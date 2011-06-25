@@ -119,17 +119,39 @@ body {
             }
           }
 
-          a.twitter {
-            background-image: url("/images/twitter.png");
+          &#twitter {
+            > div:hover {
+              background: #42d0ff;
+            }
+            a {
+              background-image: url("/images/twitter.png");
+            }
           }
-          a.dribbble {
-            background-image: url("/images/dribbble.png");
+          &#dribbble {
+            > div:hover {
+              background: #ea4c88;
+            }
+            a {
+              background-image: url("/images/dribbble.png");
+            }
           }
-          a.github {
-            background-image: url("/images/github.png");
+          &#github {
+            > div:hover {
+              background: #efefef;
+            }
+            a {
+              background-image: url("/images/github.png");
+            }
           }
-          a.tumblr {
-            background-image: url("/images/tumblr.png");
+          &#tumblr {
+            > div:hover {
+              background: #6f8fa8;
+              background: #3c5a76;
+              background: #2291ac;
+            }
+            a {
+              background-image: url("/images/tumblr.png");
+            }
           }
         }
       }

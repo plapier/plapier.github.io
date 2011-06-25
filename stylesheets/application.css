@@ -581,13 +581,23 @@ body {
                 -webkit-transition-delay: 0;
                 -moz-transition-delay: 0;
                 transition-delay: 0; }
-          body header section#social-media > ul > li a.twitter {
+          body header section#social-media > ul > li#twitter > div:hover {
+            background: #42d0ff; }
+          body header section#social-media > ul > li#twitter a {
             background-image: url("/images/twitter.png"); }
-          body header section#social-media > ul > li a.dribbble {
+          body header section#social-media > ul > li#dribbble > div:hover {
+            background: #ea4c88; }
+          body header section#social-media > ul > li#dribbble a {
             background-image: url("/images/dribbble.png"); }
-          body header section#social-media > ul > li a.github {
+          body header section#social-media > ul > li#github > div:hover {
+            background: #efefef; }
+          body header section#social-media > ul > li#github a {
             background-image: url("/images/github.png"); }
-          body header section#social-media > ul > li a.tumblr {
+          body header section#social-media > ul > li#tumblr > div:hover {
+            background: #6f8fa8;
+            background: #3c5a76;
+            background: #2291ac; }
+          body header section#social-media > ul > li#tumblr a {
             background-image: url("/images/tumblr.png"); }
   body div.main-content {
     color: #ececec;
