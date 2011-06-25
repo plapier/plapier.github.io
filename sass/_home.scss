@@ -62,8 +62,11 @@ body {
     background: #202020;
     margin-bottom: 50px;
     padding-top: 4px;
-    @extend .fadein;
-    @include animation-duration(0.5s);
+    @include animation-name(slidedown);
+    @include animation-duration(0.8s);
+    @include animation-timing-function(ease-out);
+    @include animation-delay(5s);
+    @include animation-fill-mode(both);
 
     h1#logo {
       background: url("/images/emdash-logo.png") no-repeat 0% 50%;
@@ -94,13 +97,11 @@ body {
             @include border-radius(32px);
             display: inline-block;
             float: left;
-            @include transition;
+            @include transition($timing-function: linear);
             width: auto;
 
             &:hover {
               background: $link;
-              //background: $hover;
-              //background: lighten(#333, 10%);
               @include box-shadow(inset 0 0 0 4px #404040, 0 0 0 3px lighten(#333, 5%));
             }
 
@@ -145,8 +146,6 @@ body {
           }
           &#tumblr {
             > div:hover {
-              background: #6f8fa8;
-              background: #3c5a76;
               background: #2291ac;
             }
             a {
@@ -329,7 +328,7 @@ body {
           @include transition;
           @extend .fadein;
           @include animation-name(bling);
-          @include animation-delay(3.0s);
+          @include animation-delay(3.5s);
 
           &:hover {
             color: $hover-alt;
@@ -344,8 +343,10 @@ body {
       margin-right: $gutter;
       position: relative;
       bottom: 29px;
+      z-index: 20;
       @extend .fadein;
-      @include animation-delay(3.0s);
+      @include animation-delay(6.0s);
+      @include animation-duration(1.0s);
 
       > p {
         font-size: 11px;

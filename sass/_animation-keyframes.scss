@@ -1,4 +1,12 @@
 //Keyframes for Animations
+@-webkit-keyframes slidedown {
+  from {
+    -webkit-transform: translateY(-65px);
+  }
+  to {
+    -webkit-transform: translateY(0px);
+  }
+}
 @-webkit-keyframes slideup {
   from {
     -webkit-transform: translateY(250px);
@@ -38,7 +46,7 @@
   50% {
     opacity: 1;
     color: white;
-    text-shadow: 0 0 3px hsla(100%, 100%, 100%, 0.6);
+    text-shadow: 0 0 3px hsla(100%, 100%, 100%, 0.7);
   }
   100% {
     opacity: 1;

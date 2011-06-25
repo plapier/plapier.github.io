@@ -395,6 +395,13 @@ div.radial {
   @include radial-gradient(50% 50%, circle cover, #eee 10%, #1e5799 30%, #efefef);
 }
 */
+@-webkit-keyframes slidedown {
+  from {
+    -webkit-transform: translateY(-65px); }
+
+  to {
+    -webkit-transform: translateY(0px); } }
+
 @-webkit-keyframes slideup {
   from {
     -webkit-transform: translateY(250px); }
@@ -430,7 +437,7 @@ div.radial {
   50% {
     opacity: 1;
     color: white;
-    text-shadow: 0 0 3px rgba(255, 255, 255, 0.6); }
+    text-shadow: 0 0 3px rgba(255, 255, 255, 0.7); }
 
   100% {
     opacity: 1;
@@ -473,7 +480,7 @@ a:hover {
 ::-moz-selection {
   background: #D5E255; }
 
-.fadein, body header, body div.main-content section#headline > h1, body div.main-content aside#open-source-projects, body div.main-content section#twitter-stream, body div.main-content section#twitter-stream div#twitter-follow a, body div.main-content footer {
+.fadein, body div.main-content section#headline > h1, body div.main-content aside#open-source-projects, body div.main-content section#twitter-stream, body div.main-content section#twitter-stream div#twitter-follow a, body div.main-content footer {
   -webkit-animation-name: fadein;
   -moz-animation-name: fadein;
   animation-name: fadein;
@@ -497,9 +504,21 @@ body {
     background: #202020;
     margin-bottom: 50px;
     padding-top: 4px;
-    -webkit-animation-duration: 0.5s;
-    -moz-animation-duration: 0.5s;
-    animation-duration: 0.5s; }
+    -webkit-animation-name: slidedown;
+    -moz-animation-name: slidedown;
+    animation-name: slidedown;
+    -webkit-animation-duration: 0.8s;
+    -moz-animation-duration: 0.8s;
+    animation-duration: 0.8s;
+    -webkit-animation-timing-function: ease-out;
+    -moz-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+    -webkit-animation-delay: 5s;
+    -moz-animation-delay: 5s;
+    animation-delay: 5s;
+    -webkit-animation-fill-mode: both;
+    -moz-animation-fill-mode: both;
+    animation-fill-mode: both; }
     body header h1#logo {
       background: url("/images/emdash-logo.png") no-repeat 0% 50%;
       float: left;
@@ -536,9 +555,9 @@ body {
             -webkit-transition-duration: 0.15s;
             -moz-transition-duration: 0.15s;
             transition-duration: 0.15s;
-            -webkit-transition-timing-function: ease-out;
-            -moz-transition-timing-function: ease-out;
-            transition-timing-function: ease-out;
+            -webkit-transition-timing-function: linear;
+            -moz-transition-timing-function: linear;
+            transition-timing-function: linear;
             -webkit-transition-delay: 0;
             -moz-transition-delay: 0;
             transition-delay: 0;
@@ -594,8 +613,6 @@ body {
           body header section#social-media > ul > li#github a {
             background-image: url("/images/github.png"); }
           body header section#social-media > ul > li#tumblr > div:hover {
-            background: #6f8fa8;
-            background: #3c5a76;
             background: #2291ac; }
           body header section#social-media > ul > li#tumblr a {
             background-image: url("/images/tumblr.png"); }
@@ -779,9 +796,9 @@ body {
           -webkit-animation-name: bling;
           -moz-animation-name: bling;
           animation-name: bling;
-          -webkit-animation-delay: 3s;
-          -moz-animation-delay: 3s;
-          animation-delay: 3s; }
+          -webkit-animation-delay: 3.5s;
+          -moz-animation-delay: 3.5s;
+          animation-delay: 3.5s; }
           body div.main-content section#twitter-stream div#twitter-follow a:hover {
             color: #a5a5a5;
             -webkit-text-fill-color: #a5a5a5; }
@@ -791,9 +808,13 @@ body {
       margin-right: 40px;
       position: relative;
       bottom: 29px;
-      -webkit-animation-delay: 3s;
-      -moz-animation-delay: 3s;
-      animation-delay: 3s; }
+      z-index: 20;
+      -webkit-animation-delay: 6s;
+      -moz-animation-delay: 6s;
+      animation-delay: 6s;
+      -webkit-animation-duration: 1s;
+      -moz-animation-duration: 1s;
+      animation-duration: 1s; }
       body div.main-content footer > p {
         font-size: 11px;
         color: #3f3f3f; }
