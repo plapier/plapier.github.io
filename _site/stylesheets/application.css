@@ -603,17 +603,26 @@ body {
         -webkit-animation-name: slideup-one, fadein;
         -moz-animation-name: slideup-one, fadein;
         animation-name: slideup-one, fadein;
-        -webkit-animation-timing-function: ease-in-out;
-        -moz-animation-timing-function: ease-in-out;
-        animation-timing-function: ease-in-out;
-        -webkit-animation-duration: 1s;
-        -moz-animation-duration: 1s;
-        animation-duration: 1s;
+        -webkit-animation-timing-function: ease-in-out, ease-out;
+        -moz-animation-timing-function: ease-in-out, ease-out;
+        animation-timing-function: ease-in-out, ease-out;
+        -webkit-animation-duration: 1s, 1.2s;
+        -moz-animation-duration: 1s, 1.2s;
+        animation-duration: 1s, 1.2s;
         -webkit-animation-fill-mode: both;
         -moz-animation-fill-mode: both;
         animation-fill-mode: both; }
         body div.main-content section#recent-work article#one > img, body div.main-content section#recent-work article#two > img, body div.main-content section#recent-work article#three > img {
-          margin: 0; }
+          margin: 0;
+          -webkit-animation-name: fadein, slideup-one;
+          -moz-animation-name: fadein, slideup-one;
+          animation-name: fadein, slideup-one;
+          -webkit-animation-duration: 1s, 2s;
+          -moz-animation-duration: 1s, 2s;
+          animation-duration: 1s, 2s;
+          -webkit-animation-timing-function: ease-in, ease-in-out;
+          -moz-animation-timing-function: ease-in, ease-in-out;
+          animation-timing-function: ease-in, ease-in-out; }
       body div.main-content section#recent-work article#one {
         -webkit-animation-delay: 0.5s;
         -moz-animation-delay: 0.5s;
