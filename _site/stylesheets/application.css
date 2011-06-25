@@ -1,59 +1,769 @@
 /*
-Syntax error: File to import not found or unreadable: animation.
-              Load paths:
-                /Users/phillapier/Sites/phillapier
-                /Users/phillapier/Sites/phillapier/sass
-        on line 4 of sass/application.scss
+ * HTML5 âœ° Boilerplate
+ *
+ * What follows is the result of much research on cross-browser styling. 
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+/* =============================================================================
+   HTML5 element display
+   ========================================================================== */
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {
+  display: block; }
 
-1: //@import "reset";
-2: @import "normalize";
-3: @import "sass-mixins/_mixins.scss";
-4: @import "animation";
-5: @import "directives";
-6: @import "home";
+audio[controls], canvas, video {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1; }
 
-Backtrace:
-sass/application.scss:4
-/Users/phillapier/.rvm/gems/ruby-1.8.7-p302/gems/sass-3.2.0.alpha.9/bin/../lib/sass/../sass/tree/import_node.rb:64:in `import'
-/Users/phillapier/.rvm/gems/ruby-1.8.7-p302/gems/sass-3.2.0.alpha.9/bin/../lib/sass/../sass/tree/import_node.rb:25:in `imported_file'
-/Users/phillapier/.rvm/gems/ruby-1.8.7-p302/gems/sass-3.2.0.alpha.9/bin/../lib/sass/../sass/tree/visitors/perform.rb:148:in `visit_import'
-/Users/phillapier/.rvm/gems/ruby-1.8.7-p302/gems/sass-3.2.0.alpha.9/bin/../lib/sass/../sass/tree/visitors/base.rb:37:in `send'
-/Users/phillapier/.rvm/gems/ruby-1.8.7-p302/gems/sass-3.2.0.alpha.9/bin/../lib/sass/../sass/tree/visitors/base.rb:37:in `visit'
-/Users/phillapier/.rvm/gems/ruby-1.8.7-p302/gems/sass-3.2.0.alpha.9/bin/../lib/sass/../sass/tree/visitors/perform.rb:18:in `visit'
-/Users/phillapier/.rvm/gems/ruby-1.8.7-p302/gems/sass-3.2.0.alpha.9/bin/../lib/sass/../sass/tree/visitors/base.rb:53:in `visit_children'
-/Users/phillapier/.rvm/gems/ruby-1.8.7-p302/gems/sass-3.2.0.alpha.9/bin/../lib/sass/../sass/tree/visitors/base.rb:53:in `map'
-/Users/phillapier/.rvm/gems/ruby-1.8.7-p302/gems/sass-3.2.0.alpha.9/bin/../lib/sass/../sass/tree/visitors/base.rb:53:in `visit_children'
-/Users/phillapier/.rvm/gems/ruby-1.8.7-p302/gems/sass-3.2.0.alpha.9/bin/../lib/sass/../sass/tree/visitors/perform.rb:27:in `visit_children'
-/Users/phillapier/.rvm/gems/ruby-1.8.7-p302/gems/sass-3.2.0.alpha.9/bin/../lib/sass/../sass/tree/visitors/perform.rb:39:in `with_environment'
-/Users/phillapier/.rvm/gems/ruby-1.8.7-p302/gems/sass-3.2.0.alpha.9/bin/../lib/sass/../sass/tree/visitors/perform.rb:26:in `visit_children'
-/Users/phillapier/.rvm/gems/ruby-1.8.7-p302/gems/sass-3.2.0.alpha.9/bin/../lib/sass/../sass/tree/visitors/base.rb:37:in `visit'
-/Users/phillapier/.rvm/gems/ruby-1.8.7-p302/gems/sass-3.2.0.alpha.9/bin/../lib/sass/../sass/tree/visitors/perform.rb:47:in `visit_root'
-/Users/phillapier/.rvm/gems/ruby-1.8.7-p302/gems/sass-3.2.0.alpha.9/bin/../lib/sass/../sass/tree/visitors/base.rb:37:in `send'
-/Users/phillapier/.rvm/gems/ruby-1.8.7-p302/gems/sass-3.2.0.alpha.9/bin/../lib/sass/../sass/tree/visitors/base.rb:37:in `visit'
-/Users/phillapier/.rvm/gems/ruby-1.8.7-p302/gems/sass-3.2.0.alpha.9/bin/../lib/sass/../sass/tree/visitors/perform.rb:18:in `visit'
-/Users/phillapier/.rvm/gems/ruby-1.8.7-p302/gems/sass-3.2.0.alpha.9/bin/../lib/sass/../sass/tree/visitors/perform.rb:7:in `send'
-/Users/phillapier/.rvm/gems/ruby-1.8.7-p302/gems/sass-3.2.0.alpha.9/bin/../lib/sass/../sass/tree/visitors/perform.rb:7:in `visit'
-/Users/phillapier/.rvm/gems/ruby-1.8.7-p302/gems/sass-3.2.0.alpha.9/bin/../lib/sass/../sass/tree/root_node.rb:20:in `render'
-/Users/phillapier/.rvm/gems/ruby-1.8.7-p302/gems/sass-3.2.0.alpha.9/bin/../lib/sass/../sass/engine.rb:291:in `_render'
-/Users/phillapier/.rvm/gems/ruby-1.8.7-p302/gems/sass-3.2.0.alpha.9/bin/../lib/sass/../sass/engine.rb:238:in `render'
-/Users/phillapier/.rvm/gems/ruby-1.8.7-p302/gems/sass-3.2.0.alpha.9/bin/../lib/sass/../sass/plugin/compiler.rb:319:in `update_stylesheet'
-/Users/phillapier/.rvm/gems/ruby-1.8.7-p302/gems/sass-3.2.0.alpha.9/bin/../lib/sass/../sass/plugin/compiler.rb:181:in `update_stylesheets'
-/Users/phillapier/.rvm/gems/ruby-1.8.7-p302/gems/sass-3.2.0.alpha.9/bin/../lib/sass/../sass/plugin/compiler.rb:175:in `each'
-/Users/phillapier/.rvm/gems/ruby-1.8.7-p302/gems/sass-3.2.0.alpha.9/bin/../lib/sass/../sass/plugin/compiler.rb:175:in `update_stylesheets'
-/Users/phillapier/.rvm/gems/ruby-1.8.7-p302/gems/sass-3.2.0.alpha.9/bin/../lib/sass/../sass/plugin/compiler.rb:173:in `each'
-/Users/phillapier/.rvm/gems/ruby-1.8.7-p302/gems/sass-3.2.0.alpha.9/bin/../lib/sass/../sass/plugin/compiler.rb:173:in `update_stylesheets'
-/Users/phillapier/.rvm/gems/ruby-1.8.7-p302/gems/sass-3.2.0.alpha.9/bin/../lib/sass/../sass/plugin/compiler.rb:214:in `watch'
-/Users/phillapier/.rvm/gems/ruby-1.8.7-p302/gems/sass-3.2.0.alpha.9/bin/../lib/sass/../sass/plugin.rb:111:in `send'
-/Users/phillapier/.rvm/gems/ruby-1.8.7-p302/gems/sass-3.2.0.alpha.9/bin/../lib/sass/../sass/plugin.rb:111:in `method_missing'
-/Users/phillapier/.rvm/gems/ruby-1.8.7-p302/gems/sass-3.2.0.alpha.9/bin/../lib/sass/../sass/exec.rb:408:in `watch_or_update'
-/Users/phillapier/.rvm/gems/ruby-1.8.7-p302/gems/sass-3.2.0.alpha.9/bin/../lib/sass/../sass/exec.rb:294:in `process_result'
-/Users/phillapier/.rvm/gems/ruby-1.8.7-p302/gems/sass-3.2.0.alpha.9/bin/../lib/sass/../sass/exec.rb:41:in `parse'
-/Users/phillapier/.rvm/gems/ruby-1.8.7-p302/gems/sass-3.2.0.alpha.9/bin/../lib/sass/../sass/exec.rb:21:in `parse!'
-/Users/phillapier/.rvm/gems/ruby-1.8.7-p302/gems/sass-3.2.0.alpha.9/bin/sass:8
-/Users/phillapier/.rvm/gems/ruby-1.8.7-p302/bin/sass:19:in `load'
-/Users/phillapier/.rvm/gems/ruby-1.8.7-p302/bin/sass:19
-*/
-body:before {
+/* =============================================================================
+   Base
+   ========================================================================== */
+/*
+ * 1. Correct text resizing oddly in IE6/7 when body font-size is set using em units
+ *    http://clagnut.com/blog/348/#c790
+ * 2. Force vertical scrollbar in non-IE
+ * 3. Remove Android and iOS tap highlight color to prevent entire container being highlighted
+ *    www.yuiblog.com/blog/2010/10/01/quick-tip-customizing-the-mobile-safari-tap-highlight-color/
+ * 4. Prevent iOS text size adjust on device orientation change, without disabling user zoom
+ *    www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/
+ */
+html {
+  font-size: 100%;
+  /*overflow-y: scroll;*/
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.231; }
+
+body, button, input, select, textarea {
+  font-family: sans-serif;
+  color: #222; }
+
+/* 
+ * These selection declarations have to be separate
+ * No text-shadow: twitter.com/miketaylr/status/12228805301
+ * Also: hot pink!
+ */
+::-moz-selection {
+  background: #fe57a1;
+  color: #fff;
+  text-shadow: none; }
+
+::selection {
+  background: #fe57a1;
+  color: #fff;
+  text-shadow: none; }
+
+/* =============================================================================
+   Links
+   ========================================================================== */
+a {
+  color: #00e; }
+
+a:visited {
+  color: #551a8b; }
+
+a:focus {
+  outline: thin dotted; }
+
+/* Improve readability when focused and hovered in all browsers: people.opera.com/patrickl/experiments/keyboard/test */
+a:hover, a:active {
+  outline: 0; }
+
+/* =============================================================================
+   Typography
+   ========================================================================== */
+abbr[title] {
+  border-bottom: 1px dotted; }
+
+b, strong {
+  font-weight: bold; }
+
+blockquote {
+  margin: 1em 40px; }
+
+dfn {
+  font-style: italic; }
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0; }
+
+ins {
+  background: #ff9;
+  color: #000;
+  text-decoration: none; }
+
+mark {
+  background: #ff0;
+  color: #000;
+  font-style: italic;
+  font-weight: bold; }
+
+/* Redeclare monospace font family: en.wikipedia.org/wiki/User:Davidgothberg/Test59 */
+pre, code, kbd, samp {
+  font-family: monospace, monospace;
+  _font-family: 'courier new', monospace;
+  font-size: 1em; }
+
+/* Improve readability of pre-formatted text in all browsers */
+pre {
   white-space: pre;
-  font-family: monospace;
-  content: "Syntax error: File to import not found or unreadable: animation.\A               Load paths:\A                 /Users/phillapier/Sites/phillapier\A                 /Users/phillapier/Sites/phillapier/sass\A         on line 4 of sass/application.scss\A \A 1: //@import \"reset\";\A 2: @import \"normalize\";\A 3: @import \"sass-mixins/_mixins.scss\";\A 4: @import \"animation\";\A 5: @import \"directives\";\A 6: @import \"home\";"; }
+  white-space: pre-wrap;
+  word-wrap: break-word; }
+
+q {
+  quotes: none; }
+
+q:before, q:after {
+  content: "";
+  content: none; }
+
+small {
+  font-size: 85%; }
+
+/* Position subscript and superscript content without affecting line-height: gist.github.com/413930 */
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sup {
+  top: -0.5em; }
+
+sub {
+  bottom: -0.25em; }
+
+/* =============================================================================
+   Lists
+   ========================================================================== */
+ul, ol {
+  margin: 1em 0;
+  padding: 0 0 0 40px; }
+
+dd {
+  margin: 0 0 0 40px; }
+
+nav ul, nav ol {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+
+/* =============================================================================
+   Embedded content
+   ========================================================================== */
+/*
+ * Improve image quality when scaled in IE7
+ * code.flickr.com/blog/2008/11/12/on-ui-quality-the-little-things-client-side-image-resizing/
+ */
+img {
+  border: 0;
+  -ms-interpolation-mode: bicubic; }
+
+/*
+ * Correct overflow displayed oddly in IE9 
+ */
+svg:not(:root) {
+  overflow: hidden; }
+
+/* =============================================================================
+   Figures
+   ========================================================================== */
+figure {
+  margin: 0; }
+
+/* =============================================================================
+   Forms
+   ========================================================================== */
+form {
+  margin: 0; }
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0; }
+
+/* 
+ * 1. Correct color not inheriting in IE6/7/8/9 
+ * 2. Correct alignment displayed oddly in IE6/7 
+ */
+legend {
+  border: 0;
+  *margin-left: -7px;
+  padding: 0; }
+
+/* Indicate that 'label' will shift focus to the associated form element */
+label {
+  cursor: pointer; }
+
+/*
+ * 1. Correct font-size not inheriting in all browsers
+ * 2. Remove margins in FF3/4 S5 Chrome
+ * 3. Define consistent vertical alignment display in all browsers
+ */
+button, input, select, textarea {
+  font-size: 100%;
+  margin: 0;
+  vertical-align: baseline;
+  *vertical-align: middle; }
+
+/*
+ * 1. Define line-height as normal to match FF3/4 (set using !important in the UA stylesheet)
+ * 2. Correct inner spacing displayed oddly in IE6/7
+ */
+button, input {
+  line-height: normal;
+  *overflow: visible; }
+
+/*
+ * 1. Display hand cursor for clickable form elements
+ * 2. Allow styling of clickable form elements in iOS
+ */
+button, input[type="button"], input[type="reset"], input[type="submit"] {
+  cursor: pointer;
+  -webkit-appearance: button; }
+
+/*
+ * Consistent box sizing and appearance
+ */
+input[type="checkbox"], input[type="radio"] {
+  box-sizing: border-box; }
+
+input[type="search"] {
+  -webkit-appearance: textfield;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box; }
+
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+/* 
+ * Remove inner padding and border in FF3/4
+ * www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/ 
+ */
+button::-moz-focus-inner, input::-moz-focus-inner {
+  border: 0;
+  padding: 0; }
+
+/* Remove default vertical scrollbar in IE6/7/8/9 */
+textarea {
+  overflow: auto;
+  vertical-align: top; }
+
+/* Colors for form validity */
+input:invalid, textarea:invalid {
+  background-color: #f0dddd; }
+
+/* =============================================================================
+   Tables
+   ========================================================================== */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* =============================================================================
+   Non-semantic helper classes
+   Please define your styles before this section.
+   ========================================================================== */
+/* Hide for both screenreaders and browsers:
+   css-discuss.incutio.com/wiki/Screenreader_Visibility */
+.hidden {
+  display: none;
+  visibility: hidden; }
+
+/* Hide only visually, but have it available for screenreaders: by Jon Neal.
+  www.webaim.org/techniques/css/invisiblecontent/  &  j.mp/visuallyhidden */
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px; }
+
+/* Extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard: drupal.org/node/897638 */
+.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto; }
+
+/* Hide visually and from screenreaders, but maintain layout */
+.invisible {
+  visibility: hidden; }
+
+/* Contain floats: nicolasgallagher.com/micro-clearfix-hack/ */
+.clearfix:before, div.wrapper:before, body:before, body header:before, body div.main-content:before, body div.main-content section#recent-work:before, .clearfix:after, div.wrapper:after, body:after, body header:after, body div.main-content:after, body div.main-content section#recent-work:after {
+  content: "";
+  display: table; }
+
+.clearfix:after, div.wrapper:after, body:after, body header:after, body div.main-content:after, body div.main-content section#recent-work:after {
+  clear: both; }
+
+.clearfix, div.wrapper, body, body header, body div.main-content, body div.main-content section#recent-work {
+  zoom: 1; }
+
+/* =============================================================================
+   PLACEHOLDER Media Queries for Responsive Design.
+   These override the primary ('mobile first') styles
+   Modify as content requires.
+   ========================================================================== */
+@media only screen and (min-width: 480px) {
+  /* Style adjustments for viewports 480px and over go here */ }
+@media only screen and (min-width: 768px) {
+  /* Style adjustments for viewports 768px and over go here */ }
+/* =============================================================================
+   Print styles.
+   Inlined to avoid required HTTP connection: www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+@media print {
+  * {
+    background: transparent !important;
+    color: black !important;
+    text-shadow: none !important;
+    filter: none !important;
+    -ms-filter: none !important; }
+
+  /* Black prints faster: sanbeiji.com/archives/953 */
+  a, a:visited {
+    color: #444 !important;
+    text-decoration: underline; }
+
+  a[href]:after {
+    content: " (" attr(href) ")"; }
+
+  abbr[title]:after {
+    content: " (" attr(title) ")"; }
+
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after {
+    content: ""; }
+
+  /* Don't show links for images, or javascript/internal links */
+  pre, blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid; }
+
+  thead {
+    display: table-header-group; }
+
+  /* css-discuss.incutio.com/wiki/Printing_Tables */
+  tr, img {
+    page-break-inside: avoid; }
+
+  img {
+    max-width: 100% !important; }
+
+  @page {
+    margin: 0.5cm; }
+
+  p, h2, h3 {
+    orphans: 3;
+    widows: 3; }
+
+  h2, h3 {
+    page-break-after: avoid; } }
+/* Legacy support for inline-block in IE7 (maybe IE6) */
+/* Requires Sass 3.1+ */
+/* Usage: Gradient position is optional, default is top. Position can be a degree. Color stops are optional as well.*/
+/*
+div.linear {
+  @include linear-gradient(#1e5799, #2989d8);
+  @include linear-gradient(top, #1e5799 0%, #2989d8 50%);
+  @include linear-gradient(50deg, rgba(10, 10, 10, 0.5) 0%, #2989d8 50%, #207cca 51%, #7db9e8 100%);
+}
+*/
+/* Requires Sass 3.1+ */
+/* Usage: Gradient position and shape-size are required. Color stops are optional.*/
+/*
+div.radial {
+  @include radial-gradient(50% 50%, circle cover, #1e5799, #efefef);
+  @include radial-gradient(50% 50%, circle cover, #eee 10%, #1e5799 30%, #efefef);
+}
+*/
+@-webkit-keyframes slideup {
+  from {
+    -webkit-transform: translateY(250px); }
+
+  to {
+    -webkit-transform: translateY(0px); } }
+
+@-webkit-keyframes over {
+  from {
+    -webkit-transform: translateX(250px); }
+
+  to {
+    -webkit-transform: translateX(0px); } }
+
+@-webkit-keyframes fadein {
+  from {
+    opacity: 0; }
+
+  to {
+    opacity: 1; } }
+
+@-webkit-keyframes loading {
+  0% {
+    opacity: 0;
+    text-shadow: 0 0 3px rgba(255, 255, 255, 0.2); }
+
+  50% {
+    opacity: 1;
+    text-shadow: 0 0 3px rgba(255, 255, 255, 0.6); }
+
+  100% {
+    opacity: 0;
+    text-shadow: 0 0 3px rgba(255, 255, 255, 0.2); } }
+
+@-webkit-keyframes bling {
+  0% {
+    opacity: 0;
+    text-shadow: 0 0 3px rgba(255, 255, 255, 0); }
+
+  50% {
+    opacity: 1;
+    color: white;
+    text-shadow: 0 0 3px rgba(255, 255, 255, 0.6); }
+
+  100% {
+    opacity: 1;
+    text-shadow: none; } }
+
+body, html {
+  background: #262626; }
+
+div.wrapper {
+  width: 800px;
+  margin: 0 auto; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "proxima-nova-1", "proxima-nova-2", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 100; }
+
+a, a:link, a:active, a:visited {
+  color: #b8d2a5;
+  text-decoration: none; }
+
+a:hover {
+  color: #9fcb59;
+  -webkit-transition: all 0.15s ease-out;
+  -moz-transition: all 0.15s ease-out;
+  -o-transition: all 0.15s ease-out;
+  transition: all 0.15s ease-out;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.75); }
+
+::selection {
+  background: #D5E255; }
+
+::-moz-selection {
+  background: #D5E255; }
+
+.fadein, body header, body div.main-content section#headline > h1, body div.main-content aside#open-source-projects, body div.main-content section#twitter-stream, body div.main-content section#twitter-stream div#twitter-follow a, body div.main-content footer {
+  -webkit-animation-name: fadein;
+  -moz-animation-name: fadein;
+  animation-name: fadein;
+  -webkit-animation-duration: 3s;
+  -moz-animation-duration: 3s;
+  animation-duration: 3s;
+  -webkit-animation-timing-function: ease-in;
+  -moz-animation-timing-function: ease-in;
+  animation-timing-function: ease-in;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  animation-fill-mode: both; }
+
+body {
+  color: #ececec;
+  font-family: "museo-slab-1", "museo-slab-2", Georgia, Palatino, "Palatino Linotype", Times, serif;
+  margin: 0 auto;
+  margin-bottom: 40px;
+  text-rendering: optimizeLegibility; }
+  body header {
+    background: #202020;
+    margin-bottom: 50px;
+    padding-top: 4px;
+    -webkit-animation-duration: 0.5s;
+    -moz-animation-duration: 0.5s;
+    animation-duration: 0.5s; }
+    body header h1#logo {
+      background: url("/images/emdash-logo.png") no-repeat 0% 50%;
+      float: left;
+      font-size: 32px;
+      margin: 10px 40px 10px 0;
+      text-indent: -9999px;
+      width: 520px; }
+    body header section#social-media {
+      float: left;
+      width: 240px; }
+      body header section#social-media > ul {
+        float: right;
+        margin: 14px 0 12px 0; }
+        body header section#social-media > ul > li {
+          display: -moz-inline-box;
+          -moz-box-orient: vertical;
+          display: inline-block;
+          vertical-align: baseline;
+          zoom: 1;
+          *display: inline;
+          *vertical-align: auto;
+          margin: 0 6px; }
+          body header section#social-media > ul > li:last-child {
+            margin-right: 0; }
+          body header section#social-media > ul > li > div {
+            -moz-border-radius: 32px;
+            -webkit-border-radius: 32px;
+            border-radius: 32px;
+            display: inline-block;
+            float: left;
+            -webkit-transition: all 0.15s ease-out;
+            -moz-transition: all 0.15s ease-out;
+            -o-transition: all 0.15s ease-out;
+            transition: all 0.15s ease-out;
+            width: auto; }
+            body header section#social-media > ul > li > div:hover {
+              background: #b8d2a5;
+              -webkit-box-shadow: inset 0 0 0 4px #404040, 0 0 0 3px #404040;
+              -moz-box-shadow: inset 0 0 0 4px #404040, 0 0 0 3px #404040;
+              -o-box-shadow: inset 0 0 0 4px #404040, 0 0 0 3px #404040;
+              box-shadow: inset 0 0 0 4px #404040, 0 0 0 3px #404040; }
+            body header section#social-media > ul > li > div > a {
+              background-repeat: no-repeat;
+              height: 32px;
+              display: -moz-inline-box;
+              -moz-box-orient: vertical;
+              display: inline-block;
+              vertical-align: baseline;
+              zoom: 1;
+              *display: inline;
+              *vertical-align: auto;
+              text-indent: -9999px;
+              width: 32px; }
+              body header section#social-media > ul > li > div > a:hover {
+                -moz-border-radius: 32px;
+                -webkit-border-radius: 32px;
+                border-radius: 32px;
+                -webkit-box-shadow: inset 0 0 0 1px #404040, 0 0 0 3px #404040;
+                -moz-box-shadow: inset 0 0 0 1px #404040, 0 0 0 3px #404040;
+                -o-box-shadow: inset 0 0 0 1px #404040, 0 0 0 3px #404040;
+                box-shadow: inset 0 0 0 1px #404040, 0 0 0 3px #404040;
+                -webkit-transition: box-shadow 0s ease-in;
+                -moz-transition: box-shadow 0s ease-in;
+                -o-transition: box-shadow 0s ease-in;
+                transition: box-shadow 0s ease-in; }
+          body header section#social-media > ul > li a.twitter {
+            background-image: url("/images/twitter.png"); }
+          body header section#social-media > ul > li a.dribbble {
+            background-image: url("/images/dribbble.png"); }
+          body header section#social-media > ul > li a.github {
+            background-image: url("/images/github.png"); }
+          body header section#social-media > ul > li a.tumblr {
+            background-image: url("/images/tumblr.png"); }
+  body div.main-content {
+    color: #ececec;
+    font-family: "museo-slab-1", "museo-slab-2", Georgia, Palatino, "Palatino Linotype", Times, serif;
+    margin: 0 auto;
+    text-rendering: optimizeLegibility;
+    width: 800px; }
+    body div.main-content section#headline {
+      margin: 20px 0 50px;
+      width: 100%; }
+      body div.main-content section#headline > h1 {
+        font-size: 36px;
+        font-weight: 300;
+        letter-spacing: -1px;
+        margin: 0;
+        -webkit-font-smoothing: antialiased;
+        -webkit-animation-duration: 1s;
+        -moz-animation-duration: 1s;
+        animation-duration: 1s; }
+    body div.main-content section#recent-work {
+      background-image: url("/images/oval-highlight.png");
+      background-position: 50% 100%;
+      background-repeat: no-repeat;
+      padding-bottom: 55px;
+      width: 100%; }
+      body div.main-content section#recent-work article#one, body div.main-content section#recent-work article#two, body div.main-content section#recent-work article#three {
+        background: #333333;
+        border: 10px solid #333333;
+        -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.45);
+        -moz-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.45);
+        -o-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.45);
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.45);
+        float: left;
+        height: 165px;
+        width: 220px;
+        z-index: 0;
+        -webkit-animation-name: slideup, fadein;
+        -moz-animation-name: slideup, fadein;
+        animation-name: slideup, fadein;
+        -webkit-animation-timing-function: ease-in-out, ease-out;
+        -moz-animation-timing-function: ease-in-out, ease-out;
+        animation-timing-function: ease-in-out, ease-out;
+        -webkit-animation-duration: 1s, 1.2s;
+        -moz-animation-duration: 1s, 1.2s;
+        animation-duration: 1s, 1.2s;
+        -webkit-animation-fill-mode: both;
+        -moz-animation-fill-mode: both;
+        animation-fill-mode: both; }
+        body div.main-content section#recent-work article#one > img, body div.main-content section#recent-work article#two > img, body div.main-content section#recent-work article#three > img {
+          margin: 0; }
+      body div.main-content section#recent-work article#one {
+        -webkit-animation-delay: 0.5s;
+        -moz-animation-delay: 0.5s;
+        animation-delay: 0.5s; }
+      body div.main-content section#recent-work article#two {
+        -webkit-animation-delay: 0.75s;
+        -moz-animation-delay: 0.75s;
+        animation-delay: 0.75s; }
+      body div.main-content section#recent-work article#three {
+        -webkit-animation-delay: 1s;
+        -moz-animation-delay: 1s;
+        animation-delay: 1s; }
+      body div.main-content section#recent-work article#two {
+        margin: 0 40px; }
+    body div.main-content section#recent-work + div.wrapper {
+      -webkit-box-shadow: inset 0 1px 0 #373737, 0 -1px 0 #191919;
+      -moz-box-shadow: inset 0 1px 0 #373737, 0 -1px 0 #191919;
+      -o-box-shadow: inset 0 1px 0 #373737, 0 -1px 0 #191919;
+      box-shadow: inset 0 1px 0 #373737, 0 -1px 0 #191919;
+      background: #262626;
+      position: relative;
+      padding-top: 30px;
+      min-height: 300px;
+      z-index: 10; }
+    body div.main-content aside#open-source-projects {
+      float: left;
+      margin-right: 40px;
+      width: 240px;
+      -webkit-animation-delay: 1.5s;
+      -moz-animation-delay: 1.5s;
+      animation-delay: 1.5s; }
+      body div.main-content aside#open-source-projects > h2 {
+        font-size: 24px; }
+      body div.main-content aside#open-source-projects > ul {
+        padding: 0; }
+        body div.main-content aside#open-source-projects > ul > li {
+          font-size: 16px;
+          list-style-type: none;
+          margin: 15px 0;
+          -webkit-font-smoothing: antialiased;
+          font-weight: 700; }
+          body div.main-content aside#open-source-projects > ul > li a {
+            color: #727272; }
+            body div.main-content aside#open-source-projects > ul > li a:hover {
+              color: #a5a5a5; }
+    body div.main-content section#twitter-stream {
+      float: left;
+      width: 520px;
+      min-height: 200px;
+      -webkit-animation-delay: 1.5s;
+      -moz-animation-delay: 1.5s;
+      animation-delay: 1.5s; }
+      body div.main-content section#twitter-stream > h2 {
+        font-size: 24px; }
+      body div.main-content section#twitter-stream div.tweet {
+        min-height: 200px; }
+        body div.main-content section#twitter-stream div.tweet p.loading {
+          color: #ccc;
+          -webkit-transition: all 0.15s ease-out;
+          -moz-transition: all 0.15s ease-out;
+          -o-transition: all 0.15s ease-out;
+          transition: all 0.15s ease-out;
+          -webkit-animation-name: loading;
+          -moz-animation-name: loading;
+          animation-name: loading;
+          -webkit-animation-duration: 3s;
+          -moz-animation-duration: 3s;
+          animation-duration: 3s;
+          -webkit-animation-timing-function: ease-in-out;
+          -moz-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+          -webkit-animation-iteration-count: infinite;
+          -moz-animation-iteration-count: infinite;
+          animation-iteration-count: infinite; }
+        body div.main-content section#twitter-stream div.tweet ul.tweet_list {
+          margin: 0;
+          padding: 0; }
+          body div.main-content section#twitter-stream div.tweet ul.tweet_list > li {
+            -webkit-font-smoothing: antialiased;
+            font-size: 14px;
+            line-height: 150%;
+            list-style-type: none;
+            margin: 20px 0; }
+            body div.main-content section#twitter-stream div.tweet ul.tweet_list > li span.tweet_time {
+              display: block;
+              font-size: 11px; }
+              body div.main-content section#twitter-stream div.tweet ul.tweet_list > li span.tweet_time a {
+                color: #727272; }
+                body div.main-content section#twitter-stream div.tweet ul.tweet_list > li span.tweet_time a:hover {
+                  background: rgba(255, 255, 255, 0.05);
+                  -moz-border-radius: 3px;
+                  -webkit-border-radius: 3px;
+                  border-radius: 3px;
+                  -webkit-box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.05);
+                  -moz-box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.05);
+                  -o-box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.05);
+                  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.05);
+                  color: #a5a5a5;
+                  text-shadow: none; }
+      body div.main-content section#twitter-stream div#twitter-follow {
+        -webkit-font-smoothing: antialiased;
+        font-size: 16px;
+        padding: 4px 0 4px 42px;
+        background-image: url("/images/twitter-bird.png");
+        background-repeat: no-repeat;
+        background-position: 0% 0%; }
+        body div.main-content section#twitter-stream div#twitter-follow a {
+          color: #727272;
+          -webkit-transition: all 0.15s ease-out;
+          -moz-transition: all 0.15s ease-out;
+          -o-transition: all 0.15s ease-out;
+          transition: all 0.15s ease-out;
+          -webkit-animation-name: bling;
+          -moz-animation-name: bling;
+          animation-name: bling;
+          -webkit-animation-delay: 3s;
+          -moz-animation-delay: 3s;
+          animation-delay: 3s; }
+          body div.main-content section#twitter-stream div#twitter-follow a:hover {
+            color: #a5a5a5;
+            -webkit-text-fill-color: #a5a5a5; }
+    body div.main-content footer {
+      float: left;
+      width: 240px;
+      margin-right: 40px;
+      position: relative;
+      bottom: 29px;
+      -webkit-animation-delay: 3s;
+      -moz-animation-delay: 3s;
+      animation-delay: 3s; }
+      body div.main-content footer > p {
+        font-size: 11px;
+        color: #3f3f3f; }
+        body div.main-content footer > p a {
+          color: #3f3f3f; }
+          body div.main-content footer > p a:hover {
+            background: rgba(255, 255, 255, 0.05);
+            -moz-border-radius: 3px;
+            -webkit-border-radius: 3px;
+            border-radius: 3px;
+            -webkit-box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.05);
+            -moz-box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.05);
+            -o-box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.05);
+            box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.05);
+            color: #727272;
+            text-shadow: none; }
