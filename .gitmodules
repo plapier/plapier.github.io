@@ -1,0 +1,3 @@
+[submodule "sass-mixins"]
+	path = sass-mixins
+	url = git@github.com:plapier/sass-mixins.git
