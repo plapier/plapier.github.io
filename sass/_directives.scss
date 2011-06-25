@@ -1,0 +1,13 @@
+//************************************************************************//
+// Assitional Sass Variables, Mixins, Directives
+//************************************************************************//
+
+$column: 100px;       // Column Width
+$gutter: 40px;        // Gutter Width
+
+@function grid-width($n) {
+  @return $n * $column + ($n - 1) * $gutter;
+}
+
+$title-font: "proxima-nova-1","proxima-nova-2", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$body-font: "museo-slab-1","museo-slab-2", Georgia, Palatino, "Palatino Linotype", Times, serif;

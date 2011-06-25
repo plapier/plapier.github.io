@@ -1,0 +1,292 @@
+//---------------------------------------------------
+//  Global Styles
+//---------------------------------------------------
+
+$primary: #ECECEC;
+$link: #B8D2A5;
+$hover: #9FCB59;
+$link-alt: #727272;
+$hover-alt: #a5a5a5;
+
+body, html {
+  background: #262626;
+}
+
+div.wrapper {
+  @extend .clearfix;
+  width: 800px;
+  margin: 0 auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $title-font;
+  font-weight: 100;
+}
+a, a:link, a:active, a:visited {
+  color: $link;
+  text-decoration: none;
+}
+a:hover {
+  color: $hover;
+  @include transition;
+  text-shadow: 1px 1px 0 hsla(0%, 0%, 0%, 0.75);
+}
+::selection {
+  background: #D5E255;
+}
+::-moz-selection {
+  background: #D5E255;
+}
+
+
+//---------------------------------------------------
+//  Website Structure and style
+//---------------------------------------------------
+
+body {
+  @extend .clearfix;
+  color: $primary;
+  font-family: $body-font;
+  margin: 0 auto;
+  margin-bottom: 40px;
+  text-rendering: optimizeLegibility;
+
+  header {
+    @extend .clearfix;
+    background: #202020;
+    margin-bottom: 50px;
+    padding-top: 4px;
+
+    h1#logo {
+      background: url("/images/emdash-logo.png") no-repeat 0% 50%;
+      float: left;
+      font-size: 32px;
+      margin: 10px $gutter 10px 0;
+      text-indent: -9999px;
+      width: grid-width(4);
+    }
+
+    section#social-media {
+      float: left;
+      width: grid-width(2);
+
+      > ul {
+        float: right;
+        margin: 14px 0 12px 0;
+
+        > li {
+          @include inline-block;
+          margin: 0 6px;
+
+          &:last-child {
+            margin-right: 0;
+          }
+
+          > div {
+            @include border-radius(32px);
+            display: inline-block;
+            float: left;
+            @include transition;
+            width: auto;
+
+            &:hover {
+              background: $link;
+              //background: $hover;
+              //background: lighten(#333, 10%);
+              @include box-shadow(inset 0 0 0 4px #404040, 0 0 0 3px lighten(#333, 5%));
+            }
+
+            > a {
+              background-repeat: no-repeat;
+              height: 32px;
+              @include inline-block;
+              text-indent: -9999px;
+              width: 32px;
+
+              &:hover {
+                @include border-radius(32px);
+                @include box-shadow(inset 0 0 0 1px #404040, 0 0 0 3px lighten(#333, 5%));
+              }
+            }
+          }
+
+          a.twitter {
+            background-image: url("/images/twitter.png");
+          }
+          a.dribbble {
+            background-image: url("/images/dribbble.png");
+          }
+          a.github {
+            background-image: url("/images/github.png");
+          }
+          a.tumblr {
+            background-image: url("/images/tumblr.png");
+          }
+        }
+      }
+    }
+  }
+
+  div.main-content {
+    @extend .clearfix;
+    color: $primary;
+    font-family: $body-font;
+    margin: 0 auto;
+    text-rendering: optimizeLegibility;
+    width: 800px;
+
+    section#headline {
+      margin: 20px 0 50px;
+      width: 100%;
+
+      > h1 {
+        font-size: 36px;
+        font-weight: 300;
+        letter-spacing: -1px;
+        margin: 0;
+        -webkit-font-smoothing: antialiased;
+      }
+    }
+
+    section#recent-work {
+      @extend .clearfix;
+      background-image: url('/images/oval-highlight.png');
+      background-position: 50% 100%;
+      background-repeat: no-repeat;
+      @include box-shadow(inset 0 -1px 0 #191919, 0 1px 0 #373737);
+      margin-bottom: 30px;
+      padding-bottom: 55px;
+      width: 100%;
+
+      article#one, article#two, article#three {
+        $article-bg: #333;
+        background: $article-bg;
+        border: 10px solid $article-bg;
+        @include box-shadow(0 1px 3px 0 hsla(0%, 0%, 0%, 0.45));
+        float: left;
+        height: 165px;
+        width: 220px;
+
+        > img {
+          margin: 0;
+        }
+      }
+
+      article#two {
+        margin: 0 $gutter;
+      }
+    }
+
+    aside#open-source-projects {
+      float: left;
+      margin-right: $gutter;
+      width: grid-width(2);
+
+      > h2 {
+        font-size: 24px;
+      }
+
+      > ul {
+        padding: 0;
+        > li {
+          font-size: 16px;
+          list-style-type: none;
+          margin: 15px 0;
+          -webkit-font-smoothing: antialiased;
+          font-weight: 700;
+
+          a {
+            color: $link-alt;
+
+            &:hover {
+              color: $hover-alt;
+            }
+          }
+
+        }
+      }
+    }
+
+    section#twitter-stream {
+      float: left;
+      width: grid-width(4);
+      min-height: 200px;
+
+      > h2 {
+        font-size: 24px;
+      }
+
+      div.tweet {
+        min-height: 40px;
+
+        ul.tweet_list {
+          margin: 0;
+          padding: 0;
+
+          > li {
+            -webkit-font-smoothing: antialiased;
+            font-size: 14px;
+            line-height: 150%;
+            list-style-type: none;
+            margin: $gutter/2 0;
+
+            span.tweet_time {
+              display: block;
+              font-size: 11px;
+
+              a {
+                color: $link-alt;
+                &:hover {
+                  background: hsla(100%, 100%, 100%, 0.05);
+                  @include border-radius(3px);
+                  @include box-shadow(0 0 0 3px hsla(100%, 100%, 100%, 0.05));
+                  color: $hover-alt;
+                  text-shadow: none;
+                }
+              }
+            }
+          }
+        }
+      }
+      div#twitter-follow {
+        -webkit-font-smoothing: antialiased;
+        font-size: 16px;
+        padding: 4px 0 4px 42px;
+        background-image: url('/images/twitter-bird.png');
+        background-repeat: no-repeat;
+        background-position: 0% 0%;
+
+        a {
+          color: $link-alt;
+          &:hover {
+            color: $hover-alt;
+          }
+        }
+      }
+    }
+    footer {
+      float: left;
+      width: grid-width(2);
+      margin-right: $gutter;
+      position: relative;
+      bottom: 29px;
+
+      > p {
+        font-size: 11px;
+        color: darken($link-alt, 20%);
+
+        a {
+          color: darken($link-alt, 20%);
+
+          &:hover {
+            background: hsla(100%, 100%, 100%, 0.05);
+            @include border-radius(3px);
+            @include box-shadow(0 0 0 3px hsla(100%, 100%, 100%, 0.05));
+            color: darken($hover-alt, 20%);
+            text-shadow: none;
+          }
+        }
+      }
+    }
+  }
+}
