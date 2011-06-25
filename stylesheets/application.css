@@ -395,6 +395,47 @@ div.radial {
   @include radial-gradient(50% 50%, circle cover, #eee 10%, #1e5799 30%, #efefef);
 }
 */
+@-webkit-keyframes slideup-one {
+  from {
+    -webkit-transform: translateY(250px); }
+
+  to {
+    -webkit-transform: translateY(0px); } }
+
+@-webkit-keyframes fadein {
+  from {
+    opacity: 0; }
+
+  to {
+    opacity: 1; } }
+
+@-webkit-keyframes loading {
+  0% {
+    opacity: 0;
+    text-shadow: 0 0 3px rgba(255, 255, 255, 0.2); }
+
+  50% {
+    opacity: 1;
+    text-shadow: 0 0 3px rgba(255, 255, 255, 0.6); }
+
+  100% {
+    opacity: 0;
+    text-shadow: 0 0 3px rgba(255, 255, 255, 0.2); } }
+
+@-webkit-keyframes bling {
+  0% {
+    opacity: 0;
+    text-shadow: 0 0 3px rgba(255, 255, 255, 0); }
+
+  50% {
+    opacity: 1;
+    color: white;
+    text-shadow: 0 0 3px rgba(255, 255, 255, 0.6); }
+
+  100% {
+    opacity: 1;
+    text-shadow: none; } }
+
 body, html {
   background: #262626; }
 
@@ -424,6 +465,20 @@ a:hover {
 ::-moz-selection {
   background: #D5E255; }
 
+.fadein, body header, body div.main-content section#headline > h1, body div.main-content aside#open-source-projects, body div.main-content section#twitter-stream, body div.main-content section#twitter-stream div#twitter-follow a, body div.main-content footer {
+  -webkit-animation-name: fadein;
+  -moz-animation-name: fadein;
+  animation-name: fadein;
+  -webkit-animation-duration: 3s;
+  -moz-animation-duration: 3s;
+  animation-duration: 3s;
+  -webkit-animation-timing-function: ease-in;
+  -moz-animation-timing-function: ease-in;
+  animation-timing-function: ease-in;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  animation-fill-mode: both; }
+
 body {
   color: #ececec;
   font-family: "museo-slab-1", "museo-slab-2", Georgia, Palatino, "Palatino Linotype", Times, serif;
@@ -433,7 +488,10 @@ body {
   body header {
     background: #202020;
     margin-bottom: 50px;
-    padding-top: 4px; }
+    padding-top: 4px;
+    -webkit-animation-duration: 0.5s;
+    -moz-animation-duration: 0.5s;
+    animation-duration: 0.5s; }
     body header h1#logo {
       background: url("/images/emdash-logo.png") no-repeat 0% 50%;
       float: left;
@@ -494,7 +552,11 @@ body {
                 -webkit-box-shadow: inset 0 0 0 1px #404040, 0 0 0 3px #404040;
                 -moz-box-shadow: inset 0 0 0 1px #404040, 0 0 0 3px #404040;
                 -o-box-shadow: inset 0 0 0 1px #404040, 0 0 0 3px #404040;
-                box-shadow: inset 0 0 0 1px #404040, 0 0 0 3px #404040; }
+                box-shadow: inset 0 0 0 1px #404040, 0 0 0 3px #404040;
+                -webkit-transition: box-shadow 0s ease-in;
+                -moz-transition: box-shadow 0s ease-in;
+                -o-transition: box-shadow 0s ease-in;
+                transition: box-shadow 0s ease-in; }
           body header section#social-media > ul > li a.twitter {
             background-image: url("/images/twitter.png"); }
           body header section#social-media > ul > li a.dribbble {
@@ -517,16 +579,14 @@ body {
         font-weight: 300;
         letter-spacing: -1px;
         margin: 0;
-        -webkit-font-smoothing: antialiased; }
+        -webkit-font-smoothing: antialiased;
+        -webkit-animation-duration: 1s;
+        -moz-animation-duration: 1s;
+        animation-duration: 1s; }
     body div.main-content section#recent-work {
       background-image: url("/images/oval-highlight.png");
       background-position: 50% 100%;
       background-repeat: no-repeat;
-      -webkit-box-shadow: inset 0 -1px 0 #191919, 0 1px 0 #373737;
-      -moz-box-shadow: inset 0 -1px 0 #191919, 0 1px 0 #373737;
-      -o-box-shadow: inset 0 -1px 0 #191919, 0 1px 0 #373737;
-      box-shadow: inset 0 -1px 0 #191919, 0 1px 0 #373737;
-      margin-bottom: 30px;
       padding-bottom: 55px;
       width: 100%; }
       body div.main-content section#recent-work article#one, body div.main-content section#recent-work article#two, body div.main-content section#recent-work article#three {
@@ -538,15 +598,53 @@ body {
         box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.45);
         float: left;
         height: 165px;
-        width: 220px; }
+        width: 220px;
+        z-index: 0;
+        -webkit-animation-name: slideup-one, fadein;
+        -moz-animation-name: slideup-one, fadein;
+        animation-name: slideup-one, fadein;
+        -webkit-animation-timing-function: ease-in-out;
+        -moz-animation-timing-function: ease-in-out;
+        animation-timing-function: ease-in-out;
+        -webkit-animation-duration: 1s;
+        -moz-animation-duration: 1s;
+        animation-duration: 1s;
+        -webkit-animation-fill-mode: both;
+        -moz-animation-fill-mode: both;
+        animation-fill-mode: both; }
         body div.main-content section#recent-work article#one > img, body div.main-content section#recent-work article#two > img, body div.main-content section#recent-work article#three > img {
           margin: 0; }
+      body div.main-content section#recent-work article#one {
+        -webkit-animation-delay: 0.5s;
+        -moz-animation-delay: 0.5s;
+        animation-delay: 0.5s; }
+      body div.main-content section#recent-work article#two {
+        -webkit-animation-delay: 0.75s;
+        -moz-animation-delay: 0.75s;
+        animation-delay: 0.75s; }
+      body div.main-content section#recent-work article#three {
+        -webkit-animation-delay: 1s;
+        -moz-animation-delay: 1s;
+        animation-delay: 1s; }
       body div.main-content section#recent-work article#two {
         margin: 0 40px; }
+    body div.main-content section#recent-work + div.wrapper {
+      -webkit-box-shadow: inset 0 1px 0 #373737, 0 -1px 0 #191919;
+      -moz-box-shadow: inset 0 1px 0 #373737, 0 -1px 0 #191919;
+      -o-box-shadow: inset 0 1px 0 #373737, 0 -1px 0 #191919;
+      box-shadow: inset 0 1px 0 #373737, 0 -1px 0 #191919;
+      background: #262626;
+      position: relative;
+      padding-top: 30px;
+      min-height: 300px;
+      z-index: 10; }
     body div.main-content aside#open-source-projects {
       float: left;
       margin-right: 40px;
-      width: 240px; }
+      width: 240px;
+      -webkit-animation-delay: 1.5s;
+      -moz-animation-delay: 1.5s;
+      animation-delay: 1.5s; }
       body div.main-content aside#open-source-projects > h2 {
         font-size: 24px; }
       body div.main-content aside#open-source-projects > ul {
@@ -564,11 +662,32 @@ body {
     body div.main-content section#twitter-stream {
       float: left;
       width: 520px;
-      min-height: 200px; }
+      min-height: 200px;
+      -webkit-animation-delay: 1.5s;
+      -moz-animation-delay: 1.5s;
+      animation-delay: 1.5s; }
       body div.main-content section#twitter-stream > h2 {
         font-size: 24px; }
       body div.main-content section#twitter-stream div.tweet {
-        min-height: 40px; }
+        min-height: 200px; }
+        body div.main-content section#twitter-stream div.tweet p.loading {
+          color: #ccc;
+          -webkit-transition: all 0.15s ease-out;
+          -moz-transition: all 0.15s ease-out;
+          -o-transition: all 0.15s ease-out;
+          transition: all 0.15s ease-out;
+          -webkit-animation-name: loading;
+          -moz-animation-name: loading;
+          animation-name: loading;
+          -webkit-animation-duration: 3s;
+          -moz-animation-duration: 3s;
+          animation-duration: 3s;
+          -webkit-animation-timing-function: ease-in-out;
+          -moz-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+          -webkit-animation-iteration-count: infinite;
+          -moz-animation-iteration-count: infinite;
+          animation-iteration-count: infinite; }
         body div.main-content section#twitter-stream div.tweet ul.tweet_list {
           margin: 0;
           padding: 0; }
@@ -602,15 +721,29 @@ body {
         background-repeat: no-repeat;
         background-position: 0% 0%; }
         body div.main-content section#twitter-stream div#twitter-follow a {
-          color: #727272; }
+          color: #727272;
+          -webkit-transition: all 0.15s ease-out;
+          -moz-transition: all 0.15s ease-out;
+          -o-transition: all 0.15s ease-out;
+          transition: all 0.15s ease-out;
+          -webkit-animation-name: bling;
+          -moz-animation-name: bling;
+          animation-name: bling;
+          -webkit-animation-delay: 3s;
+          -moz-animation-delay: 3s;
+          animation-delay: 3s; }
           body div.main-content section#twitter-stream div#twitter-follow a:hover {
-            color: #a5a5a5; }
+            color: #a5a5a5;
+            -webkit-text-fill-color: #a5a5a5; }
     body div.main-content footer {
       float: left;
       width: 240px;
       margin-right: 40px;
       position: relative;
-      bottom: 29px; }
+      bottom: 29px;
+      -webkit-animation-delay: 3s;
+      -moz-animation-delay: 3s;
+      animation-delay: 3s; }
       body div.main-content footer > p {
         font-size: 11px;
         color: #3f3f3f; }

@@ -1,0 +1,74 @@
+// http://www.w3.org/TR/css3-animations/#the-animation-name-property-
+@mixin animation-name ($name-1,
+  $name-2: false, $name-3: false,
+  $name-4: false, $name-5: false,
+  $name-6: false, $name-7: false,
+  $name-8: false, $name-9: false)
+  {
+    $full: $name-1;
+    @each $name in
+      $name-2, $name-3,
+      $name-4, $name-5,
+      $name-6, $name-7,
+      $name-8, $name-9{
+        @if $name {
+          $full: $full, $name;
+        }
+      }
+  -webkit-animation-name: $full;
+     -moz-animation-name: $full;
+          animation-name: $full;
+}
+
+@mixin animation-duration ($time: 0) {
+  -webkit-animation-duration: $time;
+     -moz-animation-duration: $time;
+          animation-duration: $time;
+}
+@mixin animation-timing-function ($motion: ease) {
+//  ease | linear | ease-in | ease-out | ease-in-out
+  -webkit-animation-timing-function: $motion;
+     -moz-animation-timing-function: $motion;
+          animation-timing-function: $motion;
+}
+@mixin animation-iteration-count ($integer: 1) {
+//  infinite | <number>
+  -webkit-animation-iteration-count: $integer;
+     -moz-animation-iteration-count: $integer;
+          animation-iteration-count: $integer;
+}
+
+@mixin animation-direction ($direction: normal) {
+//  normal | alternate
+  -webkit-animation-direction: $direction;
+     -moz-animation-direction: $direction;
+          animation-direction: $direction;
+}
+
+@mixin animation-play-state ($state: running) {
+//  running | paused
+  -webkit-animation-play-state: $state;
+     -moz-animation-play-state: $state;
+          animation-play-state: $state;
+}
+
+@mixin animation-delay ($time: 0) {
+  -webkit-animation-delay: $time;
+     -moz-animation-delay: $time;
+          animation-delay: $time;
+}
+
+@mixin animation-fill-mode ($mode: none) {
+//  http://goo.gl/l6ckm
+//  none | forwards | backwards | both
+  -webkit-animation-fill-mode: $mode;
+     -moz-animation-fill-mode: $mode;
+          animation-fill-mode: $mode;
+}
+
+//official animation shorthand property
+@mixin animation ($name, $duration, $timing-function, $delay, $iteration-count, $direction) {
+  -webkit-animation-delay: $name $duration $timing-function $delay $iteration-count $direction;
+     -moz-animation-delay: $name $duration $timing-function $delay $iteration-count $direction;
+          animation-delay: $name $duration $timing-function $delay $iteration-count $direction;
+}
