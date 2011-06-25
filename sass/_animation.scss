@@ -108,7 +108,7 @@
 }
 // shorthand for a basic animation. Support multiple parenthesis-deliminated values for each variable.
 // @include animation-basic( (slideup, fadein), (1.0s, 2.0s), ease-in);
-@mixin animation-basic ($name, $time, $motion) {
+@mixin animation-basic ($name, $time: 0, $motion: ease) {
     $length-of-name: length($name);
     $length-of-time: length($time);
   $length-of-motion: length($motion);
@@ -116,13 +116,13 @@
   @if $length-of-name > 1 {
     @include animation-name(zip($name));
   } @else {
-    @include animation($name);
+    @include animation-name($name);
   }
 
   @if $length-of-time > 1 {
     @include animation-duration(zip($time));
   } @else {
-    @include animation-name($name);
+    @include animation-duration($time);
   }
 
   @if $length-of-motion > 1 {

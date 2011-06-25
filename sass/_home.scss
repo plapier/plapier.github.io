@@ -176,14 +176,14 @@ body {
         height: 165px;
         width: 220px;
         z-index: 0;
-        @include animation-name(slideup-one, fadein);
+        @include animation-name(slideup, fadein);
         @include animation-timing-function(ease-in-out, ease-out);
         @include animation-duration(1.0s, 1.2s);
         @include animation-fill-mode(both);
 
         > img {
           margin: 0;
-          @include animation-basic((fadein, slideup-one), (1.0s, 2.0s), (ease-in, ease-in-out));
+//          @include animation-basic(over, 1.0s, ease-in-out);
         }
       }
 

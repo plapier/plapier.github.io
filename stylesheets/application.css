@@ -395,12 +395,19 @@ div.radial {
   @include radial-gradient(50% 50%, circle cover, #eee 10%, #1e5799 30%, #efefef);
 }
 */
-@-webkit-keyframes slideup-one {
+@-webkit-keyframes slideup {
   from {
     -webkit-transform: translateY(250px); }
 
   to {
     -webkit-transform: translateY(0px); } }
+
+@-webkit-keyframes over {
+  from {
+    -webkit-transform: translateX(250px); }
+
+  to {
+    -webkit-transform: translateX(0px); } }
 
 @-webkit-keyframes fadein {
   from {
@@ -600,9 +607,9 @@ body {
         height: 165px;
         width: 220px;
         z-index: 0;
-        -webkit-animation-name: slideup-one, fadein;
-        -moz-animation-name: slideup-one, fadein;
-        animation-name: slideup-one, fadein;
+        -webkit-animation-name: slideup, fadein;
+        -moz-animation-name: slideup, fadein;
+        animation-name: slideup, fadein;
         -webkit-animation-timing-function: ease-in-out, ease-out;
         -moz-animation-timing-function: ease-in-out, ease-out;
         animation-timing-function: ease-in-out, ease-out;
@@ -613,16 +620,7 @@ body {
         -moz-animation-fill-mode: both;
         animation-fill-mode: both; }
         body div.main-content section#recent-work article#one > img, body div.main-content section#recent-work article#two > img, body div.main-content section#recent-work article#three > img {
-          margin: 0;
-          -webkit-animation-name: fadein, slideup-one;
-          -moz-animation-name: fadein, slideup-one;
-          animation-name: fadein, slideup-one;
-          -webkit-animation-duration: 1s, 2s;
-          -moz-animation-duration: 1s, 2s;
-          animation-duration: 1s, 2s;
-          -webkit-animation-timing-function: ease-in, ease-in-out;
-          -moz-animation-timing-function: ease-in, ease-in-out;
-          animation-timing-function: ease-in, ease-in-out; }
+          margin: 0; }
       body div.main-content section#recent-work article#one {
         -webkit-animation-delay: 0.5s;
         -moz-animation-delay: 0.5s;
