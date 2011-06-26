@@ -1,22 +1,35 @@
 //Keyframes for Animations
-@-webkit-keyframes slidedown {
-  from {
-    -webkit-transform: translateY(-65px);
-  }
-  to {
-    -webkit-transform: translateY(0px);
-  }
-}
-@-webkit-keyframes slideup {
-  from {
-    -webkit-transform: translateY(250px);
-  }
-  to {
-    -webkit-transform: translateY(0px);
-  }
-}
 
-@-webkit-keyframes fadein {
+// Slide down animation
+@mixin slidedown {
+  from {
+    @include transform(translateY(-65px));
+  }
+  to {
+    @include transform(translateY(0px));
+  }
+}
+@-webkit-keyframes slidedown { @include slidedown; }
+   @-moz-keyframes slidedown { @include slidedown; }
+        @keyframes slidedown { @include slidedown; }
+
+
+// Slide Up Animation
+@mixin slideup {
+  from {
+    @include transform(translateY(250px));
+  }
+  to {
+    @include transform(translateY(0));
+  }
+}
+@-webkit-keyframes slideup { @include slideup; }
+   @-moz-keyframes slideup { @include slideup; }
+        @keyframes slideup { @include slideup; }
+
+
+// Fade In animation
+@mixin fadein {
   from {
     opacity: 0;
   }
@@ -24,7 +37,13 @@
     opacity: 1;
   }
 }
-@-webkit-keyframes loading {
+@-webkit-keyframes fadein { @include fadein; }
+   @-moz-keyframes fadein { @include fadein; }
+        @keyframes fadein { @include fadein; }
+
+
+// Loading Animation for Twitter Plugin
+@mixin loading {
   0% {
     opacity: 0;
     text-shadow: 0 0 3px hsla(100%, 100%, 100%, 0.2);
@@ -38,7 +57,13 @@
     text-shadow: 0 0 3px hsla(100%, 100%, 100%, 0.2);
   }
 }
-@-webkit-keyframes bling {
+@-webkit-keyframes loading { @include loading; }
+   @-moz-keyframes loading { @include loading; }
+        @keyframes loading { @include loading; }
+
+
+// Bling Animation for Twitter Button
+@mixin bling {
   0% {
     opacity: 0;
     text-shadow: 0 0 3px hsla(100%, 100%, 100%, 0.0);
@@ -49,7 +74,9 @@
     text-shadow: 0 0 3px hsla(100%, 100%, 100%, 0.7);
   }
   100% {
-    opacity: 1;
     text-shadow: none;
   }
 }
+@-webkit-keyframes bling { @include bling; }
+   @-moz-keyframes bling { @include bling; }
+        @keyframes bling { @include bling; }
