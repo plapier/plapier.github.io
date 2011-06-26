@@ -8,8 +8,8 @@ body, html {
 
 div.wrapper {
   @extend .clearfix;
-  width: 800px;
   margin: 0 auto;
+  width: 800px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -25,11 +25,13 @@ a:hover {
   text-shadow: 1px 1px 0 hsla(0%, 0%, 0%, 0.75);
   @include transition;
 }
+
+$selection: #D5E255;
 ::selection {
-  background: #D5E255;
+  background: $selection;
 }
 ::-moz-selection {
-  background: #D5E255;
+  background: $selection;
 }
 
 
@@ -107,6 +109,7 @@ body {
             }
 
             > a {
+              background-image: url("/images/social-icons.png");
               background-repeat: no-repeat;
               height: 32px;
               @include inline-block;
@@ -121,40 +124,25 @@ body {
             }
           }
 
-          &#twitter {
-            > div:hover {
-              background: #42d0ff;
-            }
-            a {
-              background-image: url("/images/social-icons.png");
-              background-position: 0 0;
-            }
+          // Lookup Table for Social Media Icons
+                         $icons: twitter,  dribbble,  github,    tumblr;
+             $background-colors: #42d0ff,  #ea4c88,   #efefef,   #2291ac;
+          $background-positions: (0 0),   (-33px 0), (-66px 0), (-99px 0);
+
+          @function bg-color($icon) {
+            @return nth($background-colors, index($icons, $icon));
           }
-          &#dribbble {
-            > div:hover {
-              background: #ea4c88;
-            }
-            a {
-              background-image: url("/images/social-icons.png");
-              background-position: -33px 0;
-            }
+          @function bg-pos($icon) {
+            @return nth($background-positions, index($icons, $icon));
           }
-          &#github {
-            > div:hover {
-              background: #efefef;
-            }
-            a {
-              background-image: url("/images/social-icons.png");
-              background-position: -66px 0;
-            }
-          }
-          &#tumblr {
-            > div:hover {
-              background: #2291ac;
-            }
-            a {
-              background-image: url("/images/social-icons.png");
-              background-position: -99px 0;
+          @each $icon in $icons {
+            &##{$icon} {
+              > div:hover {
+                background-color: bg-color($icon);
+              }
+              a {
+                background-position: bg-pos($icon);
+              }
             }
           }
         }
@@ -213,8 +201,8 @@ body {
       }
 
       // Lookup table for animation delays
-      $articles: one, two, three;
-      $delays: 0.5s, 0.75s, 1.0s;
+      $articles: one,  two,   three;
+        $delays: 0.5s, 0.75s, 1.0s;
 
       @function delay-time($article) {
         @return nth($delays, index($articles, $article));

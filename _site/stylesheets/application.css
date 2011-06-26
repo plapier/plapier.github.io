@@ -576,8 +576,8 @@ body, html {
   background: #262626; }
 
 div.wrapper {
-  width: 800px;
-  margin: 0 auto; }
+  margin: 0 auto;
+  width: 800px; }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "proxima-nova-1", "proxima-nova-2", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -604,10 +604,10 @@ a:hover {
   transition-delay: 0; }
 
 ::selection {
-  background: #D5E255; }
+  background: #d5e255; }
 
 ::-moz-selection {
-  background: #D5E255; }
+  background: #d5e255; }
 
 .animation-fadein, body div.main-content section#headline > h1, body div.main-content aside#open-source-projects, body div.main-content section#twitter-stream, body div.main-content section#twitter-stream div#twitter-follow a, body div.main-content footer {
   -webkit-animation-name: fadein;
@@ -708,6 +708,7 @@ body {
               -o-box-shadow: inset 0 0 0 4px #404040, 0 0 0 3px #404040;
               box-shadow: inset 0 0 0 4px #404040, 0 0 0 3px #404040; }
             body header section#social-media > ul > li > div > a {
+              background-image: url("/images/social-icons.png");
               background-repeat: no-repeat;
               height: 32px;
               display: -moz-inline-box;
@@ -740,24 +741,20 @@ body {
                 -moz-transition-delay: 0;
                 transition-delay: 0; }
           body header section#social-media > ul > li#twitter > div:hover {
-            background: #42d0ff; }
+            background-color: #42d0ff; }
           body header section#social-media > ul > li#twitter a {
-            background-image: url("/images/social-icons.png");
             background-position: 0 0; }
           body header section#social-media > ul > li#dribbble > div:hover {
-            background: #ea4c88; }
+            background-color: #ea4c88; }
           body header section#social-media > ul > li#dribbble a {
-            background-image: url("/images/social-icons.png");
             background-position: -33px 0; }
           body header section#social-media > ul > li#github > div:hover {
-            background: #efefef; }
+            background-color: #efefef; }
           body header section#social-media > ul > li#github a {
-            background-image: url("/images/social-icons.png");
             background-position: -66px 0; }
           body header section#social-media > ul > li#tumblr > div:hover {
-            background: #2291ac; }
+            background-color: #2291ac; }
           body header section#social-media > ul > li#tumblr a {
-            background-image: url("/images/social-icons.png");
             background-position: -99px 0; }
   body div.main-content {
     color: #ececec;
