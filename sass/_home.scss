@@ -54,24 +54,27 @@ body {
   header {
     @extend .clearfix;
     background: #202020;
+    background: hsla(0%, 0%, 0%, 0.1);
     margin-bottom: 50px;
     padding-top: 4px;
+    @include box-shadow(0 1px 0 0 hsla(100%, 100%, 100%, 0.03), inset 0 -1px 0 0 hsla(0%, 0%, 0%, 0.15));
     @include animation-name(slidedown);
     @include animation-duration(0.8s);
     @include animation-timing-function(ease-out);
     @include animation-delay(5s);
     @include animation-fill-mode(both);
+    @include transition;
 
     h2#tagline {
-      font-family: $body-font;
       color: #333;
       float: left;
-      font-weight: 300;
+      font-family: $body-font;
       font-size: 15px;
+      font-weight: 300;
       margin: 10px $gutter 10px 0;
       position: relative;
       text-transform: uppercase;
-      top: 6px;
+      top: 10px;
       width: grid-width(4);
     }
 
@@ -81,7 +84,7 @@ body {
 
       > ul {
         float: right;
-        margin: 8px 0 6px 0;
+        margin: 12px 0 8px 0;
         padding: 0;
 
         > li {

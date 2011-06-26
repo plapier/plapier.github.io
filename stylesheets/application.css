@@ -631,8 +631,13 @@ body {
   text-rendering: optimizeLegibility; }
   body header {
     background: #202020;
+    background: rgba(0, 0, 0, 0.1);
     margin-bottom: 50px;
     padding-top: 4px;
+    -webkit-box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.03), inset 0 -1px 0 0 rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.03), inset 0 -1px 0 0 rgba(0, 0, 0, 0.15);
+    -o-box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.03), inset 0 -1px 0 0 rgba(0, 0, 0, 0.15);
+    box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.03), inset 0 -1px 0 0 rgba(0, 0, 0, 0.15);
     -webkit-animation-name: slidedown;
     -moz-animation-name: slidedown;
     animation-name: slidedown;
@@ -647,24 +652,36 @@ body {
     animation-delay: 5s;
     -webkit-animation-fill-mode: both;
     -moz-animation-fill-mode: both;
-    animation-fill-mode: both; }
+    animation-fill-mode: both;
+    -webkit-transition-property: all;
+    -moz-transition-property: all;
+    transition-property: all;
+    -webkit-transition-duration: 0.15s;
+    -moz-transition-duration: 0.15s;
+    transition-duration: 0.15s;
+    -webkit-transition-timing-function: ease-out;
+    -moz-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+    -webkit-transition-delay: 0;
+    -moz-transition-delay: 0;
+    transition-delay: 0; }
     body header h2#tagline {
-      font-family: "museo-slab-1", "museo-slab-2", Georgia, Palatino, "Palatino Linotype", Times, serif;
       color: #333;
       float: left;
-      font-weight: 300;
+      font-family: "museo-slab-1", "museo-slab-2", Georgia, Palatino, "Palatino Linotype", Times, serif;
       font-size: 15px;
+      font-weight: 300;
       margin: 10px 40px 10px 0;
       position: relative;
       text-transform: uppercase;
-      top: 6px;
+      top: 10px;
       width: 520px; }
     body header section#social-media {
       float: left;
       width: 240px; }
       body header section#social-media > ul {
         float: right;
-        margin: 8px 0 6px 0;
+        margin: 12px 0 8px 0;
         padding: 0; }
         body header section#social-media > ul > li {
           display: -moz-inline-box;
