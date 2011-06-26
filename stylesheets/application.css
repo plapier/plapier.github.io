@@ -648,99 +648,112 @@ body {
     -webkit-animation-fill-mode: both;
     -moz-animation-fill-mode: both;
     animation-fill-mode: both; }
-    body header section#social-media > ul {
-      margin: 8px 0 6px 0;
-      padding: 0; }
-      body header section#social-media > ul > li {
-        display: -moz-inline-box;
-        -moz-box-orient: vertical;
-        display: inline-block;
-        vertical-align: baseline;
-        zoom: 1;
-        *display: inline;
-        *vertical-align: auto;
-        margin: 0 6px; }
-        body header section#social-media > ul > li:first-child {
-          margin-left: 0; }
-        body header section#social-media > ul > li:last-child {
-          margin-right: 0; }
-        body header section#social-media > ul > li > div {
-          -moz-border-radius: 32px;
-          -webkit-border-radius: 32px;
-          border-radius: 32px;
+    body header h2#tagline {
+      font-family: "museo-slab-1", "museo-slab-2", Georgia, Palatino, "Palatino Linotype", Times, serif;
+      color: #333;
+      float: left;
+      font-weight: 300;
+      font-size: 15px;
+      margin: 10px 40px 10px 0;
+      position: relative;
+      text-transform: uppercase;
+      top: 6px;
+      width: 520px; }
+    body header section#social-media {
+      float: left;
+      width: 240px; }
+      body header section#social-media > ul {
+        float: right;
+        margin: 8px 0 6px 0;
+        padding: 0; }
+        body header section#social-media > ul > li {
+          display: -moz-inline-box;
+          -moz-box-orient: vertical;
           display: inline-block;
-          float: left;
-          -webkit-transition-property: all;
-          -moz-transition-property: all;
-          transition-property: all;
-          -webkit-transition-duration: 0.15s;
-          -moz-transition-duration: 0.15s;
-          transition-duration: 0.15s;
-          -webkit-transition-timing-function: linear;
-          -moz-transition-timing-function: linear;
-          transition-timing-function: linear;
-          -webkit-transition-delay: 0;
-          -moz-transition-delay: 0;
-          transition-delay: 0;
-          width: auto; }
-          body header section#social-media > ul > li > div:hover {
-            background: #b8d2a5;
-            -webkit-box-shadow: inset 0 0 0 4px #404040, 0 0 0 3px #404040;
-            -moz-box-shadow: inset 0 0 0 4px #404040, 0 0 0 3px #404040;
-            -o-box-shadow: inset 0 0 0 4px #404040, 0 0 0 3px #404040;
-            box-shadow: inset 0 0 0 4px #404040, 0 0 0 3px #404040; }
-          body header section#social-media > ul > li > div > a {
-            background-repeat: no-repeat;
-            height: 32px;
-            display: -moz-inline-box;
-            -moz-box-orient: vertical;
+          vertical-align: baseline;
+          zoom: 1;
+          *display: inline;
+          *vertical-align: auto;
+          margin: 0 6px; }
+          body header section#social-media > ul > li:last-child {
+            margin-right: 0; }
+          body header section#social-media > ul > li > div {
+            -moz-border-radius: 32px;
+            -webkit-border-radius: 32px;
+            border-radius: 32px;
             display: inline-block;
-            vertical-align: baseline;
-            zoom: 1;
-            *display: inline;
-            *vertical-align: auto;
-            text-indent: -9999px;
-            width: 32px; }
-            body header section#social-media > ul > li > div > a:hover {
-              -moz-border-radius: 32px;
-              -webkit-border-radius: 32px;
-              border-radius: 32px;
-              -webkit-box-shadow: inset 0 0 0 1px #404040, 0 0 0 3px #404040;
-              -moz-box-shadow: inset 0 0 0 1px #404040, 0 0 0 3px #404040;
-              -o-box-shadow: inset 0 0 0 1px #404040, 0 0 0 3px #404040;
-              box-shadow: inset 0 0 0 1px #404040, 0 0 0 3px #404040;
-              -webkit-transition-property: box-shadow;
-              -moz-transition-property: box-shadow;
-              transition-property: box-shadow;
-              -webkit-transition-duration: 0s;
-              -moz-transition-duration: 0s;
-              transition-duration: 0s;
-              -webkit-transition-timing-function: ease-in;
-              -moz-transition-timing-function: ease-in;
-              transition-timing-function: ease-in;
-              -webkit-transition-delay: 0;
-              -moz-transition-delay: 0;
-              transition-delay: 0; }
-        body header section#social-media > ul > li#twitter > div:hover {
-          background: #42d0ff; }
-        body header section#social-media > ul > li#twitter a {
-          background-image: url("/images/social-icons.png");
-          background-position: 0 0; }
-        body header section#social-media > ul > li#dribbble > div:hover {
-          background: #ea4c88; }
-        body header section#social-media > ul > li#dribbble a {
-          background-image: url("/images/social-icons.png");
-          background-position: -33px 0; }
-        body header section#social-media > ul > li#github > div:hover {
-          background: #efefef; }
-        body header section#social-media > ul > li#github a {
-          background-image: url("/images/social-icons.png");
-          background-position: -66px 0; }
-        body header section#social-media > ul > li#tumblr > div:hover {
-          background: #2291ac; }
-        body header section#social-media > ul > li#tumblr a {
-          background-image: url("/images/social-icons.png");
-          background-position: -99px 0; }
+            float: left;
+            -webkit-transition-property: all;
+            -moz-transition-property: all;
+            transition-property: all;
+            -webkit-transition-duration: 0.15s;
+            -moz-transition-duration: 0.15s;
+            transition-duration: 0.15s;
+            -webkit-transition-timing-function: linear;
+            -moz-transition-timing-function: linear;
+            transition-timing-function: linear;
+            -webkit-transition-delay: 0;
+            -moz-transition-delay: 0;
+            transition-delay: 0;
+            width: auto; }
+            body header section#social-media > ul > li > div:hover {
+              background: #b8d2a5;
+              -webkit-box-shadow: inset 0 0 0 4px #404040, 0 0 0 3px #404040;
+              -moz-box-shadow: inset 0 0 0 4px #404040, 0 0 0 3px #404040;
+              -o-box-shadow: inset 0 0 0 4px #404040, 0 0 0 3px #404040;
+              box-shadow: inset 0 0 0 4px #404040, 0 0 0 3px #404040; }
+            body header section#social-media > ul > li > div > a {
+              background-repeat: no-repeat;
+              height: 32px;
+              display: -moz-inline-box;
+              -moz-box-orient: vertical;
+              display: inline-block;
+              vertical-align: baseline;
+              zoom: 1;
+              *display: inline;
+              *vertical-align: auto;
+              text-indent: -9999px;
+              width: 32px; }
+              body header section#social-media > ul > li > div > a:hover {
+                -moz-border-radius: 32px;
+                -webkit-border-radius: 32px;
+                border-radius: 32px;
+                -webkit-box-shadow: inset 0 0 0 1px #404040, 0 0 0 3px #404040;
+                -moz-box-shadow: inset 0 0 0 1px #404040, 0 0 0 3px #404040;
+                -o-box-shadow: inset 0 0 0 1px #404040, 0 0 0 3px #404040;
+                box-shadow: inset 0 0 0 1px #404040, 0 0 0 3px #404040;
+                -webkit-transition-property: box-shadow;
+                -moz-transition-property: box-shadow;
+                transition-property: box-shadow;
+                -webkit-transition-duration: 0s;
+                -moz-transition-duration: 0s;
+                transition-duration: 0s;
+                -webkit-transition-timing-function: ease-in;
+                -moz-transition-timing-function: ease-in;
+                transition-timing-function: ease-in;
+                -webkit-transition-delay: 0;
+                -moz-transition-delay: 0;
+                transition-delay: 0; }
+          body header section#social-media > ul > li#twitter > div:hover {
+            background: #42d0ff; }
+          body header section#social-media > ul > li#twitter a {
+            background-image: url("/images/social-icons.png");
+            background-position: 0 0; }
+          body header section#social-media > ul > li#dribbble > div:hover {
+            background: #ea4c88; }
+          body header section#social-media > ul > li#dribbble a {
+            background-image: url("/images/social-icons.png");
+            background-position: -33px 0; }
+          body header section#social-media > ul > li#github > div:hover {
+            background: #efefef; }
+          body header section#social-media > ul > li#github a {
+            background-image: url("/images/social-icons.png");
+            background-position: -66px 0; }
+          body header section#social-media > ul > li#tumblr > div:hover {
+            background: #2291ac; }
+          body header section#social-media > ul > li#tumblr a {
+            background-image: url("/images/social-icons.png");
+            background-position: -99px 0; }
   body div.main-content {
     color: #ececec;
     font-family: "museo-slab-1", "museo-slab-2", Georgia, Palatino, "Palatino Linotype", Times, serif;

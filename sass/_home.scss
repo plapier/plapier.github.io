@@ -62,17 +62,31 @@ body {
     @include animation-delay(5s);
     @include animation-fill-mode(both);
 
+    h2#tagline {
+      font-family: $body-font;
+      color: #333;
+      float: left;
+      font-weight: 300;
+      font-size: 15px;
+      margin: 10px $gutter 10px 0;
+      position: relative;
+      text-transform: uppercase;
+      top: 6px;
+      width: grid-width(4);
+    }
+
     section#social-media {
+      float: left;
+      width: grid-width(2);
+
       > ul {
+        float: right;
         margin: 8px 0 6px 0;
         padding: 0;
 
         > li {
           @include inline-block;
           margin: 0 6px;
-          &:first-child {
-            margin-left: 0;
-          }
 
           &:last-child {
             margin-right: 0;
