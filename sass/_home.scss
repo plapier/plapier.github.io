@@ -22,8 +22,8 @@ a, a:link, a:active, a:visited {
 }
 a:hover {
   color: $hover;
-  @include transition;
   text-shadow: 1px 1px 0 hsla(0%, 0%, 0%, 0.75);
+  @include transition;
 }
 ::selection {
   background: #D5E255;
@@ -47,23 +47,22 @@ body {
   @extend .clearfix;
   color: $primary;
   font-family: $body-font;
-  margin: 0 auto;
   margin-bottom: 40px;
+  margin: 0 auto;
   text-rendering: optimizeLegibility;
 
   header {
     @extend .clearfix;
-    background: #202020;
-    background: hsla(0%, 0%, 0%, 0.1);
-    margin-bottom: 50px;
-    padding-top: 4px;
-    @include box-shadow(0 1px 0 0 hsla(100%, 100%, 100%, 0.03), inset 0 -1px 0 0 hsla(0%, 0%, 0%, 0.15));
     @include animation-name(slidedown);
+    @include animation-delay(5s);
     @include animation-duration(0.8s);
     @include animation-timing-function(ease-out);
-    @include animation-delay(5s);
     @include animation-fill-mode(both);
-    @include transition;
+    background: #202020;
+    background: hsla(0%, 0%, 0%, 0.1);
+    @include box-shadow(0 1px 0 0 hsla(100%, 100%, 100%, 0.03), inset 0 -1px 0 0 hsla(0%, 0%, 0%, 0.15));
+    margin-bottom: 50px;
+    padding-top: 4px;
 
     h2#tagline {
       color: #333;
@@ -176,13 +175,13 @@ body {
       width: 100%;
 
       > h1 {
+        -webkit-font-smoothing: antialiased;
+        @extend .fadein;
+        @include animation-duration(1.0s);
         font-size: 36px;
         font-weight: 300;
         letter-spacing: -1px;
         margin: 0;
-        -webkit-font-smoothing: antialiased;
-        @extend .fadein;
-        @include animation-duration(1.0s);
       }
     }
 
@@ -196,6 +195,10 @@ body {
 
       article#one, article#two, article#three {
         $article-bg: #333;
+        @include animation-name(slideup, fadein);
+        @include animation-duration(1.0s, 1.2s);
+        @include animation-timing-function(ease-in-out, ease-out);
+        @include animation-fill-mode(both);
         background: $article-bg;
         border: 10px solid $article-bg;
         @include box-shadow(0 1px 3px 0 hsla(0%, 0%, 0%, 0.45));
@@ -203,25 +206,24 @@ body {
         height: 165px;
         width: 220px;
         z-index: 0;
-        @include animation-name(slideup, fadein);
-        @include animation-timing-function(ease-in-out, ease-out);
-        @include animation-duration(1.0s, 1.2s);
-        @include animation-fill-mode(both);
 
         > img {
           margin: 0;
         }
       }
 
-      article#one {
-        @include animation-delay(0.5s);
+      // Lookup table for animation delays
+      $articles: one, two, three;
+      $delays: 0.5s, 0.75s, 1.0s;
 
+      @function delay-time($article) {
+        @return nth($delays, index($articles, $article));
       }
-      article#two {
-        @include animation-delay(0.75s);
-      }
-      article#three {
-        @include animation-delay(1.0s);
+
+      @each $article in $articles {
+        article##{$article} {
+          @include animation-delay(delay-time($article));
+        }
       }
 
       article#two {
@@ -229,20 +231,20 @@ body {
       }
     }
     section#recent-work + div.wrapper {
-      @include box-shadow(inset 0 1px 0 #373737, 0 -1px 0 #191919);
       background: #262626;
-      position: relative;
-      padding-top: 30px;
+      @include box-shadow(inset 0 1px 0 #373737, 0 -1px 0 #191919);
       min-height: 300px;
+      padding-top: 30px;
+      position: relative;
       z-index: 10;
     }
 
     aside#open-source-projects {
+      @extend .fadein;
+      @include animation-delay(1.5s);
       float: left;
       margin-right: $gutter;
       width: grid-width(2);
-      @extend .fadein;
-      @include animation-delay(1.5s);
 
       > h2 {
         font-size: 24px;
@@ -252,11 +254,11 @@ body {
         padding: 0;
 
         > li {
+          -webkit-font-smoothing: antialiased;
           font-size: 16px;
+          font-weight: 700;
           list-style-type: none;
           margin: 15px 0;
-          -webkit-font-smoothing: antialiased;
-          font-weight: 700;
 
           a {
             color: $link-alt;
@@ -271,11 +273,11 @@ body {
     }
 
     section#twitter-stream {
-      float: left;
-      width: grid-width(4);
-      min-height: 200px;
       @extend .fadein;
       @include animation-delay(1.5s);
+      float: left;
+      min-height: 200px;
+      width: grid-width(4);
 
       > h2 {
         font-size: 24px;
@@ -285,12 +287,12 @@ body {
         min-height: 200px;
 
         p.loading {
-          color: #ccc;
-          @include transition;
           @include animation-name(loading);
           @include animation-duration(3.0s);
           @include animation-timing-function(ease-in-out);
           @include animation-iteration-count(infinite);
+          color: #ccc;
+          @include transition;
         }
 
         ul.tweet_list {
@@ -310,6 +312,7 @@ body {
 
               a {
                 color: $link-alt;
+
                 &:hover {
                   background: hsla(100%, 100%, 100%, 0.05);
                   @include border-radius(3px);
@@ -324,40 +327,40 @@ body {
       }
       div#twitter-follow {
         -webkit-font-smoothing: antialiased;
+        background-image: url('/images/social-icons.png');
+        background-position: -132px 0;
+        background-repeat: no-repeat;
         font-size: 16px;
         padding: 4px 0 4px 42px;
-        background-image: url('/images/social-icons.png');
-        background-repeat: no-repeat;
-        background-position: -132px 0;
 
         a {
-          color: $link-alt;
-          @include transition;
           @extend .fadein;
           @include animation-name(bling);
           @include animation-delay(3.5s);
+          color: $link-alt;
+          @include transition;
 
           &:hover {
-            color: $hover-alt;
             -webkit-text-fill-color: $hover-alt;
+            color: $hover-alt;
           }
         }
       }
     }
     footer {
-      float: left;
-      width: grid-width(2);
-      margin-right: $gutter;
-      position: relative;
-      bottom: 29px;
-      z-index: 20;
       @extend .fadein;
       @include animation-delay(6.0s);
       @include animation-duration(1.0s);
+      bottom: 29px;
+      float: left;
+      margin-right: $gutter;
+      position: relative;
+      width: grid-width(2);
+      z-index: 20;
 
       > p {
-        font-size: 11px;
         color: darken($link-alt, 20%);
+        font-size: 11px;
 
         a {
           color: darken($link-alt, 20%);

@@ -589,6 +589,7 @@ a, a:link, a:active, a:visited {
 
 a:hover {
   color: #9fcb59;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.75);
   -webkit-transition-property: all;
   -moz-transition-property: all;
   transition-property: all;
@@ -600,8 +601,7 @@ a:hover {
   transition-timing-function: ease-out;
   -webkit-transition-delay: 0;
   -moz-transition-delay: 0;
-  transition-delay: 0;
-  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.75); }
+  transition-delay: 0; }
 
 ::selection {
   background: #D5E255; }
@@ -626,45 +626,33 @@ a:hover {
 body {
   color: #ececec;
   font-family: "museo-slab-1", "museo-slab-2", Georgia, Palatino, "Palatino Linotype", Times, serif;
-  margin: 0 auto;
   margin-bottom: 40px;
+  margin: 0 auto;
   text-rendering: optimizeLegibility; }
   body header {
-    background: #202020;
-    background: rgba(0, 0, 0, 0.1);
-    margin-bottom: 50px;
-    padding-top: 4px;
-    -webkit-box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.03), inset 0 -1px 0 0 rgba(0, 0, 0, 0.15);
-    -moz-box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.03), inset 0 -1px 0 0 rgba(0, 0, 0, 0.15);
-    -o-box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.03), inset 0 -1px 0 0 rgba(0, 0, 0, 0.15);
-    box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.03), inset 0 -1px 0 0 rgba(0, 0, 0, 0.15);
     -webkit-animation-name: slidedown;
     -moz-animation-name: slidedown;
     animation-name: slidedown;
+    -webkit-animation-delay: 5s;
+    -moz-animation-delay: 5s;
+    animation-delay: 5s;
     -webkit-animation-duration: 0.8s;
     -moz-animation-duration: 0.8s;
     animation-duration: 0.8s;
     -webkit-animation-timing-function: ease-out;
     -moz-animation-timing-function: ease-out;
     animation-timing-function: ease-out;
-    -webkit-animation-delay: 5s;
-    -moz-animation-delay: 5s;
-    animation-delay: 5s;
     -webkit-animation-fill-mode: both;
     -moz-animation-fill-mode: both;
     animation-fill-mode: both;
-    -webkit-transition-property: all;
-    -moz-transition-property: all;
-    transition-property: all;
-    -webkit-transition-duration: 0.15s;
-    -moz-transition-duration: 0.15s;
-    transition-duration: 0.15s;
-    -webkit-transition-timing-function: ease-out;
-    -moz-transition-timing-function: ease-out;
-    transition-timing-function: ease-out;
-    -webkit-transition-delay: 0;
-    -moz-transition-delay: 0;
-    transition-delay: 0; }
+    background: #202020;
+    background: rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.03), inset 0 -1px 0 0 rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.03), inset 0 -1px 0 0 rgba(0, 0, 0, 0.15);
+    -o-box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.03), inset 0 -1px 0 0 rgba(0, 0, 0, 0.15);
+    box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.03), inset 0 -1px 0 0 rgba(0, 0, 0, 0.15);
+    margin-bottom: 50px;
+    padding-top: 4px; }
     body header h2#tagline {
       color: #333;
       float: left;
@@ -781,14 +769,14 @@ body {
       margin: 20px 0 50px;
       width: 100%; }
       body div.main-content section#headline > h1 {
-        font-size: 36px;
-        font-weight: 300;
-        letter-spacing: -1px;
-        margin: 0;
         -webkit-font-smoothing: antialiased;
         -webkit-animation-duration: 1s;
         -moz-animation-duration: 1s;
-        animation-duration: 1s; }
+        animation-duration: 1s;
+        font-size: 36px;
+        font-weight: 300;
+        letter-spacing: -1px;
+        margin: 0; }
     body div.main-content section#recent-work {
       background-image: url("/images/oval-highlight.png");
       background-position: 50% 100%;
@@ -796,6 +784,18 @@ body {
       padding-bottom: 55px;
       width: 100%; }
       body div.main-content section#recent-work article#one, body div.main-content section#recent-work article#two, body div.main-content section#recent-work article#three {
+        -webkit-animation-name: slideup, fadein;
+        -moz-animation-name: slideup, fadein;
+        animation-name: slideup, fadein;
+        -webkit-animation-duration: 1s, 1.2s;
+        -moz-animation-duration: 1s, 1.2s;
+        animation-duration: 1s, 1.2s;
+        -webkit-animation-timing-function: ease-in-out, ease-out;
+        -moz-animation-timing-function: ease-in-out, ease-out;
+        animation-timing-function: ease-in-out, ease-out;
+        -webkit-animation-fill-mode: both;
+        -moz-animation-fill-mode: both;
+        animation-fill-mode: both;
         background: #333333;
         border: 10px solid #333333;
         -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.45);
@@ -805,19 +805,7 @@ body {
         float: left;
         height: 165px;
         width: 220px;
-        z-index: 0;
-        -webkit-animation-name: slideup, fadein;
-        -moz-animation-name: slideup, fadein;
-        animation-name: slideup, fadein;
-        -webkit-animation-timing-function: ease-in-out, ease-out;
-        -moz-animation-timing-function: ease-in-out, ease-out;
-        animation-timing-function: ease-in-out, ease-out;
-        -webkit-animation-duration: 1s, 1.2s;
-        -moz-animation-duration: 1s, 1.2s;
-        animation-duration: 1s, 1.2s;
-        -webkit-animation-fill-mode: both;
-        -moz-animation-fill-mode: both;
-        animation-fill-mode: both; }
+        z-index: 0; }
         body div.main-content section#recent-work article#one > img, body div.main-content section#recent-work article#two > img, body div.main-content section#recent-work article#three > img {
           margin: 0; }
       body div.main-content section#recent-work article#one {
@@ -835,48 +823,60 @@ body {
       body div.main-content section#recent-work article#two {
         margin: 0 40px; }
     body div.main-content section#recent-work + div.wrapper {
+      background: #262626;
       -webkit-box-shadow: inset 0 1px 0 #373737, 0 -1px 0 #191919;
       -moz-box-shadow: inset 0 1px 0 #373737, 0 -1px 0 #191919;
       -o-box-shadow: inset 0 1px 0 #373737, 0 -1px 0 #191919;
       box-shadow: inset 0 1px 0 #373737, 0 -1px 0 #191919;
-      background: #262626;
-      position: relative;
-      padding-top: 30px;
       min-height: 300px;
+      padding-top: 30px;
+      position: relative;
       z-index: 10; }
     body div.main-content aside#open-source-projects {
-      float: left;
-      margin-right: 40px;
-      width: 240px;
       -webkit-animation-delay: 1.5s;
       -moz-animation-delay: 1.5s;
-      animation-delay: 1.5s; }
+      animation-delay: 1.5s;
+      float: left;
+      margin-right: 40px;
+      width: 240px; }
       body div.main-content aside#open-source-projects > h2 {
         font-size: 24px; }
       body div.main-content aside#open-source-projects > ul {
         padding: 0; }
         body div.main-content aside#open-source-projects > ul > li {
-          font-size: 16px;
-          list-style-type: none;
-          margin: 15px 0;
           -webkit-font-smoothing: antialiased;
-          font-weight: 700; }
+          font-size: 16px;
+          font-weight: 700;
+          list-style-type: none;
+          margin: 15px 0; }
           body div.main-content aside#open-source-projects > ul > li a {
             color: #727272; }
             body div.main-content aside#open-source-projects > ul > li a:hover {
               color: #a5a5a5; }
     body div.main-content section#twitter-stream {
-      float: left;
-      width: 520px;
-      min-height: 200px;
       -webkit-animation-delay: 1.5s;
       -moz-animation-delay: 1.5s;
-      animation-delay: 1.5s; }
+      animation-delay: 1.5s;
+      float: left;
+      min-height: 200px;
+      width: 520px; }
       body div.main-content section#twitter-stream > h2 {
         font-size: 24px; }
       body div.main-content section#twitter-stream div.tweet {
         min-height: 200px; }
         body div.main-content section#twitter-stream div.tweet p.loading {
+          -webkit-animation-name: loading;
+          -moz-animation-name: loading;
+          animation-name: loading;
+          -webkit-animation-duration: 3s;
+          -moz-animation-duration: 3s;
+          animation-duration: 3s;
+          -webkit-animation-timing-function: ease-in-out;
+          -moz-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+          -webkit-animation-iteration-count: infinite;
+          -moz-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
           color: #ccc;
           -webkit-transition-property: all;
           -moz-transition-property: all;
@@ -889,19 +889,7 @@ body {
           transition-timing-function: ease-out;
           -webkit-transition-delay: 0;
           -moz-transition-delay: 0;
-          transition-delay: 0;
-          -webkit-animation-name: loading;
-          -moz-animation-name: loading;
-          animation-name: loading;
-          -webkit-animation-duration: 3s;
-          -moz-animation-duration: 3s;
-          animation-duration: 3s;
-          -webkit-animation-timing-function: ease-in-out;
-          -moz-animation-timing-function: ease-in-out;
-          animation-timing-function: ease-in-out;
-          -webkit-animation-iteration-count: infinite;
-          -moz-animation-iteration-count: infinite;
-          animation-iteration-count: infinite; }
+          transition-delay: 0; }
         body div.main-content section#twitter-stream div.tweet ul.tweet_list {
           margin: 0;
           padding: 0; }
@@ -929,12 +917,18 @@ body {
                   text-shadow: none; }
       body div.main-content section#twitter-stream div#twitter-follow {
         -webkit-font-smoothing: antialiased;
-        font-size: 16px;
-        padding: 4px 0 4px 42px;
         background-image: url("/images/social-icons.png");
+        background-position: -132px 0;
         background-repeat: no-repeat;
-        background-position: -132px 0; }
+        font-size: 16px;
+        padding: 4px 0 4px 42px; }
         body div.main-content section#twitter-stream div#twitter-follow a {
+          -webkit-animation-name: bling;
+          -moz-animation-name: bling;
+          animation-name: bling;
+          -webkit-animation-delay: 3.5s;
+          -moz-animation-delay: 3.5s;
+          animation-delay: 3.5s;
           color: #727272;
           -webkit-transition-property: all;
           -moz-transition-property: all;
@@ -947,32 +941,26 @@ body {
           transition-timing-function: ease-out;
           -webkit-transition-delay: 0;
           -moz-transition-delay: 0;
-          transition-delay: 0;
-          -webkit-animation-name: bling;
-          -moz-animation-name: bling;
-          animation-name: bling;
-          -webkit-animation-delay: 3.5s;
-          -moz-animation-delay: 3.5s;
-          animation-delay: 3.5s; }
+          transition-delay: 0; }
           body div.main-content section#twitter-stream div#twitter-follow a:hover {
-            color: #a5a5a5;
-            -webkit-text-fill-color: #a5a5a5; }
+            -webkit-text-fill-color: #a5a5a5;
+            color: #a5a5a5; }
     body div.main-content footer {
-      float: left;
-      width: 240px;
-      margin-right: 40px;
-      position: relative;
-      bottom: 29px;
-      z-index: 20;
       -webkit-animation-delay: 6s;
       -moz-animation-delay: 6s;
       animation-delay: 6s;
       -webkit-animation-duration: 1s;
       -moz-animation-duration: 1s;
-      animation-duration: 1s; }
+      animation-duration: 1s;
+      bottom: 29px;
+      float: left;
+      margin-right: 40px;
+      position: relative;
+      width: 240px;
+      z-index: 20; }
       body div.main-content footer > p {
-        font-size: 11px;
-        color: #3f3f3f; }
+        color: #3f3f3f;
+        font-size: 11px; }
         body div.main-content footer > p a {
           color: #3f3f3f; }
           body div.main-content footer > p a:hover {
