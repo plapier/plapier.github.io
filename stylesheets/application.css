@@ -609,7 +609,7 @@ a:hover {
 ::-moz-selection {
   background: #D5E255; }
 
-.fadein, body div.main-content section#headline > h1, body div.main-content aside#open-source-projects, body div.main-content section#twitter-stream, body div.main-content section#twitter-stream div#twitter-follow a, body div.main-content footer {
+.animation-fadein, body div.main-content section#headline > h1, body div.main-content aside#open-source-projects, body div.main-content section#twitter-stream, body div.main-content section#twitter-stream div#twitter-follow a, body div.main-content footer {
   -webkit-animation-name: fadein;
   -moz-animation-name: fadein;
   animation-name: fadein;
