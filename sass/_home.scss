@@ -68,26 +68,17 @@ body {
     @include animation-delay(5s);
     @include animation-fill-mode(both);
 
-    h1#logo {
-      background: url("/images/emdash-logo.png") no-repeat 0% 50%;
-      float: left;
-      font-size: 32px;
-      margin: 10px $gutter 10px 0;
-      text-indent: -9999px;
-      width: grid-width(4);
-    }
-
     section#social-media {
-      float: left;
-      width: grid-width(2);
-
       > ul {
-        float: right;
-        margin: 14px 0 12px 0;
+        margin: 8px 0 6px 0;
+        padding: 0;
 
         > li {
           @include inline-block;
           margin: 0 6px;
+          &:first-child {
+            margin-left: 0;
+          }
 
           &:last-child {
             margin-right: 0;
