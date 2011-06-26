@@ -654,7 +654,7 @@ body {
     margin-bottom: 50px;
     padding-top: 4px; }
     body header h2#tagline {
-      color: #333;
+      color: rgba(255, 255, 255, 0.15);
       float: left;
       font-family: "museo-slab-1", "museo-slab-2", Georgia, Palatino, "Palatino Linotype", Times, serif;
       font-size: 15px;
@@ -770,7 +770,7 @@ body {
         -webkit-animation-duration: 1s;
         -moz-animation-duration: 1s;
         animation-duration: 1s;
-        font-size: 36px;
+        font-size: 35px;
         font-weight: 300;
         letter-spacing: -1px;
         margin: 0; }

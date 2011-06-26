@@ -67,7 +67,7 @@ body {
     padding-top: 4px;
 
     h2#tagline {
-      color: #333;
+      color: hsla(100%, 100%, 100%, 0.15);
       float: left;
       font-family: $body-font;
       font-size: 15px;
@@ -166,7 +166,7 @@ body {
         -webkit-font-smoothing: antialiased;
         @extend .animation-fadein;
         @include animation-duration(1.0s);
-        font-size: 36px;
+        font-size: 35px;
         font-weight: 300;
         letter-spacing: -1px;
         margin: 0;
