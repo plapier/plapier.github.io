@@ -184,60 +184,12 @@ body {
         @include box-shadow(0 1px 3px 0 hsla(0%, 0%, 0%, 0.45));
         float: left;
         height: 165px;
-        position: relative;
         width: 220px;
         z-index: 0;
         @include animation-name(slideup, fadein);
         @include animation-timing-function(ease-in-out, ease-out);
         @include animation-duration(1.0s, 1.2s);
         @include animation-fill-mode(both);
-        @include transition(background, 0.3s, ease-out);
-
-        &:hover:after {
-          background: hsla(0%, 0%, 0%, 0.6);
-          content: "";
-          display: block;
-          height: 165px;
-          left: 0;
-          position: absolute;
-          top: 0;
-          width: 220px;
-          z-index: 30;
-        }
-
-        > div.overlay {
-          background-color: hsla(0%, 0%, 0%, 0.6);
-          background-image: url('/images/mag-glass.png');
-          background-position: 50% 50%;
-          background-repeat: no-repeat;
-          bottom: 70%;
-          height: 60px;
-          margin: 0 auto;
-          opacity: 0;
-          position: relative;
-          width: 60px;
-          @include border-radius(605px);
-          @include transition(box-shadow, 0.15s, ease-out);
-          z-index: 50;
-          &:hover {
-            @include box-shadow(0 0 0 3px rgba($link, 0.5));
-            background-color: hsla(0%, 0%, 0%, 0.7);
-          }
-          > a {
-            text-index: -999px;
-            opacity: 0;
-            display: block;
-            height: 60px;
-            width: 60px;
-            @include border-radius(60px);
-          }
-        }
-        &:hover > div.overlay {
-          @include animation-name(show-mag);
-          @include animation-duration(0.15s);
-          @include animation-timing-function(ease-in-out);
-          @include animation-fill-mode(both);
-        }
 
         > img {
           margin: 0;

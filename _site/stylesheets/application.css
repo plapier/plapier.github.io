@@ -494,39 +494,6 @@ div.radial {
   to {
     opacity: 1; } }
 
-@-webkit-keyframes show-mag {
-  from {
-    opacity: 0;
-    zoom: 0.90;
-    height: 60px;
-    width: 60px; }
-
-  to {
-    opacity: 1;
-    zoom: 1.0; } }
-
-@-moz-keyframes show-mag {
-  from {
-    opacity: 0;
-    zoom: 0.90;
-    height: 60px;
-    width: 60px; }
-
-  to {
-    opacity: 1;
-    zoom: 1.0; } }
-
-@keyframes show-mag {
-  from {
-    opacity: 0;
-    zoom: 0.90;
-    height: 60px;
-    width: 60px; }
-
-  to {
-    opacity: 1;
-    zoom: 1.0; } }
-
 @-webkit-keyframes loading {
   0% {
     opacity: 0;
@@ -807,7 +774,6 @@ body {
         box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.45);
         float: left;
         height: 165px;
-        position: relative;
         width: 220px;
         z-index: 0;
         -webkit-animation-name: slideup, fadein;
@@ -821,84 +787,7 @@ body {
         animation-duration: 1s, 1.2s;
         -webkit-animation-fill-mode: both;
         -moz-animation-fill-mode: both;
-        animation-fill-mode: both;
-        -webkit-transition-property: background;
-        -moz-transition-property: background;
-        transition-property: background;
-        -webkit-transition-duration: 0.3s;
-        -moz-transition-duration: 0.3s;
-        transition-duration: 0.3s;
-        -webkit-transition-timing-function: ease-out;
-        -moz-transition-timing-function: ease-out;
-        transition-timing-function: ease-out;
-        -webkit-transition-delay: 0;
-        -moz-transition-delay: 0;
-        transition-delay: 0; }
-        body div.main-content section#recent-work article#one:hover:after, body div.main-content section#recent-work article#two:hover:after, body div.main-content section#recent-work article#three:hover:after {
-          background: rgba(0, 0, 0, 0.6);
-          content: "";
-          display: block;
-          height: 165px;
-          left: 0;
-          position: absolute;
-          top: 0;
-          width: 220px;
-          z-index: 30; }
-        body div.main-content section#recent-work article#one > div.overlay, body div.main-content section#recent-work article#two > div.overlay, body div.main-content section#recent-work article#three > div.overlay {
-          background-color: rgba(0, 0, 0, 0.6);
-          background-image: url("/images/mag-glass.png");
-          background-position: 50% 50%;
-          background-repeat: no-repeat;
-          bottom: 70%;
-          height: 60px;
-          margin: 0 auto;
-          opacity: 0;
-          position: relative;
-          width: 60px;
-          -moz-border-radius: 605px;
-          -webkit-border-radius: 605px;
-          border-radius: 605px;
-          -webkit-transition-property: box-shadow;
-          -moz-transition-property: box-shadow;
-          transition-property: box-shadow;
-          -webkit-transition-duration: 0.15s;
-          -moz-transition-duration: 0.15s;
-          transition-duration: 0.15s;
-          -webkit-transition-timing-function: ease-out;
-          -moz-transition-timing-function: ease-out;
-          transition-timing-function: ease-out;
-          -webkit-transition-delay: 0;
-          -moz-transition-delay: 0;
-          transition-delay: 0;
-          z-index: 50; }
-          body div.main-content section#recent-work article#one > div.overlay:hover, body div.main-content section#recent-work article#two > div.overlay:hover, body div.main-content section#recent-work article#three > div.overlay:hover {
-            -webkit-box-shadow: 0 0 0 3px rgba(184, 210, 165, 0.5);
-            -moz-box-shadow: 0 0 0 3px rgba(184, 210, 165, 0.5);
-            -o-box-shadow: 0 0 0 3px rgba(184, 210, 165, 0.5);
-            box-shadow: 0 0 0 3px rgba(184, 210, 165, 0.5);
-            background-color: rgba(0, 0, 0, 0.7); }
-          body div.main-content section#recent-work article#one > div.overlay > a, body div.main-content section#recent-work article#two > div.overlay > a, body div.main-content section#recent-work article#three > div.overlay > a {
-            text-index: -999px;
-            opacity: 0;
-            display: block;
-            height: 60px;
-            width: 60px;
-            -moz-border-radius: 60px;
-            -webkit-border-radius: 60px;
-            border-radius: 60px; }
-        body div.main-content section#recent-work article#one:hover > div.overlay, body div.main-content section#recent-work article#two:hover > div.overlay, body div.main-content section#recent-work article#three:hover > div.overlay {
-          -webkit-animation-name: show-mag;
-          -moz-animation-name: show-mag;
-          animation-name: show-mag;
-          -webkit-animation-duration: 0.15s;
-          -moz-animation-duration: 0.15s;
-          animation-duration: 0.15s;
-          -webkit-animation-timing-function: ease-in-out;
-          -moz-animation-timing-function: ease-in-out;
-          animation-timing-function: ease-in-out;
-          -webkit-animation-fill-mode: both;
-          -moz-animation-fill-mode: both;
-          animation-fill-mode: both; }
+        animation-fill-mode: both; }
         body div.main-content section#recent-work article#one > img, body div.main-content section#recent-work article#two > img, body div.main-content section#recent-work article#three > img {
           margin: 0; }
       body div.main-content section#recent-work article#one {
