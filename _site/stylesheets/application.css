@@ -400,12 +400,14 @@ div.radial {
     -webkit-transform: translateY(-65px);
     -moz-transform: translateY(-65px);
     -ms-transform: translateY(-65px);
+    -o-transform: translateY(-65px);
     transform: translateY(-65px); }
 
   to {
     -webkit-transform: translateY(0px);
     -moz-transform: translateY(0px);
     -ms-transform: translateY(0px);
+    -o-transform: translateY(0px);
     transform: translateY(0px); } }
 
 @-moz-keyframes slidedown {
@@ -413,12 +415,14 @@ div.radial {
     -webkit-transform: translateY(-65px);
     -moz-transform: translateY(-65px);
     -ms-transform: translateY(-65px);
+    -o-transform: translateY(-65px);
     transform: translateY(-65px); }
 
   to {
     -webkit-transform: translateY(0px);
     -moz-transform: translateY(0px);
     -ms-transform: translateY(0px);
+    -o-transform: translateY(0px);
     transform: translateY(0px); } }
 
 @keyframes slidedown {
@@ -426,12 +430,14 @@ div.radial {
     -webkit-transform: translateY(-65px);
     -moz-transform: translateY(-65px);
     -ms-transform: translateY(-65px);
+    -o-transform: translateY(-65px);
     transform: translateY(-65px); }
 
   to {
     -webkit-transform: translateY(0px);
     -moz-transform: translateY(0px);
     -ms-transform: translateY(0px);
+    -o-transform: translateY(0px);
     transform: translateY(0px); } }
 
 @-webkit-keyframes slideup {
@@ -439,12 +445,14 @@ div.radial {
     -webkit-transform: translateY(250px);
     -moz-transform: translateY(250px);
     -ms-transform: translateY(250px);
+    -o-transform: translateY(250px);
     transform: translateY(250px); }
 
   to {
     -webkit-transform: translateY(0);
     -moz-transform: translateY(0);
     -ms-transform: translateY(0);
+    -o-transform: translateY(0);
     transform: translateY(0); } }
 
 @-moz-keyframes slideup {
@@ -452,12 +460,14 @@ div.radial {
     -webkit-transform: translateY(250px);
     -moz-transform: translateY(250px);
     -ms-transform: translateY(250px);
+    -o-transform: translateY(250px);
     transform: translateY(250px); }
 
   to {
     -webkit-transform: translateY(0);
     -moz-transform: translateY(0);
     -ms-transform: translateY(0);
+    -o-transform: translateY(0);
     transform: translateY(0); } }
 
 @keyframes slideup {
@@ -465,12 +475,14 @@ div.radial {
     -webkit-transform: translateY(250px);
     -moz-transform: translateY(250px);
     -ms-transform: translateY(250px);
+    -o-transform: translateY(250px);
     transform: translateY(250px); }
 
   to {
     -webkit-transform: translateY(0);
     -moz-transform: translateY(0);
     -ms-transform: translateY(0);
+    -o-transform: translateY(0);
     transform: translateY(0); } }
 
 @-webkit-keyframes fadein {
@@ -592,15 +604,23 @@ a:hover {
   text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.75);
   -webkit-transition-property: all;
   -moz-transition-property: all;
+  -ms-transition-property: all;
+  -o-transition-property: all;
   transition-property: all;
   -webkit-transition-duration: 0.15s;
   -moz-transition-duration: 0.15s;
+  -ms-transition-duration: 0.15s;
+  -o-transition-duration: 0.15s;
   transition-duration: 0.15s;
   -webkit-transition-timing-function: ease-out;
   -moz-transition-timing-function: ease-out;
+  -ms-transition-timing-function: ease-out;
+  -o-transition-timing-function: ease-out;
   transition-timing-function: ease-out;
   -webkit-transition-delay: 0;
   -moz-transition-delay: 0;
+  -ms-transition-delay: 0;
+  -o-transition-delay: 0;
   transition-delay: 0; }
 
 ::selection {
@@ -649,6 +669,7 @@ body {
     background: rgba(0, 0, 0, 0.1);
     -webkit-box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.03), inset 0 -1px 0 0 rgba(0, 0, 0, 0.15);
     -moz-box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.03), inset 0 -1px 0 0 rgba(0, 0, 0, 0.15);
+    -ms-box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.03), inset 0 -1px 0 0 rgba(0, 0, 0, 0.15);
     -o-box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.03), inset 0 -1px 0 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.03), inset 0 -1px 0 0 rgba(0, 0, 0, 0.15);
     margin-bottom: 50px;
@@ -683,28 +704,39 @@ body {
           body header section#social-media > ul > li:last-child {
             margin-right: 0; }
           body header section#social-media > ul > li > div {
-            -moz-border-radius: 32px;
             -webkit-border-radius: 32px;
+            -moz-border-radius: 32px;
+            -ms-border-radius: 32px;
+            -o-border-radius: 32px;
             border-radius: 32px;
             display: inline-block;
             float: left;
             -webkit-transition-property: all;
             -moz-transition-property: all;
+            -ms-transition-property: all;
+            -o-transition-property: all;
             transition-property: all;
             -webkit-transition-duration: 0.15s;
             -moz-transition-duration: 0.15s;
+            -ms-transition-duration: 0.15s;
+            -o-transition-duration: 0.15s;
             transition-duration: 0.15s;
             -webkit-transition-timing-function: linear;
             -moz-transition-timing-function: linear;
+            -ms-transition-timing-function: linear;
+            -o-transition-timing-function: linear;
             transition-timing-function: linear;
             -webkit-transition-delay: 0;
             -moz-transition-delay: 0;
+            -ms-transition-delay: 0;
+            -o-transition-delay: 0;
             transition-delay: 0;
             width: auto; }
             body header section#social-media > ul > li > div:hover {
               background: #b8d2a5;
               -webkit-box-shadow: inset 0 0 0 4px #404040, 0 0 0 3px #404040;
               -moz-box-shadow: inset 0 0 0 4px #404040, 0 0 0 3px #404040;
+              -ms-box-shadow: inset 0 0 0 4px #404040, 0 0 0 3px #404040;
               -o-box-shadow: inset 0 0 0 4px #404040, 0 0 0 3px #404040;
               box-shadow: inset 0 0 0 4px #404040, 0 0 0 3px #404040; }
             body header section#social-media > ul > li > div > a {
@@ -721,24 +753,35 @@ body {
               text-indent: -9999px;
               width: 32px; }
               body header section#social-media > ul > li > div > a:hover {
-                -moz-border-radius: 32px;
                 -webkit-border-radius: 32px;
+                -moz-border-radius: 32px;
+                -ms-border-radius: 32px;
+                -o-border-radius: 32px;
                 border-radius: 32px;
                 -webkit-box-shadow: inset 0 0 0 1px #404040, 0 0 0 3px #404040;
                 -moz-box-shadow: inset 0 0 0 1px #404040, 0 0 0 3px #404040;
+                -ms-box-shadow: inset 0 0 0 1px #404040, 0 0 0 3px #404040;
                 -o-box-shadow: inset 0 0 0 1px #404040, 0 0 0 3px #404040;
                 box-shadow: inset 0 0 0 1px #404040, 0 0 0 3px #404040;
                 -webkit-transition-property: box-shadow;
                 -moz-transition-property: box-shadow;
+                -ms-transition-property: box-shadow;
+                -o-transition-property: box-shadow;
                 transition-property: box-shadow;
                 -webkit-transition-duration: 0s;
                 -moz-transition-duration: 0s;
+                -ms-transition-duration: 0s;
+                -o-transition-duration: 0s;
                 transition-duration: 0s;
                 -webkit-transition-timing-function: ease-in;
                 -moz-transition-timing-function: ease-in;
+                -ms-transition-timing-function: ease-in;
+                -o-transition-timing-function: ease-in;
                 transition-timing-function: ease-in;
                 -webkit-transition-delay: 0;
                 -moz-transition-delay: 0;
+                -ms-transition-delay: 0;
+                -o-transition-delay: 0;
                 transition-delay: 0; }
           body header section#social-media > ul > li#twitter > div:hover {
             background-color: #42d0ff; }
@@ -797,6 +840,7 @@ body {
         border: 10px solid #333333;
         -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.45);
         -moz-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.45);
+        -ms-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.45);
         -o-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.45);
         box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.45);
         float: left;
@@ -823,6 +867,7 @@ body {
       background: #262626;
       -webkit-box-shadow: inset 0 1px 0 #373737, 0 -1px 0 #191919;
       -moz-box-shadow: inset 0 1px 0 #373737, 0 -1px 0 #191919;
+      -ms-box-shadow: inset 0 1px 0 #373737, 0 -1px 0 #191919;
       -o-box-shadow: inset 0 1px 0 #373737, 0 -1px 0 #191919;
       box-shadow: inset 0 1px 0 #373737, 0 -1px 0 #191919;
       min-height: 300px;
@@ -877,15 +922,23 @@ body {
           color: #ccc;
           -webkit-transition-property: all;
           -moz-transition-property: all;
+          -ms-transition-property: all;
+          -o-transition-property: all;
           transition-property: all;
           -webkit-transition-duration: 0.15s;
           -moz-transition-duration: 0.15s;
+          -ms-transition-duration: 0.15s;
+          -o-transition-duration: 0.15s;
           transition-duration: 0.15s;
           -webkit-transition-timing-function: ease-out;
           -moz-transition-timing-function: ease-out;
+          -ms-transition-timing-function: ease-out;
+          -o-transition-timing-function: ease-out;
           transition-timing-function: ease-out;
           -webkit-transition-delay: 0;
           -moz-transition-delay: 0;
+          -ms-transition-delay: 0;
+          -o-transition-delay: 0;
           transition-delay: 0; }
         body div.main-content section#twitter-stream div.tweet ul.tweet_list {
           margin: 0;
@@ -903,11 +956,14 @@ body {
                 color: #727272; }
                 body div.main-content section#twitter-stream div.tweet ul.tweet_list > li span.tweet_time a:hover {
                   background: rgba(255, 255, 255, 0.05);
-                  -moz-border-radius: 3px;
                   -webkit-border-radius: 3px;
+                  -moz-border-radius: 3px;
+                  -ms-border-radius: 3px;
+                  -o-border-radius: 3px;
                   border-radius: 3px;
                   -webkit-box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.05);
                   -moz-box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.05);
+                  -ms-box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.05);
                   -o-box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.05);
                   box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.05);
                   color: #a5a5a5;
@@ -929,15 +985,23 @@ body {
           color: #727272;
           -webkit-transition-property: all;
           -moz-transition-property: all;
+          -ms-transition-property: all;
+          -o-transition-property: all;
           transition-property: all;
           -webkit-transition-duration: 0.15s;
           -moz-transition-duration: 0.15s;
+          -ms-transition-duration: 0.15s;
+          -o-transition-duration: 0.15s;
           transition-duration: 0.15s;
           -webkit-transition-timing-function: ease-out;
           -moz-transition-timing-function: ease-out;
+          -ms-transition-timing-function: ease-out;
+          -o-transition-timing-function: ease-out;
           transition-timing-function: ease-out;
           -webkit-transition-delay: 0;
           -moz-transition-delay: 0;
+          -ms-transition-delay: 0;
+          -o-transition-delay: 0;
           transition-delay: 0; }
           body div.main-content section#twitter-stream div#twitter-follow a:hover {
             -webkit-text-fill-color: #a5a5a5;
@@ -962,11 +1026,14 @@ body {
           color: #3f3f3f; }
           body div.main-content footer > p a:hover {
             background: rgba(255, 255, 255, 0.05);
-            -moz-border-radius: 3px;
             -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            -ms-border-radius: 3px;
+            -o-border-radius: 3px;
             border-radius: 3px;
             -webkit-box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.05);
             -moz-box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.05);
+            -ms-box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.05);
             -o-box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.05);
             box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.05);
             color: #727272;
