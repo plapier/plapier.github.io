@@ -378,23 +378,6 @@ table {
   h2, h3 {
     page-break-after: avoid; } }
 /* Legacy support for inline-block in IE7 (maybe IE6) */
-/* Requires Sass 3.1+ */
-/* Usage: Gradient position is optional, default is top. Position can be a degree. Color stops are optional as well.*/
-/*
-div.linear {
-  @include linear-gradient(#1e5799, #2989d8);
-  @include linear-gradient(top, #1e5799 0%, #2989d8 50%);
-  @include linear-gradient(50deg, rgba(10, 10, 10, 0.5) 0%, #2989d8 50%, #207cca 51%, #7db9e8 100%);
-}
-*/
-/* Requires Sass 3.1+ */
-/* Usage: Gradient position and shape-size are required. Color stops are optional.*/
-/*
-div.radial {
-  @include radial-gradient(50% 50%, circle cover, #1e5799, #efefef);
-  @include radial-gradient(50% 50%, circle cover, #eee 10%, #1e5799 30%, #efefef);
-}
-*/
 @-webkit-keyframes slidedown {
   from {
     -webkit-transform: translateY(-65px);
@@ -678,7 +661,7 @@ body {
       color: rgba(255, 255, 255, 0.15);
       float: left;
       font-family: "museo-slab-1", "museo-slab-2", Georgia, Palatino, "Palatino Linotype", Times, serif;
-      font-size: 15px;
+      font-size: 14px;
       font-weight: 300;
       margin: 10px 40px 10px 0;
       position: relative;
@@ -815,7 +798,7 @@ body {
         animation-duration: 1s;
         font-size: 35px;
         font-weight: 300;
-        letter-spacing: -1px;
+        letter-spacing: -0.029em;
         margin: 0; }
     body div.main-content section#recent-work {
       background-image: url("/images/oval-highlight.png");
@@ -874,6 +857,9 @@ body {
       padding-top: 30px;
       position: relative;
       z-index: 10; }
+    body div.main-content aside#open-source-projects > h2,
+    body div.main-content section#twitter-stream > h2 {
+      font-size: 22.652px; }
     body div.main-content aside#open-source-projects {
       -webkit-animation-delay: 1.5s;
       -moz-animation-delay: 1.5s;
@@ -881,15 +867,14 @@ body {
       float: left;
       margin-right: 40px;
       width: 240px; }
-      body div.main-content aside#open-source-projects > h2 {
-        font-size: 24px; }
       body div.main-content aside#open-source-projects > ul {
         padding: 0; }
         body div.main-content aside#open-source-projects > ul > li {
           -webkit-font-smoothing: antialiased;
-          font-size: 16px;
+          font-size: 14px;
           font-weight: 700;
           list-style-type: none;
+          line-height: 150%;
           margin: 15px 0; }
           body div.main-content aside#open-source-projects > ul > li a {
             color: #727272; }
@@ -902,8 +887,6 @@ body {
       float: left;
       min-height: 200px;
       width: 520px; }
-      body div.main-content section#twitter-stream > h2 {
-        font-size: 24px; }
       body div.main-content section#twitter-stream div.tweet {
         min-height: 200px; }
         body div.main-content section#twitter-stream div.tweet p.loading {
@@ -973,7 +956,9 @@ body {
         background-image: url("/images/social-icons.png");
         background-position: -132px 0;
         background-repeat: no-repeat;
-        font-size: 16px;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 150%;
         padding: 4px 0 4px 42px; }
         body div.main-content section#twitter-stream div#twitter-follow a {
           -webkit-animation-name: bling;
@@ -1013,7 +998,7 @@ body {
       -webkit-animation-duration: 1s;
       -moz-animation-duration: 1s;
       animation-duration: 1s;
-      bottom: 29px;
+      bottom: 32px;
       float: left;
       margin-right: 40px;
       position: relative;
@@ -1021,7 +1006,8 @@ body {
       z-index: 20; }
       body div.main-content footer > p {
         color: #3f3f3f;
-        font-size: 11px; }
+        font-size: 11px;
+        line-height: 150%; }
         body div.main-content footer > p a {
           color: #3f3f3f; }
           body div.main-content footer > p a:hover {

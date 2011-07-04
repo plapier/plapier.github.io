@@ -2,6 +2,7 @@
 //  Global Styles
 //---------------------------------------------------
 
+
 body, html {
   background: #262626;
 }
@@ -53,6 +54,11 @@ body {
   margin: 0 auto;
   text-rendering: optimizeLegibility;
 
+
+//************************************************************************//
+// Header
+//************************************************************************//
+
   header {
     @extend .clearfix;
     @include animation-name(slidedown);
@@ -70,7 +76,7 @@ body {
       color: hsla(100%, 100%, 100%, 0.15);
       float: left;
       font-family: $body-font;
-      font-size: 15px;
+      font-size: $base-font-size;
       font-weight: 300;
       margin: 10px $gutter 10px 0;
       position: relative;
@@ -151,6 +157,11 @@ body {
     }
   }
 
+
+//************************************************************************//
+//  Big Headline Title
+//************************************************************************//
+
   div.main-content {
     @extend .clearfix;
     color: $primary;
@@ -169,10 +180,15 @@ body {
         @include animation-duration(1.0s);
         font-size: 35px;
         font-weight: 300;
-        letter-spacing: -1px;
+        letter-spacing: -0.029em;
         margin: 0;
       }
     }
+
+
+//************************************************************************//
+//  Recent Work Section
+//************************************************************************//
 
     section#recent-work {
       @extend .clearfix;
@@ -228,6 +244,18 @@ body {
       z-index: 10;
     }
 
+
+//************************************************************************//
+// Open Source Projects Sidebar
+//************************************************************************//
+
+    aside#open-source-projects,
+    section#twitter-stream {
+      > h2 {
+        font-size: golden-ratio($base-font-size, 1);
+      }
+    }
+
     aside#open-source-projects {
       @extend .animation-fadein;
       @include animation-delay(1.5s);
@@ -236,7 +264,7 @@ body {
       width: grid-width(2);
 
       > h2 {
-        font-size: 24px;
+        // See Above
       }
 
       > ul {
@@ -244,9 +272,10 @@ body {
 
         > li {
           -webkit-font-smoothing: antialiased;
-          font-size: 16px;
+          font-size: $base-font-size;
           font-weight: 700;
           list-style-type: none;
+          line-height: 150%;
           margin: 15px 0;
 
           a {
@@ -261,6 +290,11 @@ body {
       }
     }
 
+
+//************************************************************************//
+//  Recently Tweeted Section
+//************************************************************************//
+
     section#twitter-stream {
       @extend .animation-fadein;
       @include animation-delay(1.5s);
@@ -269,7 +303,7 @@ body {
       width: grid-width(4);
 
       > h2 {
-        font-size: 24px;
+        // See Above
       }
 
       div.tweet {
@@ -290,7 +324,7 @@ body {
 
           > li {
             -webkit-font-smoothing: antialiased;
-            font-size: 14px;
+            font-size: $base-font-size;
             line-height: 150%;
             list-style-type: none;
             margin: $gutter/2 0;
@@ -319,7 +353,9 @@ body {
         background-image: url('/images/social-icons.png');
         background-position: -132px 0;
         background-repeat: no-repeat;
-        font-size: 16px;
+        font-size: $base-font-size;
+        font-weight: 700;
+        line-height: 150%;
         padding: 4px 0 4px 42px;
 
         a {
@@ -336,11 +372,17 @@ body {
         }
       }
     }
+
+
+//************************************************************************//
+//  Footer
+//************************************************************************//
+
     footer {
       @extend .animation-fadein;
       @include animation-delay(6.0s);
       @include animation-duration(1.0s);
-      bottom: 29px;
+      bottom: 32px;
       float: left;
       margin-right: $gutter;
       position: relative;
@@ -350,6 +392,7 @@ body {
       > p {
         color: darken($link-alt, 20%);
         font-size: 11px;
+        line-height: 150%;
 
         a {
           color: darken($link-alt, 20%);
