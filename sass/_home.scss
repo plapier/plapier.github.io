@@ -17,10 +17,12 @@ h1, h2, h3, h4, h5, h6 {
   font-family: $title-font;
   font-weight: 100;
 }
+
 a, a:link, a:active, a:visited {
   color: $link;
   text-decoration: none;
 }
+
 a:hover {
   color: $hover;
   text-shadow: 1px 1px 0 hsla(0%, 0%, 0%, 0.75);
@@ -31,6 +33,7 @@ $selection: #D5E255;
 ::selection {
   background: $selection;
 }
+
 ::-moz-selection {
   background: $selection;
 }
@@ -73,7 +76,7 @@ body {
     padding-top: 4px;
 
     h2#tagline {
-      color: hsla(100%, 100%, 100%, 0.15);
+      color: hsla(100%, 100%, 100%, 0.2);
       float: left;
       font-family: $body-font;
       font-size: $base-font-size;
@@ -109,9 +112,12 @@ body {
             @include transition($timing-function: linear);
             width: auto;
 
+            $icon-color: #3F3F3f;
+            $hover-effect: inset 0 0 0 1px $icon-color, 0 0 0 3px lighten($icon-color, 5%);
+
             &:hover {
               background: $link;
-              @include box-shadow(inset 0 0 0 4px #404040, 0 0 0 3px lighten(#333, 5%));
+              @include box-shadow($hover-effect);
             }
 
             > a {
@@ -124,7 +130,7 @@ body {
 
               &:hover {
                 @include border-radius(32px);
-                @include box-shadow(inset 0 0 0 1px #404040, 0 0 0 3px lighten(#333, 5%));
+                @include box-shadow($hover-effect);
                 @include transition(box-shadow, 0s, ease-in);
               }
             }
