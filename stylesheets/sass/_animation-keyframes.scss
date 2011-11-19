@@ -1,12 +1,18 @@
 //Keyframes for Animations
+// @extend fixes screen flicker of animations
+.force3d {
+  -webkit-backface-visibility: hidden;  // Fixes animation screen flicker
+  -webkit-perspective: 1000;            // Fixes animation screen flicker
+  -webkit-transform-style: preserve-3d; // Fixes animation screen flicker
+}
 
 // Slide down animation
 @mixin slidedown {
   from {
-    @include transform(translateY(-65px));
+    @include transform(translate3d(0, -65px, 0));
   }
   to {
-    @include transform(translateY(0px));
+    @include transform(translate3d(0, 0px, 0));
   }
 }
 @-webkit-keyframes slidedown { @include slidedown; }
@@ -17,10 +23,10 @@
 // Slide Up Animation
 @mixin slideup {
   from {
-    @include transform(translateY(250px));
+    @include transform(translate3d(0, 250px, 0));
   }
   to {
-    @include transform(translateY(0));
+    @include transform(translate3d(0, 0px, 0));
   }
 }
 @-webkit-keyframes slideup { @include slideup; }
@@ -29,6 +35,12 @@
 
 
 // Fade In animation
+.animation-fadein {
+  @include animation-name(fadein);
+  @include animation-duration(3.0s);
+  @include animation-timing-function(ease-in);
+  @include animation-fill-mode(both);
+}
 @mixin fadein {
   from {
     opacity: 0;

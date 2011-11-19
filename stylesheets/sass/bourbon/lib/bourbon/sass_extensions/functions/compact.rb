@@ -1,6 +1,6 @@
-require 'sass'
+# Compact function pulled from compass
+module Bourbon::SassExtensions::Functions::Compact
 
-module CompactList
   def compact(*args)
     sep = :comma
     if args.size == 1 && args.first.is_a?(Sass::Script::List)
@@ -9,8 +9,5 @@ module CompactList
     end
     Sass::Script::List.new(args.reject{|a| !a.to_bool}, sep)
   end
-end
 
-module Sass::Script::Functions
-  include CompactList
 end
