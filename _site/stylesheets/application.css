@@ -803,9 +803,10 @@ div.main-content {
       -webkit-animation-duration: 1s;
       -moz-animation-duration: 1s;
       animation-duration: 1s;
-      font-size: 35px;
+      font-size: 39px;
       font-weight: 300;
       letter-spacing: -0.029em;
+      line-height: 1em;
       margin: 0; }
 
 section#recent-work {
