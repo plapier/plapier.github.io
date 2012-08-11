@@ -378,7 +378,7 @@ table {
 
   h2, h3 {
     page-break-after: avoid; } }
-.force3d, header, div.main-content section#headline > h1, section#recent-work article#one, section#recent-work article#two, section#recent-work article#three {
+.force3d, header, div.main-content section#headline h1, section#recent-work article#one, section#recent-work article#two, section#recent-work article#three {
   -webkit-backface-visibility: hidden;
   -webkit-perspective: 1000;
   -webkit-transform-style: preserve-3d; }
@@ -473,7 +473,7 @@ table {
     -o-transform: translate3d(0, 0px, 0);
     transform: translate3d(0, 0px, 0); } }
 
-.animation-fadein, div.main-content section#headline > h1, aside#open-source-projects, section#twitter-stream, section#twitter-stream div#twitter-follow a, footer {
+.animation-fadein, div.main-content section#headline h1, aside#open-source-projects, section#twitter-stream, section#twitter-stream div#twitter-follow a, footer {
   -webkit-animation-name: fadein;
   -moz-animation-name: fadein;
   animation-name: fadein;
@@ -604,26 +604,11 @@ a, a:link, a:active, a:visited {
 a:hover {
   color: #9fcb59;
   text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.75);
-  -webkit-transition-property: all;
-  -moz-transition-property: all;
-  -ms-transition-property: all;
-  -o-transition-property: all;
-  transition-property: all;
-  -webkit-transition-duration: 0.15s;
-  -moz-transition-duration: 0.15s;
-  -ms-transition-duration: 0.15s;
-  -o-transition-duration: 0.15s;
-  transition-duration: 0.15s;
-  -webkit-transition-timing-function: ease-out;
-  -moz-transition-timing-function: ease-out;
-  -ms-transition-timing-function: ease-out;
-  -o-transition-timing-function: ease-out;
-  transition-timing-function: ease-out;
-  -webkit-transition-delay: 0;
-  -moz-transition-delay: 0;
-  -ms-transition-delay: 0;
-  -o-transition-delay: 0;
-  transition-delay: 0; }
+  -webkit-transition: all 0.15s ease-out 0;
+  -moz-transition: all 0.15s ease-out 0;
+  -ms-transition: all 0.15s ease-out 0;
+  -o-transition: all 0.15s ease-out 0;
+  transition: all 0.15s ease-out 0; }
 
 ::selection {
   background: #d5e255; }
@@ -642,9 +627,9 @@ header {
   -webkit-animation-name: slidedown;
   -moz-animation-name: slidedown;
   animation-name: slidedown;
-  -webkit-animation-delay: 5s;
-  -moz-animation-delay: 5s;
-  animation-delay: 5s;
+  -webkit-animation-delay: 2.6s;
+  -moz-animation-delay: 2.6s;
+  animation-delay: 2.6s;
   -webkit-animation-duration: 0.8s;
   -moz-animation-duration: 0.8s;
   animation-duration: 0.8s;
@@ -657,9 +642,6 @@ header {
   background: #202020;
   background: rgba(0, 0, 0, 0.1);
   -webkit-box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.03), inset 0 -1px 0 0 rgba(0, 0, 0, 0.15);
-  -moz-box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.03), inset 0 -1px 0 0 rgba(0, 0, 0, 0.15);
-  -ms-box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.03), inset 0 -1px 0 0 rgba(0, 0, 0, 0.15);
-  -o-box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.03), inset 0 -1px 0 0 rgba(0, 0, 0, 0.15);
   box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.03), inset 0 -1px 0 0 rgba(0, 0, 0, 0.15);
   margin-bottom: 50px;
   padding-top: 4px; }
@@ -682,8 +664,6 @@ header {
       margin: 12px 0 8px 0;
       padding: 0; }
       header section#social-media > ul > li {
-        display: -moz-inline-box;
-        -moz-box-orient: vertical;
         display: inline-block;
         vertical-align: baseline;
         zoom: 1;
@@ -694,46 +674,23 @@ header {
           margin-right: 0; }
         header section#social-media > ul > li > div {
           -webkit-border-radius: 32px;
-          -moz-border-radius: 32px;
-          -ms-border-radius: 32px;
-          -o-border-radius: 32px;
           border-radius: 32px;
           display: inline-block;
           float: left;
-          -webkit-transition-property: all;
-          -moz-transition-property: all;
-          -ms-transition-property: all;
-          -o-transition-property: all;
-          transition-property: all;
-          -webkit-transition-duration: 0.15s;
-          -moz-transition-duration: 0.15s;
-          -ms-transition-duration: 0.15s;
-          -o-transition-duration: 0.15s;
-          transition-duration: 0.15s;
-          -webkit-transition-timing-function: linear;
-          -moz-transition-timing-function: linear;
-          -ms-transition-timing-function: linear;
-          -o-transition-timing-function: linear;
-          transition-timing-function: linear;
-          -webkit-transition-delay: 0;
-          -moz-transition-delay: 0;
-          -ms-transition-delay: 0;
-          -o-transition-delay: 0;
-          transition-delay: 0;
+          -webkit-transition: all 0.15s linear 0;
+          -moz-transition: all 0.15s linear 0;
+          -ms-transition: all 0.15s linear 0;
+          -o-transition: all 0.15s linear 0;
+          transition: all 0.15s linear 0;
           width: auto; }
           header section#social-media > ul > li > div:hover {
             background: #b8d2a5;
             -webkit-box-shadow: inset 0 0 0 1px #3f3f3f, 0 0 0 3px #4c4c4c;
-            -moz-box-shadow: inset 0 0 0 1px #3f3f3f, 0 0 0 3px #4c4c4c;
-            -ms-box-shadow: inset 0 0 0 1px #3f3f3f, 0 0 0 3px #4c4c4c;
-            -o-box-shadow: inset 0 0 0 1px #3f3f3f, 0 0 0 3px #4c4c4c;
             box-shadow: inset 0 0 0 1px #3f3f3f, 0 0 0 3px #4c4c4c; }
           header section#social-media > ul > li > div > a {
             background-image: url("/images/social-icons.png");
             background-repeat: no-repeat;
             height: 32px;
-            display: -moz-inline-box;
-            -moz-box-orient: vertical;
             display: inline-block;
             vertical-align: baseline;
             zoom: 1;
@@ -743,35 +700,14 @@ header {
             width: 32px; }
             header section#social-media > ul > li > div > a:hover {
               -webkit-border-radius: 32px;
-              -moz-border-radius: 32px;
-              -ms-border-radius: 32px;
-              -o-border-radius: 32px;
               border-radius: 32px;
               -webkit-box-shadow: inset 0 0 0 1px #3f3f3f, 0 0 0 3px #4c4c4c;
-              -moz-box-shadow: inset 0 0 0 1px #3f3f3f, 0 0 0 3px #4c4c4c;
-              -ms-box-shadow: inset 0 0 0 1px #3f3f3f, 0 0 0 3px #4c4c4c;
-              -o-box-shadow: inset 0 0 0 1px #3f3f3f, 0 0 0 3px #4c4c4c;
               box-shadow: inset 0 0 0 1px #3f3f3f, 0 0 0 3px #4c4c4c;
-              -webkit-transition-property: box-shadow;
-              -moz-transition-property: box-shadow;
-              -ms-transition-property: box-shadow;
-              -o-transition-property: box-shadow;
-              transition-property: box-shadow;
-              -webkit-transition-duration: 0s;
-              -moz-transition-duration: 0s;
-              -ms-transition-duration: 0s;
-              -o-transition-duration: 0s;
-              transition-duration: 0s;
-              -webkit-transition-timing-function: ease-in;
-              -moz-transition-timing-function: ease-in;
-              -ms-transition-timing-function: ease-in;
-              -o-transition-timing-function: ease-in;
-              transition-timing-function: ease-in;
-              -webkit-transition-delay: 0;
-              -moz-transition-delay: 0;
-              -ms-transition-delay: 0;
-              -o-transition-delay: 0;
-              transition-delay: 0; }
+              -webkit-transition: box-shadow 0s ease-in;
+              -moz-transition: box-shadow 0s ease-in;
+              -ms-transition: box-shadow 0s ease-in;
+              -o-transition: box-shadow 0s ease-in;
+              transition: box-shadow 0s ease-in; }
         header section#social-media > ul > li#twitter > div:hover {
           background-color: #42d0ff; }
         header section#social-media > ul > li#twitter a {
@@ -798,20 +734,22 @@ div.main-content {
   div.main-content section#headline {
     margin: 20px 0 50px;
     width: 100%; }
-    div.main-content section#headline > h1 {
+    div.main-content section#headline h1 {
       -webkit-font-smoothing: antialiased;
       -webkit-animation-duration: 1s;
       -moz-animation-duration: 1s;
       animation-duration: 1s;
-      font-size: 39px;
+      font-size: 41px;
       font-weight: 300;
-      letter-spacing: -0.029em;
       line-height: 1em;
       margin: 0; }
 
 section#recent-work {
-  background-image: url("/images/oval-highlight.png");
-  background-position: 50% 100%;
+  background-image: -webkit-radial-gradient(50% 100%, ellipse cover, rgba(255, 255, 255, 0.045) 0%, rgba(255, 255, 255, 0.015) 55%, transparent 100%);
+  background-image: -moz-radial-gradient(50% 100%, ellipse cover, rgba(255, 255, 255, 0.045) 0%, rgba(255, 255, 255, 0.015) 55%, transparent 100%);
+  background-image: -ms-radial-gradient(50% 100%, ellipse cover, rgba(255, 255, 255, 0.045) 0%, rgba(255, 255, 255, 0.015) 55%, transparent 100%);
+  background-image: -o-radial-gradient(50% 100%, ellipse cover, rgba(255, 255, 255, 0.045) 0%, rgba(255, 255, 255, 0.015) 55%, transparent 100%);
+  background-image: radial-gradient(50% 100%, ellipse cover, rgba(255, 255, 255, 0.045) 0%, rgba(255, 255, 255, 0.015) 55%, transparent 100%);
   background-repeat: no-repeat;
   padding-bottom: 55px;
   width: 100%; }
@@ -831,9 +769,6 @@ section#recent-work {
     background: #333333;
     border: 10px solid #333333;
     -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.45);
-    -moz-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.45);
-    -ms-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.45);
-    -o-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.45);
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.45);
     float: left;
     height: 165px;
@@ -859,9 +794,6 @@ section#recent-work {
 section#recent-work + div.wrapper {
   background: #262626;
   -webkit-box-shadow: inset 0 1px 0 #373737, 0 -1px 0 #191919;
-  -moz-box-shadow: inset 0 1px 0 #373737, 0 -1px 0 #191919;
-  -ms-box-shadow: inset 0 1px 0 #373737, 0 -1px 0 #191919;
-  -o-box-shadow: inset 0 1px 0 #373737, 0 -1px 0 #191919;
   box-shadow: inset 0 1px 0 #373737, 0 -1px 0 #191919;
   min-height: 300px;
   padding-top: 30px;
@@ -916,26 +848,11 @@ section#twitter-stream {
       -moz-animation-iteration-count: infinite;
       animation-iteration-count: infinite;
       color: #ccc;
-      -webkit-transition-property: all;
-      -moz-transition-property: all;
-      -ms-transition-property: all;
-      -o-transition-property: all;
-      transition-property: all;
-      -webkit-transition-duration: 0.15s;
-      -moz-transition-duration: 0.15s;
-      -ms-transition-duration: 0.15s;
-      -o-transition-duration: 0.15s;
-      transition-duration: 0.15s;
-      -webkit-transition-timing-function: ease-out;
-      -moz-transition-timing-function: ease-out;
-      -ms-transition-timing-function: ease-out;
-      -o-transition-timing-function: ease-out;
-      transition-timing-function: ease-out;
-      -webkit-transition-delay: 0;
-      -moz-transition-delay: 0;
-      -ms-transition-delay: 0;
-      -o-transition-delay: 0;
-      transition-delay: 0; }
+      -webkit-transition: all 0.15s ease-out 0;
+      -moz-transition: all 0.15s ease-out 0;
+      -ms-transition: all 0.15s ease-out 0;
+      -o-transition: all 0.15s ease-out 0;
+      transition: all 0.15s ease-out 0; }
     section#twitter-stream div.tweet ul.tweet_list {
       margin: 0;
       padding: 0; }
@@ -953,14 +870,8 @@ section#twitter-stream {
             section#twitter-stream div.tweet ul.tweet_list > li span.tweet_time a:hover {
               background: rgba(255, 255, 255, 0.05);
               -webkit-border-radius: 3px;
-              -moz-border-radius: 3px;
-              -ms-border-radius: 3px;
-              -o-border-radius: 3px;
               border-radius: 3px;
               -webkit-box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.05);
-              -moz-box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.05);
-              -ms-box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.05);
-              -o-box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.05);
               box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.05);
               color: #a5a5a5;
               text-shadow: none; }
@@ -981,26 +892,11 @@ section#twitter-stream {
       -moz-animation-delay: 3.5s;
       animation-delay: 3.5s;
       color: #727272;
-      -webkit-transition-property: all;
-      -moz-transition-property: all;
-      -ms-transition-property: all;
-      -o-transition-property: all;
-      transition-property: all;
-      -webkit-transition-duration: 0.15s;
-      -moz-transition-duration: 0.15s;
-      -ms-transition-duration: 0.15s;
-      -o-transition-duration: 0.15s;
-      transition-duration: 0.15s;
-      -webkit-transition-timing-function: ease-out;
-      -moz-transition-timing-function: ease-out;
-      -ms-transition-timing-function: ease-out;
-      -o-transition-timing-function: ease-out;
-      transition-timing-function: ease-out;
-      -webkit-transition-delay: 0;
-      -moz-transition-delay: 0;
-      -ms-transition-delay: 0;
-      -o-transition-delay: 0;
-      transition-delay: 0; }
+      -webkit-transition: all 0.15s ease-out 0;
+      -moz-transition: all 0.15s ease-out 0;
+      -ms-transition: all 0.15s ease-out 0;
+      -o-transition: all 0.15s ease-out 0;
+      transition: all 0.15s ease-out 0; }
       section#twitter-stream div#twitter-follow a:hover {
         -webkit-text-fill-color: #a5a5a5;
         color: #a5a5a5; }
@@ -1027,14 +923,8 @@ footer {
       footer p a:hover, footer p a:link:hover, footer p a:visited:hover, footer p a:active:hover {
         background: rgba(255, 255, 255, 0.05);
         -webkit-border-radius: 3px;
-        -moz-border-radius: 3px;
-        -ms-border-radius: 3px;
-        -o-border-radius: 3px;
         border-radius: 3px;
         -webkit-box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.05);
-        -moz-box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.05);
-        -ms-box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.05);
-        -o-box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.05);
         box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.05);
         color: #727272;
         text-shadow: none; }

@@ -78,7 +78,7 @@ body {
 header {
   @extend .clearfix;
   @include animation-name(slidedown);
-  @include animation-delay(5s);
+  @include animation-delay(2.6s);
   @include animation-duration(0.8s);
   @include animation-timing-function(ease-out);
   @include animation-fill-mode(both);
@@ -123,7 +123,7 @@ header {
           @include border-radius(32px);
           display: inline-block;
           float: left;
-          @include transition($timing-function: linear);
+          @include transition(all 0.15s linear 0);
           width: auto;
 
           $icon-color: #3F3F3f;
@@ -145,7 +145,7 @@ header {
             &:hover {
               @include border-radius(32px);
               @include box-shadow($hover-effect);
-              @include transition(box-shadow, 0s, ease-in);
+              @include transition(box-shadow 0s ease-in);
             }
           }
         }
@@ -183,14 +183,13 @@ div.main-content {
     margin: 20px 0 50px;
     width: 100%;
 
-    > h1 {
+    h1 {
       -webkit-font-smoothing: antialiased;
       @extend .animation-fadein;
       @extend .force3d;
       @include animation-duration(1.0s);
-      font-size: ceil(golden-ratio($base-font-size, 2)) + 2px; // 29px
+      font-size: ceil(golden-ratio($base-font-size, 2)) + 4px; // 29px
       font-weight: 300;
-      letter-spacing: -0.029em;
       line-height: 1em;
       margin: 0;
     }
@@ -204,8 +203,7 @@ div.main-content {
 
 section#recent-work {
   @extend .clearfix;
-  background-image: url('/images/oval-highlight.png');
-  background-position: 50% 100%;
+  @include background-image(radial-gradient(50% 100%, ellipse cover, rgba(255, 255, 255, 0.045) 0%, rgba(255, 255, 255, 0.015) 55%, transparent 100%));
   background-repeat: no-repeat;
   padding-bottom: 55px;
   width: 100%;
