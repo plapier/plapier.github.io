@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Phil LaPier / UI Engineer / Product Designer</title>
+    <meta name="description" content="Phil LaPier is a Product & Interface Designer in Boston, MA.">
+    <meta name="keywords" content="web design, web development, product design, interface design, ruby, rails, boston" >
+    <link rel="stylesheet" href="stylesheets/application.css">
+  </head>
+
+  <body class="home">
+    <header>
+      <div class="wrapper">
+        <h2 id="tagline">design. code. build. innovate.</h2>
+        <section id="social-media">
+          <ul>
+            <li id="twitter">
+            <div class="wrapper">
+              <a href="http://twitter.com/phillapier">Follow me on twitter</a>
+            </div>
+            </li>
+            <li id="dribbble">
+              <div class="wrapper">
+                <a href="http://dribbble.com/plapier">Follow me on dribbble</a>
+              </div>
+            </li>
+            <li id="github">
+              <div class="wrapper">
+                <a href="http://github.com/plapier">Follow me on github</a>
+              </div>
+            </li>
+            <li id="tumblr">
+              <div class="wrapper">
+                <a href="http://www.tumblr.com/tumblelog/plapier">Follow me on tumblr</a>
+              </div>
+            </li>
+          </ul>
+        </section>
+      </div>
+    </header>
+
+    <div class="main-content">
+      <section id="headline">
+      <h1>Phil LaPier&mdash;Product Designer at <a href="http://thoughtbot.com">thoughtbot.</a></h1>
+      </section>
+      <section id="recent-work">
+
+        <article id="one">
+          <a href="portfolio.html">
+            <img src="/images/recent-work/radish-logo.png" height="165px" width="220px" alt="Radish App Logo" />
+          </a>
+        </article>
+
+        <article id="two">
+          <a href="portfolio.html">
+            <img src="/images/recent-work/trajectory-logo.png" height="165px" width="220px" alt="Trajectory App Logo" />
+          </a>
+        </article>
+
+        <article id="three">
+          <a href="portfolio.html">
+            <img src="/images/recent-work/radish-app.png" height="165px" width="220px" alt="Radish App Homepage" />
+          </a>
+        </article>
+
+      </section>
+
+      <div class="wrapper">
+        <aside id="open-source-projects">
+          <h2>Open Source Projects</h2>
+          <ul id="github">
+            <li>
+              <a href="https://github.com/thoughtbot/bourbon">Bourbon Sass Mixins</a>
+            </li>
+            <li>
+              <a href="https://github.com/plapier/sexy-css3-flashes">Sexy CSS3 Flashes</a>
+            </li>
+          </ul>
+        </aside>
+
+        <section id="twitter-stream">
+          <h2>Recently Tweeted</h2>
+          <div class="tweet"></div>
+          <div id="twitter-follow">
+            <a href="http://twitter.com/phillapier">Follow me on twitter</a>
+          </div>
+        </section>
+      </div>
+      <footer>
+        <p>&copy; 2012 <a href="mailto:hello@phillapier.com">Phil LaPier</a></p>
+      </footer>
+    </div>
+  </body>
+
+  <script type="text/javascript" src="http://use.typekit.com/lhw2xhw.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js" type="text/javascript"></script>
+  <script language="javascript" src="/javascripts/jquery.tweet.js" type="text/javascript"></script>
+  <script type='text/javascript'>
+      $(document).ready(function(){
+          $(".tweet").tweet({
+              username: "phillapier",
+              join_text: "auto",
+              avatar_size: 32,
+              count: 3,
+              auto_join_text_default: "",
+              auto_join_text_ed: "",
+              auto_join_text_ing: "",
+              auto_join_text_reply: "",
+              auto_join_text_url: "",
+              loading_text: "loading tweets...",
+              template: "{text} {time}"
+          });
+      });
+  </script>
+
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-5098241-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+</html>
+

@@ -1,0 +1,986 @@
+@charset "UTF-8";
+/*
+ * HTML5 âœ° Boilerplate
+ *
+ * What follows is the result of much research on cross-browser styling. 
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+/* =============================================================================
+   HTML5 element display
+   ========================================================================== */
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {
+  display: block; }
+
+audio[controls], canvas, video {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1; }
+
+/* =============================================================================
+   Base
+   ========================================================================== */
+/*
+ * 1. Correct text resizing oddly in IE6/7 when body font-size is set using em units
+ *    http://clagnut.com/blog/348/#c790
+ * 2. Force vertical scrollbar in non-IE
+ * 3. Remove Android and iOS tap highlight color to prevent entire container being highlighted
+ *    www.yuiblog.com/blog/2010/10/01/quick-tip-customizing-the-mobile-safari-tap-highlight-color/
+ * 4. Prevent iOS text size adjust on device orientation change, without disabling user zoom
+ *    www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/
+ */
+html {
+  font-size: 100%;
+  /*overflow-y: scroll;*/
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.231; }
+
+body, button, input, select, textarea {
+  font-family: sans-serif;
+  color: #222; }
+
+/* 
+ * These selection declarations have to be separate
+ * No text-shadow: twitter.com/miketaylr/status/12228805301
+ * Also: hot pink!
+ */
+::-moz-selection {
+  background: #fe57a1;
+  color: #fff;
+  text-shadow: none; }
+
+::selection {
+  background: #fe57a1;
+  color: #fff;
+  text-shadow: none; }
+
+/* =============================================================================
+   Links
+   ========================================================================== */
+a {
+  color: #00e; }
+
+a:visited {
+  color: #551a8b; }
+
+a:focus {
+  outline: thin dotted; }
+
+/* Improve readability when focused and hovered in all browsers: people.opera.com/patrickl/experiments/keyboard/test */
+a:hover, a:active {
+  outline: 0; }
+
+/* =============================================================================
+   Typography
+   ========================================================================== */
+abbr[title] {
+  border-bottom: 1px dotted; }
+
+b, strong {
+  font-weight: bold; }
+
+blockquote {
+  margin: 1em 40px; }
+
+dfn {
+  font-style: italic; }
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0; }
+
+ins {
+  background: #ff9;
+  color: #000;
+  text-decoration: none; }
+
+mark {
+  background: #ff0;
+  color: #000;
+  font-style: italic;
+  font-weight: bold; }
+
+/* Redeclare monospace font family: en.wikipedia.org/wiki/User:Davidgothberg/Test59 */
+pre, code, kbd, samp {
+  font-family: monospace, monospace;
+  _font-family: 'courier new', monospace;
+  font-size: 1em; }
+
+/* Improve readability of pre-formatted text in all browsers */
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word; }
+
+q {
+  quotes: none; }
+
+q:before, q:after {
+  content: "";
+  content: none; }
+
+small {
+  font-size: 85%; }
+
+/* Position subscript and superscript content without affecting line-height: gist.github.com/413930 */
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sup {
+  top: -0.5em; }
+
+sub {
+  bottom: -0.25em; }
+
+/* =============================================================================
+   Lists
+   ========================================================================== */
+ul, ol {
+  margin: 1em 0;
+  padding: 0 0 0 40px; }
+
+dd {
+  margin: 0 0 0 40px; }
+
+nav ul, nav ol {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+
+/* =============================================================================
+   Embedded content
+   ========================================================================== */
+/*
+ * Improve image quality when scaled in IE7
+ * code.flickr.com/blog/2008/11/12/on-ui-quality-the-little-things-client-side-image-resizing/
+ */
+img {
+  border: 0;
+  -ms-interpolation-mode: bicubic; }
+
+/*
+ * Correct overflow displayed oddly in IE9 
+ */
+svg:not(:root) {
+  overflow: hidden; }
+
+/* =============================================================================
+   Figures
+   ========================================================================== */
+figure {
+  margin: 0; }
+
+/* =============================================================================
+   Forms
+   ========================================================================== */
+form {
+  margin: 0; }
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0; }
+
+/* 
+ * 1. Correct color not inheriting in IE6/7/8/9 
+ * 2. Correct alignment displayed oddly in IE6/7 
+ */
+legend {
+  border: 0;
+  *margin-left: -7px;
+  padding: 0; }
+
+/* Indicate that 'label' will shift focus to the associated form element */
+label {
+  cursor: pointer; }
+
+/*
+ * 1. Correct font-size not inheriting in all browsers
+ * 2. Remove margins in FF3/4 S5 Chrome
+ * 3. Define consistent vertical alignment display in all browsers
+ */
+button, input, select, textarea {
+  font-size: 100%;
+  margin: 0;
+  vertical-align: baseline;
+  *vertical-align: middle; }
+
+/*
+ * 1. Define line-height as normal to match FF3/4 (set using !important in the UA stylesheet)
+ * 2. Correct inner spacing displayed oddly in IE6/7
+ */
+button, input {
+  line-height: normal;
+  *overflow: visible; }
+
+/*
+ * 1. Display hand cursor for clickable form elements
+ * 2. Allow styling of clickable form elements in iOS
+ */
+button, input[type="button"], input[type="reset"], input[type="submit"] {
+  cursor: pointer;
+  -webkit-appearance: button; }
+
+/*
+ * Consistent box sizing and appearance
+ */
+input[type="checkbox"], input[type="radio"] {
+  box-sizing: border-box; }
+
+input[type="search"] {
+  -webkit-appearance: textfield;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box; }
+
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+/* 
+ * Remove inner padding and border in FF3/4
+ * www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/ 
+ */
+button::-moz-focus-inner, input::-moz-focus-inner {
+  border: 0;
+  padding: 0; }
+
+/* Remove default vertical scrollbar in IE6/7/8/9 */
+textarea {
+  overflow: auto;
+  vertical-align: top; }
+
+/* Colors for form validity */
+input:invalid, textarea:invalid {
+  background-color: #f0dddd; }
+
+/* =============================================================================
+   Tables
+   ========================================================================== */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* =============================================================================
+   Non-semantic helper classes
+   Please define your styles before this section.
+   ========================================================================== */
+/* Hide for both screenreaders and browsers:
+   css-discuss.incutio.com/wiki/Screenreader_Visibility */
+.hidden {
+  display: none;
+  visibility: hidden; }
+
+/* Hide only visually, but have it available for screenreaders: by Jon Neal.
+  www.webaim.org/techniques/css/invisiblecontent/  &  j.mp/visuallyhidden */
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px; }
+
+/* Extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard: drupal.org/node/897638 */
+.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto; }
+
+/* Hide visually and from screenreaders, but maintain layout */
+.invisible {
+  visibility: hidden; }
+
+/* Contain floats: nicolasgallagher.com/micro-clearfix-hack/ */
+.clearfix:before, div.wrapper:before, body:before, header:before, div.main-content:before, section#recent-work:before, .clearfix:after, div.wrapper:after, body:after, header:after, div.main-content:after, section#recent-work:after {
+  content: "";
+  display: table; }
+
+.clearfix:after, div.wrapper:after, body:after, header:after, div.main-content:after, section#recent-work:after {
+  clear: both; }
+
+.clearfix, div.wrapper, body, header, div.main-content, section#recent-work {
+  zoom: 1; }
+
+/* =============================================================================
+   PLACEHOLDER Media Queries for Responsive Design.
+   These override the primary ('mobile first') styles
+   Modify as content requires.
+   ========================================================================== */
+@media only screen and (min-width: 480px) {
+  /* Style adjustments for viewports 480px and over go here */ }
+@media only screen and (min-width: 768px) {
+  /* Style adjustments for viewports 768px and over go here */ }
+/* =============================================================================
+   Print styles.
+   Inlined to avoid required HTTP connection: www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+@media print {
+  * {
+    background: transparent !important;
+    color: black !important;
+    text-shadow: none !important;
+    filter: none !important;
+    -ms-filter: none !important; }
+
+  /* Black prints faster: sanbeiji.com/archives/953 */
+  a, a:visited {
+    color: #444 !important;
+    text-decoration: underline; }
+
+  a[href]:after {
+    content: " (" attr(href) ")"; }
+
+  abbr[title]:after {
+    content: " (" attr(title) ")"; }
+
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after {
+    content: ""; }
+
+  /* Don't show links for images, or javascript/internal links */
+  pre, blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid; }
+
+  thead {
+    display: table-header-group; }
+
+  /* css-discuss.incutio.com/wiki/Printing_Tables */
+  tr, img {
+    page-break-inside: avoid; }
+
+  img {
+    max-width: 100% !important; }
+
+  @page {
+    margin: 0.5cm; }
+
+  p, h2, h3 {
+    orphans: 3;
+    widows: 3; }
+
+  h2, h3 {
+    page-break-after: avoid; } }
+.force3d, header, div.main-content section#headline h1, section#recent-work article#one, section#recent-work article#two, section#recent-work article#three {
+  -webkit-backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  -webkit-transform-style: preserve-3d; }
+
+@-webkit-keyframes slidedown {
+  from {
+    -webkit-transform: translate3d(0, -65px, 0);
+    -moz-transform: translate3d(0, -65px, 0);
+    -ms-transform: translate3d(0, -65px, 0);
+    -o-transform: translate3d(0, -65px, 0);
+    transform: translate3d(0, -65px, 0); }
+
+  to {
+    -webkit-transform: translate3d(0, 0px, 0);
+    -moz-transform: translate3d(0, 0px, 0);
+    -ms-transform: translate3d(0, 0px, 0);
+    -o-transform: translate3d(0, 0px, 0);
+    transform: translate3d(0, 0px, 0); } }
+
+@-moz-keyframes slidedown {
+  from {
+    -webkit-transform: translate3d(0, -65px, 0);
+    -moz-transform: translate3d(0, -65px, 0);
+    -ms-transform: translate3d(0, -65px, 0);
+    -o-transform: translate3d(0, -65px, 0);
+    transform: translate3d(0, -65px, 0); }
+
+  to {
+    -webkit-transform: translate3d(0, 0px, 0);
+    -moz-transform: translate3d(0, 0px, 0);
+    -ms-transform: translate3d(0, 0px, 0);
+    -o-transform: translate3d(0, 0px, 0);
+    transform: translate3d(0, 0px, 0); } }
+
+@keyframes slidedown {
+  from {
+    -webkit-transform: translate3d(0, -65px, 0);
+    -moz-transform: translate3d(0, -65px, 0);
+    -ms-transform: translate3d(0, -65px, 0);
+    -o-transform: translate3d(0, -65px, 0);
+    transform: translate3d(0, -65px, 0); }
+
+  to {
+    -webkit-transform: translate3d(0, 0px, 0);
+    -moz-transform: translate3d(0, 0px, 0);
+    -ms-transform: translate3d(0, 0px, 0);
+    -o-transform: translate3d(0, 0px, 0);
+    transform: translate3d(0, 0px, 0); } }
+
+@-webkit-keyframes slideup {
+  from {
+    -webkit-transform: translate3d(0, 250px, 0);
+    -moz-transform: translate3d(0, 250px, 0);
+    -ms-transform: translate3d(0, 250px, 0);
+    -o-transform: translate3d(0, 250px, 0);
+    transform: translate3d(0, 250px, 0); }
+
+  to {
+    -webkit-transform: translate3d(0, 0px, 0);
+    -moz-transform: translate3d(0, 0px, 0);
+    -ms-transform: translate3d(0, 0px, 0);
+    -o-transform: translate3d(0, 0px, 0);
+    transform: translate3d(0, 0px, 0); } }
+
+@-moz-keyframes slideup {
+  from {
+    -webkit-transform: translate3d(0, 250px, 0);
+    -moz-transform: translate3d(0, 250px, 0);
+    -ms-transform: translate3d(0, 250px, 0);
+    -o-transform: translate3d(0, 250px, 0);
+    transform: translate3d(0, 250px, 0); }
+
+  to {
+    -webkit-transform: translate3d(0, 0px, 0);
+    -moz-transform: translate3d(0, 0px, 0);
+    -ms-transform: translate3d(0, 0px, 0);
+    -o-transform: translate3d(0, 0px, 0);
+    transform: translate3d(0, 0px, 0); } }
+
+@keyframes slideup {
+  from {
+    -webkit-transform: translate3d(0, 250px, 0);
+    -moz-transform: translate3d(0, 250px, 0);
+    -ms-transform: translate3d(0, 250px, 0);
+    -o-transform: translate3d(0, 250px, 0);
+    transform: translate3d(0, 250px, 0); }
+
+  to {
+    -webkit-transform: translate3d(0, 0px, 0);
+    -moz-transform: translate3d(0, 0px, 0);
+    -ms-transform: translate3d(0, 0px, 0);
+    -o-transform: translate3d(0, 0px, 0);
+    transform: translate3d(0, 0px, 0); } }
+
+.animation-fadein, div.main-content section#headline h1, aside#open-source-projects, section#twitter-stream, section#twitter-stream div#twitter-follow a, footer {
+  -webkit-animation-name: fadein;
+  -moz-animation-name: fadein;
+  animation-name: fadein;
+  -webkit-animation-duration: 3s;
+  -moz-animation-duration: 3s;
+  animation-duration: 3s;
+  -webkit-animation-timing-function: ease-in;
+  -moz-animation-timing-function: ease-in;
+  animation-timing-function: ease-in;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  animation-fill-mode: both; }
+
+@-webkit-keyframes fadein {
+  from {
+    opacity: 0; }
+
+  to {
+    opacity: 1; } }
+
+@-moz-keyframes fadein {
+  from {
+    opacity: 0; }
+
+  to {
+    opacity: 1; } }
+
+@keyframes fadein {
+  from {
+    opacity: 0; }
+
+  to {
+    opacity: 1; } }
+
+@-webkit-keyframes loading {
+  0% {
+    opacity: 0;
+    text-shadow: 0 0 3px rgba(255, 255, 255, 0.2); }
+
+  50% {
+    opacity: 1;
+    text-shadow: 0 0 3px rgba(255, 255, 255, 0.6); }
+
+  100% {
+    opacity: 0;
+    text-shadow: 0 0 3px rgba(255, 255, 255, 0.2); } }
+
+@-moz-keyframes loading {
+  0% {
+    opacity: 0;
+    text-shadow: 0 0 3px rgba(255, 255, 255, 0.2); }
+
+  50% {
+    opacity: 1;
+    text-shadow: 0 0 3px rgba(255, 255, 255, 0.6); }
+
+  100% {
+    opacity: 0;
+    text-shadow: 0 0 3px rgba(255, 255, 255, 0.2); } }
+
+@keyframes loading {
+  0% {
+    opacity: 0;
+    text-shadow: 0 0 3px rgba(255, 255, 255, 0.2); }
+
+  50% {
+    opacity: 1;
+    text-shadow: 0 0 3px rgba(255, 255, 255, 0.6); }
+
+  100% {
+    opacity: 0;
+    text-shadow: 0 0 3px rgba(255, 255, 255, 0.2); } }
+
+@-webkit-keyframes bling {
+  0% {
+    opacity: 0;
+    text-shadow: 0 0 3px rgba(255, 255, 255, 0); }
+
+  50% {
+    opacity: 1;
+    color: white;
+    text-shadow: 0 0 3px rgba(255, 255, 255, 0.7); }
+
+  100% {
+    text-shadow: none; } }
+
+@-moz-keyframes bling {
+  0% {
+    opacity: 0;
+    text-shadow: 0 0 3px rgba(255, 255, 255, 0); }
+
+  50% {
+    opacity: 1;
+    color: white;
+    text-shadow: 0 0 3px rgba(255, 255, 255, 0.7); }
+
+  100% {
+    text-shadow: none; } }
+
+@keyframes bling {
+  0% {
+    opacity: 0;
+    text-shadow: 0 0 3px rgba(255, 255, 255, 0); }
+
+  50% {
+    opacity: 1;
+    color: white;
+    text-shadow: 0 0 3px rgba(255, 255, 255, 0.7); }
+
+  100% {
+    text-shadow: none; } }
+
+body, html {
+  background: #262626; }
+
+div.wrapper {
+  margin: 0 auto;
+  width: 800px; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "proxima-nova-1", "proxima-nova-2", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 100; }
+
+a, a:link, a:active, a:visited {
+  color: #b8d2a5;
+  text-decoration: none; }
+
+a:hover {
+  color: #9fcb59;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.75);
+  -webkit-transition: all 0.15s ease-out 0;
+  -moz-transition: all 0.15s ease-out 0;
+  -ms-transition: all 0.15s ease-out 0;
+  -o-transition: all 0.15s ease-out 0;
+  transition: all 0.15s ease-out 0; }
+
+::selection {
+  background: #d5e255; }
+
+::-moz-selection {
+  background: #d5e255; }
+
+body {
+  color: #ececec;
+  font-family: "museo-slab-1", "museo-slab-2", Georgia, Palatino, "Palatino Linotype", Times, serif;
+  margin-bottom: 40px;
+  margin: 0 auto;
+  text-rendering: optimizeLegibility; }
+
+header {
+  -webkit-animation-name: slidedown;
+  -moz-animation-name: slidedown;
+  animation-name: slidedown;
+  -webkit-animation-delay: 2.6s;
+  -moz-animation-delay: 2.6s;
+  animation-delay: 2.6s;
+  -webkit-animation-duration: 0.8s;
+  -moz-animation-duration: 0.8s;
+  animation-duration: 0.8s;
+  -webkit-animation-timing-function: ease-out;
+  -moz-animation-timing-function: ease-out;
+  animation-timing-function: ease-out;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  animation-fill-mode: both;
+  background: #202020;
+  background: rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.03), inset 0 -1px 0 0 rgba(0, 0, 0, 0.15);
+  box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.03), inset 0 -1px 0 0 rgba(0, 0, 0, 0.15);
+  margin-bottom: 50px;
+  padding-top: 4px; }
+  header h2#tagline {
+    color: rgba(255, 255, 255, 0.2);
+    float: left;
+    font-family: "museo-slab-1", "museo-slab-2", Georgia, Palatino, "Palatino Linotype", Times, serif;
+    font-size: 14px;
+    font-weight: 300;
+    margin: 10px 40px 10px 0;
+    position: relative;
+    text-transform: uppercase;
+    top: 10px;
+    width: 520px; }
+  header section#social-media {
+    float: left;
+    width: 240px; }
+    header section#social-media > ul {
+      float: right;
+      margin: 12px 0 8px 0;
+      padding: 0; }
+      header section#social-media > ul > li {
+        display: inline-block;
+        vertical-align: baseline;
+        zoom: 1;
+        *display: inline;
+        *vertical-align: auto;
+        margin: 0 6px; }
+        header section#social-media > ul > li:last-child {
+          margin-right: 0; }
+        header section#social-media > ul > li > div {
+          -webkit-border-radius: 32px;
+          border-radius: 32px;
+          display: inline-block;
+          float: left;
+          -webkit-transition: all 0.15s linear 0;
+          -moz-transition: all 0.15s linear 0;
+          -ms-transition: all 0.15s linear 0;
+          -o-transition: all 0.15s linear 0;
+          transition: all 0.15s linear 0;
+          width: auto; }
+          header section#social-media > ul > li > div:hover {
+            background: #b8d2a5;
+            -webkit-box-shadow: inset 0 0 0 1px #3f3f3f, 0 0 0 3px #4c4c4c;
+            box-shadow: inset 0 0 0 1px #3f3f3f, 0 0 0 3px #4c4c4c; }
+          header section#social-media > ul > li > div > a {
+            background-image: url("/images/social-icons.png");
+            background-repeat: no-repeat;
+            height: 32px;
+            display: inline-block;
+            vertical-align: baseline;
+            zoom: 1;
+            *display: inline;
+            *vertical-align: auto;
+            text-indent: -9999px;
+            width: 32px; }
+            header section#social-media > ul > li > div > a:hover {
+              -webkit-border-radius: 32px;
+              border-radius: 32px;
+              -webkit-box-shadow: inset 0 0 0 1px #3f3f3f, 0 0 0 3px #4c4c4c;
+              box-shadow: inset 0 0 0 1px #3f3f3f, 0 0 0 3px #4c4c4c;
+              -webkit-transition: box-shadow 0s ease-in;
+              -moz-transition: box-shadow 0s ease-in;
+              -ms-transition: box-shadow 0s ease-in;
+              -o-transition: box-shadow 0s ease-in;
+              transition: box-shadow 0s ease-in; }
+        header section#social-media > ul > li#twitter > div:hover {
+          background-color: #42d0ff; }
+        header section#social-media > ul > li#twitter a {
+          background-position: 0 0; }
+        header section#social-media > ul > li#dribbble > div:hover {
+          background-color: #ea4c88; }
+        header section#social-media > ul > li#dribbble a {
+          background-position: -33px 0; }
+        header section#social-media > ul > li#github > div:hover {
+          background-color: #efefef; }
+        header section#social-media > ul > li#github a {
+          background-position: -66px 0; }
+        header section#social-media > ul > li#tumblr > div:hover {
+          background-color: #2291ac; }
+        header section#social-media > ul > li#tumblr a {
+          background-position: -99px 0; }
+
+div.main-content {
+  color: #ececec;
+  font-family: "museo-slab-1", "museo-slab-2", Georgia, Palatino, "Palatino Linotype", Times, serif;
+  margin: 0 auto;
+  text-rendering: optimizeLegibility;
+  width: 800px; }
+  div.main-content section#headline {
+    margin: 20px 0 50px;
+    width: 100%; }
+    div.main-content section#headline h1 {
+      -webkit-font-smoothing: antialiased;
+      -webkit-animation-duration: 1s;
+      -moz-animation-duration: 1s;
+      animation-duration: 1s;
+      font-size: 41px;
+      font-weight: 300;
+      line-height: 1em;
+      margin: 0; }
+
+section#recent-work {
+  background-image: -webkit-radial-gradient(50% 100%, ellipse cover, rgba(255, 255, 255, 0.045) 0%, rgba(255, 255, 255, 0.015) 55%, transparent 100%);
+  background-image: -moz-radial-gradient(50% 100%, ellipse cover, rgba(255, 255, 255, 0.045) 0%, rgba(255, 255, 255, 0.015) 55%, transparent 100%);
+  background-image: -ms-radial-gradient(50% 100%, ellipse cover, rgba(255, 255, 255, 0.045) 0%, rgba(255, 255, 255, 0.015) 55%, transparent 100%);
+  background-image: -o-radial-gradient(50% 100%, ellipse cover, rgba(255, 255, 255, 0.045) 0%, rgba(255, 255, 255, 0.015) 55%, transparent 100%);
+  background-image: radial-gradient(50% 100%, ellipse cover, rgba(255, 255, 255, 0.045) 0%, rgba(255, 255, 255, 0.015) 55%, transparent 100%);
+  background-repeat: no-repeat;
+  padding-bottom: 55px;
+  width: 100%; }
+  section#recent-work article#one, section#recent-work article#two, section#recent-work article#three {
+    -webkit-animation-name: slideup, fadein;
+    -moz-animation-name: slideup, fadein;
+    animation-name: slideup, fadein;
+    -webkit-animation-duration: 1s, 1.2s;
+    -moz-animation-duration: 1s, 1.2s;
+    animation-duration: 1s, 1.2s;
+    -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275), ease-out;
+    -moz-animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275), ease-out;
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275), ease-out;
+    -webkit-animation-fill-mode: both;
+    -moz-animation-fill-mode: both;
+    animation-fill-mode: both;
+    background: #333333;
+    border: 10px solid #333333;
+    -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.45);
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.45);
+    float: left;
+    height: 165px;
+    width: 220px;
+    z-index: 0; }
+    section#recent-work article#one > img, section#recent-work article#two > img, section#recent-work article#three > img {
+      margin: 0; }
+  section#recent-work article#one {
+    -webkit-animation-delay: 0.5s;
+    -moz-animation-delay: 0.5s;
+    animation-delay: 0.5s; }
+  section#recent-work article#two {
+    -webkit-animation-delay: 0.75s;
+    -moz-animation-delay: 0.75s;
+    animation-delay: 0.75s; }
+  section#recent-work article#three {
+    -webkit-animation-delay: 1s;
+    -moz-animation-delay: 1s;
+    animation-delay: 1s; }
+  section#recent-work article#two {
+    margin: 0 40px; }
+
+section#recent-work + div.wrapper {
+  background: #262626;
+  -webkit-box-shadow: inset 0 1px 0 #373737, 0 -1px 0 #191919;
+  box-shadow: inset 0 1px 0 #373737, 0 -1px 0 #191919;
+  min-height: 300px;
+  padding-top: 30px;
+  position: relative;
+  z-index: 10; }
+
+aside#open-source-projects > h2,
+section#twitter-stream > h2 {
+  font-size: 22.652px; }
+
+aside#open-source-projects {
+  -webkit-animation-delay: 1.5s;
+  -moz-animation-delay: 1.5s;
+  animation-delay: 1.5s;
+  float: left;
+  margin-right: 40px;
+  width: 240px; }
+  aside#open-source-projects > ul {
+    padding: 0; }
+    aside#open-source-projects > ul > li {
+      -webkit-font-smoothing: antialiased;
+      font-size: 14px;
+      font-weight: 700;
+      list-style-type: none;
+      line-height: 150%;
+      margin: 15px 0; }
+      aside#open-source-projects > ul > li a {
+        color: #727272; }
+        aside#open-source-projects > ul > li a:hover {
+          color: #a5a5a5; }
+
+section#twitter-stream {
+  -webkit-animation-delay: 1.5s;
+  -moz-animation-delay: 1.5s;
+  animation-delay: 1.5s;
+  float: left;
+  min-height: 200px;
+  width: 520px; }
+  section#twitter-stream div.tweet {
+    min-height: 200px; }
+    section#twitter-stream div.tweet p.loading {
+      -webkit-animation-name: loading;
+      -moz-animation-name: loading;
+      animation-name: loading;
+      -webkit-animation-duration: 3s;
+      -moz-animation-duration: 3s;
+      animation-duration: 3s;
+      -webkit-animation-timing-function: ease-in-out;
+      -moz-animation-timing-function: ease-in-out;
+      animation-timing-function: ease-in-out;
+      -webkit-animation-iteration-count: infinite;
+      -moz-animation-iteration-count: infinite;
+      animation-iteration-count: infinite;
+      color: #ccc;
+      -webkit-transition: all 0.15s ease-out 0;
+      -moz-transition: all 0.15s ease-out 0;
+      -ms-transition: all 0.15s ease-out 0;
+      -o-transition: all 0.15s ease-out 0;
+      transition: all 0.15s ease-out 0; }
+    section#twitter-stream div.tweet ul.tweet_list {
+      margin: 0;
+      padding: 0; }
+      section#twitter-stream div.tweet ul.tweet_list > li {
+        -webkit-font-smoothing: antialiased;
+        font-size: 14px;
+        line-height: 150%;
+        list-style-type: none;
+        margin: 20px 0; }
+        section#twitter-stream div.tweet ul.tweet_list > li span.tweet_time {
+          display: block;
+          font-size: 11px; }
+          section#twitter-stream div.tweet ul.tweet_list > li span.tweet_time a {
+            color: #727272; }
+            section#twitter-stream div.tweet ul.tweet_list > li span.tweet_time a:hover {
+              background: rgba(255, 255, 255, 0.05);
+              -webkit-border-radius: 3px;
+              border-radius: 3px;
+              -webkit-box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.05);
+              box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.05);
+              color: #a5a5a5;
+              text-shadow: none; }
+  section#twitter-stream div#twitter-follow {
+    -webkit-font-smoothing: antialiased;
+    background-image: url("/images/social-icons.png");
+    background-position: -132px 0;
+    background-repeat: no-repeat;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 150%;
+    padding: 4px 0 4px 42px; }
+    section#twitter-stream div#twitter-follow a {
+      -webkit-animation-name: bling;
+      -moz-animation-name: bling;
+      animation-name: bling;
+      -webkit-animation-delay: 3.5s;
+      -moz-animation-delay: 3.5s;
+      animation-delay: 3.5s;
+      color: #727272;
+      -webkit-transition: all 0.15s ease-out 0;
+      -moz-transition: all 0.15s ease-out 0;
+      -ms-transition: all 0.15s ease-out 0;
+      -o-transition: all 0.15s ease-out 0;
+      transition: all 0.15s ease-out 0; }
+      section#twitter-stream div#twitter-follow a:hover {
+        -webkit-text-fill-color: #a5a5a5;
+        color: #a5a5a5; }
+
+footer {
+  -webkit-animation-delay: 6s;
+  -moz-animation-delay: 6s;
+  animation-delay: 6s;
+  -webkit-animation-duration: 1s;
+  -moz-animation-duration: 1s;
+  animation-duration: 1s;
+  bottom: 32px;
+  float: left;
+  margin-right: 40px;
+  position: relative;
+  width: 240px;
+  z-index: 20; }
+  footer p {
+    color: #3f3f3f;
+    font-size: 11px;
+    line-height: 150%; }
+    footer p a, footer p a:link, footer p a:visited, footer p a:active {
+      color: #3f3f3f; }
+      footer p a:hover, footer p a:link:hover, footer p a:visited:hover, footer p a:active:hover {
+        background: rgba(255, 255, 255, 0.05);
+        -webkit-border-radius: 3px;
+        border-radius: 3px;
+        -webkit-box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.05);
+        box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.05);
+        color: #727272;
+        text-shadow: none; }
+
+body.portfolio header {
+  -webkit-animation: none;
+  -moz-animation: none;
+  animation: none; }
+
+div.main-content.portfolio {
+  padding-top: 20px; }
+  div.main-content.portfolio figure {
+    position: relative; }
+    div.main-content.portfolio figure figcaption {
+      width: 240px;
+      position: absolute;
+      left: -280px;
+      top: 0; }
+      div.main-content.portfolio figure figcaption header {
+        background: none;
+        font-family: "proxima-nova-1", "proxima-nova-2", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 41px;
+        margin-bottom: 0.6em;
+        -webkit-box-shadow: none;
+        box-shadow: none; }
+      div.main-content.portfolio figure figcaption p {
+        color: #a5a5a5;
+        line-height: 1.6em;
+        margin-top: 0; }
+    div.main-content.portfolio figure div.image-wrapper {
+      background: #202020;
+      padding: 10px;
+      border: 1px solid #111111;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      -webkit-box-shadow: 1px 1px 0 rgba(255, 255, 255, 0.1);
+      box-shadow: 1px 1px 0 rgba(255, 255, 255, 0.1);
+      border-radius: 5px;
+      margin-bottom: 140px; }
+      div.main-content.portfolio figure div.image-wrapper div.image {
+        border: 1px solid #111111;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        height: 530px;
+        overflow: hidden;
+        width: 778px; }
+
+img.iora-overlay {
+  top: -40%;
+  position: relative;
+  left: -30%; }
+
+@media only screen and (-moz-min-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
+  body.portfolio img {
+    width: 100%; }
+  body.portfolio img.iora-overlay {
+    position: static; } }
