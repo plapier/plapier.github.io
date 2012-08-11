@@ -95,7 +95,7 @@ header {
     font-family: $body-font;
     font-size: $base-font-size;
     font-weight: 300;
-    margin: 10px $gutter 10px 0;
+    margin: 10px $gw-gutter 10px 0;
     position: relative;
     text-transform: uppercase;
     top: 10px;
@@ -188,7 +188,7 @@ div.main-content {
       @extend .animation-fadein;
       @extend .force3d;
       @include animation-duration(1.0s);
-      font-size: ceil(golden-ratio($base-font-size, 2)) + 4px; // 29px
+      font-size: $base-font-size-headline;
       font-weight: 300;
       line-height: 1em;
       margin: 0;
@@ -235,7 +235,7 @@ section#recent-work {
   }
 
   article#two {
-    margin: 0 $gutter;
+    margin: 0 $gw-gutter;
   }
 }
 
@@ -264,7 +264,7 @@ aside#open-source-projects {
   @extend .animation-fadein;
   @include animation-delay(1.5s);
   float: left;
-  margin-right: $gutter;
+  margin-right: $gw-gutter;
   width: grid-width(2);
 
   > h2 {
@@ -330,7 +330,7 @@ section#twitter-stream {
         font-size: $base-font-size;
         line-height: 150%;
         list-style-type: none;
-        margin: $gutter/2 0;
+        margin: $gw-gutter/2 0;
 
         span.tweet_time {
           display: block;
@@ -388,7 +388,7 @@ footer {
   @include animation-duration(1.0s);
   bottom: 32px;
   float: left;
-  margin-right: $gutter;
+  margin-right: $gw-gutter;
   position: relative;
   width: grid-width(2);
   z-index: 20;

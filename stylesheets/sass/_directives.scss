@@ -2,14 +2,11 @@
 // Assitional Sass Variables, Mixins, Directives
 //************************************************************************//
 
-$column: 100px;       // Column Width
-$gutter: 40px;        // Gutter Width
-
-@function grid-width($n) {
-  @return $n * $column + ($n - 1) * $gutter;
-}
+$gw-column: 100px;       // Column Width
+$gw-gutter: 40px;        // Gutter Width
 
 $base-font-size: 14px;
+$base-font-size-headline: ceil(golden-ratio($base-font-size, 2)) + 4px; // 29px
 
 $title-font: "proxima-nova-1","proxima-nova-2", "Helvetica Neue", Helvetica, Arial, sans-serif;
 $body-font: "museo-slab-1","museo-slab-2", Georgia, Palatino, "Palatino Linotype", Times, serif;
@@ -19,3 +16,7 @@ $link: #B8D2A5;
 $hover: #9FCB59;
 $link-alt: #727272;
 $hover-alt: #a5a5a5;
+
+
+$base-background-color: #202020;
+$base-border-color: #111;

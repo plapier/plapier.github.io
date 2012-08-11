@@ -1,0 +1,77 @@
+body.portfolio {
+  header {
+    @include animation(none);
+  }
+}
+
+div.main-content.portfolio {
+  padding-top: 20px;
+
+  figure {
+    position: relative;
+
+    figcaption {
+      $width: grid-width(2);
+      width: $width;
+      position: absolute;
+      left: -($width + $gw-gutter);
+      top: 0;
+
+      header {
+        background: none;
+        font-family: $title-font;
+        font-size: $base-font-size-headline;
+        margin-bottom: 0.6em;
+        @include box-shadow(none);
+      }
+      p {
+        color: $hover-alt;
+        line-height: 1.6em;
+        margin-top: 0;
+      }
+    }
+
+    div.image-wrapper {
+      background: $base-background-color;
+      padding: 10px;
+      border: 1px solid $base-border-color;
+      @include box-sizing(border-box);
+      @include box-shadow(1px 1px 0 hsla(0, 0%, 100%, 0.1));
+      border-radius: 5px;
+      margin-bottom: 140px;
+
+      div.image {
+        border: 1px solid $base-border-color;
+        @include box-sizing(border-box);
+        height: 530px;
+        overflow: hidden;
+        width: 778px;
+      }
+    }
+  }
+}
+
+//************************************************************************//
+// Portfolio Image Positioning
+//************************************************************************//
+img.iora-overlay {
+  top: -40%;
+  position: relative;
+  left: -30%;
+}
+
+//Scale down images on Retina displays so they dont look like shit
+@media only screen and (-moz-min-device-pixel-ratio: 2),
+       only screen and (-o-min-device-pixel-ratio: 2/1),
+       only screen and (-webkit-min-device-pixel-ratio: 2),
+       only screen and (min-device-pixel-ratio: 2) {
+
+  body.portfolio {
+   img {
+     width: 100%;
+   }
+    img.iora-overlay {
+      position: static;
+    }
+  }
+}

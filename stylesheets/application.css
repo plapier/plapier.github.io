@@ -928,3 +928,59 @@ footer {
         box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.05);
         color: #727272;
         text-shadow: none; }
+
+body.portfolio header {
+  -webkit-animation: none;
+  -moz-animation: none;
+  animation: none; }
+
+div.main-content.portfolio {
+  padding-top: 20px; }
+  div.main-content.portfolio figure {
+    position: relative; }
+    div.main-content.portfolio figure figcaption {
+      width: 240px;
+      position: absolute;
+      left: -280px;
+      top: 0; }
+      div.main-content.portfolio figure figcaption header {
+        background: none;
+        font-family: "proxima-nova-1", "proxima-nova-2", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 41px;
+        margin-bottom: 0.6em;
+        -webkit-box-shadow: none;
+        box-shadow: none; }
+      div.main-content.portfolio figure figcaption p {
+        color: #a5a5a5;
+        line-height: 1.6em;
+        margin-top: 0; }
+    div.main-content.portfolio figure div.image-wrapper {
+      background: #202020;
+      padding: 10px;
+      border: 1px solid #111111;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      -webkit-box-shadow: 1px 1px 0 rgba(255, 255, 255, 0.1);
+      box-shadow: 1px 1px 0 rgba(255, 255, 255, 0.1);
+      border-radius: 5px;
+      margin-bottom: 140px; }
+      div.main-content.portfolio figure div.image-wrapper div.image {
+        border: 1px solid #111111;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        height: 530px;
+        overflow: hidden;
+        width: 778px; }
+
+img.iora-overlay {
+  top: -40%;
+  position: relative;
+  left: -30%; }
+
+@media only screen and (-moz-min-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
+  body.portfolio img {
+    width: 100%; }
+  body.portfolio img.iora-overlay {
+    position: static; } }
