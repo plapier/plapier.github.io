@@ -732,7 +732,7 @@ div.main-content {
   text-rendering: optimizeLegibility;
   width: 800px; }
   div.main-content section#headline {
-    margin: 20px 0 50px;
+    margin: 20px 0 55px;
     width: 100%; }
     div.main-content section#headline h1 {
       -webkit-font-smoothing: antialiased;
