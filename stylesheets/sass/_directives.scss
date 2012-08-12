@@ -8,8 +8,8 @@ $gw-gutter: 40px;        // Gutter Width
 $base-font-size: 14px;
 $base-font-size-headline: ceil(golden-ratio($base-font-size, 2)) + 4px; // 29px
 
-$title-font: "proxima-nova-1","proxima-nova-2", "Helvetica Neue", Helvetica, Arial, sans-serif;
-$body-font: "museo-slab-1","museo-slab-2", Georgia, Palatino, "Palatino Linotype", Times, serif;
+$title-font: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$body-font: "museo-slab", Georgia, Palatino, "Palatino Linotype", Times, serif;
 
 $primary: #ECECEC;
 $link: #B8D2A5;

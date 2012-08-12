@@ -594,7 +594,7 @@ div.wrapper {
   width: 800px; }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "proxima-nova-1", "proxima-nova-2", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 100; }
 
 a, a:link, a:active, a:visited {
@@ -618,7 +618,7 @@ a:hover {
 
 body {
   color: #ececec;
-  font-family: "museo-slab-1", "museo-slab-2", Georgia, Palatino, "Palatino Linotype", Times, serif;
+  font-family: "museo-slab", Georgia, Palatino, "Palatino Linotype", Times, serif;
   margin-bottom: 40px;
   margin: 0 auto;
   text-rendering: optimizeLegibility; }
@@ -648,7 +648,7 @@ header {
   header h2#tagline {
     color: rgba(255, 255, 255, 0.2);
     float: left;
-    font-family: "museo-slab-1", "museo-slab-2", Georgia, Palatino, "Palatino Linotype", Times, serif;
+    font-family: "museo-slab", Georgia, Palatino, "Palatino Linotype", Times, serif;
     font-size: 14px;
     font-weight: 300;
     margin: 10px 40px 10px 0;
@@ -727,7 +727,7 @@ header {
 
 div.main-content {
   color: #ececec;
-  font-family: "museo-slab-1", "museo-slab-2", Georgia, Palatino, "Palatino Linotype", Times, serif;
+  font-family: "museo-slab", Georgia, Palatino, "Palatino Linotype", Times, serif;
   margin: 0 auto;
   text-rendering: optimizeLegibility;
   width: 800px; }
@@ -945,7 +945,7 @@ div.main-content.portfolio {
       top: 0; }
       div.main-content.portfolio figure figcaption header {
         background: none;
-        font-family: "proxima-nova-1", "proxima-nova-2", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
         font-size: 41px;
         margin-bottom: 0.6em;
         -webkit-box-shadow: none;
