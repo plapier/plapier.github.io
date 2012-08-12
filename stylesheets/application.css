@@ -473,7 +473,7 @@ table {
     -o-transform: translate3d(0, 0px, 0);
     transform: translate3d(0, 0px, 0); } }
 
-.animation-fadein, div.main-content section#headline h1, aside#open-source-projects, section#twitter-stream, section#twitter-stream div#twitter-follow a, footer {
+.animation-fadein, div.main-content section#headline h1, aside#sidebar, section#twitter-stream, section#twitter-stream div#twitter-follow a, footer {
   -webkit-animation-name: fadein;
   -moz-animation-name: fadein;
   animation-name: fadein;
@@ -598,11 +598,11 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 100; }
 
 a, a:link, a:active, a:visited {
-  color: #b8d2a5;
+  color: #fe9979;
   text-decoration: none; }
 
 a:hover {
-  color: #9fcb59;
+  color: #ff8158;
   text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.75);
   -webkit-transition: all 0.15s ease-out 0;
   -moz-transition: all 0.15s ease-out 0;
@@ -684,7 +684,7 @@ header {
           transition: all 0.15s linear 0;
           width: auto; }
           header section#social-media > ul > li > div:hover {
-            background: #b8d2a5;
+            background: #fe9979;
             -webkit-box-shadow: inset 0 0 0 1px #3f3f3f, 0 0 0 3px #4c4c4c;
             box-shadow: inset 0 0 0 1px #3f3f3f, 0 0 0 3px #4c4c4c; }
           header section#social-media > ul > li > div > a {
@@ -800,30 +800,33 @@ section#recent-work + div.wrapper {
   position: relative;
   z-index: 10; }
 
-aside#open-source-projects > h2,
+aside#sidebar > h2,
 section#twitter-stream > h2 {
   font-size: 22.652px; }
 
-aside#open-source-projects {
+aside#sidebar {
   -webkit-animation-delay: 1.5s;
   -moz-animation-delay: 1.5s;
   animation-delay: 1.5s;
   float: left;
   margin-right: 40px;
   width: 240px; }
-  aside#open-source-projects > ul {
+  aside#sidebar p {
+    font-size: 14px;
+    line-height: 150%; }
+  aside#sidebar > ul {
     padding: 0; }
-    aside#open-source-projects > ul > li {
+    aside#sidebar > ul > li {
       -webkit-font-smoothing: antialiased;
       font-size: 14px;
       font-weight: 700;
       list-style-type: none;
       line-height: 150%;
       margin: 15px 0; }
-      aside#open-source-projects > ul > li a {
-        color: #727272; }
-        aside#open-source-projects > ul > li a:hover {
-          color: #a5a5a5; }
+      aside#sidebar > ul > li a {
+        color: #fe9979; }
+        aside#sidebar > ul > li a:hover {
+          color: #ff8158; }
 
 section#twitter-stream {
   -webkit-animation-delay: 1.5s;
@@ -861,7 +864,11 @@ section#twitter-stream {
         font-size: 14px;
         line-height: 150%;
         list-style-type: none;
-        margin: 20px 0; }
+        margin: 1em 0; }
+        section#twitter-stream div.tweet ul.tweet_list > li span.tweet_text a {
+          color: white; }
+          section#twitter-stream div.tweet ul.tweet_list > li span.tweet_text a:hover {
+            color: #a5a5a5; }
         section#twitter-stream div.tweet ul.tweet_list > li span.tweet_time {
           display: block;
           font-size: 11px; }

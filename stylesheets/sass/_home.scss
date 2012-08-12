@@ -250,22 +250,27 @@ section#recent-work + div.wrapper {
 
 
 //************************************************************************//
-// Open Source Projects Sidebar
+// About Me Sidebar
 //************************************************************************//
 
-aside#open-source-projects,
+aside#sidebar,
 section#twitter-stream {
   > h2 {
     font-size: golden-ratio($base-font-size, 1);
   }
 }
 
-aside#open-source-projects {
+aside#sidebar {
   @extend .animation-fadein;
   @include animation-delay(1.5s);
   float: left;
   margin-right: $gw-gutter;
   width: grid-width(2);
+
+  p {
+    font-size: $base-font-size;
+    line-height: 150%;
+  }
 
   > h2 {
     // See Above
@@ -283,10 +288,10 @@ aside#open-source-projects {
       margin: 15px 0;
 
       a {
-        color: $link-alt;
+        color: $link;
 
         &:hover {
-          color: $hover-alt;
+          color: $hover;
         }
       }
     }
@@ -330,7 +335,17 @@ section#twitter-stream {
         font-size: $base-font-size;
         line-height: 150%;
         list-style-type: none;
-        margin: $gw-gutter/2 0;
+        margin: 1em 0;
+
+        span.tweet_text {
+          a {
+            color: white;
+
+            &:hover {
+              color: $hover-alt;
+            }
+          }
+        }
 
         span.tweet_time {
           display: block;
