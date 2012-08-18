@@ -940,6 +940,16 @@ body.portfolio header {
   -webkit-animation: none;
   -moz-animation: none;
   animation: none; }
+  body.portfolio header a.home {
+    color: rgba(255, 255, 255, 0.2);
+    -webkit-transition: all 0.15s ease-out 0;
+    -moz-transition: all 0.15s ease-out 0;
+    -ms-transition: all 0.15s ease-out 0;
+    -o-transition: all 0.15s ease-out 0;
+    transition: all 0.15s ease-out 0; }
+    body.portfolio header a.home:hover {
+      text-shadow: none;
+      color: rgba(255, 255, 255, 0.3); }
 
 div.main-content.portfolio {
   padding-top: 20px; }
@@ -1006,9 +1016,9 @@ img.iora-overlay {
     div.main-content.portfolio figure figcaption header {
       float: left;
       line-height: 1em;
+      padding-top: 0;
       vertical-align: top;
-      width: 240px;
-      padding-top: 0; }
+      width: 240px; }
     div.main-content.portfolio figure figcaption div.description {
       float: left;
       width: 560px; } }
