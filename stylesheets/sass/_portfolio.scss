@@ -75,3 +75,28 @@ img.iora-overlay {
     }
   }
 }
+
+@media only screen and (max-width : 1380px) {
+  div.main-content.portfolio figure {
+    figcaption {
+      @include clearfix;
+      left: 0;
+      margin-bottom: 3em;
+      position: static;
+      width: 100%;
+
+      header {
+        float: left;
+        line-height: 1em;
+        padding-top: 0;
+        vertical-align: top;
+        width: grid-width(2);
+      }
+
+      div.description {
+        float: left;
+        width: grid-width(4) + $gw-gutter;
+      }
+    }
+  }
+}

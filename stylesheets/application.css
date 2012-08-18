@@ -986,8 +986,29 @@ img.iora-overlay {
   position: relative;
   left: -30%; }
 
-@media only screen and (-moz-min-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
+@media only screen and (-moz-min-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
   body.portfolio img {
     width: 100%; }
   body.portfolio img.iora-overlay {
     position: static; } }
+@media only screen and (max-width: 1380px) {
+  div.main-content.portfolio figure figcaption {
+    zoom: 1;
+    left: 0;
+    margin-bottom: 3em;
+    position: static;
+    width: 100%; }
+    div.main-content.portfolio figure figcaption:before, div.main-content.portfolio figure figcaption:after {
+      content: "";
+      display: table; }
+    div.main-content.portfolio figure figcaption:after {
+      clear: both; }
+    div.main-content.portfolio figure figcaption header {
+      float: left;
+      line-height: 1em;
+      vertical-align: top;
+      width: 240px;
+      padding-top: 0; }
+    div.main-content.portfolio figure figcaption div.description {
+      float: left;
+      width: 560px; } }
