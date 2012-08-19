@@ -656,6 +656,16 @@ header {
     text-transform: uppercase;
     top: 10px;
     width: 520px; }
+  header a.home {
+    color: rgba(255, 255, 255, 0.2);
+    -webkit-transition: all 0.15s ease-out 0;
+    -moz-transition: all 0.15s ease-out 0;
+    -ms-transition: all 0.15s ease-out 0;
+    -o-transition: all 0.15s ease-out 0;
+    transition: all 0.15s ease-out 0; }
+    header a.home:hover {
+      text-shadow: none;
+      color: rgba(255, 255, 255, 0.3); }
   header section#social-media {
     float: left;
     width: 240px; }
@@ -940,16 +950,6 @@ body.portfolio header {
   -webkit-animation: none;
   -moz-animation: none;
   animation: none; }
-  body.portfolio header a.home {
-    color: rgba(255, 255, 255, 0.2);
-    -webkit-transition: all 0.15s ease-out 0;
-    -moz-transition: all 0.15s ease-out 0;
-    -ms-transition: all 0.15s ease-out 0;
-    -o-transition: all 0.15s ease-out 0;
-    transition: all 0.15s ease-out 0; }
-    body.portfolio header a.home:hover {
-      text-shadow: none;
-      color: rgba(255, 255, 255, 0.3); }
 
 div.main-content.portfolio {
   padding-top: 20px; }

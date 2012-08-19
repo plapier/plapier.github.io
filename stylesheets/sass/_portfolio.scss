@@ -1,16 +1,6 @@
 body.portfolio {
   header {
     @include animation(none);
-
-    a.home {
-      color: hsla(100%, 100%, 100%, 0.2);
-      @include transition;
-
-      &:hover {
-        text-shadow: none;
-        color: hsla(0, 0%, 100%, 0.3);
-      }
-    }
   }
 }
 

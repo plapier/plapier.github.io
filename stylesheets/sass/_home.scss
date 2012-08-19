@@ -102,6 +102,16 @@ header {
     width: grid-width(4);
   }
 
+  a.home {
+    color: hsla(100%, 100%, 100%, 0.2);
+    @include transition;
+
+    &:hover {
+      text-shadow: none;
+      color: hsla(0, 0%, 100%, 0.3);
+    }
+  }
+
   section#social-media {
     float: left;
     width: grid-width(2);
