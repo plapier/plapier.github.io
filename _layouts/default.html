@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>Phil LaPier / UI Engineer / Product Designer</title>
     <meta name="description" content="Phil LaPier is a Product & Interface Designer in Boston, MA.">
-    <meta name="keywords" content="web design, web development, product design, interface design, ruby, rails, boston" >
+    <meta name="keywords" content="web design, web development, product design, interface design, ruby, rails, boston, bourbon, sass, scss" >
     <link rel="stylesheet" href="stylesheets/application.css">
   </head>
 
@@ -46,8 +46,9 @@
 
   <script type="text/javascript" src="//use.typekit.net/dbg7qay.js"></script>
   <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js" type="text/javascript"></script>
+
+  {% if page.title == "home" %}
   <script language="javascript" src="/javascripts/jquery.tweet.js" type="text/javascript"></script>
   <script type='text/javascript'>
       $(document).ready(function(){
@@ -66,6 +67,7 @@
           });
       });
   </script>
+  {% endif %}
 
   <script type="text/javascript">
     var _gaq = _gaq || [];
