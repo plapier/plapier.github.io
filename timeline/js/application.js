@@ -5,5 +5,5 @@ $(document).ready(function () {
         var dominantColor = getDominantColor(images);
         $(this).find("section.post-meta h2").css('color', 'rgba('+ dominantColor +', 1)');
     });
-  }, 3000);
+  }, 1000);
 });
