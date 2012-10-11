@@ -238,6 +238,7 @@ section.container {
       box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
       height: 296px;
       left: 1px;
+      pointer-events: none;
       position: absolute;
       top: 1px;
       width: 296px; }

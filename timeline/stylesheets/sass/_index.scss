@@ -67,6 +67,7 @@ section.container {
       box-shadow: 0 0 0 1px hsla(0, 0%, 0%, 0.1);
       height: $size;
       left: 1px;
+      pointer-events: none;
       position: absolute;
       top: 1px;
       width: $size;
