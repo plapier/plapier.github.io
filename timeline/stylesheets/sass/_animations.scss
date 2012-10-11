@@ -1,0 +1,50 @@
+//************************************************************************//
+// Keyframes for Animations
+//************************************************************************//
+
+.force3d {
+  -webkit-backface-visibility: hidden;  // Possibly fixes animation screen flicker
+  -webkit-perspective: 1000;            // Possibly fixes animation screen flicker
+  -webkit-transform-style: preserve-3d; // Possibly fixes animation screen flicker
+}
+
+// Slide Up Animation
+.animation-slideup {
+  @extend .force3d;
+  @include animation-name(slideup);
+  @include animation-duration(3.0s);
+  @include animation-timing-function(ease-in);
+  @include animation-fill-mode(both);
+}
+@mixin slideup {
+  from {
+    @include transform(translate3d(0, 50px, 0));
+  }
+  to {
+    @include transform(translate3d(0, 0px, 0));
+  }
+}
+@-webkit-keyframes slideup { @include slideup; }
+   @-moz-keyframes slideup { @include slideup; }
+        @keyframes slideup { @include slideup; }
+
+
+// Fade In animation
+.animation-fadein {
+  @include animation-name(fadein);
+  @include animation-duration(3.0s);
+  @include animation-timing-function(ease-in);
+  @include animation-fill-mode(both);
+}
+@mixin fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadein { @include fadein; }
+   @-moz-keyframes fadein { @include fadein; }
+        @keyframes fadein { @include fadein; }
+

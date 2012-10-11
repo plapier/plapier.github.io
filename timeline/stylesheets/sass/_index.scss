@@ -1,0 +1,167 @@
+//************************************************************************//
+// Start here
+//************************************************************************//
+$width: 750px;
+$padding: 75px;
+
+html,
+body {
+  height:100%;
+  width: 100%;
+}
+
+body {
+  @include box-sizing(border-box);
+}
+
+h1 {
+  font-size: 32px;
+  margin-bottom: 2em;
+  text-align: center;
+}
+
+h1, h2, h3, h4, p, span {
+  text-rendering: optimizeLegibility;
+}
+
+section.container {
+  margin: 0 auto;
+  margin-top: 50px;
+  padding-bottom: 10px;
+  position: relative;
+  width: $width;
+
+  article {
+    @include clearfix;
+    margin: 300px 0;
+    position: relative;
+
+    &::before {
+      border: 15px solid transparent;
+      border-left-color: #f2f2f2;
+      content: "";
+      left: ($width / 2) + 2px;
+      position: absolute;
+      top: 44.5%;
+      z-index: 1;
+    }
+
+    &:first-of-type {
+      margin-top: 250px;
+    }
+
+    section {
+      @include box-sizing(border-box);
+      float: left;
+      width: $width / 2;
+    }
+
+    div.img-border {
+      $size: 296px;
+      border: 1px solid hsla(0, 100%, 100%, 0.2);
+      border-radius: 4px;
+      box-shadow: 0 0 0 1px hsla(0, 0%, 0%, 0.1);
+      height: $size;
+      left: 1px;
+      position: absolute;
+      top: 1px;
+      width: $size;
+    }
+
+    section.post-content {
+      padding-right: $padding;
+
+      div.image-wrapper {
+        border-radius: 4px;
+        height: 300px;
+        overflow: hidden;
+        width: 300px;
+
+        img {
+          height: 310px;
+          margin-left: -5px;
+          margin-top: -5px;
+          width: 310px;
+        }
+      }
+    }
+
+    section.post-meta {
+      @include box(horizontal, center, center);
+      padding-left: $padding;
+      height: 300px;
+
+      div.meta-wrapper {
+        @include box-flex(1);
+      }
+
+      h2 {
+        font-size: 44px;
+        font-weight: 100;
+        margin-bottom: 5px;
+        @include transition(color 1s);
+      }
+
+      time {
+        display: block;
+        font-size: 18px;
+        font-weight: 100;
+        text-transform: uppercase;
+        padding-bottom: 3px; // center the flexbox
+
+        a {
+          color: #888;
+        }
+      }
+
+
+      span.metadata {
+        font-size: 12px;
+        font-weight: 200;
+      }
+    }
+
+    // Right
+    //************************************************************************//
+    &:nth-child(odd) {
+      &::before {
+        border-left-color: transparent;
+        border-right-color: #f2f2f2;
+        left: 342px;
+      }
+
+      section.post-content {
+        float: right;
+        padding: 0 0 0 $padding;
+
+        div.image-wrapper {
+          float: right;
+          margin-left: 50px;
+        }
+      }
+
+      div.img-border {
+        left: auto;
+        right: 1px;
+      }
+
+      section.post-meta {
+        @include box-sizing(border-box);
+        padding-left: 0;
+        padding-right: $padding;
+        text-align: right;
+      }
+    }
+  }
+}
+
+
+div.line {
+  height: 100%;
+  left: ($width / 2) - 2px;
+  @include linear-gradient(#f2f2f2, #f2f2f2);
+  position: absolute;
+  top: 70px;
+  width: 4px;
+  border-radius: 4px;
+}
