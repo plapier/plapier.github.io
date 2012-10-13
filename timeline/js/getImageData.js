@@ -73,7 +73,7 @@ f=d("head")[0]||document.documentElement,q={},S=0,p,C={callback:L,url:location.h
             }
 
           // Put the base64 encoded image into the src to start the load
-          }).attr('src', data.data).addClass('64-image');
+          }).attr('src', data.data);
 
         },
         // Something went wrong..
