@@ -2,23 +2,23 @@
  *
  *  jQuery $.getImageData Plugin 0.3
  *  http://www.maxnov.com/getimagedata
- *  
+ *
  *  Written by Max Novakovic (http://www.maxnov.com/)
  *  Date: Thu Jan 13 2011
  *
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
- *  
+ *
  *  Includes jQuery JSONP Core Plugin 2.1.4
  *  http://code.google.com/p/jquery-jsonp/
  *  Copyright 2010, Julian Aubourg
  *  Released under the MIT License.
- * 
+ *
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
- *  
+ *
  *  Copyright 2011, Max Novakovic
  *  Dual licensed under the MIT or GPL Version 2 licenses.
  *  http://www.maxnov.com/getimagedata/#license
- * 
+ *
  */
 
 // jQuery JSONP
@@ -27,74 +27,70 @@ m()};if(g(a.beforeSend,a,[a])===false||j)return a;c=c||r;e=e?typeof e=="string"?
 F;var N=function(v){(b[t]||w)();v=p;p=undefined;v?h(v[0]):i(M)};if(O.msie){b.event=t;b.htmlFor=b.id;b[H]=function(){/loaded|complete/.test(b.readyState)&&N()}}else{b[u]=b[I]=N;O.opera?(k=d(K)[0]).text="jQuery('#"+b.id+"')[0]."+u+"()":b[P]=P}b.src=c;f.insertBefore(b,f.firstChild);k&&f.insertBefore(k,f.firstChild)}},0);return a}var P="async",T="charset",r="",M="error",L="_jqjsp",t="onclick",u="on"+M,I="onload",H="onreadystatechange",J="removeChild",K="<script/>",z="success",B="timeout",O=d.browser,
 f=d("head")[0]||document.documentElement,q={},S=0,p,C={callback:L,url:location.href};x.setup=function(a){d.extend(C,a)};d.jsonp=x})(jQuery,setTimeout);
 
+
 (function( $ ){
+  // jQuery getImageData Plugin
+  $.getImageData = function(args) {
 
-	// jQuery getImageData Plugin
-	$.getImageData = function(args) {
-	
-		var regex_url_test = /(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/;
-	
-		// If a URL has been specified
-		if(args.url) {
-		
-			// Ensure no problems when using http or http
-			var is_secure = location.protocol === "https:";
-			var server_url = "";
-		
-			// If url specified and is a url + if server is secure when image or user page is
-			if(args.server && regex_url_test.test(args.server) && (args.server.indexOf('https:') && (is_secure || args.url.indexOf('https:')))) {
-				server_url = args.server;
-			} else server_url = "//instatimeline.appspot.com/go/";
-		
-			server_url += "?callback=?";
-      console.log(server_url);
-      console.log(args.url);
-		
-			// Using jquery-jsonp (http://code.google.com/p/jquery-jsonp/) for the request
-			// so that errors can be handled
-			$.jsonp({	
-				url: server_url,
-				data: { url: args.url },
-				dataType: 'jsonp',
-				timeout: 10000,
-				// It worked!
-				success: function(data, status) {
-			
-          console.log(data);
-					// Create new, empty image
-					var return_image = new Image();
-				
-					// When the image has loaded
-					$(return_image).load(function(){
-					
-						// Set image dimensions
-						this.width = data.width;
-						this.height = data.height;
-					
-						// Return the image
-						if(typeof(args.success) == typeof(Function)) {
-							args.success(this);
-						}
-					
-					// Put the base64 encoded image into the src to start the load
-					}).attr('src', data.data);
-				
-			  },
-				// Something went wrong.. 
-				error: function(xhr, text_status){
-					// Return the error(s)
-					if(typeof(args.error) == typeof(Function)) {
-						args.error(xhr, text_status);
-					}
-				}
-			});
-		
-		// No URL specified so error
-		} else {
-			if(typeof(args.error) == typeof(Function)) {
-				args.error(null, "no_url");
-			}
-		}
-	};
+    var regex_url_test = /(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/;
 
+    // If a URL has been specified
+    if(args.url) {
+
+      // Ensure no problems when using http or http
+      var is_secure = location.protocol === "https:";
+      var server_url = "";
+
+      // If url specified and is a url + if server is secure when image or user page is
+      if(args.server && regex_url_test.test(args.server) && (args.server.indexOf('https:') && (is_secure || args.url.indexOf('https:')))) {
+        server_url = args.server;
+      // } else server_url = "//localhost:3000/";
+      } else server_url = "//instatimeline.aws.af.cm/";
+
+      server_url += "?callback=?";
+
+      // Using jquery-jsonp (http://code.google.com/p/jquery-jsonp/) for the request
+      // so that errors can be handled
+      $.jsonp({
+        url: server_url,
+        data: { url: escape(args.url) },
+        dataType: 'jsonp',
+        timeout: 10000,
+        success: function(data, status) {
+          // Create new, empty image
+          var return_image = new Image();
+
+          // When the image has loaded
+          $(return_image).load(function(){
+
+            // Set image dimensions
+            this.width = data.width;
+            this.height = data.height;
+
+            // Return the image
+            if(typeof(args.success) == typeof(Function)) {
+              args.success(this);
+            }
+
+          // Put the base64 encoded image into the src to start the load
+          }).attr('src', data.data).addClass('64-image');
+
+        },
+        // Something went wrong..
+        error: function(xhr, text_status){
+          console.log("fail");
+          // Return the error(s)
+          if(typeof(args.error) == typeof(Function)) {
+            args.error(xhr, text_status);
+          }
+        }
+      });
+
+    // No URL specified so error
+    } else {
+      if(typeof(args.error) == typeof(Function)) {
+        args.error(null, "no_url");
+      }
+    }
+  };
 })(jQuery);
