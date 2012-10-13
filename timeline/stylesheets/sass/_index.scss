@@ -3,7 +3,7 @@
 //************************************************************************//
 $width: 750px;
 $padding: 75px;
-$line-color: hsla(0, 0%, 90%, 1.0);
+$line-color: hsla(0, 0%, 92%, 1.0);
 
 html,
 body {
@@ -27,6 +27,34 @@ h1, h2, h3, h4, p, span {
 
 canvas {
   display: none;
+}
+
+header {
+  position: relative;
+  z-index: 1;
+    text-align: center;
+
+  div.header-image-wrapper {
+    $size: 75px;
+    background-color: $line-color;
+    border-radius: $size;
+    // box-shadow: inset 0 1px 0 hsla(0, 0%, 0%, 0.06);
+    height: $size;
+    margin: 0 auto;
+    padding: 5px;
+    width: $size;
+
+
+    img {
+      height: $size;
+      width: $size;
+      border-radius: $size;
+    }
+  }
+
+  hgroup {
+    display: none;
+  }
 }
 
 section.container {

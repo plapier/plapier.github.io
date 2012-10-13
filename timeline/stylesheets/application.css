@@ -201,6 +201,24 @@ h1, h2, h3, h4, p, span {
 canvas {
   display: none; }
 
+header {
+  position: relative;
+  z-index: 1;
+  text-align: center; }
+  header div.header-image-wrapper {
+    background-color: #ebebeb;
+    border-radius: 75px;
+    height: 75px;
+    margin: 0 auto;
+    padding: 5px;
+    width: 75px; }
+    header div.header-image-wrapper img {
+      height: 75px;
+      width: 75px;
+      border-radius: 75px; }
+  header hgroup {
+    display: none; }
+
 section.container {
   margin: 0 auto;
   margin-top: 50px;
@@ -218,7 +236,7 @@ section.container {
       clear: both; }
     section.container article::before {
       border: 15px solid transparent;
-      border-left-color: #e6e6e6;
+      border-left-color: #ebebeb;
       content: "";
       left: 377px;
       position: absolute;
@@ -295,7 +313,7 @@ section.container {
         font-weight: 200; }
     section.container article:nth-child(odd)::before {
       border-left-color: transparent;
-      border-right-color: #e6e6e6;
+      border-right-color: #ebebeb;
       left: 342px; }
     section.container article:nth-child(odd) section.post-content {
       float: right;
@@ -317,7 +335,7 @@ section.container {
 div.line {
   height: 100%;
   left: 373px;
-  background-color: #e6e6e6;
+  background-color: #ebebeb;
   position: absolute;
   top: 70px;
   width: 4px;

@@ -5,7 +5,6 @@ $(window).load(function () {
     var currentId = $(this).attr("id");
 
     $.getImageData({
-      // url: "http://24.media.tumblr.com/tumblr_mbk0mtvzOM1riznzbo1_500.jpg",
       url: small_image_url,
       success: function(image){
         // Do something with new local version of the image
