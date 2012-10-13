@@ -218,7 +218,7 @@ section.container {
       clear: both; }
     section.container article::before {
       border: 15px solid transparent;
-      border-left-color: #f2f2f2;
+      border-left-color: #e6e6e6;
       content: "";
       left: 377px;
       position: absolute;
@@ -295,7 +295,7 @@ section.container {
         font-weight: 200; }
     section.container article:nth-child(odd)::before {
       border-left-color: transparent;
-      border-right-color: #f2f2f2;
+      border-right-color: #e6e6e6;
       left: 342px; }
     section.container article:nth-child(odd) section.post-content {
       float: right;
@@ -317,13 +317,7 @@ section.container {
 div.line {
   height: 100%;
   left: 373px;
-  background-color: #f2f2f2;
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f2f2f2), color-stop(100%, #f2f2f2));
-  background-image: -webkit-linear-gradient(top, #f2f2f2, #f2f2f2);
-  background-image: -moz-linear-gradient(top, #f2f2f2, #f2f2f2);
-  background-image: -ms-linear-gradient(top, #f2f2f2, #f2f2f2);
-  background-image: -o-linear-gradient(top, #f2f2f2, #f2f2f2);
-  background-image: linear-gradient(top, #f2f2f2, #f2f2f2);
+  background-color: #e6e6e6;
   position: absolute;
   top: 70px;
   width: 4px;

@@ -3,6 +3,7 @@
 //************************************************************************//
 $width: 750px;
 $padding: 75px;
+$line-color: hsla(0, 0%, 90%, 1.0);
 
 html,
 body {
@@ -42,7 +43,7 @@ section.container {
 
     &::before {
       border: 15px solid transparent;
-      border-left-color: #f2f2f2;
+      border-left-color: $line-color;
       content: "";
       left: ($width / 2) + 2px;
       position: absolute;
@@ -131,7 +132,7 @@ section.container {
     &:nth-child(odd) {
       &::before {
         border-left-color: transparent;
-        border-right-color: #f2f2f2;
+        border-right-color: $line-color;
         left: 342px;
       }
 
@@ -164,7 +165,8 @@ section.container {
 div.line {
   height: 100%;
   left: ($width / 2) - 2px;
-  @include linear-gradient(#f2f2f2, #f2f2f2);
+  background-color: $line-color;
+  // @include linear-gradient(#f2f2f2, #f2f2f2);
   position: absolute;
   top: 70px;
   width: 4px;
