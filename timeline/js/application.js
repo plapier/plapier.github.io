@@ -26,7 +26,7 @@ getImageColor = function () {
   });
 };
 
-$(window).load(function () {
+$(document).ready(function () {
 
   // Run getImageColor function on load
   getImageColor();
