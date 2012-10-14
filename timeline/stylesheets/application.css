@@ -299,7 +299,8 @@ section.container {
         -moz-transition: color 1s;
         -ms-transition: color 1s;
         -o-transition: color 1s;
-        transition: color 1s; }
+        transition: color 1s;
+        width: 400px; }
       section.container article section.post-meta time {
         display: block;
         font-size: 18px;
@@ -311,26 +312,29 @@ section.container {
       section.container article section.post-meta span.metadata {
         font-size: 12px;
         font-weight: 200; }
-    section.container article:nth-child(odd)::before {
+    section.container article:nth-child(even)::before {
       border-left-color: transparent;
       border-right-color: #ebebeb;
       left: 342px; }
-    section.container article:nth-child(odd) section.post-content {
+    section.container article:nth-child(even) section.post-content {
       float: right;
       padding: 0 0 0 75px; }
-      section.container article:nth-child(odd) section.post-content div.image-wrapper {
+      section.container article:nth-child(even) section.post-content div.image-wrapper {
         float: right;
         margin-left: 50px; }
-    section.container article:nth-child(odd) div.img-border {
+    section.container article:nth-child(even) div.img-border {
       left: auto;
       right: 1px; }
-    section.container article:nth-child(odd) section.post-meta {
+    section.container article:nth-child(even) section.post-meta {
       -webkit-box-sizing: border-box;
       -moz-box-sizing: border-box;
       box-sizing: border-box;
       padding-left: 0;
       padding-right: 75px;
       text-align: right; }
+      section.container article:nth-child(even) section.post-meta h2 {
+        position: relative;
+        left: -100px; }
 
 div.line {
   height: 100%;
