@@ -12,8 +12,11 @@ getImageColor = function () {
         url: small_image_url,
         success: function(image){
           // Do something with new local version of the image
-          var dominantColor = getDominantColor(image);
-          $('#' + currentId + " section.post-meta h2").css('color', 'rgba('+ dominantColor +', 1)');
+          // var dominantColor = getDominantColor(image);
+          // $('#' + currentId + " section.post-meta h2").css('color', 'rgba('+ dominantColor +', 1)');
+          var paletteArray = createPalette(image, 2);
+          paletteArray.sort(function() { return 0.5 - Math.random() });
+          $('#' + currentId + " section.post-meta h2").css('color', 'rgba('+ paletteArray[0] +', 1)');
         },
         error: function(xhr, text_status){
           console.log("Failed on " + small_image_url);
