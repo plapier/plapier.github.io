@@ -12,7 +12,7 @@ $(window).load(function () {
         $('#' + currentId + " section.post-meta h2").css('color', 'rgba('+ dominantColor +', 1)');
       },
       error: function(xhr, text_status){
-        console.log("getImageData failed. Is the server down?")
+        console.log("Failed on " + small_image_url);
       }
     });
   });

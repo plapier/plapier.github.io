@@ -78,7 +78,6 @@ f=d("head")[0]||document.documentElement,q={},S=0,p,C={callback:L,url:location.h
         },
         // Something went wrong..
         error: function(xhr, text_status){
-          console.log("fail");
           // Return the error(s)
           if(typeof(args.error) == typeof(Function)) {
             args.error(xhr, text_status);
