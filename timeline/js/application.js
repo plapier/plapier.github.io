@@ -28,6 +28,23 @@ getImageColor = function () {
 
 $(document).ready(function () {
 
+var calendar = [
+  {12 : 01 : 02 : 'Winter'},
+  {03 : 04 : 05 : 'Spring'},
+  {06 : 07 : 08 : 'Summer'},
+  {09 : 10 : 11 : 'Fall'};
+
+  console.log(calendar);
+
+  $("article.post").each(function() {
+    var currentId = $(this).attr("id");
+    var datetime = $(this).find("time").attr("datetime").split('-');
+    console.log(datetime[1]);
+  });
+
+
+
+
   // Run getImageColor function on load
   getImageColor();
 
