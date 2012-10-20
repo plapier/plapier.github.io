@@ -340,8 +340,6 @@ div.season {
   position: relative;
   text-align: center;
   z-index: 1; }
-  div.season.summer h2 {
-    color: #FBA71A; }
   div.season h2 {
     background: white;
     border-radius: 100px;
