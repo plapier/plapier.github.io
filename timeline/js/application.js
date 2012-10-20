@@ -28,18 +28,67 @@ getImageColor = function () {
 
 $(document).ready(function () {
 
-var calendar = [
-  {12 : 01 : 02 : 'Winter'},
-  {03 : 04 : 05 : 'Spring'},
-  {06 : 07 : 08 : 'Summer'},
-  {09 : 10 : 11 : 'Fall'};
+var calendar =[
+  [01, "Winter"],
+  [02, "Winter"],
+  [03, "Spring"],
+  [04, "Spring"],
+  [05, "Spring"],
+  [06, "Summer"],
+  [07, "Summer"],
+  [08, "Summer"],
+  [09, "Fall"],
+  [10, "Fall"],
+  [11, "Fall"],
+  [12, "Winter"]];
 
   console.log(calendar);
+
+  var postMonth = [];
+
+  var winter = [12, 01, 02];
+  var spring = [03, 04, 05];
+  var summer = [06, 07, 08];
+  var fall   = [09, 10, 11];
+  var seasons = [winter, spring, summer, fall];
+  // console.log(seasons);
+
+  var previousMonth = null;
 
   $("article.post").each(function() {
     var currentId = $(this).attr("id");
     var datetime = $(this).find("time").attr("datetime").split('-');
-    console.log(datetime[1]);
+    var currentMonth = datetime[1];
+    if (currentMonth < previousMonth) {
+      console.log("True! " + currentMonth + " < " + previousMonth );
+      var currentMonthSeason = calendar[currentMonth - 1][1];
+      var previousMonthSeason = calendar[previousMonth - 1][1];
+      if (currentMonthSeason != previousMonthSeason) {
+        console.log(this);
+        // $(this).before('<section class="season">' + currentMonthSeason + '</section>');
+      };
+
+      console.log(previousMonthSeason + " " + currentMonthSeason);
+      // console.log(calendar[0][0]);
+    }
+
+    else {
+      console.log("False " + currentMonth + " = " + previousMonth );
+    }
+    previousMonth = currentMonth
+
+    // for (var i = 0; i < items.length; i++) {
+      // postMonth[1].push(currentId, datetime[1]);
+    // }
+
+
+    // console.log($.inArray(10, seasons[3]));
+
+    // for (var i = 0; i < fall.length; i++) {
+      // if (datetime[1] == fall[i]) {
+        // console.log('Fall!');
+      // }
+    // }
   });
 
 
