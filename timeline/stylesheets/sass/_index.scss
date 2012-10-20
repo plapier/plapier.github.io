@@ -195,6 +195,26 @@ section.container {
   }
 }
 
+div.season {
+  position: relative;
+  text-align: center;
+  z-index: 1;
+
+  &.summer h2 {
+    color: #FBA71A;
+  }
+
+  h2 {
+    background: rgb(255, 255, 255);
+    border-radius: 100px;
+    color: #888;
+    display: inline-block;
+    font-size: 24px;
+    font-weight: 100;
+    padding: 30px 0;
+    text-transform: uppercase;
+  }
+}
 
 div.line {
   height: 100%;

@@ -27,31 +27,19 @@ getImageColor = function () {
 };
 
 $(document).ready(function () {
-
-var calendar =[
-  [01, "Winter"],
-  [02, "Winter"],
-  [03, "Spring"],
-  [04, "Spring"],
-  [05, "Spring"],
-  [06, "Summer"],
-  [07, "Summer"],
-  [08, "Summer"],
-  [09, "Fall"],
-  [10, "Fall"],
-  [11, "Fall"],
-  [12, "Winter"]];
-
-  console.log(calendar);
-
-  var postMonth = [];
-
-  var winter = [12, 01, 02];
-  var spring = [03, 04, 05];
-  var summer = [06, 07, 08];
-  var fall   = [09, 10, 11];
-  var seasons = [winter, spring, summer, fall];
-  // console.log(seasons);
+  var calendar =[
+    [01, "winter"],
+    [02, "winter"],
+    [03, "spring"],
+    [04, "spring"],
+    [05, "spring"],
+    [06, "summer"],
+    [07, "summer"],
+    [08, "summer"],
+    [09, "fall"],
+    [10, "fall"],
+    [11, "fall"],
+    [12, "winter"]];
 
   var previousMonth = null;
 
@@ -59,40 +47,24 @@ var calendar =[
     var currentId = $(this).attr("id");
     var datetime = $(this).find("time").attr("datetime").split('-');
     var currentMonth = datetime[1];
+
     if (currentMonth < previousMonth) {
-      console.log("True! " + currentMonth + " < " + previousMonth );
+      // console.log("True! " + currentMonth + " < " + previousMonth );
       var currentMonthSeason = calendar[currentMonth - 1][1];
       var previousMonthSeason = calendar[previousMonth - 1][1];
-      if (currentMonthSeason != previousMonthSeason) {
-        console.log(this);
-        // $(this).before('<section class="season">' + currentMonthSeason + '</section>');
-      };
 
-      console.log(previousMonthSeason + " " + currentMonthSeason);
-      // console.log(calendar[0][0]);
+      if (currentMonthSeason != previousMonthSeason) {
+        // console.log(this);
+        $(this).before('<div class="season ' + currentMonthSeason + '"><h2>' + currentMonthSeason + '</h2></div>');
+      };
+      // console.log(previousMonthSeason + " " + currentMonthSeason);
     }
 
     else {
-      console.log("False " + currentMonth + " = " + previousMonth );
+      // console.log("False " + currentMonth + " = " + previousMonth );
     }
     previousMonth = currentMonth
-
-    // for (var i = 0; i < items.length; i++) {
-      // postMonth[1].push(currentId, datetime[1]);
-    // }
-
-
-    // console.log($.inArray(10, seasons[3]));
-
-    // for (var i = 0; i < fall.length; i++) {
-      // if (datetime[1] == fall[i]) {
-        // console.log('Fall!');
-      // }
-    // }
   });
-
-
-
 
   // Run getImageColor function on load
   getImageColor();
