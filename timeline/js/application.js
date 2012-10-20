@@ -26,7 +26,7 @@ getImageColor = function () {
   });
 };
 
-$(document).ready(function () {
+insertSeasons = function () {
   var calendar =[
     [01, "winter"],
     [02, "winter"],
@@ -44,9 +44,10 @@ $(document).ready(function () {
   var previousMonth = null;
 
   $("article.post").each(function() {
-    var currentId = $(this).attr("id");
     var datetime = $(this).find("time").attr("datetime").split('-');
     var currentMonth = datetime[1];
+    currentId = $(this).attr("id");
+    console.log(currentId);
 
     if (currentMonth < previousMonth) {
       // console.log("True! " + currentMonth + " < " + previousMonth );
@@ -66,7 +67,13 @@ $(document).ready(function () {
     previousMonth = currentMonth
   });
 
+};
+
+$(document).ready(function () {
+
   // Run getImageColor function on load
+  var currentId = null;
+  insertSeasons();
   getImageColor();
 
   // Hijack infinite scroll & run getImageColor again
