@@ -207,7 +207,9 @@ div.season {
     display: inline-block;
     font-size: 24px;
     font-weight: 100;
+    letter-spacing: 2px;
     padding: 30px 0;
+    text-rendering: optimizeLegibility;
     text-transform: uppercase;
   }
 }
