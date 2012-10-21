@@ -167,7 +167,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 100; }
 
-a, a:link, a:active, a:visited {
+a {
   color: #fc511d;
   text-decoration: none; }
 
@@ -308,8 +308,8 @@ section.container {
         letter-spacing: 1px;
         padding-bottom: 3px;
         text-transform: uppercase; }
-        section.container article section.post-meta time a {
-          color: #888; }
+        section.container article section.post-meta time, section.container article section.post-meta time a {
+          color: #888888; }
       section.container article section.post-meta span.metadata {
         font-size: 12px;
         font-weight: 200; }
@@ -344,7 +344,7 @@ div.season {
   div.season h2 {
     background: white;
     border-radius: 100px;
-    color: #888;
+    color: #888888;
     display: inline-block;
     font-size: 24px;
     font-weight: 100;
@@ -353,8 +353,28 @@ div.season {
     text-rendering: optimizeLegibility;
     text-transform: uppercase; }
 
+footer {
+  background: white;
+  color: #bbbbbb;
+  font-size: 8px;
+  font-weight: 200;
+  letter-spacing: 1px;
+  padding: 35px 0 30px;
+  position: relative;
+  text-align: center;
+  text-transform: uppercase; }
+  footer a {
+    color: #6f6f6f;
+    -webkit-transition: all 0.15s ease-out 0;
+    -moz-transition: all 0.15s ease-out 0;
+    -ms-transition: all 0.15s ease-out 0;
+    -o-transition: all 0.15s ease-out 0;
+    transition: all 0.15s ease-out 0; }
+    footer a:hover {
+      color: #fc511d; }
+
 div.line {
-  height: 100%;
+  height: 97%;
   left: 373px;
   background-color: #ebebeb;
   position: absolute;

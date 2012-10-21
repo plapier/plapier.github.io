@@ -1,9 +1,6 @@
 //************************************************************************//
 // Start here
 //************************************************************************//
-$width: 750px;
-$padding: 75px;
-$line-color: hsla(0, 0%, 92%, 1.0);
 
 html,
 body {
@@ -150,8 +147,8 @@ section.container {
         padding-bottom: 3px; // center the flexbox
         text-transform: uppercase;
 
-        a {
-          color: #888;
+        &, a {
+          color: $base-font-color-alt;
         }
       }
 
@@ -212,7 +209,7 @@ div.season {
   h2 {
     background: rgb(255, 255, 255);
     border-radius: 100px;
-    color: #888;
+    color: $base-font-color-alt;
     display: inline-block;
     font-size: 24px;
     font-weight: 100;
@@ -224,10 +221,34 @@ div.season {
 }
 
 //************************************************************************//
+//  Footer
+//************************************************************************//
+footer {
+  background: white;
+  color: lighten($base-font-color-alt, 20%);
+  font-size: 8px;
+  font-weight: 200;
+  letter-spacing: 1px;
+  padding: 35px 0 30px;
+  position: relative;
+  text-align: center;
+  text-transform: uppercase;
+
+  a {
+    color: darken($base-font-color-alt, 10%);
+    @include transition;
+
+    &:hover {
+      color: $base-link-color;
+    }
+  }
+}
+
+//************************************************************************//
 // Line
 //************************************************************************//
 div.line {
-  height: 100%;
+  height: 97%;
   left: ($width / 2) - 2px;
   background-color: $line-color;
   // @include linear-gradient(#f2f2f2, #f2f2f2);
