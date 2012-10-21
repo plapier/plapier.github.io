@@ -42,12 +42,13 @@ insertSeasons = function () {
     [12, "winter"]];
 
   var previousMonth = null;
+  $('div.season').remove();
 
   $("article.post").each(function() {
     var datetime = $(this).find("time").attr("datetime").split('-');
     var currentMonth = datetime[1];
-    currentId = $(this).attr("id");
-    console.log(currentId);
+    // currentId = $(this).attr("id");
+    // console.log(currentId);
 
     if (currentMonth < previousMonth) {
       // console.log("True! " + currentMonth + " < " + previousMonth );
@@ -72,7 +73,7 @@ insertSeasons = function () {
 $(document).ready(function () {
 
   // Run getImageColor function on load
-  var currentId = null;
+  // var currentId = null;
   insertSeasons();
   getImageColor();
 
@@ -81,6 +82,7 @@ $(document).ready(function () {
   XMLHttpRequest.prototype.send=function(s){
     this.addEventListener('load',function(){
 
+      insertSeasons();
       getImageColor();
 
     },false);
