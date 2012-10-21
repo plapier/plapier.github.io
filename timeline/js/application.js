@@ -27,6 +27,7 @@ getImageColor = function () {
 };
 
 insertSeasons = function () {
+  var previousMonth = null;
   var calendar =[
     [01, "winter"],
     [02, "winter"],
@@ -41,30 +42,24 @@ insertSeasons = function () {
     [11, "fall"],
     [12, "winter"]];
 
-  var previousMonth = null;
-  $('div.season').remove();
+  $('div.season').remove(); // remove all instances of .season so we don't get duplicates
 
   $("article.post").each(function() {
-    var datetime = $(this).find("time").attr("datetime").split('-');
+    var datetime = $(this).find("time").attr("datetime").split('-'); // split into [year, month, day]
     var currentMonth = datetime[1];
-    // currentId = $(this).attr("id");
-    // console.log(currentId);
 
     if ((currentMonth != previousMonth) && (previousMonth != null)) {
-      // console.log("True! " + currentMonth + " < " + previousMonth );
       var currentMonthSeason = calendar[currentMonth - 1][1];
       var previousMonthSeason = calendar[previousMonth - 1][1];
 
       if (currentMonthSeason != previousMonthSeason) {
-        // console.log(this);
         $(this).before('<div class="season ' + currentMonthSeason + '"><h2>' + currentMonthSeason + '</h2></div>');
       };
-      // console.log(previousMonthSeason + " " + currentMonthSeason);
     }
 
     else {
-      // console.log("False " + currentMonth + " = " + previousMonth );
     }
+
     previousMonth = currentMonth
   });
 
@@ -72,8 +67,6 @@ insertSeasons = function () {
 
 $(document).ready(function () {
 
-  // Run getImageColor function on load
-  // var currentId = null;
   insertSeasons();
   getImageColor();
 

@@ -29,6 +29,9 @@ canvas {
   display: none;
 }
 
+//************************************************************************//
+// Header
+//************************************************************************//
 header {
   position: relative;
   z-index: 1;
@@ -38,7 +41,6 @@ header {
     $size: 75px;
     background-color: $line-color;
     border-radius: $size;
-    // box-shadow: inset 0 1px 0 hsla(0, 0%, 0%, 0.06);
     height: $size;
     margin: 0 auto;
     padding: 5px;
@@ -57,6 +59,9 @@ header {
   }
 }
 
+//************************************************************************//
+// Main Content
+//************************************************************************//
 section.container {
   margin: 0 auto;
   margin-top: 50px;
@@ -141,8 +146,9 @@ section.container {
         display: block;
         font-size: 18px;
         font-weight: 100;
-        text-transform: uppercase;
+        letter-spacing: 1px;
         padding-bottom: 3px; // center the flexbox
+        text-transform: uppercase;
 
         a {
           color: #888;
@@ -195,6 +201,9 @@ section.container {
   }
 }
 
+///************************************************************************//
+// Season
+//************************************************************************//
 div.season {
   position: relative;
   text-align: center;
@@ -214,6 +223,9 @@ div.season {
   }
 }
 
+//************************************************************************//
+// Line
+//************************************************************************//
 div.line {
   height: 100%;
   left: ($width / 2) - 2px;
