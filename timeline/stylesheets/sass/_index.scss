@@ -62,7 +62,6 @@ header {
 section.container {
   margin: 0 auto;
   margin-top: 50px;
-  padding-bottom: 10px;
   position: relative;
   width: $width;
 
@@ -248,12 +247,11 @@ footer {
 // Line
 //************************************************************************//
 div.line {
-  height: 97%;
-  left: ($width / 2) - 2px;
   background-color: $line-color;
-  // @include linear-gradient(#f2f2f2, #f2f2f2);
-  position: absolute;
-  top: 70px;
-  width: 4px;
   border-radius: 4px;
+  height: 100%;
+  left: ($width / 2) - 2px;
+  position: absolute;
+  top: 0;
+  width: 4px;
 }

@@ -222,7 +222,6 @@ header {
 section.container {
   margin: 0 auto;
   margin-top: 50px;
-  padding-bottom: 10px;
   position: relative;
   width: 750px; }
   section.container article {
@@ -374,10 +373,10 @@ footer {
       color: #fc511d; }
 
 div.line {
-  height: 97%;
-  left: 373px;
   background-color: #ebebeb;
+  border-radius: 4px;
+  height: 100%;
+  left: 373px;
   position: absolute;
-  top: 70px;
-  width: 4px;
-  border-radius: 4px; }
+  top: 0;
+  width: 4px; }
