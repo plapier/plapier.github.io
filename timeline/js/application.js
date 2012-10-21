@@ -50,7 +50,7 @@ insertSeasons = function () {
     // currentId = $(this).attr("id");
     // console.log(currentId);
 
-    if (currentMonth < previousMonth) {
+    if ((currentMonth != previousMonth) && (previousMonth != null)) {
       // console.log("True! " + currentMonth + " < " + previousMonth );
       var currentMonthSeason = calendar[currentMonth - 1][1];
       var previousMonthSeason = calendar[previousMonth - 1][1];
