@@ -79,16 +79,32 @@ insertSeasons = function () {
 
 $(document).ready(function () {
 
-  $.tumbox();
   insertSeasons();
   getImageColor();
+
+  $(".fancybox").fancybox({
+    padding: 0,
+
+    openEffect : 'elastic',
+    openSpeed  : 150,
+
+    closeEffect : 'elastic',
+    closeSpeed  : 150,
+
+    closeClick : true,
+
+    helpers : {
+      title : {
+        type : 'outside'
+      }
+    }
+  });
 
   // Hijack infinite scroll & run getImageColor again
   XMLHttpRequest.prototype.originalSend=XMLHttpRequest.prototype.send;
   XMLHttpRequest.prototype.send=function(s){
     this.addEventListener('load',function(){
 
-      $.tumbox();
       insertSeasons();
       getImageColor();
 
