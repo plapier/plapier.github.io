@@ -10,9 +10,9 @@
  *   http://www.opensource.org/licenses/mit-license.php
  */
 
-(function( $ ){(
+(function( $ ){
 
-  $.fn.tumbox = function() {
+  $.tumbox = function() {
 
     if(typeof(window.console) === "undefined" || typeof(window.console.log) === "undefined") {
       window.console = {
@@ -99,5 +99,5 @@
 
     // Add CSS
     load_file('http://picuous.github.com/tumblrbox/lib/jquery.fancybox.css');
-  })();
+  };
 })( jQuery );
