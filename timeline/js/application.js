@@ -79,6 +79,7 @@ insertSeasons = function () {
 
 $(document).ready(function () {
 
+  $.tumbox;
   insertSeasons();
   getImageColor();
 
@@ -87,6 +88,7 @@ $(document).ready(function () {
   XMLHttpRequest.prototype.send=function(s){
     this.addEventListener('load',function(){
 
+      $.tumbox;
       insertSeasons();
       getImageColor();
 
