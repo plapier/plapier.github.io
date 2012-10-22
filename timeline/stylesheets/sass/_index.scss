@@ -210,9 +210,9 @@ div.season {
     border-radius: 100px;
     color: $base-font-color-alt;
     display: inline-block;
-    font-size: 24px;
+    font-size: 26px;
     font-weight: 100;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
     padding: 30px 0;
     text-rendering: optimizeLegibility;
     text-transform: uppercase;
@@ -220,7 +220,7 @@ div.season {
     span.year {
       display: block;
       font-size: 18px;
-      padding-top: 5px;
+      padding-top: 3px;
       letter-spacing: 0px;
     }
   }
