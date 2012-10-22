@@ -312,27 +312,27 @@ section.container {
       section.container article section.post-meta span.metadata {
         font-size: 12px;
         font-weight: 200; }
-    section.container article:nth-child(even)::before {
+    section.container article:nth-of-type(even)::before {
       border-left-color: transparent;
       border-right-color: #ebebeb;
       left: 342px; }
-    section.container article:nth-child(even) section.post-content {
+    section.container article:nth-of-type(even) section.post-content {
       float: right;
       padding: 0 0 0 75px; }
-      section.container article:nth-child(even) section.post-content div.image-wrapper {
+      section.container article:nth-of-type(even) section.post-content div.image-wrapper {
         float: right;
         margin-left: 50px; }
-    section.container article:nth-child(even) div.img-border {
+    section.container article:nth-of-type(even) div.img-border {
       left: auto;
       right: 1px; }
-    section.container article:nth-child(even) section.post-meta {
+    section.container article:nth-of-type(even) section.post-meta {
       -webkit-box-sizing: border-box;
       -moz-box-sizing: border-box;
       box-sizing: border-box;
       padding-left: 0;
       padding-right: 75px;
       text-align: right; }
-      section.container article:nth-child(even) section.post-meta h2 {
+      section.container article:nth-of-type(even) section.post-meta h2 {
         position: relative;
         left: -100px; }
 
@@ -351,6 +351,11 @@ div.season {
     padding: 30px 0;
     text-rendering: optimizeLegibility;
     text-transform: uppercase; }
+    div.season h2 span.year {
+      display: block;
+      font-size: 18px;
+      padding-top: 5px;
+      letter-spacing: 0px; }
 
 footer {
   background: white;

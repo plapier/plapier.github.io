@@ -47,17 +47,29 @@ insertSeasons = function () {
   $("article.post").each(function() {
     var datetime = $(this).find("time").attr("datetime").split('-'); // split into [year, month, day]
     var currentMonth = datetime[1];
+    var currentYear  = datetime[0];
 
+    // Find current Season
     if ((currentMonth != previousMonth) && (previousMonth != null)) {
-      var currentMonthSeason = calendar[currentMonth - 1][1];
+      var currentMonthSeason  = calendar[currentMonth - 1][1];
       var previousMonthSeason = calendar[previousMonth - 1][1];
 
-      if (currentMonthSeason != previousMonthSeason) {
-        $(this).before('<div class="season ' + currentMonthSeason + '"><h2>' + currentMonthSeason + '</h2></div>');
-      };
-    }
+      // Generate Year change for Winter Season: "2012-2013"
+      if ((currentMonthSeason == "winter") && (currentMonth == 12)){
+        var previousYear = currentYear;
+        var upcomingYear = parseInt(currentYear) + 1;
+            currentYear  = previousYear + '–' + upcomingYear;
 
-    else {
+      } else if (currentMonthSeason == "winter") {
+        var previousYear = parseInt(currentYear) - 1;
+        var upcomingYear = currentYear;
+            currentYear  = previousYear + '–' + upcomingYear;
+      };
+
+      // Insert Season into DOM
+      if (currentMonthSeason != previousMonthSeason) {
+        $(this).before('<div class="season ' + currentMonthSeason + '"><h2>' + currentMonthSeason + '<span class="year">' + currentYear + '</span></h2></div>');
+      };
     }
 
     previousMonth = currentMonth

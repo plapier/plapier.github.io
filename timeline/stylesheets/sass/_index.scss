@@ -160,7 +160,7 @@ section.container {
 
     // Right
     //************************************************************************//
-    &:nth-child(even) {
+    &:nth-of-type(even) {
       &::before {
         border-left-color: transparent;
         border-right-color: $line-color;
@@ -216,6 +216,13 @@ div.season {
     padding: 30px 0;
     text-rendering: optimizeLegibility;
     text-transform: uppercase;
+
+    span.year {
+      display: block;
+      font-size: 18px;
+      padding-top: 5px;
+      letter-spacing: 0px;
+    }
   }
 }
 
