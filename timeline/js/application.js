@@ -37,9 +37,9 @@ insertSeasons = function () {
     [06, "summer"],
     [07, "summer"],
     [08, "summer"],
-    [09, "fall"],
-    [10, "fall"],
-    [11, "fall"],
+    [09, "autumn"],
+    [10, "autumn"],
+    [11, "autumn"],
     [12, "winter"]];
 
   $('div.season').remove(); // remove all instances of .season so we don't get duplicates
