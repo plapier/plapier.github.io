@@ -68,6 +68,7 @@ section.container {
   article {
     @include clearfix;
     margin: 300px 0;
+    margin: 50vh 0;
     position: relative;
 
     &::before {

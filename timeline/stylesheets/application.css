@@ -227,6 +227,7 @@ section.container {
   section.container article {
     zoom: 1;
     margin: 300px 0;
+    margin: 50vh 0;
     position: relative; }
     section.container article:before, section.container article:after {
       content: "";
