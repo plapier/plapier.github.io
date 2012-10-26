@@ -68,7 +68,7 @@ section.container {
   article {
     @include clearfix;
     margin: 300px 0;
-    margin: 50vh 0;
+    margin: 40vh 0;
     position: relative;
 
     &::before {
@@ -83,6 +83,7 @@ section.container {
 
     &:first-of-type {
       margin-top: 250px;
+      margin-top: 30vh;
     }
 
     section {

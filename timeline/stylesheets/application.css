@@ -227,7 +227,7 @@ section.container {
   section.container article {
     zoom: 1;
     margin: 300px 0;
-    margin: 50vh 0;
+    margin: 40vh 0;
     position: relative; }
     section.container article:before, section.container article:after {
       content: "";
@@ -243,7 +243,8 @@ section.container {
       top: 44.5%;
       z-index: 1; }
     section.container article:first-of-type {
-      margin-top: 250px; }
+      margin-top: 250px;
+      margin-top: 30vh; }
     section.container article section {
       -webkit-box-sizing: border-box;
       -moz-box-sizing: border-box;
