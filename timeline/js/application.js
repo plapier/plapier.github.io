@@ -17,7 +17,6 @@
             paletteArray.sort(function() {
               return 0.5 - Math.random();
             });
-            console.log(paletteArray[0]);
             return $("#" + currentId + " section.post-meta h2").css('color', "rgba(" + paletteArray[0] + ", 1)");
           },
           error: function(xhr, text_status) {

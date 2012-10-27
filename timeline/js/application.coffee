@@ -16,8 +16,6 @@ getImageColor = ->
           paletteArray.sort ->
             0.5 - Math.random()
 
-          console.log(paletteArray[0])
-
           $("##{currentId} section.post-meta h2").css 'color', "rgba(#{paletteArray[0]}, 1)"
 
         error: (xhr, text_status) ->
