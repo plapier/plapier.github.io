@@ -16,7 +16,9 @@ getImageColor = ->
           paletteArray.sort ->
             0.5 - Math.random()
 
-          $('#' + currentId + " section.post-meta h2").css 'color', 'rgba('+ paletteArray[0] +', 1)'
+          console.log(paletteArray[0])
+
+          $("##{currentId} section.post-meta h2").css 'color', "rgba(#{paletteArray[0]}, 1)"
 
         error: (xhr, text_status) ->
           console.log("Failed on " + small_image_url);
@@ -72,8 +74,8 @@ insertSeasons = ->
 
 
 $(document).ready ->
-  insertSeasons();
-  getImageColor();
+  insertSeasons()
+  getImageColor()
 
   $(".fancybox").fancybox
     padding: 0
