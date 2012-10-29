@@ -45,9 +45,10 @@ insertSeasons = ->
     currentYear  = datetime[0]
 
     # Find current Season
-    if (currentMonth isnt previousMonth) and (previousMonth?)
+    if (currentMonth isnt previousMonth) and (previousMonth isnt null)
       currentMonthSeason  = calendar[currentMonth - 1][1]
       previousMonthSeason = calendar[previousMonth - 1][1]
+
 
       # Generate Year change for Winter Season: "2012-2013"
       if (currentMonthSeason is "winter") and (currentMonth is 12)
@@ -60,15 +61,15 @@ insertSeasons = ->
         upcomingYear = currentYear
         currentYear  = previousYear + '–' + upcomingYear
 
+
       # Insert Season into DOM
-      $(this).before
-      """
+      $(this).before """
       <div class="season #{currentMonthSeason}">
         <h2>#{currentMonthSeason} <span class="year">#{currentYear}</span></h2>
       </div>
       """ unless currentMonthSeason is previousMonthSeason
 
-      previousMonth = currentMonth
+    previousMonth = currentMonth
 
 
 $(document).ready ->

@@ -37,7 +37,7 @@
       datetime = $(this).find("time").attr("datetime").split('-');
       currentMonth = datetime[1];
       currentYear = datetime[0];
-      if ((currentMonth !== previousMonth) && (previousMonth != null)) {
+      if ((currentMonth !== previousMonth) && (previousMonth !== null)) {
         currentMonthSeason = calendar[currentMonth - 1][1];
         previousMonthSeason = calendar[previousMonth - 1][1];
         if ((currentMonthSeason === "winter") && (currentMonth === 12)) {
@@ -49,12 +49,11 @@
           upcomingYear = currentYear;
           currentYear = previousYear + '–' + upcomingYear;
         }
-        $(this).before;
         if (currentMonthSeason !== previousMonthSeason) {
-          "<div class=\"season " + currentMonthSeason + "\">\n  <h2>" + currentMonthSeason + " <span class=\"year\">" + currentYear + "</span></h2>\n</div>";
+          $(this).before("<div class=\"season " + currentMonthSeason + "\">\n  <h2>" + currentMonthSeason + " <span class=\"year\">" + currentYear + "</span></h2>\n</div>");
         }
-        return previousMonth = currentMonth;
       }
+      return previousMonth = currentMonth;
     });
   };
 
