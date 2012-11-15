@@ -67,6 +67,10 @@
       closeEffect: 'elastic',
       closeSpeed: 150,
       closeClick: true,
+      minHeight: 500,
+      minWidth: 500,
+      maxHeight: 600,
+      maxWidth: 600,
       helpers: {
         title: {
           type: 'outside'
