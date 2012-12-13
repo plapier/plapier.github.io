@@ -683,7 +683,6 @@ header {
         header section#social-media > ul > li:last-child {
           margin-right: 0; }
         header section#social-media > ul > li > div {
-          -webkit-border-radius: 32px;
           border-radius: 32px;
           display: inline-block;
           float: left;
@@ -709,7 +708,6 @@ header {
             text-indent: -9999px;
             width: 32px; }
             header section#social-media > ul > li > div > a:hover {
-              -webkit-border-radius: 32px;
               border-radius: 32px;
               -webkit-box-shadow: inset 0 0 0 1px #3f3f3f, 0 0 0 3px #4c4c4c;
               box-shadow: inset 0 0 0 1px #3f3f3f, 0 0 0 3px #4c4c4c;
@@ -886,7 +884,6 @@ section#twitter-stream {
             color: #727272; }
             section#twitter-stream div.tweet ul.tweet_list > li span.tweet_time a:hover {
               background: rgba(255, 255, 255, 0.05);
-              -webkit-border-radius: 3px;
               border-radius: 3px;
               -webkit-box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.05);
               box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.05);
@@ -939,7 +936,6 @@ footer {
       color: #3f3f3f; }
       footer p a:hover, footer p a:link:hover, footer p a:visited:hover, footer p a:active:hover {
         background: rgba(255, 255, 255, 0.05);
-        -webkit-border-radius: 3px;
         border-radius: 3px;
         -webkit-box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.05);
         box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.05);
@@ -1003,13 +999,13 @@ img.iora-overlay {
     position: static; } }
 @media only screen and (max-width: 1380px) {
   div.main-content.portfolio figure figcaption {
-    zoom: 1;
+    *zoom: 1;
     left: 0;
     margin-bottom: 3em;
     position: static;
     width: 100%; }
     div.main-content.portfolio figure figcaption:before, div.main-content.portfolio figure figcaption:after {
-      content: "";
+      content: " ";
       display: table; }
     div.main-content.portfolio figure figcaption:after {
       clear: both; }
