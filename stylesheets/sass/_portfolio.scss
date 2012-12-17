@@ -24,6 +24,7 @@ div.main-content.portfolio {
         margin-bottom: 0.6em;
         @include box-shadow(none);
       }
+
       p {
         color: $hover-alt;
         line-height: 1.6em;
@@ -46,6 +47,10 @@ div.main-content.portfolio {
         height: 530px;
         overflow: hidden;
         width: 778px;
+
+        a img {
+          position: relative;
+        }
       }
     }
   }
@@ -54,9 +59,16 @@ div.main-content.portfolio {
 //************************************************************************//
 // Portfolio Image Positioning
 //************************************************************************//
+.fdn-1, .fdn-2 {
+  left: -20.5%;
+}
+
+.fdn-3 {
+  left: -27.6%;
+}
+
 img.iora-overlay {
   top: -40%;
-  position: relative;
   left: -30%;
 }
 

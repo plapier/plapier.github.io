@@ -986,10 +986,17 @@ div.main-content.portfolio {
         height: 530px;
         overflow: hidden;
         width: 778px; }
+        div.main-content.portfolio figure div.image-wrapper div.image a img {
+          position: relative; }
+
+.fdn-1, .fdn-2 {
+  left: -20.5%; }
+
+.fdn-3 {
+  left: -27.6%; }
 
 img.iora-overlay {
   top: -40%;
-  position: relative;
   left: -30%; }
 
 @media only screen and (-moz-min-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
