@@ -990,7 +990,7 @@ div.main-content.portfolio {
           position: relative; }
 
 .fdn-1, .fdn-2 {
-  left: -20.5%; }
+  left: -7.5%; }
 
 .fdn-3 {
   left: -27.6%; }
@@ -1001,7 +1001,11 @@ img.iora-overlay {
 
 @media only screen and (-moz-min-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
   body.portfolio img {
-    width: 100%; }
+    width: 100%;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0; }
   body.portfolio img.iora-overlay {
     position: static; } }
 @media only screen and (max-width: 1380px) {

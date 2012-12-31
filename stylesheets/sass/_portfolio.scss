@@ -60,7 +60,7 @@ div.main-content.portfolio {
 // Portfolio Image Positioning
 //************************************************************************//
 .fdn-1, .fdn-2 {
-  left: -20.5%;
+  left: -7.5%;
 }
 
 .fdn-3 {
@@ -81,7 +81,12 @@ img.iora-overlay {
   body.portfolio {
    img {
      width: 100%;
+     left: 0;
+     top: 0;
+     right: 0;
+     bottom: 0;
    }
+
     img.iora-overlay {
       position: static;
     }
