@@ -32,7 +32,7 @@ audio[controls], canvas, video {
 html {
   font-size: 100%;
   /*overflow-y: scroll;*/
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%; }
 
@@ -989,6 +989,14 @@ div.main-content.portfolio {
         div.main-content.portfolio figure div.image-wrapper div.image a img {
           position: relative; }
 
+.thoughtbot-1 {
+  left: -770px;
+  top: -4020px; }
+
+.thoughtbot-2 {
+  left: 0;
+  top: -117px; }
+
 .fdn-1, .fdn-2 {
   left: -7.5%; }
 
@@ -1036,3 +1044,5 @@ div.main-content.image {
     border: 2px solid #111;
     box-shadow: 0 6px 18px 2px rgba(0, 0, 0, 0.45);
     margin: 40px 20px; }
+
+/*# sourceMappingURL=application.css.map */
