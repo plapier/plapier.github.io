@@ -63,7 +63,6 @@ nav {
 // Drawer
 //************************************************************************//
 .drawer {
-  // box-shadow: inset 0 -4px 0 rgba(0, 0, 0, 0.1);
   @include clearfix;
   display: block;
   height: $drawer-height;
@@ -72,6 +71,7 @@ nav {
   position: absolute;
   top: $nav-height;
   @include transition;
+  width: 100%;
 
   li {
     @include calc(width, "100% / 7");
