@@ -763,52 +763,42 @@ nav {
   right: 0; }
   nav div.main-nav {
     height: 60px; }
-    nav div.main-nav a {
+    nav div.main-nav > a {
       color: #fff;
       display: block;
       float: left;
       height: 60px;
+      opacity: 0.3;
       position: absolute;
       text-decoration: none;
       top: 0;
+      -webkit-transition: all 0.15s ease-out 0s;
+      -moz-transition: all 0.15s ease-out 0s;
+      transition: all 0.15s ease-out 0s;
       width: 60px; }
-      nav div.main-nav a .icon {
-        color: transparent;
-        font: 0/0 a;
-        text-shadow: none;
-        display: block;
-        width: 100%;
-        height: 100%;
-        background: rgba(255, 255, 255, 0.3);
-        -webkit-mask-position: 50% 50%;
-        -webkit-mask-repeat: no-repeat;
-        -webkit-mask-size: 23px 33px;
-        -webkit-transition: all 0.15s ease-out 0s;
-        -moz-transition: all 0.15s ease-out 0s;
-        transition: all 0.15s ease-out 0s; }
-        nav div.main-nav a .icon:hover {
-          background: rgba(255, 255, 255, 0.5); }
-      nav div.main-nav a.arrow .icon {
-        clip-path: url("/images/arrow.svg#polyclip");
-        mask-image: url("/images/arrow.svg#poly");
-        -webkit-mask-image: url("/images/arrow.svg#poly"); }
-      nav div.main-nav a.menu {
+      nav div.main-nav > a:hover {
+        opacity: 0.5; }
+      nav div.main-nav > a img {
+        top: 13px;
+        position: relative; }
+      nav div.main-nav > a.menu {
         left: 50%;
-        margin-left: -40px; }
-        nav div.main-nav a.menu .icon {
-          -webkit-mask-size: 42px 24px;
-          clip-path: url("/images/menu.svg#polyclip");
-          mask-image: url("/images/menu.svg#poly");
-          -webkit-mask-image: url("/images/menu.svg#poly"); }
-      nav div.main-nav a.prev {
+        margin-left: -30px; }
+        nav div.main-nav > a.menu img {
+          left: 9px; }
+      nav div.main-nav > a.prev {
         left: 0; }
-      nav div.main-nav a.next {
-        right: 0;
-        -webkit-transform: rotate(180deg);
-        -moz-transform: rotate(180deg);
-        -ms-transform: rotate(180deg);
-        -o-transform: rotate(180deg);
-        transform: rotate(180deg); }
+        nav div.main-nav > a.prev img {
+          left: 20px; }
+      nav div.main-nav > a.next {
+        right: 0; }
+        nav div.main-nav > a.next img {
+          left: 17px;
+          -webkit-transform: scaleX(-1);
+          -moz-transform: scaleX(-1);
+          -ms-transform: scaleX(-1);
+          -o-transform: scaleX(-1);
+          transform: scaleX(-1); }
 
 .drawer {
   *zoom: 1;

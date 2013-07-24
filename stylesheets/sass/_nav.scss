@@ -9,57 +9,51 @@ nav {
   div.main-nav {
     height: $nav-height;
 
-    a {
+    > a {
       color: #fff;
       display: block;
       float: left;
       height: $nav-height;
+      opacity: 0.3;
       position: absolute;
       text-decoration: none;
       top: 0;
+      @include transition;
       width: $nav-height;
 
-      .icon {
-        @include hide-text;
-        display: block;
-        width: 100%;
-        height: 100%;
-        background: hsla(0, 100%, 100%, 0.3);
-        -webkit-mask-position: 50% 50%;
-        -webkit-mask-repeat: no-repeat;
-        -webkit-mask-size: 23px 33px;
-        @include transition;
-
-        &:hover {
-          background: hsla(0, 100%, 100%, 0.5);
-        }
+      &:hover {
+        opacity: 0.5;
       }
 
-      &.arrow .icon {
-        clip-path: url("/images/arrow.svg#polyclip");
-        mask-image: url("/images/arrow.svg#poly");
-        -webkit-mask-image: url("/images/arrow.svg#poly");
+      img {
+        top: 13px;
+        position: relative;
       }
 
       &.menu {
         left: 50%;
-        margin-left: -40px;
+        margin-left: -$nav-height / 2;
 
-        .icon {
-          -webkit-mask-size: 42px 24px;
-          clip-path: url("/images/menu.svg#polyclip");
-          mask-image: url("/images/menu.svg#poly");
-          -webkit-mask-image: url("/images/menu.svg#poly");
+        img {
+          left: 9px;
         }
       }
 
       &.prev {
         left: 0;
+
+        img {
+          left: 20px;
+        }
       }
 
       &.next {
         right: 0;
-        @include transform(rotate(180deg));
+
+        img {
+          left: 17px;
+          @include transform(scaleX(-1));
+        }
       }
     }
   }
