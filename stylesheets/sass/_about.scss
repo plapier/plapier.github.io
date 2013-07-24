@@ -1,0 +1,62 @@
+section.about {
+  .inner {
+    // padding-top: 20vh;
+  }
+
+  ol {
+    list-style: none;
+    @include clearfix;
+    margin: 20vh 0 0;
+    padding: 0;
+
+    li {
+      float: left;
+      margin-right: 30px;
+
+      a {
+        font-weight: 700;
+      }
+    }
+  }
+
+  // a.twitter {
+    // $color: #1DACED;
+    // color: $color;
+
+    // &:hover {
+      // color: darken($color, 15%);
+    // }
+  // }
+  // a.dribbble {
+    // $color: #ea4c89;
+    // color: $color;
+
+    // &:hover {
+      // color: darken($color, 15%);
+    // }
+  // }
+  // a.github {
+    // $color: #ea4c89;
+    // color: $color;
+
+    // &:hover {
+      // color: darken($color, 15%);
+    // }
+  // }
+  // a.tumblr {
+    // $color: #ea4c89;
+    // color: $color;
+
+    // &:hover {
+      // color: darken($color, 15%);
+    // }
+  // }
+  // a.email {
+    // $color: #ea4c89;
+    // color: $color;
+
+    // &:hover {
+      // color: darken($color, 15%);
+    // }
+  // }
+}

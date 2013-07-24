@@ -1,0 +1,30 @@
+.browser {
+  border-radius: 4px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.23);
+  float: left;
+  @include linear-gradient(#E8E8E8 0px, #B1B1B1 30px, #ccc 50%);
+  margin: 10vh 5vw;
+
+  img {
+    left: 0;
+    margin: 20px 0 6px;
+    border-radius: 0px;
+    border: 1px solid #999;
+    border-left: 0;
+    border-right: 0;
+  }
+}
+
+.ipad {
+  background: #000;
+  border-radius: 40px;
+  // box-shadow: 2px -2px 0 #fff;
+  box-shadow: inset -2px 2px 0 #fff;
+  margin: 10vh 5vw;
+
+  img {
+    border-radius: 4px;
+    left: 5vw;
+    width: 70vw;
+  }
+}

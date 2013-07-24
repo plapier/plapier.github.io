@@ -1,0 +1,107 @@
+nav {
+  background: $nav-bg;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  right: 0;
+
+  div.main-nav {
+    height: $nav-height;
+
+    a {
+      color: #fff;
+      display: block;
+      float: left;
+      height: $nav-height;
+      position: absolute;
+      text-decoration: none;
+      top: 0;
+      width: $nav-height;
+
+      .icon {
+        @include hide-text;
+        display: block;
+        width: 100%;
+        height: 100%;
+        background: hsla(0, 100%, 100%, 0.3);
+        -webkit-mask-position: 50% 50%;
+        -webkit-mask-repeat: no-repeat;
+        -webkit-mask-size: 23px 33px;
+        @include transition;
+
+        &:hover {
+          background: hsla(0, 100%, 100%, 0.5);
+        }
+      }
+
+      &.arrow .icon {
+        clip-path: url("/images/arrow.svg#polyclip");
+        mask-image: url("/images/arrow.svg#poly");
+        -webkit-mask-image: url("/images/arrow.svg#poly");
+      }
+
+      &.menu {
+        left: 50%;
+        margin-left: -40px;
+
+        .icon {
+          -webkit-mask-size: 42px 24px;
+          clip-path: url("/images/menu.svg#polyclip");
+          mask-image: url("/images/menu.svg#poly");
+          -webkit-mask-image: url("/images/menu.svg#poly");
+        }
+      }
+
+      &.prev {
+        left: 0;
+      }
+
+      &.next {
+        right: 0;
+        @include transform(rotate(180deg));
+      }
+    }
+  }
+}
+
+//************************************************************************//
+// Drawer
+//************************************************************************//
+.drawer {
+  // box-shadow: inset 0 -4px 0 rgba(0, 0, 0, 0.1);
+  @include clearfix;
+  display: block;
+  height: $drawer-height;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: $nav-height;
+  @include transition;
+
+  li {
+    @include calc(width, "100% / 7");
+    @include clearfix;
+    display: inline-block;
+    float: left;
+    font-size: 18px;
+    height: 100%;
+    line-height: 1.5em;
+
+    a {
+      color: hsla(0, 0%, 100%, 0.7);
+      display: block;
+      font-family: $serif;
+      font-weight: 200;
+      height: 100%;
+      padding: 20px 30% 20px 20%;
+      text-decoration: none;
+      @include transition;
+
+      &:hover {
+        background: lighten($body-bg, 2%);
+        color: #efefef;
+      }
+    }
+  }
+}

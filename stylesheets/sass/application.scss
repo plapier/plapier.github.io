@@ -1,7 +1,10 @@
-@import "bourbon/bourbon";
-@import "normalize";
-@import "directives";
-@import "animation-keyframes";
-@import "home";
-@import "portfolio";
-@import "image";
+@import 'normalize';
+
+@import 'bourbon/bourbon';
+@import 'neat/neat';
+@import 'bitters/base';
+@import 'home';
+@import 'about';
+@import 'nav';
+@import 'device-style';
+@import 'animations';

@@ -1,438 +1,145 @@
-//---------------------------------------------------
-//  Global Styles
-//---------------------------------------------------
-body, html {
-  background: #262626;
-}
-
-div.wrapper {
-  @extend .clearfix;
-  margin: 0 auto;
-  width: 800px;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: $title-font;
-  font-weight: 100;
-}
-
-a, a:link, a:active, a:visited {
-  color: $link;
-  text-decoration: none;
-}
-
-a:hover {
-  color: $hover;
-  text-shadow: 1px 1px 0 hsla(0%, 0%, 0%, 0.75);
-  @include transition;
-}
-
-$selection: #D5E255;
-::selection {
-  background: $selection;
-}
-
-::-moz-selection {
-  background: $selection;
-}
-
-
-//---------------------------------------------------
-//  Website Structure and style
-//---------------------------------------------------
-
-// Lookup Table for Social Media Icons
-               $icons: twitter,  dribbble,  github,    tumblr;
-   $background-colors: #42d0ff,  #ea4c88,   #efefef,   #2291ac;
-$background-positions: (0 0),   (-33px 0), (-66px 0), (-99px 0);
-
-@function bg-color($icon) {
-  @return nth($background-colors, index($icons, $icon));
-}
-@function bg-pos($icon) {
-  @return nth($background-positions, index($icons, $icon));
-}
-
-// Lookup table for animation delays
-$articles: one,  two,   three;
-  $delays: 0.5s, 0.75s, 1.0s;
-
-@function delay-time($article) {
-  @return nth($delays, index($articles, $article));
-}
-
-
 body {
-  @extend .clearfix;
-  color: $primary;
-  font-family: $body-font;
-  margin-bottom: 40px;
-  margin: 0 auto;
-  text-rendering: optimizeLegibility;
+  background: $body-bg;
+  overflow-y: hidden;
+  @include transform(translateZ(0));
 }
 
-//************************************************************************//
-// Header
-//************************************************************************//
+div#slides {
+  overflow: hidden;
+  position: relative;
+  @include transform(translateZ(0));
+  @include transition;
+  width: 100%;
+  z-index: 2;
 
-header {
-  @extend .clearfix;
-  @include animation-name(slidedown);
-  @include animation-delay(2.6s);
-  @include animation-duration(0.8s);
-  @include animation-timing-function(ease-out);
-  @include animation-fill-mode(both);
-  @extend .force3d;
-  background: #202020;
-  background: hsla(0%, 0%, 0%, 0.1);
-  @include box-shadow(0 1px 0 0 hsla(100%, 100%, 100%, 0.03), inset 0 -1px 0 0 hsla(0%, 0%, 0%, 0.15));
-  margin-bottom: 50px;
-  padding-top: 4px;
-
-  h2#tagline {
-    color: hsla(100%, 100%, 100%, 0.2);
-    float: left;
-    font-family: $body-font;
-    font-size: $base-font-size;
-    font-weight: 300;
-    margin: 10px $gw-gutter 10px 0;
-    position: relative;
-    text-transform: uppercase;
-    top: 10px;
-    width: grid-width(4);
+  &.show-nav {
+    @include transform(translateY($drawer-height + $nav-height));
   }
 
-  a.home {
-    color: hsla(100%, 100%, 100%, 0.2);
+  &.hide-nav {
+    @include transform(translateY(0px));
+  }
+}
+
+div.slides-container {
+  @include clearfix;
+  overflow: hidden;
+  position: relative;
+  @include transform(translateZ(0));
+  @include transition(all 0.5s $ease-in-out-circ);
+}
+
+section {
+  background: #3D4652;
+  float: left;
+  height: 100vh !important;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  position: relative;
+  width: 90vw;
+  padding-top: $nav-height;
+
+  // Fix for weird malrendering lines
+  &:before, &:after {
+    bottom: 0;
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 4px;
+    z-index: -1;
+  }
+  &:before { left: -2px; }
+  &:after { right: -2px; }
+
+  a:link, a:visited {
+    border-bottom: 1px solid transparent;
+    font-weight: 600;
     @include transition;
+    white-space: nowrap;
 
     &:hover {
-      text-shadow: none;
-      color: hsla(0, 0%, 100%, 0.3);
+      border-bottom: 1px solid currentColor;
     }
   }
 
-  section#social-media {
-    float: left;
-    width: grid-width(2);
-
-    > ul {
-      float: right;
-      margin: 12px 0 8px 0;
-      padding: 0;
-
-      > li {
-        @include inline-block;
-        margin: 0 6px;
-
-        &:last-child {
-          margin-right: 0;
-        }
-
-        > div {
-          border-radius: 32px;
-          display: inline-block;
-          float: left;
-          @include transition(all 0.15s linear 0);
-          width: auto;
-
-          $icon-color: #3F3F3f;
-          $hover-effect: inset 0 0 0 1px $icon-color, 0 0 0 3px lighten($icon-color, 5%);
-
-          &:hover {
-            background: $link;
-            @include box-shadow($hover-effect);
-          }
-
-          > a {
-            background-image: url("/images/social-icons.png");
-            background-repeat: no-repeat;
-            height: 32px;
-            @include inline-block;
-            text-indent: -9999px;
-            width: 32px;
-
-            &:hover {
-              border-radius: 32px;
-              @include box-shadow($hover-effect);
-              @include transition(box-shadow 0s ease-in);
-            }
-          }
-        }
-
-        @each $icon in $icons {
-          &##{$icon} {
-            > div:hover {
-              background-color: bg-color($icon);
-            }
-            a {
-              background-position: bg-pos($icon);
-            }
-          }
-        }
-
-      }
-    }
-  }
-}
-
-
-//************************************************************************//
-//  Big Headline Title
-//************************************************************************//
-
-div.main-content {
-  @extend .clearfix;
-  color: $primary;
-  font-family: $body-font;
-  margin: 0 auto;
-  text-rendering: optimizeLegibility;
-  width: 800px;
-
-  section#headline {
-    margin: 20px 0 55px;
-    width: 100%;
-
-    h1 {
-      -webkit-font-smoothing: antialiased;
-      @extend .animation-fadein;
-      @extend .force3d;
-      @include animation-duration(1.0s);
-      font-size: $base-font-size-headline;
-      font-weight: 300;
-      line-height: 1em;
-      margin: 0;
-    }
-  }
-}
-
-
-//************************************************************************//
-//  Recent Work Section
-//************************************************************************//
-
-section#recent-work {
-  @extend .clearfix;
-  @include background-image(radial-gradient(50% 100%, ellipse cover, rgba(255, 255, 255, 0.045) 0%, rgba(255, 255, 255, 0.015) 55%, transparent 100%));
-  background-repeat: no-repeat;
-  padding-bottom: 55px;
-  width: 100%;
-
-  article#one, article#two, article#three {
-    $article-bg: #333;
-    @include animation-name(slideup, fadein);
-    @include animation-duration(1.0s, 1.2s);
-    @include animation-timing-function($ease-out-back, ease-out);
-    @include animation-fill-mode(both);
-    @extend .force3d;
-    background: $article-bg;
-    border: 10px solid $article-bg;
-    @include box-shadow(0 1px 3px 0 hsla(0%, 0%, 0%, 0.45));
-    float: left;
-    height: 165px;
-    width: 220px;
-    z-index: 0;
-
-    > img {
-      margin: 0;
-    }
+  .inner {
+    padding: 10vh 40vw 10vh 10vw;
   }
 
-  @each $article in $articles {
-    article##{$article} {
-      @include animation-delay(delay-time($article));
-    }
+  &.parent {
+    box-shadow: inset $spacer 0 0 $spacer-color;
   }
-
-  article#two {
-    margin: 0 $gw-gutter;
-  }
-}
-
-section#recent-work + div.wrapper {
-  background: #262626;
-  @include box-shadow(inset 0 1px 0 #373737, 0 -1px 0 #191919);
-  min-height: 300px;
-  padding-top: 30px;
-  position: relative;
-  z-index: 10;
-}
-
-
-//************************************************************************//
-// About Me Sidebar
-//************************************************************************//
-
-aside#sidebar,
-section#twitter-stream {
-  > h2 {
-    font-size: golden-ratio($base-font-size, 1);
-  }
-}
-
-aside#sidebar {
-  @extend .animation-fadein;
-  @include animation-delay(1.5s);
-  float: left;
-  margin-right: $gw-gutter;
-  width: grid-width(2);
 
   p {
-    font-size: $base-font-size;
-    line-height: 150%;
+    line-height: 1.5em;
+    margin-bottom: 1em;
+    color: hsla(0, 0%, 100%, 0.7);
   }
 
-  > h2 {
-    // See Above
-  }
-
-  > ul {
-    padding: 0;
-
-    > li {
-      -webkit-font-smoothing: antialiased;
-      font-size: $base-font-size;
-      font-weight: 700;
-      list-style-type: none;
-      line-height: 150%;
-      margin: 15px 0;
-
-      a {
-        color: $link;
-
-        &:hover {
-          color: $hover;
-        }
-      }
-    }
+  img {
+    width: 80vw;
+    position: relative;
+    top: 0;
+    left: 5vw;
+    margin: 50px 0;
   }
 }
 
-
-//************************************************************************//
-//  Recently Tweeted Section
-//************************************************************************//
-
-section#twitter-stream {
-  @extend .animation-fadein;
-  @include animation-delay(1.5s);
-  float: left;
-  min-height: 200px;
-  width: grid-width(4);
-
-  > h2 {
-    // See Above
-  }
-
-  div.tweet {
-    min-height: 200px;
-
-    p.loading {
-      @include animation-name(loading);
-      @include animation-duration(3.0s);
-      @include animation-timing-function(ease-in-out);
-      @include animation-iteration-count(infinite);
-      color: #ccc;
-      @include transition;
-    }
-
-    ul.tweet_list {
-      margin: 0;
-      padding: 0;
-
-      > li {
-        -webkit-font-smoothing: antialiased;
-        font-size: $base-font-size;
-        line-height: 150%;
-        list-style-type: none;
-        margin: 1em 0;
-
-        span.tweet_text {
-          a {
-            color: white;
-
-            &:hover {
-              color: $hover-alt;
-            }
-          }
-        }
-
-        span.tweet_time {
-          display: block;
-          font-size: 11px;
-
-          a {
-            color: $link-alt;
-
-            &:hover {
-              background: hsla(100%, 100%, 100%, 0.05);
-              border-radius: 3px;
-              @include box-shadow(0 0 0 3px hsla(100%, 100%, 100%, 0.05));
-              color: $hover-alt;
-              text-shadow: none;
-            }
-          }
-        }
-      }
-    }
-  }
-
-  div#twitter-follow {
-    -webkit-font-smoothing: antialiased;
-    background-image: url('/images/social-icons.png');
-    background-position: -132px 0;
-    background-repeat: no-repeat;
-    font-size: $base-font-size;
-    font-weight: 700;
-    line-height: 150%;
-    padding: 4px 0 4px 42px;
-
-    a {
-      @extend .animation-fadein;
-      @include animation-name(bling);
-      @include animation-delay(3.5s);
-      color: $link-alt;
-      @include transition;
-
-      &:hover {
-        -webkit-text-fill-color: $hover-alt;
-        color: $hover-alt;
-      }
-    }
-  }
+section:first-child,
+section:last-child {
+  width: 95vw;
 }
 
+section:last-child {
+  padding-right: 5vw;
+}
 
-//************************************************************************//
-//  Footer
-//************************************************************************//
+$purple: #7F63B5;
+// $purple-alt: #AB8CD5;
+$purple-alt: #B080C1;
+$red: #DF6C63;
+$green: #5AC292;
+$orange: #F89E6B;
+$yellow: #F4C042;
+$blue: #60A4EB;
+$blue-alt: #88B3E8;
 
-footer {
-  @extend .animation-fadein;
-  @include animation-delay(6.0s);
-  @include animation-duration(1.0s);
-  bottom: 32px;
-  float: left;
-  margin-right: $gw-gutter;
-  position: relative;
-  width: grid-width(2);
-  z-index: 20;
+.about {
+  $c: $purple;
+  background: $c;
+  &:before, &:after { background: $c; }
+}
+.thoughtbot {
+  $c: $red;
+  background: $c;
+  &:before, &:after { background: $c; }
+}
+.grpz-portal {
+  $c: $purple-alt;
+  background: $c;
+  &:before, &:after { background: $c; }
+}
+.grpz-consumer {
+  $c: $blue;
+  background: $c;
+  &:before, &:after { background: $c; }
+}
+.fdn {
+  $c: $green;
+  background: $c;
+  &:before, &:after { background: $c; }
 
-  p {
-    color: darken($link-alt, 20%);
-    font-size: 11px;
-    line-height: 150%;
-
-    a, a:link, a:visited, a:active {
-      color: darken($link-alt, 20%);
-
-      &:hover {
-        background: hsla(100%, 100%, 100%, 0.05);
-        border-radius: 3px;
-        @include box-shadow(0 0 0 3px hsla(100%, 100%, 100%, 0.05));
-        color: darken($hover-alt, 20%);
-        text-shadow: none;
-      }
-    }
-  }
+  // &.parent {
+    // box-shadow: inset $spacer 0 0 hsla(0, 0%, 0%, 0.15);
+  // }
+}
+.velocity {
+  $c: $orange;
+  background: $c;
+  &:before, &:after { background: $c; }
+}
+.iora {
+  $c: $blue-alt;
+  background: $c;
+  &:before, &:after { background: $c; }
 }

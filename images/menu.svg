@@ -1,0 +1,15 @@
+<svg width="42px" height="24px" viewBox="0 0 42 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+  <g id="polyclip">
+    <clipPath id="poolyclip">
+        <path d="M2.5,2 L39.5540161,2" id="Line" stroke="#FFFFFF" stroke-width="4"></path>
+        <path d="M2.5,12 L39.5540161,12" id="Line" stroke="#FFFFFF" stroke-width="4"></path>
+        <path d="M2.5,22 L39.5540161,22" id="Line" stroke="#FFFFFF" stroke-width="4"></path>
+    </clipPath>
+  </g>
+
+  <g id="poly" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="square">
+      <path d="M2.5,2 L39.5540161,2" id="Line" stroke="#FFFFFF" stroke-width="4"></path>
+      <path d="M2.5,12 L39.5540161,12" id="Line" stroke="#FFFFFF" stroke-width="4"></path>
+      <path d="M2.5,22 L39.5540161,22" id="Line" stroke="#FFFFFF" stroke-width="4"></path>
+  </g>
+</svg>

@@ -1,0 +1,39 @@
+///////////////////////////////////////////////////////////////////////////////
+//
+//  Global Variables
+//
+///////////////////////////////////////////////////////////////////////////////
+$body-bg: #313841;
+$nav-bg-alt: #3D4652;
+$nav-bg: rgba(49, 56, 65, 0.61);
+$nav-height: 60px;
+$spacer: 4px;
+$spacer-color: #fff;
+$spacer-color: hsla(0, 0%, 0%, 0.1);
+
+$drawer-height: 120px;
+
+// Colors
+///////////////////////////////////////////////////////////////////////////////
+
+$blue: #477DCA;
+$dark-gray: #333;
+$light-gray: #DDD;
+$light-red: #FBE3E4;
+$light-yellow: #FFF6BF;
+$light-green: #E6EFC2;
+
+//  Font Colors
+$base-font-color: #fff;
+
+//  Text Link Colors
+$base-link-color: #fff;
+$hover-link-color: #fff;
+
+// Border color
+$base-border-color: $light-gray;
+
+// Flash Colors
+$error-color: $light-red;
+$notice-color: $light-yellow;
+$success-color: $light-green;
