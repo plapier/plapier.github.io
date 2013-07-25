@@ -1,0 +1,44 @@
+$purple: #7F63B5;
+$purple-alt: #B080C1;
+$red: #DF6C63;
+$green: #5AC292;
+$orange: #F89E6B;
+$yellow: #F4C042;
+$blue: #60A4EB;
+$blue-alt: #88B3E8;
+
+.about {
+  $c: $purple;
+  background: $c;
+  &:before, &:after { background: $c; }
+}
+.thoughtbot {
+  $c: $red;
+  background: $c;
+  &:before, &:after { background: $c; }
+}
+.grpz-portal {
+  $c: $purple-alt;
+  background: $c;
+  &:before, &:after { background: $c; }
+}
+.grpz-consumer {
+  $c: $blue;
+  background: $c;
+  &:before, &:after { background: $c; }
+}
+.fdn {
+  $c: $green;
+  background: $c;
+  &:before, &:after { background: $c; }
+}
+.velocity {
+  $c: $orange;
+  background: $c;
+  &:before, &:after { background: $c; }
+}
+.iora {
+  $c: $blue-alt;
+  background: $c;
+  &:before, &:after { background: $c; }
+}

@@ -9,3 +9,15 @@
     opacity: 1;
   }
 }
+
+%title-slide-in {
+  @include animation(title-slide-in 0.5s ease-in 0.0s forwards);
+}
+@include keyframes(title-slide-in) {
+  0% {
+    @include transform(translateX(-200px));
+  }
+  100% {
+    @include transform(translateX(0));
+  }
+}

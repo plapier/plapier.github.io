@@ -1,8 +1,7 @@
 section.about {
-  .inner {
-    // padding-top: 20vh;
+  h1.title {
+    @extend %title-slide-in;
   }
-
   ol {
     list-style: none;
     @include clearfix;
@@ -18,45 +17,4 @@ section.about {
       }
     }
   }
-
-  // a.twitter {
-    // $color: #1DACED;
-    // color: $color;
-
-    // &:hover {
-      // color: darken($color, 15%);
-    // }
-  // }
-  // a.dribbble {
-    // $color: #ea4c89;
-    // color: $color;
-
-    // &:hover {
-      // color: darken($color, 15%);
-    // }
-  // }
-  // a.github {
-    // $color: #ea4c89;
-    // color: $color;
-
-    // &:hover {
-      // color: darken($color, 15%);
-    // }
-  // }
-  // a.tumblr {
-    // $color: #ea4c89;
-    // color: $color;
-
-    // &:hover {
-      // color: darken($color, 15%);
-    // }
-  // }
-  // a.email {
-    // $color: #ea4c89;
-    // color: $color;
-
-    // &:hover {
-      // color: darken($color, 15%);
-    // }
-  // }
 }

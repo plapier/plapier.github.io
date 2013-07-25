@@ -611,11 +611,6 @@ body {
 div#slides {
   overflow: hidden;
   position: relative;
-  -webkit-transform: translateZ(0);
-  -moz-transform: translateZ(0);
-  -ms-transform: translateZ(0);
-  -o-transform: translateZ(0);
-  transform: translateZ(0);
   -webkit-transition: all 0.15s ease-out 0s;
   -moz-transition: all 0.15s ease-out 0s;
   transition: all 0.15s ease-out 0s;
@@ -638,14 +633,17 @@ div.slides-container {
   *zoom: 1;
   overflow: hidden;
   position: relative;
+  -webkit-transition: all 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  -moz-transition: all 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  transition: all 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  width: 500vw;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
   -webkit-transform: translateZ(0);
   -moz-transform: translateZ(0);
   -ms-transform: translateZ(0);
   -o-transform: translateZ(0);
-  transform: translateZ(0);
-  -webkit-transition: all 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86);
-  -moz-transition: all 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86);
-  transition: all 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86); }
+  transform: translateZ(0); }
   div.slides-container:before, div.slides-container:after {
     content: " ";
     display: table; }
@@ -655,7 +653,7 @@ div.slides-container {
 section {
   background: #3D4652;
   float: left;
-  height: 100vh !important;
+  height: 100vh;
   overflow-x: hidden;
   overflow-y: scroll;
   position: relative;
@@ -690,11 +688,11 @@ section {
     margin-bottom: 1em;
     color: rgba(255, 255, 255, 0.7); }
   section img {
-    width: 80vw;
+    left: 5vw;
+    margin: 50px 0;
     position: relative;
     top: 0;
-    left: 5vw;
-    margin: 50px 0; }
+    width: 80vw; }
 
 section:first-child,
 section:last-child {
@@ -779,8 +777,9 @@ nav {
       nav div.main-nav > a:hover {
         opacity: 0.5; }
       nav div.main-nav > a img {
-        top: 13px;
-        position: relative; }
+        pointer-events: none;
+        position: relative;
+        top: 13px; }
       nav div.main-nav > a.menu {
         left: 50%;
         margin-left: -30px; }
@@ -900,5 +899,38 @@ nav {
 
   100% {
     opacity: 1; } }
+
+section.about h1.title {
+  -webkit-animation: title-slide-in 0.5s ease-in 0s forwards;
+  -moz-animation: title-slide-in 0.5s ease-in 0s forwards;
+  animation: title-slide-in 0.5s ease-in 0s forwards; }
+
+@-webkit-keyframes title-slide-in {
+  0% {
+    -webkit-transform: translateX(-200px); }
+
+  100% {
+    -webkit-transform: translateX(0); } }
+
+@-moz-keyframes title-slide-in {
+  0% {
+    -moz-transform: translateX(-200px); }
+
+  100% {
+    -moz-transform: translateX(0); } }
+
+@-o-keyframes title-slide-in {
+  0% {
+    -o-transform: translateX(-200px); }
+
+  100% {
+    -o-transform: translateX(0); } }
+
+@keyframes title-slide-in {
+  0% {
+    transform: translateX(-200px); }
+
+  100% {
+    transform: translateX(0); } }
 
 /*# sourceMappingURL=application.css.map */
