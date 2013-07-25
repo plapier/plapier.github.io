@@ -900,11 +900,6 @@ nav {
   100% {
     opacity: 1; } }
 
-section.about h1.title {
-  -webkit-animation: title-slide-in 0.5s ease-in 0s forwards;
-  -moz-animation: title-slide-in 0.5s ease-in 0s forwards;
-  animation: title-slide-in 0.5s ease-in 0s forwards; }
-
 @-webkit-keyframes title-slide-in {
   0% {
     -webkit-transform: translateX(-200px); }
