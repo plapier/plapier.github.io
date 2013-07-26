@@ -1,4 +1,5 @@
 class ConstructSlider
+  @viewportW
   constructor: () ->
     @nav       = $('nav.slides-nav')
     @container = $('#slides')
@@ -6,8 +7,8 @@ class ConstructSlider
     @setInnerWidth()
     @setupArrows()
     @setupDrawerNav()
-    @setupWindowResizer()
     @setupKeybindings()
+    @watchViewportWidth()
 
   setInnerWidth: ->
     width = null
@@ -23,17 +24,16 @@ class ConstructSlider
       @hideDrawer()
 
   slideNext: (id) ->
-    viewportW = @viewportWidth()
     $current = $(@container).find('.active')
     index = $(@inner).find('section').index($current)
     if id is "next"
       $next = $current.next()
       width = (index + 1) * 90
-      pxVal = (viewportW * (index + 1)) * (90/100)
+      pxVal = (@viewportW * (index + 1)) * (90/100)
     else if id = "prev"
       $next = $current.prev()
       width = (index - 1) * 90
-      pxVal = (viewportW * (index - 1)) * (90/100)
+      pxVal = (@viewportW * (index - 1)) * (90/100)
 
     if $next.length
       # $inner.css('left', "-#{width}vw")
@@ -49,19 +49,18 @@ class ConstructSlider
     $('.drawer a').on 'click', (event) =>
       dataId = $(event.target).attr('href')
       dataId = dataId.replace("#", "")
-      $target = $("[data-id='#{dataId}']")
-      targetIndex = $(@inner).find('section').index($target)
+      $target = $(@inner).find("[data-id='#{dataId}']")
+      $targetIndex = $(@inner).find('section').index($target)
 
       $current = @container.find('.active')
-      currentIndex = @inner.find('section').index($current)
-      if targetIndex isnt currentIndex
+      $currentIndex = @inner.find('section').index($current)
+      if $targetIndex isnt $currentIndex
         # width = 90 * targetIndex
         # $inner.css('left', "-#{width}vw")
-        viewportW = @viewportWidth()
-        pxVal = (viewportW * targetIndex) * (90/100)
-        @inner.css('transform', "translateX(-#{pxVal}px)")
+        pxVal = (@viewportW * targetIndex) * (90/100)
         $($current).removeClass('active')
         $target.addClass('active')
+        @inner.css('transform', "translateX(-#{pxVal}px)")
         @hideDrawer()
 
   ## Show/Hide Drawer
@@ -75,15 +74,6 @@ class ConstructSlider
     if $(@container).hasClass('show-nav')
       @inner.on "transitionend webkitTransitionEnd MSTransitionEnd", =>
         @toggleDrawer("close")
-
-  ## Fix positioning on window resize
-  setupWindowResizer: ->
-    window.onresize = =>
-      viewportW = @viewportWidth()
-      $current = $(@container).find('.active')
-      index = $(@inner).find('section').index($current)
-      pxVal = (viewportW * index) * (90/100)
-      $(@inner).css('transform', "translateX(-#{pxVal}px)")
 
   setupKeybindings: ->
     $(window).focus ->
@@ -106,7 +96,23 @@ class ConstructSlider
         when arrow.up
           @toggleDrawer()
 
-  viewportWidth: ->
+  ## Setup event listener on resize and set global variable
+  watchViewportWidth: ->
+    @viewportW = @getViewportW()
+
+    window.onresize = =>
+      @viewportW = @getViewportW()
+      @recalculatePos()
+
+  getViewportW: ->
     document.documentElement.clientWidth
+
+  ## Fix panel positioning
+  recalculatePos: ->
+    $current = $(@container).find('.active')
+    index = $(@inner).find('section').index($current)
+    pxVal = (@viewportW * index) * (90/100)
+    $(@inner).css('transform', "translateX(-#{pxVal}px)")
+
 $ ->
   new ConstructSlider()

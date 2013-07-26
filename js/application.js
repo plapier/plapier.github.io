@@ -4,6 +4,8 @@
 
   ConstructSlider = (function() {
 
+    ConstructSlider.viewportW;
+
     function ConstructSlider() {
       this.nav = $('nav.slides-nav');
       this.container = $('#slides');
@@ -11,8 +13,8 @@
       this.setInnerWidth();
       this.setupArrows();
       this.setupDrawerNav();
-      this.setupWindowResizer();
       this.setupKeybindings();
+      this.watchViewportWidth();
     }
 
     ConstructSlider.prototype.setInnerWidth = function() {
@@ -35,18 +37,17 @@
     };
 
     ConstructSlider.prototype.slideNext = function(id) {
-      var $current, $next, index, pxVal, viewportW, width;
-      viewportW = this.viewportWidth();
+      var $current, $next, index, pxVal, width;
       $current = $(this.container).find('.active');
       index = $(this.inner).find('section').index($current);
       if (id === "next") {
         $next = $current.next();
         width = (index + 1) * 90;
-        pxVal = (viewportW * (index + 1)) * (90 / 100);
+        pxVal = (this.viewportW * (index + 1)) * (90 / 100);
       } else if (id = "prev") {
         $next = $current.prev();
         width = (index - 1) * 90;
-        pxVal = (viewportW * (index - 1)) * (90 / 100);
+        pxVal = (this.viewportW * (index - 1)) * (90 / 100);
       }
       if ($next.length) {
         $(this.inner).css('transform', "translateX(-" + pxVal + "px)");
@@ -61,19 +62,18 @@
         return _this.toggleDrawer();
       });
       return $('.drawer a').on('click', function(event) {
-        var $current, $target, currentIndex, dataId, pxVal, targetIndex, viewportW;
+        var $current, $currentIndex, $target, $targetIndex, dataId, pxVal;
         dataId = $(event.target).attr('href');
         dataId = dataId.replace("#", "");
-        $target = $("[data-id='" + dataId + "']");
-        targetIndex = $(_this.inner).find('section').index($target);
+        $target = $(_this.inner).find("[data-id='" + dataId + "']");
+        $targetIndex = $(_this.inner).find('section').index($target);
         $current = _this.container.find('.active');
-        currentIndex = _this.inner.find('section').index($current);
-        if (targetIndex !== currentIndex) {
-          viewportW = _this.viewportWidth();
-          pxVal = (viewportW * targetIndex) * (90 / 100);
-          _this.inner.css('transform', "translateX(-" + pxVal + "px)");
+        $currentIndex = _this.inner.find('section').index($current);
+        if ($targetIndex !== $currentIndex) {
+          pxVal = (_this.viewportW * targetIndex) * (90 / 100);
           $($current).removeClass('active');
           $target.addClass('active');
+          _this.inner.css('transform', "translateX(-" + pxVal + "px)");
           return _this.hideDrawer();
         }
       });
@@ -94,18 +94,6 @@
           return _this.toggleDrawer("close");
         });
       }
-    };
-
-    ConstructSlider.prototype.setupWindowResizer = function() {
-      var _this = this;
-      return window.onresize = function() {
-        var $current, index, pxVal, viewportW;
-        viewportW = _this.viewportWidth();
-        $current = $(_this.container).find('.active');
-        index = $(_this.inner).find('section').index($current);
-        pxVal = (viewportW * index) * (90 / 100);
-        return $(_this.inner).css('transform', "translateX(-" + pxVal + "px)");
-      };
     };
 
     ConstructSlider.prototype.setupKeybindings = function() {
@@ -136,8 +124,25 @@
       });
     };
 
-    ConstructSlider.prototype.viewportWidth = function() {
+    ConstructSlider.prototype.watchViewportWidth = function() {
+      var _this = this;
+      this.viewportW = this.getViewportW();
+      return window.onresize = function() {
+        _this.viewportW = _this.getViewportW();
+        return _this.recalculatePos();
+      };
+    };
+
+    ConstructSlider.prototype.getViewportW = function() {
       return document.documentElement.clientWidth;
+    };
+
+    ConstructSlider.prototype.recalculatePos = function() {
+      var $current, index, pxVal;
+      $current = $(this.container).find('.active');
+      index = $(this.inner).find('section').index($current);
+      pxVal = (this.viewportW * index) * (90 / 100);
+      return $(this.inner).css('transform', "translateX(-" + pxVal + "px)");
     };
 
     return ConstructSlider;
