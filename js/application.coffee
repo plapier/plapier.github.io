@@ -36,10 +36,19 @@ class ConstructSlider
       pxVal = (@viewportW * (index - 1)) * (90/100)
 
     if $next.length
-      # $inner.css('left', "-#{width}vw")
-      $(@inner).css('transform', "translateX(-#{pxVal}px)")
-      $current.removeClass('active')
-      $next.addClass('active')
+      timeout = 0
+      speed = 400
+      $scrollPos = $current.scrollTop()
+      if $scrollPos > 100
+        $current.animate scrollTop: "0", speed
+        timeout = speed + 50
+
+      window.setTimeout (->
+        $(@inner).css('transform', "translateX(-#{pxVal}px)")
+        $current.removeClass('active')
+        $next.addClass('active')
+      ), timeout
+
 
   ## Drawer Navigation
   setupDrawerNav: ->
@@ -55,13 +64,12 @@ class ConstructSlider
       $current = @container.find('.active')
       $currentIndex = @inner.find('section').index($current)
       if $targetIndex isnt $currentIndex
-        # width = 90 * targetIndex
-        # $inner.css('left', "-#{width}vw")
-        pxVal = (@viewportW * targetIndex) * (90/100)
+        pxVal = (@viewportW * $targetIndex) * (90/100)
         $($current).removeClass('active')
         $target.addClass('active')
         @inner.css('transform', "translateX(-#{pxVal}px)")
         @hideDrawer()
+        $current.scrollTop(0)
 
   ## Show/Hide Drawer
   toggleDrawer: (val) ->

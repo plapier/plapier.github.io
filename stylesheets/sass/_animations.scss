@@ -11,13 +11,15 @@
 }
 
 %title-slide-in {
-  @include animation(title-slide-in 0.5s ease-in 0.0s forwards);
+  @include animation(title-slide-in 1.0s $ease-out-quad 0.5s forwards);
 }
 @include keyframes(title-slide-in) {
   0% {
-    @include transform(translateX(-200px));
+    opacity: 0;
+    @include transform(translateX(-400px));
   }
   100% {
+    opacity: 1;
     @include transform(translateX(0));
   }
 }

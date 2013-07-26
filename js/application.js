@@ -37,7 +37,7 @@
     };
 
     ConstructSlider.prototype.slideNext = function(id) {
-      var $current, $next, index, pxVal, width;
+      var $current, $next, $scrollPos, index, pxVal, speed, timeout, width;
       $current = $(this.container).find('.active');
       index = $(this.inner).find('section').index($current);
       if (id === "next") {
@@ -50,9 +50,20 @@
         pxVal = (this.viewportW * (index - 1)) * (90 / 100);
       }
       if ($next.length) {
-        $(this.inner).css('transform', "translateX(-" + pxVal + "px)");
-        $current.removeClass('active');
-        return $next.addClass('active');
+        timeout = 0;
+        speed = 400;
+        $scrollPos = $current.scrollTop();
+        if ($scrollPos > 100) {
+          $current.animate({
+            scrollTop: "0"
+          }, speed);
+          timeout = speed + 50;
+        }
+        return window.setTimeout((function() {
+          $(this.inner).css('transform', "translateX(-" + pxVal + "px)");
+          $current.removeClass('active');
+          return $next.addClass('active');
+        }), timeout);
       }
     };
 
@@ -70,11 +81,12 @@
         $current = _this.container.find('.active');
         $currentIndex = _this.inner.find('section').index($current);
         if ($targetIndex !== $currentIndex) {
-          pxVal = (_this.viewportW * targetIndex) * (90 / 100);
+          pxVal = (_this.viewportW * $targetIndex) * (90 / 100);
           $($current).removeClass('active');
           $target.addClass('active');
           _this.inner.css('transform', "translateX(-" + pxVal + "px)");
-          return _this.hideDrawer();
+          _this.hideDrawer();
+          return $current.scrollTop(0);
         }
       });
     };
