@@ -18,6 +18,7 @@ class ConstructSlider
 
   ## Next/Prev Nav Buttons
   setupArrows: ->
+    $('.nav-info').addClass('slide-up')
     $('.main-nav').on 'click', '.arrow', (event) =>
       id = $(event.target).attr('data-id')
       @slideNext(id)
@@ -36,18 +37,31 @@ class ConstructSlider
       pxVal = (@viewportW * (index - 1)) * (90/100)
 
     if $next.length
+      $target = $current.find('div')
       timeout = 0
       speed = 400
       $scrollPos = $current.scrollTop()
       if $scrollPos > 100
-        $current.animate scrollTop: "0", speed
+        offset = $current.scrollTop()
+        $target.addClass('animate').css('transform', "translateY(#{offset}px")
+        $target.on "transitionend webkitTransitionEnd MSTransitionEnd", ->
+          $(this).removeClass('animate')
+        # $current.animate scrollTop: '0', speed
         timeout = speed + 50
 
       window.setTimeout (->
         $(@inner).css('transform', "translateX(-#{pxVal}px)")
         $current.removeClass('active')
         $next.addClass('active')
+        $(@inner).on "transitionend webkitTransitionEnd MSTransitionEnd", ->
+          $target.removeAttr('style')
+          $current.scrollTop(0)
       ), timeout
+      @hideDrawer()
+
+    # dataId = $next.attr('data-id')
+    # console.log $nextNav
+    # $nextNav.parent().addClass('active')
 
 
   ## Drawer Navigation

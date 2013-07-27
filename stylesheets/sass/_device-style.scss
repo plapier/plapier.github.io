@@ -5,6 +5,10 @@
   @include linear-gradient(#E8E8E8 0px, #B1B1B1 30px, #ccc 50%);
   margin: 10vh 5vw;
 
+  &.animate {
+    @include transition(all 0.4s $ease-out-quad);
+  }
+
   img {
     left: 0;
     margin: 20px 0 6px;

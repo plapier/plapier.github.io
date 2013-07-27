@@ -28,6 +28,7 @@
 
     ConstructSlider.prototype.setupArrows = function() {
       var _this = this;
+      $('.nav-info').addClass('slide-up');
       return $('.main-nav').on('click', '.arrow', function(event) {
         var id;
         id = $(event.target).attr('data-id');
@@ -37,7 +38,7 @@
     };
 
     ConstructSlider.prototype.slideNext = function(id) {
-      var $current, $next, $scrollPos, index, pxVal, speed, timeout, width;
+      var $current, $next, $scrollPos, $target, index, offset, pxVal, speed, timeout, width;
       $current = $(this.container).find('.active');
       index = $(this.inner).find('section').index($current);
       if (id === "next") {
@@ -50,20 +51,28 @@
         pxVal = (this.viewportW * (index - 1)) * (90 / 100);
       }
       if ($next.length) {
+        $target = $current.find('div');
         timeout = 0;
         speed = 400;
         $scrollPos = $current.scrollTop();
         if ($scrollPos > 100) {
-          $current.animate({
-            scrollTop: "0"
-          }, speed);
+          offset = $current.scrollTop();
+          $target.addClass('animate').css('transform', "translateY(" + offset + "px");
+          $target.on("transitionend webkitTransitionEnd MSTransitionEnd", function() {
+            return $(this).removeClass('animate');
+          });
           timeout = speed + 50;
         }
-        return window.setTimeout((function() {
+        window.setTimeout((function() {
           $(this.inner).css('transform', "translateX(-" + pxVal + "px)");
           $current.removeClass('active');
-          return $next.addClass('active');
+          $next.addClass('active');
+          return $(this.inner).on("transitionend webkitTransitionEnd MSTransitionEnd", function() {
+            $target.removeAttr('style');
+            return $current.scrollTop(0);
+          });
         }), timeout);
+        return this.hideDrawer();
       }
     };
 

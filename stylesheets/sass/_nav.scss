@@ -82,6 +82,11 @@ nav {
     height: 100%;
     line-height: 1.5em;
 
+    // &.active a {
+      // box-shadow: inset $spacer 0 0 $spacer-color;
+      // background: $purple;
+    // }
+
     a {
       color: hsla(0, 0%, 100%, 0.7);
       display: block;

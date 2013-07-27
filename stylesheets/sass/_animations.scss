@@ -1,25 +1,11 @@
-%image-fade-in {
-  @include animation(image-fade-in 0.15s ease-in 0.35s forwards);
-}
-@include keyframes(image-fade-in) {
-  0% {
-    opacity: 0.5;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-%title-slide-in {
-  @include animation(title-slide-in 1.0s $ease-out-quad 0.5s forwards);
-}
-@include keyframes(title-slide-in) {
-  0% {
-    opacity: 0;
-    @include transform(translateX(-400px));
-  }
-  100% {
-    opacity: 1;
-    @include transform(translateX(0));
-  }
-}
+// %image-fade-in {
+  // @include animation(image-fade-in 0.15s ease-in 0.35s forwards);
+// }
+// @include keyframes(image-fade-in) {
+  // 0% {
+    // opacity: 0.5;
+  // }
+  // 100% {
+    // opacity: 1;
+  // }
+// }

@@ -1,15 +1,22 @@
 body {
   background: $body-bg;
   overflow-y: hidden;
-  @include transform(translateZ(0));
+  // @include transform-style(preserve-3d);
+  // @include transform(translateZ(0));
+
+  * {
+    @include transform-style(preserve-3d);
+  }
 }
 
 div#slides {
+  // @include transform(translateZ(0));
   overflow: hidden;
   position: relative;
   @include transition;
   width: 100%;
   z-index: 2;
+
 
   &.show-nav {
     @include transform(translateY($drawer-height + $nav-height));
@@ -21,14 +28,12 @@ div#slides {
 }
 
 div.slides-container {
+  // @include backface-visibility(hidden);
+  // @include transform(translateZ(0));
   @include clearfix;
   overflow: hidden;
-  position: relative;
   @include transition(all 0.5s $ease-in-out-circ);
   width: 500vw;
-
-  @include backface-visibility(hidden);
-  @include transform(translateZ(0));
 }
 
 section {
@@ -37,9 +42,9 @@ section {
   height: 100vh;
   overflow-x: hidden;
   overflow-y: scroll;
+  padding-top: $nav-height;
   position: relative;
   width: 90vw;
-  padding-top: $nav-height;
 
   // Fix for weird malrendering lines
   &:before, &:after {
@@ -67,7 +72,7 @@ section {
   }
 
   .inner {
-    padding: 10vh 40vw 10vh 10vw;
+    padding: 10vh 40vw 0 10vw;
   }
 
   &.parent {
@@ -81,6 +86,7 @@ section {
   }
 
   img {
+    // visibility: hidden;
     left: 5vw;
     margin: 50px 0;
     position: relative;
