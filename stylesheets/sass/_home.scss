@@ -1,16 +1,19 @@
+%force-3d {
+  // @include backface-visibility(hidden);
+  // @include transform(translateZ(0));
+}
 body {
   background: $body-bg;
   overflow-y: hidden;
-  // @include transform-style(preserve-3d);
-  // @include transform(translateZ(0));
+  @extend %force-3d !optional;
 
-  * {
+  &, * {
     @include transform-style(preserve-3d);
   }
 }
 
 div#slides {
-  // @include transform(translateZ(0));
+  @extend %force-3d !optional;
   overflow: hidden;
   position: relative;
   @include transition;
@@ -28,8 +31,7 @@ div#slides {
 }
 
 div.slides-container {
-  // @include backface-visibility(hidden);
-  // @include transform(translateZ(0));
+  @extend %force-3d !optional;
   @include clearfix;
   overflow: hidden;
   @include transition(all 0.5s $ease-in-out-circ);
@@ -47,17 +49,18 @@ section {
   width: 90vw;
 
   // Fix for weird malrendering lines
-  &:before, &:after {
-    bottom: 0;
-    content: "";
-    position: absolute;
-    top: 0;
-    width: 4px;
-    z-index: -1;
-  }
+  // with forced 3d rendering
+  // &:before, &:after {
+    // bottom: 0;
+    // content: "";
+    // position: absolute;
+    // top: 0;
+    // width: 4px;
+    // z-index: -1;
+  // }
 
-  &:before { left: -2px; }
-  &:after { right: -2px; }
+  // &:before { left: -2px; }
+  // &:after { right: -2px; }
   // End
 
   a:link, a:visited {
@@ -76,7 +79,18 @@ section {
   }
 
   &.parent {
-    box-shadow: inset $spacer 0 0 $spacer-color;
+    // box-shadow: inset $spacer 0 0 $spacer-color;
+    // box-shadow hack required for preserve-3d
+    &:before {
+      background: $spacer-color;
+      z-index: 1;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      content: "";
+    }
   }
 
   p {
@@ -86,7 +100,6 @@ section {
   }
 
   img {
-    // visibility: hidden;
     left: 5vw;
     margin: 50px 0;
     position: relative;
