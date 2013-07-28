@@ -6,6 +6,7 @@ body {
   background: $body-bg;
   overflow-y: hidden;
   @extend %force-3d !optional;
+  // height: 100vh;
 
   &, * {
     @include transform-style(preserve-3d);
@@ -19,6 +20,7 @@ div#slides {
   @include transition;
   width: 100%;
   z-index: 2;
+  height: $base-height;
 
 
   &.show-nav {
@@ -41,7 +43,7 @@ div.slides-container {
 section {
   background: #3D4652;
   float: left;
-  height: 100vh;
+  height: $base-height;
   overflow-x: hidden;
   overflow-y: scroll;
   padding-top: $nav-height;
@@ -50,17 +52,17 @@ section {
 
   // Fix for weird malrendering lines
   // with forced 3d rendering
-  // &:before, &:after {
-    // bottom: 0;
-    // content: "";
-    // position: absolute;
-    // top: 0;
-    // width: 4px;
-    // z-index: -1;
-  // }
+  &:before, &:after {
+    bottom: 0;
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 4px;
+    z-index: -1;
+  }
 
-  // &:before { left: -2px; }
-  // &:after { right: -2px; }
+  &:before { left: -2px; }
+  &:after { right: -2px; }
   // End
 
   a:link, a:visited {
@@ -98,14 +100,6 @@ section {
     margin-bottom: 1em;
     color: hsla(0, 0%, 100%, 0.7);
   }
-
-  img {
-    left: 5vw;
-    margin: 50px 0;
-    position: relative;
-    top: 0;
-    width: 80vw;
-  }
 }
 
 section:first-child,
@@ -115,4 +109,17 @@ section:last-child {
 
 section:last-child {
   padding-right: 5vw;
+}
+
+$nums: 0;
+@for $i from 2 through 25 {
+  $nums: join($nums, $i);
+}
+
+@each $num in $nums {
+  div#slides .transition-#{$num} {
+    $duration: 200 * $num;
+    @include transition-duration(#{$duration}ms);
+    @include transition-timing-function($ease-out-quad);
+  }
 }

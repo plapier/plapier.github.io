@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="stylesheets/application.css">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <script src="js/application.js"></script>
+    <script src="js/jquery.alterclass.js"></script>
     <script type="text/javascript" src="//use.typekit.net/sfm3cqo.js"></script>
     <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
   </head>
@@ -17,19 +18,19 @@
   <body>
     <nav class="slides-nav">
       <div class="main-nav">
-        <a href="#" data-id="prev" class="prev arrow"><img src="images/arrow.svg" alt="Previous"></a>
-        <a href="#" class="menu"><img src="images/menu.svg" alt="Menu"></a>
-        <a href="#" data-id="next" class="next arrow"><img src="images/arrow.svg" alt="Next"></a>
+        <a href="#" onclick="return false;" data-id="prev" class="prev arrow"><img src="images/arrow.svg" alt="Previous"></a>
+        <a href="#" onclick="return false;" class="menu"><img src="images/menu.svg" alt="Menu"></a>
+        <a href="#" onclick="return false;" data-id="next" class="next arrow"><img src="images/arrow.svg" alt="Next"></a>
       </div>
     </nav>
     <ol class="drawer">
       <li class="active"><a href="#about">About Me</a></li>
-      <li><a href="#thoughtbot">thoughtbot Learn Prime</a></li>
-      <li><a href="#groupize-wl">Groupize White-label</a></li>
-      <li><a href="#groupize-prm">Groupize PRM</a></li>
-      <li><a href="#fdn">Financial Diligence Networks</a></li>
-      <li><a href="#vpp">Velocity</a></li>
-      <li><a href="#iora">Iora Health</a></li>
+      <li><a onclick="return false;" href="#thoughtbot">thoughtbot Learn Prime</a></li>
+      <li><a onclick="return false;" href="#groupize-wl">Groupize White-label</a></li>
+      <li><a onclick="return false;" href="#groupize-prm">Groupize PRM</a></li>
+      <li><a onclick="return false;" href="#fdn">Financial Diligence Networks</a></li>
+      <li><a onclick="return false;" href="#vpp">Velocity</a></li>
+      <li><a onclick="return false;" href="#iora">Iora Health</a></li>
     </ol>
 
     {{ content }}

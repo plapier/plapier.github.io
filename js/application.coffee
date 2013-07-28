@@ -7,6 +7,7 @@ class ConstructSlider
     @setInnerWidth()
     @setupArrows()
     @setupDrawerNav()
+    @setupImagesNav()
     @setupKeybindings()
     @watchViewportWidth()
 
@@ -46,7 +47,6 @@ class ConstructSlider
         $target.addClass('animate').css('transform', "translateY(#{offset}px")
         $target.on "transitionend webkitTransitionEnd MSTransitionEnd", ->
           $(this).removeClass('animate')
-        # $current.animate scrollTop: '0', speed
         timeout = speed + 50
 
       window.setTimeout (->
@@ -54,7 +54,7 @@ class ConstructSlider
         $current.removeClass('active')
         $next.addClass('active')
         $(@inner).on "transitionend webkitTransitionEnd MSTransitionEnd", ->
-          $target.removeAttr('style')
+          $target.css('transform', "translateX(0)")
           $current.scrollTop(0)
       ), timeout
       @hideDrawer()
@@ -73,17 +73,35 @@ class ConstructSlider
       dataId = $(event.target).attr('href')
       dataId = dataId.replace("#", "")
       $target = $(@inner).find("[data-id='#{dataId}']")
-      $targetIndex = $(@inner).find('section').index($target)
+      $targetIndex = $target.index()
 
       $current = @container.find('.active')
-      $currentIndex = @inner.find('section').index($current)
+      $currentIndex = $current.index()
+      diff = Math.abs($targetIndex - $currentIndex)
+
       if $targetIndex isnt $currentIndex
-        pxVal = (@viewportW * $targetIndex) * (90/100)
+        pxVal = Math.floor (@viewportW * $targetIndex) * (90/100)
         $($current).removeClass('active')
         $target.addClass('active')
-        @inner.css('transform', "translateX(-#{pxVal}px)")
+        @inner.addClass("transition-#{diff}").css('transform', "translateX(-#{pxVal}px)")
         @hideDrawer()
         $current.scrollTop(0)
+
+  ## For Multiples images in a single browser frame
+  setupImagesNav: ->
+    @setBrowserHeight()
+    $('nav.dots').on 'click', 'span', ->
+      if !$(this).hasClass('current')
+        $(this).addClass('current').siblings().removeClass('current')
+        index = $(this).index()
+        images = $(this).parent().siblings('img')
+        $(images[index]).addClass('current').siblings().removeClass('current')
+
+  setBrowserHeight: ->
+    images = $('.multiple-images')
+    $(images).each ->
+      imageHeight = $(this).find('img.current').outerHeight()
+      $(this).height(imageHeight)
 
   ## Show/Hide Drawer
   toggleDrawer: (val) ->
@@ -95,6 +113,7 @@ class ConstructSlider
   hideDrawer: ->
     if $(@container).hasClass('show-nav')
       @inner.on "transitionend webkitTransitionEnd MSTransitionEnd", =>
+        @inner.alterClass('transition-*', '')
         @toggleDrawer("close")
 
   setupKeybindings: ->
@@ -122,18 +141,24 @@ class ConstructSlider
   watchViewportWidth: ->
     @viewportW = @getViewportW()
 
-    window.onresize = =>
+    onResize = () =>
       @viewportW = @getViewportW()
+      @setInnerWidth()
       @recalculatePos()
+      @setBrowserHeight()
+
+    ## Resize after user stops resizing
+    $(window).bind "resize", ->
+      timer and clearTimeout(timer)
+      timer = setTimeout(onResize, 500)
 
   getViewportW: ->
     document.documentElement.clientWidth
-
   ## Fix panel positioning
   recalculatePos: ->
     $current = $(@container).find('.active')
     index = $(@inner).find('section').index($current)
-    pxVal = (@viewportW * index) * (90/100)
+    pxVal = Math.floor (@viewportW * index) * (90/100)
     $(@inner).css('transform', "translateX(-#{pxVal}px)")
 
 $ ->
