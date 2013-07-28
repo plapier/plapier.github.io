@@ -118,8 +118,8 @@ $nums: 0;
 
 @each $num in $nums {
   div#slides .transition-#{$num} {
-    $duration: 200 * $num;
+    $duration: 175 * $num;
     @include transition-duration(#{$duration}ms);
-    @include transition-timing-function($ease-out-quad);
+    @include transition-timing-function($ease-out-sine);
   }
 }

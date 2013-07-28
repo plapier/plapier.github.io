@@ -700,201 +700,201 @@ div#slides .transition-0 {
   -webkit-transition-duration: 0ms;
   -moz-transition-duration: 0ms;
   transition-duration: 0ms;
-  -webkit-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  -moz-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+  -webkit-transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+  -moz-transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+  transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1); }
 
 div#slides .transition-2 {
-  -webkit-transition-duration: 400ms;
-  -moz-transition-duration: 400ms;
-  transition-duration: 400ms;
-  -webkit-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  -moz-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+  -webkit-transition-duration: 350ms;
+  -moz-transition-duration: 350ms;
+  transition-duration: 350ms;
+  -webkit-transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+  -moz-transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+  transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1); }
 
 div#slides .transition-3 {
-  -webkit-transition-duration: 600ms;
-  -moz-transition-duration: 600ms;
-  transition-duration: 600ms;
-  -webkit-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  -moz-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+  -webkit-transition-duration: 525ms;
+  -moz-transition-duration: 525ms;
+  transition-duration: 525ms;
+  -webkit-transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+  -moz-transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+  transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1); }
 
 div#slides .transition-4 {
-  -webkit-transition-duration: 800ms;
-  -moz-transition-duration: 800ms;
-  transition-duration: 800ms;
-  -webkit-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  -moz-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+  -webkit-transition-duration: 700ms;
+  -moz-transition-duration: 700ms;
+  transition-duration: 700ms;
+  -webkit-transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+  -moz-transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+  transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1); }
 
 div#slides .transition-5 {
-  -webkit-transition-duration: 1000ms;
-  -moz-transition-duration: 1000ms;
-  transition-duration: 1000ms;
-  -webkit-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  -moz-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+  -webkit-transition-duration: 875ms;
+  -moz-transition-duration: 875ms;
+  transition-duration: 875ms;
+  -webkit-transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+  -moz-transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+  transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1); }
 
 div#slides .transition-6 {
-  -webkit-transition-duration: 1200ms;
-  -moz-transition-duration: 1200ms;
-  transition-duration: 1200ms;
-  -webkit-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  -moz-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+  -webkit-transition-duration: 1050ms;
+  -moz-transition-duration: 1050ms;
+  transition-duration: 1050ms;
+  -webkit-transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+  -moz-transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+  transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1); }
 
 div#slides .transition-7 {
+  -webkit-transition-duration: 1225ms;
+  -moz-transition-duration: 1225ms;
+  transition-duration: 1225ms;
+  -webkit-transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+  -moz-transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+  transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1); }
+
+div#slides .transition-8 {
   -webkit-transition-duration: 1400ms;
   -moz-transition-duration: 1400ms;
   transition-duration: 1400ms;
-  -webkit-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  -moz-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94); }
-
-div#slides .transition-8 {
-  -webkit-transition-duration: 1600ms;
-  -moz-transition-duration: 1600ms;
-  transition-duration: 1600ms;
-  -webkit-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  -moz-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+  -webkit-transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+  -moz-transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+  transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1); }
 
 div#slides .transition-9 {
-  -webkit-transition-duration: 1800ms;
-  -moz-transition-duration: 1800ms;
-  transition-duration: 1800ms;
-  -webkit-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  -moz-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+  -webkit-transition-duration: 1575ms;
+  -moz-transition-duration: 1575ms;
+  transition-duration: 1575ms;
+  -webkit-transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+  -moz-transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+  transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1); }
 
 div#slides .transition-10 {
-  -webkit-transition-duration: 2000ms;
-  -moz-transition-duration: 2000ms;
-  transition-duration: 2000ms;
-  -webkit-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  -moz-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+  -webkit-transition-duration: 1750ms;
+  -moz-transition-duration: 1750ms;
+  transition-duration: 1750ms;
+  -webkit-transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+  -moz-transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+  transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1); }
 
 div#slides .transition-11 {
-  -webkit-transition-duration: 2200ms;
-  -moz-transition-duration: 2200ms;
-  transition-duration: 2200ms;
-  -webkit-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  -moz-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+  -webkit-transition-duration: 1925ms;
+  -moz-transition-duration: 1925ms;
+  transition-duration: 1925ms;
+  -webkit-transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+  -moz-transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+  transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1); }
 
 div#slides .transition-12 {
-  -webkit-transition-duration: 2400ms;
-  -moz-transition-duration: 2400ms;
-  transition-duration: 2400ms;
-  -webkit-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  -moz-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+  -webkit-transition-duration: 2100ms;
+  -moz-transition-duration: 2100ms;
+  transition-duration: 2100ms;
+  -webkit-transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+  -moz-transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+  transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1); }
 
 div#slides .transition-13 {
-  -webkit-transition-duration: 2600ms;
-  -moz-transition-duration: 2600ms;
-  transition-duration: 2600ms;
-  -webkit-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  -moz-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+  -webkit-transition-duration: 2275ms;
+  -moz-transition-duration: 2275ms;
+  transition-duration: 2275ms;
+  -webkit-transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+  -moz-transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+  transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1); }
 
 div#slides .transition-14 {
+  -webkit-transition-duration: 2450ms;
+  -moz-transition-duration: 2450ms;
+  transition-duration: 2450ms;
+  -webkit-transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+  -moz-transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+  transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1); }
+
+div#slides .transition-15 {
+  -webkit-transition-duration: 2625ms;
+  -moz-transition-duration: 2625ms;
+  transition-duration: 2625ms;
+  -webkit-transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+  -moz-transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+  transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1); }
+
+div#slides .transition-16 {
   -webkit-transition-duration: 2800ms;
   -moz-transition-duration: 2800ms;
   transition-duration: 2800ms;
-  -webkit-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  -moz-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94); }
-
-div#slides .transition-15 {
-  -webkit-transition-duration: 3000ms;
-  -moz-transition-duration: 3000ms;
-  transition-duration: 3000ms;
-  -webkit-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  -moz-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94); }
-
-div#slides .transition-16 {
-  -webkit-transition-duration: 3200ms;
-  -moz-transition-duration: 3200ms;
-  transition-duration: 3200ms;
-  -webkit-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  -moz-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+  -webkit-transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+  -moz-transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+  transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1); }
 
 div#slides .transition-17 {
-  -webkit-transition-duration: 3400ms;
-  -moz-transition-duration: 3400ms;
-  transition-duration: 3400ms;
-  -webkit-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  -moz-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+  -webkit-transition-duration: 2975ms;
+  -moz-transition-duration: 2975ms;
+  transition-duration: 2975ms;
+  -webkit-transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+  -moz-transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+  transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1); }
 
 div#slides .transition-18 {
-  -webkit-transition-duration: 3600ms;
-  -moz-transition-duration: 3600ms;
-  transition-duration: 3600ms;
-  -webkit-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  -moz-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+  -webkit-transition-duration: 3150ms;
+  -moz-transition-duration: 3150ms;
+  transition-duration: 3150ms;
+  -webkit-transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+  -moz-transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+  transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1); }
 
 div#slides .transition-19 {
-  -webkit-transition-duration: 3800ms;
-  -moz-transition-duration: 3800ms;
-  transition-duration: 3800ms;
-  -webkit-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  -moz-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+  -webkit-transition-duration: 3325ms;
+  -moz-transition-duration: 3325ms;
+  transition-duration: 3325ms;
+  -webkit-transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+  -moz-transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+  transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1); }
 
 div#slides .transition-20 {
-  -webkit-transition-duration: 4000ms;
-  -moz-transition-duration: 4000ms;
-  transition-duration: 4000ms;
-  -webkit-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  -moz-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+  -webkit-transition-duration: 3500ms;
+  -moz-transition-duration: 3500ms;
+  transition-duration: 3500ms;
+  -webkit-transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+  -moz-transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+  transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1); }
 
 div#slides .transition-21 {
+  -webkit-transition-duration: 3675ms;
+  -moz-transition-duration: 3675ms;
+  transition-duration: 3675ms;
+  -webkit-transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+  -moz-transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+  transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1); }
+
+div#slides .transition-22 {
+  -webkit-transition-duration: 3850ms;
+  -moz-transition-duration: 3850ms;
+  transition-duration: 3850ms;
+  -webkit-transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+  -moz-transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+  transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1); }
+
+div#slides .transition-23 {
+  -webkit-transition-duration: 4025ms;
+  -moz-transition-duration: 4025ms;
+  transition-duration: 4025ms;
+  -webkit-transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+  -moz-transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+  transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1); }
+
+div#slides .transition-24 {
   -webkit-transition-duration: 4200ms;
   -moz-transition-duration: 4200ms;
   transition-duration: 4200ms;
-  -webkit-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  -moz-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94); }
-
-div#slides .transition-22 {
-  -webkit-transition-duration: 4400ms;
-  -moz-transition-duration: 4400ms;
-  transition-duration: 4400ms;
-  -webkit-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  -moz-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94); }
-
-div#slides .transition-23 {
-  -webkit-transition-duration: 4600ms;
-  -moz-transition-duration: 4600ms;
-  transition-duration: 4600ms;
-  -webkit-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  -moz-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94); }
-
-div#slides .transition-24 {
-  -webkit-transition-duration: 4800ms;
-  -moz-transition-duration: 4800ms;
-  transition-duration: 4800ms;
-  -webkit-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  -moz-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+  -webkit-transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+  -moz-transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+  transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1); }
 
 div#slides .transition-25 {
-  -webkit-transition-duration: 5000ms;
-  -moz-transition-duration: 5000ms;
-  transition-duration: 5000ms;
-  -webkit-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  -moz-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+  -webkit-transition-duration: 4375ms;
+  -moz-transition-duration: 4375ms;
+  transition-duration: 4375ms;
+  -webkit-transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+  -moz-transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+  transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1); }
 
 .about {
   background: #7f63b5; }
