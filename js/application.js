@@ -7,6 +7,7 @@
 
     function ConstructSlider() {
       this.nav = $('nav.slides-nav');
+      this.drawer = $('.drawer');
       this.container = $('#slides');
       this.inner = this.container.find('.slides-container');
       this.setInnerWidth();
@@ -20,16 +21,16 @@
     ConstructSlider.prototype.setInnerWidth = function() {
       var width;
       width = null;
-      $(".slides-container section").each(function() {
+      this.inner.find('section').each(function() {
         return width = width + $(this).outerWidth(true) + 3;
       });
-      return $(this.inner).css('width', width);
+      return this.inner.css('width', width);
     };
 
     ConstructSlider.prototype.setupArrows = function() {
       var _this = this;
-      $('.nav-info').addClass('slide-up');
-      return $('.main-nav').on('click', '.arrow', function(event) {
+      this.inner.find('.nav-info').addClass('slide-up');
+      return this.nav.on('click', '.arrow', function(event) {
         var id;
         id = $(event.target).attr('data-id');
         _this.slideNext(id);
@@ -38,9 +39,10 @@
     };
 
     ConstructSlider.prototype.slideNext = function(id) {
-      var $current, $next, $scrollPos, $target, index, offset, pxVal, speed, timeout, width;
-      $current = $(this.container).find('.active');
-      index = $(this.inner).find('section').index($current);
+      var $current, $next, $scrollPos, $target, index, offset, pxVal, speed, timeout, width,
+        _this = this;
+      $current = this.container.find('.active');
+      index = this.inner.find('section').index($current);
       if (id === "next") {
         $next = $current.next();
         width = (index + 1) * 90;
@@ -64,10 +66,10 @@
           timeout = speed + 50;
         }
         window.setTimeout((function() {
-          $(this.inner).css('transform', "translateX(-" + pxVal + "px)");
+          _this.inner.css('transform', "translateX(-" + pxVal + "px)");
           $current.removeClass('active');
           $next.addClass('active');
-          return $(this.inner).on("transitionend webkitTransitionEnd MSTransitionEnd", function() {
+          return _this.inner.on("transitionend webkitTransitionEnd MSTransitionEnd", function() {
             $target.css('transform', "translateX(0)");
             return $current.scrollTop(0);
           });
@@ -78,21 +80,21 @@
 
     ConstructSlider.prototype.setupDrawerNav = function() {
       var _this = this;
-      $('.menu').click(function() {
+      this.nav.find('.menu').click(function() {
         return _this.toggleDrawer();
       });
-      return $('.drawer a').on('click', function(event) {
+      return this.drawer.find('a').on('click', function(event) {
         var $current, $currentIndex, $target, $targetIndex, dataId, diff, pxVal;
         dataId = $(event.target).attr('href');
         dataId = dataId.replace("#", "");
-        $target = $(_this.inner).find("[data-id='" + dataId + "']");
+        $target = _this.inner.find("[data-id='" + dataId + "']");
         $targetIndex = $target.index();
         $current = _this.container.find('.active');
         $currentIndex = $current.index();
         diff = Math.abs($targetIndex - $currentIndex);
         if ($targetIndex !== $currentIndex) {
           pxVal = Math.floor((_this.viewportW * $targetIndex) * (90 / 100));
-          $($current).removeClass('active');
+          $current.removeClass('active');
           $target.addClass('active');
           _this.inner.addClass("transition-" + diff).css('transform', "translateX(-" + pxVal + "px)");
           _this.hideDrawer();
@@ -103,7 +105,7 @@
 
     ConstructSlider.prototype.setupImagesNav = function() {
       this.setBrowserHeight();
-      return $('nav.dots').on('click', 'span', function() {
+      return this.inner.find('nav.dots').on('click', 'span', function() {
         var images, index;
         if (!$(this).hasClass('current')) {
           $(this).addClass('current').siblings().removeClass('current');
@@ -115,9 +117,7 @@
     };
 
     ConstructSlider.prototype.setBrowserHeight = function() {
-      var images;
-      images = $('.multiple-images');
-      return $(images).each(function() {
+      return this.inner.find('.multiple-images').each(function() {
         var imageHeight;
         imageHeight = $(this).find('img.current').outerHeight();
         return $(this).height(imageHeight);
@@ -126,18 +126,20 @@
 
     ConstructSlider.prototype.toggleDrawer = function(val) {
       if (val === "close" || this.container.hasClass('show-nav')) {
-        return $(this.container).removeClass('show-nav').addClass('hide-nav');
+        return this.container.removeClass('show-nav').addClass('hide-nav');
       } else if (val = 'open' || this.container.hasClass('show-nav')) {
-        return $(this.container).removeClass('hide-nav').addClass('show-nav');
+        return this.container.removeClass('hide-nav').addClass('show-nav');
       }
     };
 
     ConstructSlider.prototype.hideDrawer = function() {
       var _this = this;
-      if ($(this.container).hasClass('show-nav')) {
+      if (this.container.hasClass('show-nav')) {
         return this.inner.on("transitionend webkitTransitionEnd MSTransitionEnd", function() {
-          _this.inner.alterClass('transition-*', '');
-          return _this.toggleDrawer("close");
+          _this.toggleDrawer("close");
+          return _this.inner.removeClass(function(index, css) {
+            return (css.match(/\btransition\S+/g) || []).join(" ");
+          });
         });
       }
     };
@@ -193,10 +195,10 @@
 
     ConstructSlider.prototype.recalculatePos = function() {
       var $current, index, pxVal;
-      $current = $(this.container).find('.active');
-      index = $(this.inner).find('section').index($current);
+      $current = this.container.find('.active');
+      index = this.inner.find('section').index($current);
       pxVal = Math.floor((this.viewportW * index) * (90 / 100));
-      return $(this.inner).css('transform', "translateX(-" + pxVal + "px)");
+      return this.inner.css('transform', "translateX(-" + pxVal + "px)");
     };
 
     return ConstructSlider;
