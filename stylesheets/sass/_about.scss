@@ -2,12 +2,17 @@ section.about {
   ol {
     @include clearfix;
     list-style: none;
-    margin: 20vh 0 0;
+    margin: 19vh 0 0;
     padding: 0;
+
+    @include media($mobile) {
+      margin: 15vh 0 0;
+    }
 
     li {
       float: left;
       margin-right: 30px;
+      line-height: 2em;
 
       a {
         font-weight: 700;
@@ -34,6 +39,10 @@ section.about {
     @include transform(translateY(80px));
     @include transition(all 0.45s $ease-out-quad 0.3s);
     width: 70px;
+
+    @include media($tablet) {
+      display: none;
+    }
 
     &.slide-up {
       opacity: 1;

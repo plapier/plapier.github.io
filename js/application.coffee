@@ -83,6 +83,10 @@ class ConstructSlider
         @hideDrawer()
         $current.scrollTop(0)
 
+        # Set active drawer anchor
+        $(event.target).parent().addClass('active').siblings().removeClass('active')
+
+
   ## For Multiples images in a single browser frame
   setupImagesNav: ->
     @setBrowserHeight()

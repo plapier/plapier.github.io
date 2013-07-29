@@ -35,6 +35,10 @@ nav.slides-nav {
         left: 50%;
         margin-left: -$nav-height / 2;
 
+        @include media($mobile) {
+          display: none;
+        }
+
         img {
           left: 9px;
         }
@@ -78,14 +82,23 @@ nav.slides-nav {
     @include clearfix;
     display: inline-block;
     float: left;
-    font-size: 18px;
+    font-size: em(18, $base);
     height: 100%;
     line-height: 1.5em;
 
-    // &.active a {
-      // box-shadow: inset $spacer 0 0 $spacer-color;
-      // background: $purple;
-    // }
+    @include media($tablet) {
+      font-size: em(22, $base);
+    }
+
+    @include media($mobile) {
+      font-size: em(20, $base);
+    }
+
+    &.active a {
+      &, &:hover {
+        background: lighten($body-bg, 2%);
+      }
+    }
 
     a {
       color: hsla(0, 0%, 100%, 0.7);
@@ -121,6 +134,7 @@ nav.dots {
     margin-right: $size/2 + 1;
     width: $size;
     @include transition(all 0.5);
+    cursor: pointer;
 
     &.current {
       background: hsla(0, 0%, 100%, 0.4);

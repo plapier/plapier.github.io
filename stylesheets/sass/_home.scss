@@ -78,6 +78,14 @@ section {
 
   .inner {
     padding: 10vh 40vw 0 10vw;
+
+    @include media($tablet) {
+      padding: 10vh 20vw 0 10vw;
+    }
+
+    @include media($mobile) {
+      padding: 8vh 10vw 0 10vw;
+    }
   }
 
   &.parent {

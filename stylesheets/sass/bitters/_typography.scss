@@ -16,15 +16,32 @@ $header-font-family: $serif;
 
 // Font Sizes
 $base: 28;
-$base-font-size: 28px; // this isn't supported in IE8
+$base-font-size: 1.95vw; // this isn't supported in IE8
+$base-font-size-alt: 28px; // this isn't supported in IE8
 $base-line-height: $base-font-size * 1.375;
+
+$base-font-size-tablet: 2.5vw;
+$base-font-size-tablet-alt: 20px;
+$base-font-size-mobile: 4.8vw;
+$base-font-size-mobile-alt: 16px;
 
 body {
   color: $base-font-color;
   font-family: $base-font-family;
-  font-size: $base-font-size;
   line-height: $base-line-height;
   -webkit-font-smoothing: antialiased;
+
+  font-size: $base-font-size-alt; // fallback
+  font-size: $base-font-size;
+
+  @include media($tablet) {
+    font-size: $base-font-size-tablet-alt; // fallback
+    font-size: $base-font-size-tablet;
+  }
+  @include media($mobile) {
+    font-size: $base-font-size-mobile-alt; // fallback
+    font-size: $base-font-size-mobile;
+  }
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -37,9 +54,11 @@ h1 {
   font-size: em(42, $base);
   font-weight: 400;
   line-height: $base-line-height * 1;
-  margin: ($base-line-height * .5) 0;
-  // margin: 0;
-  margin-bottom: 1.8em;
+  margin: ($base-line-height * .5) 0 1.8em;
+
+  @include media($tablet) {
+    margin: 0 0 1.6em;
+  }
 }
 
 h2 {
@@ -55,6 +74,11 @@ h3 {
   font-weight: 600;
   line-height: $base-line-height * 1.5;
   margin: ($base-line-height * .3) 0 0.75em;
+
+  @include media($tablet) {
+    line-height: 1.2em;
+    margin-bottom: 1.0em;
+  }
 }
 
 h4 {
@@ -76,7 +100,6 @@ h6 {
 }
 
 p {
-  font-size: $base-font-size;
   font-weight: 400;
   margin: 0 0 ($base-line-height * .5);
 }

@@ -98,7 +98,8 @@
           $target.addClass('active');
           _this.inner.addClass("transition-" + diff).css('transform', "translateX(-" + pxVal + "px)");
           _this.hideDrawer();
-          return $current.scrollTop(0);
+          $current.scrollTop(0);
+          return $(event.target).parent().addClass('active').siblings().removeClass('active');
         }
       });
     };
