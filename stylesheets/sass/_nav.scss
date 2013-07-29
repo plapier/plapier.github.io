@@ -14,6 +14,7 @@ nav.slides-nav {
       display: block;
       float: left;
       height: $nav-height;
+      line-height: 0;
       opacity: 0.3;
       position: absolute;
       text-decoration: none;
@@ -40,6 +41,7 @@ nav.slides-nav {
         }
 
         img {
+          top: 18px;
           left: 9px;
         }
       }
