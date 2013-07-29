@@ -69,6 +69,7 @@
           _this.inner.css('transform', "translateX(-" + pxVal + "px)");
           $current.removeClass('active');
           $next.addClass('active');
+          _this.changeDrawerActive();
           return _this.inner.on("transitionend webkitTransitionEnd MSTransitionEnd", function() {
             $target.css('transform', "translateX(0)");
             return $current.scrollTop(0);
@@ -97,9 +98,9 @@
           $current.removeClass('active');
           $target.addClass('active');
           _this.inner.addClass("transition-" + diff).css('transform', "translateX(-" + pxVal + "px)");
+          _this.changeDrawerActive();
           _this.hideDrawer();
-          $current.scrollTop(0);
-          return $(event.target).parent().addClass('active').siblings().removeClass('active');
+          return $current.scrollTop(0);
         }
       });
     };
@@ -143,6 +144,12 @@
           });
         });
       }
+    };
+
+    ConstructSlider.prototype.changeDrawerActive = function() {
+      var $target, selector;
+      selector = this.container.find('.active').attr('class').split(' ')[0];
+      return $target = this.drawer.find("a[href='#" + selector + "']").parent().addClass('active').siblings().removeClass('active');
     };
 
     ConstructSlider.prototype.setupKeybindings = function() {

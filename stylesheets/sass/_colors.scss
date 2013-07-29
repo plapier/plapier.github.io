@@ -17,13 +17,13 @@ $blue-alt: #88B3E8;
   background: $c;
   &:before, &:after { background: $c; }
 }
-.grpz-portal {
-  $c: $purple-alt;
+.groupize-wl {
+  $c: $blue;
   background: $c;
   &:before, &:after { background: $c; }
 }
-.grpz-consumer {
-  $c: $blue;
+.groupize-prm {
+  $c: $purple-alt;
   background: $c;
   &:before, &:after { background: $c; }
 }
@@ -32,7 +32,7 @@ $blue-alt: #88B3E8;
   background: $c;
   &:before, &:after { background: $c; }
 }
-.velocity {
+.vpp {
   $c: $orange;
   background: $c;
   &:before, &:after { background: $c; }

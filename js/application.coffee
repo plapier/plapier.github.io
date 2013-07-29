@@ -54,6 +54,7 @@ class ConstructSlider
         @inner.css('transform', "translateX(-#{pxVal}px)")
         $current.removeClass('active')
         $next.addClass('active')
+        @changeDrawerActive()
         @inner.on "transitionend webkitTransitionEnd MSTransitionEnd", ->
           $target.css('transform', "translateX(0)")
           $current.scrollTop(0)
@@ -80,12 +81,9 @@ class ConstructSlider
         $current.removeClass('active') ## THIS
         $target.addClass('active')
         @inner.addClass("transition-#{diff}").css('transform', "translateX(-#{pxVal}px)")
+        @changeDrawerActive()
         @hideDrawer()
         $current.scrollTop(0)
-
-        # Set active drawer anchor
-        $(event.target).parent().addClass('active').siblings().removeClass('active')
-
 
   ## For Multiples images in a single browser frame
   setupImagesNav: ->
@@ -116,6 +114,9 @@ class ConstructSlider
         @inner.removeClass (index, css) ->
           (css.match(/\btransition\S+/g) or []).join " "
 
+  changeDrawerActive: ->
+    selector = @container.find('.active').attr('class').split(' ')[0]
+    $target  = @drawer.find("a[href='##{selector}']").parent().addClass('active').siblings().removeClass('active')
 
   setupKeybindings: ->
     $(window).focus ->

@@ -926,24 +926,24 @@ div#slides .transition-25 {
   .thoughtbot:before, .thoughtbot:after {
     background: #df6c63; }
 
-.grpz-portal {
-  background: #b080c1; }
-  .grpz-portal:before, .grpz-portal:after {
-    background: #b080c1; }
-
-.grpz-consumer {
+.groupize-wl {
   background: #60a4eb; }
-  .grpz-consumer:before, .grpz-consumer:after {
+  .groupize-wl:before, .groupize-wl:after {
     background: #60a4eb; }
+
+.groupize-prm {
+  background: #b080c1; }
+  .groupize-prm:before, .groupize-prm:after {
+    background: #b080c1; }
 
 .fdn {
   background: #5ac292; }
   .fdn:before, .fdn:after {
     background: #5ac292; }
 
-.velocity {
+.vpp {
   background: #f89e6b; }
-  .velocity:before, .velocity:after {
+  .vpp:before, .vpp:after {
     background: #f89e6b; }
 
 .iora {
