@@ -24,6 +24,7 @@ $base-font-size-tablet: 2.5vw;
 $base-font-size-tablet-alt: 20px;
 $base-font-size-mobile: 4.8vw;
 $base-font-size-mobile-alt: 16px;
+$base-font-size-desktop: 28px;
 
 body {
   color: $base-font-color;
@@ -34,13 +35,16 @@ body {
   font-size: $base-font-size-alt; // fallback
   font-size: $base-font-size;
 
+  @include media($mobile) {
+    font-size: $base-font-size-mobile-alt; // fallback
+    font-size: $base-font-size-mobile;
+  }
   @include media($tablet) {
     font-size: $base-font-size-tablet-alt; // fallback
     font-size: $base-font-size-tablet;
   }
-  @include media($mobile) {
-    font-size: $base-font-size-mobile-alt; // fallback
-    font-size: $base-font-size-mobile;
+  @include media($desktop) {
+    font-size: $base-font-size-desktop;
   }
 }
 
