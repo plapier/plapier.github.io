@@ -1,12 +1,11 @@
 .browser {
   $browser-top: 20px;
-  $browser-bottom: 6px;
   border-radius: 4px;
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.23);
   @include linear-gradient(#E8E8E8 0px, #B1B1B1 30px, #ccc 50%);
-  margin: 10vh 5vw;
+  margin: 10vh 5vw 5vh;
   position: relative;
-  padding: $browser-top 0 $browser-bottom;
+  padding: $browser-top 0 0;
 
   // Faux-scroll effect
   &.animate {
@@ -34,29 +33,38 @@
   }
 
   img {
-    border: 1px solid #999;
-    border-left: 0;
-    border-radius: 0px;
-    border-right: 0;
+    border-top: 1px solid #999;
     width: 100%;
     display: block;
+    @include border-bottom-radius(4px);
   }
 }
 
 .ipad {
-  display: block;
   background: #000;
-  border-radius: 40px;
-  // border-radius: 3vw;
-  box-shadow: 2px -2px 0 #fff;
-  box-shadow: inset -2px 2px 0 #fff;
-  margin: 10vh 5vw;
+  // border-radius: 40px;
+  border-radius: 3vw;
+  display: block;
+  margin: 10vh 5vw 5vh;
   padding: 3vw 6vw;
+  position: relative;
+
+  // inset Box-shadow hack for border-radius in vw
+  &:after {
+    border-radius: 3vw;
+    box-shadow: 2px -2px 0 #fff;
+    content: "";
+    height: 100%;
+    position: absolute;
+    right: 2px;
+    top: 2px;
+    width: 100%;
+  }
 
   img {
     display: block;
     border-radius: 4px;
-    width: 100%;
+    width: 99%;
   }
 }
 
