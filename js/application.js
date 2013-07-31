@@ -157,10 +157,12 @@
       var _this = this;
       if ($.isTouchCapable()) {
         this.inner.on("swiperight", function(e) {
-          return _this.slideNext("prev");
+          _this.slideNext("prev");
+          return e.preventDefault();
         });
         return this.inner.on("swipeleft", function(e) {
-          return _this.slideNext("next");
+          _this.slideNext("next");
+          return e.preventDefault();
         });
       }
     };

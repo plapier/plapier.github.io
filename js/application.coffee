@@ -123,8 +123,11 @@ class ConstructSlider
     if $.isTouchCapable()
       @inner.on "swiperight", (e) =>
         @slideNext("prev")
+        e.preventDefault()
+
       @inner.on "swipeleft", (e) =>
         @slideNext("next")
+        e.preventDefault()
 
   setupKeybindings: ->
     $(window).focus ->

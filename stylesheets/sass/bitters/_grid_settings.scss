@@ -11,3 +11,7 @@ $mobile: new-breakpoint(max-width 480px 4);
 $tablet: new-breakpoint(max-width 768px 8);
 // $laptop: new-breakpoint(min-width 769px 12);
 $desktop: new-breakpoint(min-width 1440px 12);
+
+$ipad: new-breakpoint(min-device-width 768px max-device-width 1024px);
+$iphone5: new-breakpoint(min-device-width 320px max-device-width 568px);
+$iphone4: new-breakpoint(min-device-width 320px max-device-width 480px);

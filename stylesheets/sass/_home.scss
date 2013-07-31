@@ -5,7 +5,6 @@
 body {
   background: $body-bg;
   overflow-y: hidden;
-  @extend %force-3d !optional;
   // height: 100vh;
 
   &, * {
@@ -22,7 +21,6 @@ div#slides {
   z-index: 2;
   height: $base-height;
 
-
   &.show-nav {
     @include transform(translateY($drawer-height + $nav-height));
   }
@@ -38,6 +36,19 @@ div.slides-container {
   overflow: hidden;
   @include transition(all 0.5s $ease-in-out-circ);
   width: 500vw;
+
+  @include media($ipad) {
+    @include backface-visibility(hidden);
+    @include transform(translateZ(0));
+  }
+  @include media($iphone5) {
+    @include backface-visibility(hidden);
+    @include transform(translateZ(0));
+  }
+  @include media($iphone4) {
+    @include backface-visibility(hidden);
+    @include transform(translateZ(0));
+  }
 }
 
 section {
