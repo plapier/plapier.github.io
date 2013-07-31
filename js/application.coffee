@@ -10,6 +10,7 @@ class ConstructSlider
     @setupDrawerNav()
     @setupImagesNav()
     @setupKeybindings()
+    @setupSwipeEvents()
     @watchViewportWidth()
 
   setInnerWidth: ->
@@ -117,6 +118,13 @@ class ConstructSlider
   changeDrawerActive: ->
     selector = @container.find('.active').attr('class').split(' ')[0]
     $target  = @drawer.find("a[href='##{selector}']").parent().addClass('active').siblings().removeClass('active')
+
+  setupSwipeEvents: ->
+    if $.isTouchCapable()
+      @inner.on "swiperight", (e) =>
+        @slideNext("prev")
+      @inner.on "swipeleft", (e) =>
+        @slideNext("next")
 
   setupKeybindings: ->
     $(window).focus ->

@@ -15,6 +15,7 @@
       this.setupDrawerNav();
       this.setupImagesNav();
       this.setupKeybindings();
+      this.setupSwipeEvents();
       this.watchViewportWidth();
     }
 
@@ -150,6 +151,18 @@
       var $target, selector;
       selector = this.container.find('.active').attr('class').split(' ')[0];
       return $target = this.drawer.find("a[href='#" + selector + "']").parent().addClass('active').siblings().removeClass('active');
+    };
+
+    ConstructSlider.prototype.setupSwipeEvents = function() {
+      var _this = this;
+      if ($.isTouchCapable()) {
+        this.inner.on("swiperight", function(e) {
+          return _this.slideNext("prev");
+        });
+        return this.inner.on("swipeleft", function(e) {
+          return _this.slideNext("next");
+        });
+      }
     };
 
     ConstructSlider.prototype.setupKeybindings = function() {
