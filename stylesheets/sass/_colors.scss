@@ -1,5 +1,6 @@
 $purple: #7F63B5;
 $purple-alt: #B080C1;
+$turq: #1abc9c;
 $red: #DF6C63;
 $green: #5AC292;
 $orange: #F89E6B;
@@ -9,6 +10,12 @@ $blue-alt: #88B3E8;
 
 .about {
   $c: $purple;
+  background: $c;
+  &:before, &:after { background: $c; }
+}
+.myfaves {
+  $c: $turq;
+  $c: #16a085;
   background: $c;
   &:before, &:after { background: $c; }
 }

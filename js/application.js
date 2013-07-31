@@ -54,7 +54,7 @@
         pxVal = (this.viewportW * (index - 1)) * (90 / 100);
       }
       if ($next.length) {
-        $target = $current.find('div');
+        $target = $current.find('.frame');
         timeout = 0;
         speed = 400;
         $scrollPos = $current.scrollTop();
