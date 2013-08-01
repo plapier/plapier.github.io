@@ -6,10 +6,10 @@
     ConstructSlider.viewportW;
 
     function ConstructSlider() {
-      this.nav = $('nav.slides-nav');
+      this.nav = $('nav.slider-nav');
       this.drawer = $('.drawer');
-      this.container = $('#slides');
-      this.inner = this.container.find('.slides-container');
+      this.container = $('#slider');
+      this.inner = this.container.find('.slider-container');
       this.setInnerWidth();
       this.setupArrows();
       this.setupDrawerNav();
@@ -111,9 +111,9 @@
       return this.inner.find('nav.dots').on('click', 'span', function() {
         var images, index;
         if (!$(this).hasClass('current')) {
-          $(this).addClass('current').siblings().removeClass('current');
           index = $(this).index();
           images = $(this).parent().siblings('img');
+          $(this).addClass('current').siblings().removeClass('current');
           return $(images[index]).addClass('current').siblings().removeClass('current');
         }
       });
@@ -129,9 +129,11 @@
 
     ConstructSlider.prototype.toggleDrawer = function(val) {
       if (val === "close" || this.container.hasClass('show-nav')) {
-        return this.container.removeClass('show-nav').addClass('hide-nav');
+        this.container.removeClass('show-nav').addClass('hide-nav');
+        return this.drawer.removeClass('show').addClass('hide');
       } else if (val = 'open' || this.container.hasClass('show-nav')) {
-        return this.container.removeClass('hide-nav').addClass('show-nav');
+        this.container.removeClass('hide-nav').addClass('show-nav');
+        return this.drawer.removeClass('hide').addClass('show');
       }
     };
 
@@ -156,11 +158,11 @@
     ConstructSlider.prototype.setupSwipeEvents = function() {
       var _this = this;
       if ($.isTouchCapable()) {
-        this.inner.on("swiperight", function(e) {
+        this.inner.on("swiperight", function(e, touch) {
           _this.slideNext("prev");
           return e.preventDefault();
         });
-        return this.inner.on("swipeleft", function(e) {
+        return this.inner.on("swipeleft", function(e, touch) {
           _this.slideNext("next");
           return e.preventDefault();
         });

@@ -1,10 +1,10 @@
 class ConstructSlider
   @viewportW
   constructor: () ->
-    @nav       = $('nav.slides-nav')
+    @nav       = $('nav.slider-nav')
     @drawer    = $('.drawer')
-    @container = $('#slides')
-    @inner     = @container.find('.slides-container')
+    @container = $('#slider')
+    @inner     = @container.find('.slider-container')
     @setInnerWidth()
     @setupArrows()
     @setupDrawerNav()
@@ -91,9 +91,9 @@ class ConstructSlider
     @setBrowserHeight()
     @inner.find('nav.dots').on 'click', 'span', ->
       if !$(this).hasClass('current')
-        $(this).addClass('current').siblings().removeClass('current')
         index = $(this).index()
         images = $(this).parent().siblings('img')
+        $(this).addClass('current').siblings().removeClass('current')
         $(images[index]).addClass('current').siblings().removeClass('current')
 
   setBrowserHeight: ->
@@ -105,8 +105,10 @@ class ConstructSlider
   toggleDrawer: (val) ->
     if val is "close"    or @container.hasClass('show-nav')
       @container.removeClass('show-nav').addClass('hide-nav')
+      @drawer.removeClass('show').addClass('hide')
     else if val = 'open' or @container.hasClass('show-nav')
       @container.removeClass('hide-nav').addClass('show-nav')
+      @drawer.removeClass('hide').addClass('show')
 
   hideDrawer: ->
     if @container.hasClass('show-nav')
@@ -121,11 +123,11 @@ class ConstructSlider
 
   setupSwipeEvents: ->
     if $.isTouchCapable()
-      @inner.on "swiperight", (e) =>
+      @inner.on "swiperight", (e, touch) =>
         @slideNext("prev")
         e.preventDefault()
 
-      @inner.on "swipeleft", (e) =>
+      @inner.on "swipeleft", (e, touch) =>
         @slideNext("next")
         e.preventDefault()
 

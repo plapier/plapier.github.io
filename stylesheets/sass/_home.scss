@@ -1,6 +1,6 @@
 %force-3d {
-  // @include backface-visibility(hidden);
-  // @include transform(translateZ(0));
+  @include backface-visibility(hidden);
+  @include transform(translateZ(0));
 }
 body {
   background: $body-bg;
@@ -12,7 +12,7 @@ body {
   }
 }
 
-div#slides {
+div#slider {
   @extend %force-3d !optional;
   overflow: hidden;
   position: relative;
@@ -30,7 +30,7 @@ div#slides {
   }
 }
 
-div.slides-container {
+div.slider-container {
   @extend %force-3d !optional;
   @include clearfix;
   overflow: hidden;
@@ -136,7 +136,7 @@ $nums: 0;
 }
 
 @each $num in $nums {
-  div#slides .transition-#{$num} {
+  div#slider .transition-#{$num} {
     $duration: 175 * $num;
     @include transition-duration(#{$duration}ms);
     @include transition-timing-function($ease-out-sine);
