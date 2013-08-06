@@ -19,9 +19,14 @@
   <body>
     <nav class="slider-nav">
       <div class="main-nav">
-        <a href="#" onclick="return false;" data-id="prev" class="prev arrow"><img src="images/arrow.svg" alt="Previous"></a>
+        <a href="#" onclick="return false;" data-id="prev" class="prev arrow"><img src="images/arrow-1.svg" alt="Previous"></a>
         <a href="#" onclick="return false;" class="menu"><img src="images/menu.svg" alt="Menu"></a>
-        <a href="#" onclick="return false;" data-id="next" class="next arrow"><img src="images/arrow.svg" alt="Next"></a>
+        <a href="#" onclick="return false;" data-id="next" class="next arrow"><img src="images/arrow-1.svg" alt="Next"></a>
+        <ol class="nav-dots">
+          {% for i in (1..20) %}
+            <li></li>
+          {% endfor %}
+        </ol>
       </div>
     </nav>
     <ol class="drawer hide">

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="46px" height="80px" viewBox="0 0 46 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <title>Slice 1</title>
+    <description>Created with Sketch (http://www.bohemiancoding.com/sketch)</description>
+    <defs></defs>
+    <g id="Page 1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M42.43,44.255 C42.4084669,44.2765331 42.3866811,44.2976689 42.3646578,44.318402 L7.814,78.87 C6.647,80.036 4.738,80.037 3.572,78.87 L1.438,76.735 C0.271,75.568 0.271,73.659 1.438,72.493 L33.930942,39.9982895 L1.437,7.507 C0.27,6.34 0.27,4.431 1.437,3.265 L3.571,1.13 C4.738,-0.037 6.647,-0.037 7.814,1.13 L44.565,37.878 C45.731,39.045 45.732,40.953 44.565,42.12 Z M42.43,44.255" id="Shape" fill="#FFFFFF" transform="translate(23.000813, 39.999813) rotate(-180.000000) translate(-23.000813, -39.999813) "></path>
+    </g>
+</svg>

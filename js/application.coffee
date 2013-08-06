@@ -21,6 +21,7 @@ class ConstructSlider
 
   ## Next/Prev Nav Buttons
   setupArrows: ->
+    @nav.find('.nav-dots').addClass('show').find('li:first-child').addClass('active')
     @inner.find('.nav-info').addClass('slide-up') # keyboard shortcuts popup
     @nav.on 'click', '.arrow', (event) =>
       id = $(event.target).attr('data-id')

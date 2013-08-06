@@ -1,5 +1,6 @@
 nav.slider-nav {
   background: $nav-bg;
+  background: transparent;
   position: fixed;
   top: 0;
   left: 0;
@@ -8,6 +9,46 @@ nav.slider-nav {
 
   div.main-nav {
     height: $nav-height;
+
+    ol.nav-dots {
+      display: none;
+      margin: 22px 0;
+      float: left;
+      padding: 0;
+
+      &.show li {
+        opacity: 1;
+        @include transform(scale(1));
+      }
+
+      li {
+        list-style: none;
+        $size: 5px;
+        background: hsla(0, 0%, 100%, 0.1);
+        border-radius: $size;
+        float: left;
+        height: $size;
+        margin: 0 6px;
+        width: $size;
+        opacity: 0;
+        @include transform(scale(0));
+        @include transition-property(opacity, transform);
+        @include transition-duration(2s, 1s);
+        @include transition-timing-function($ease-out-expo, $ease-out-back);
+
+        $duration: 0;
+        $delay: 0.05;
+        @for $n from 1 through 20 {
+          &:nth-child(#{$n}) {
+            @include transition-delay(#{$duration}s);
+            $duration: $duration + $delay;
+          }
+        }
+        &.active {
+          background: hsla(0, 0%, 100%, 0.3);
+        }
+      }
+    }
 
     > a {
       color: #fff;
@@ -32,9 +73,23 @@ nav.slider-nav {
         top: 13px;
       }
 
+      &.arrow {
+        position: fixed;
+        // top: 600%;
+
+        img {
+          height: 27%;
+        }
+      }
+
       &.menu {
-        left: 50%;
-        margin-left: -$nav-height / 2;
+        // left: 50%;
+        // margin-left: -$nav-height / 2;
+        left: 1vw;
+        // margin-left: -80px;
+        img {
+          width: 40%;
+        }
 
         @include media($mobile) {
           display: none;
@@ -47,7 +102,8 @@ nav.slider-nav {
       }
 
       &.prev {
-        left: 0;
+        // left: 0;
+        right: 10px;
 
         img {
           left: 20px;
@@ -56,6 +112,7 @@ nav.slider-nav {
 
       &.next {
         right: 0;
+        right: -16px;
 
         img {
           left: 17px;

@@ -30,6 +30,7 @@
 
     ConstructSlider.prototype.setupArrows = function() {
       var _this = this;
+      this.nav.find('.nav-dots').addClass('show').find('li:first-child').addClass('active');
       this.inner.find('.nav-info').addClass('slide-up');
       return this.nav.on('click', '.arrow', function(event) {
         var id;
