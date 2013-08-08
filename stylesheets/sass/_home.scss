@@ -34,7 +34,7 @@ div.slider-container {
   @extend %force-3d !optional;
   @include clearfix;
   overflow: hidden;
-  @include transition(all 0.5s $ease-in-out-circ);
+  @include transition(all 0.65s $ease-in-out-circ);
   width: 500vw;
 
   @include media($ipad) {
@@ -137,7 +137,7 @@ $nums: 0;
 
 @each $num in $nums {
   div#slider .transition-#{$num} {
-    $duration: 175 * $num;
+    $duration: 300 * $num;
     @include transition-duration(#{$duration}ms);
     @include transition-timing-function($ease-out-sine);
   }

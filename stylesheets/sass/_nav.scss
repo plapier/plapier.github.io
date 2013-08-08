@@ -6,16 +6,21 @@ nav.slider-nav {
   z-index: 3;
   right: 0;
 
+  &.show {
+    background: $nav-bg-hover;
+  }
+
   div.main-nav {
     height: $nav-height;
 
     > a {
+      $opacity: 0.45;
       color: #fff;
       display: block;
       float: left;
       height: $nav-height;
       line-height: 0;
-      opacity: 0.3;
+      opacity: $opacity;
       position: absolute;
       text-decoration: none;
       top: 0;
@@ -23,26 +28,34 @@ nav.slider-nav {
       width: $nav-height;
 
       &:hover {
-        opacity: 0.5;
+        opacity: $opacity + 0.2;
       }
 
       img {
         pointer-events: none;
         position: relative;
-        top: 13px;
+        top: 14px;
+        height: 50%;
       }
 
       &.menu {
         left: 50%;
-        margin-left: -$nav-height / 2;
+        margin-left: (-$nav-height / 2) + 2;
+        opacity: $opacity - 0.1;
+
+        &:hover {
+          opacity: $opacity + 0.2;
+        }
 
         @include media($mobile) {
           display: none;
         }
 
         img {
-          top: 18px;
+          top: 17px;
           left: 9px;
+          height: auto;
+          width: 60%;
         }
       }
 
@@ -105,7 +118,8 @@ nav.slider-nav {
 
     &.active a {
       &, &:hover {
-        background: lighten($body-bg, 2%);
+        // background: lighten($body-bg, 2%);
+        background: $nav-bg-hover;
       }
     }
 
@@ -120,7 +134,8 @@ nav.slider-nav {
       @include transition;
 
       &:hover {
-        background: lighten($body-bg, 2%);
+        // background: lighten($body-bg, 2%);
+        background: $nav-bg-hover;
         color: #efefef;
       }
     }
@@ -128,22 +143,22 @@ nav.slider-nav {
 }
 
 nav.dots {
-  $size: 10px;
+  $size: 9px;
   left: 50%;
-  margin-left: -($size + $size/2) + 2;
+  margin-left: -($size + $size/2) + 1;
   position: absolute;
   top: -25px;
 
   span.dot {
     background: hsla(0, 0%, 100%, 0.2);
     border-radius: $size;
+    cursor: pointer;
     display: block;
     float: left;
     height: $size;
-    margin-right: $size/2 + 1;
-    width: $size;
+    margin-right: 7px;
     @include transition(all 0.5);
-    cursor: pointer;
+    width: $size;
 
     &.current {
       background: hsla(0, 0%, 100%, 0.4);
