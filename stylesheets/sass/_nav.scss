@@ -34,8 +34,8 @@ nav.slider-nav {
       img {
         pointer-events: none;
         position: relative;
-        top: 14px;
-        height: 50%;
+        top: 13px;
+        height: 26px;
       }
 
       &.menu {
@@ -52,10 +52,10 @@ nav.slider-nav {
         }
 
         img {
-          top: 17px;
-          left: 9px;
           height: auto;
-          width: 60%;
+          left: 9px;
+          top: 17px;
+          width: 32px;
         }
       }
 
@@ -100,7 +100,7 @@ nav.slider-nav {
   }
 
   li {
-    @include calc(width, "100% / 7");
+    @include calc(width, "100% / 8");
     @include clearfix;
     display: inline-block;
     float: left;
@@ -118,7 +118,6 @@ nav.slider-nav {
 
     &.active a {
       &, &:hover {
-        // background: lighten($body-bg, 2%);
         background: $nav-bg-hover;
       }
     }
@@ -129,12 +128,11 @@ nav.slider-nav {
       font-family: $serif;
       font-weight: 200;
       height: 100%;
-      padding: 20px 30% 20px 20%;
+      padding: 20px 20% 20px 20%;
       text-decoration: none;
       @include transition;
 
       &:hover {
-        // background: lighten($body-bg, 2%);
         background: $nav-bg-hover;
         color: #efefef;
       }

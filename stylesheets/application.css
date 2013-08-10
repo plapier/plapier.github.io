@@ -1131,8 +1131,8 @@ nav.slider-nav {
       nav.slider-nav div.main-nav > a img {
         pointer-events: none;
         position: relative;
-        top: 14px;
-        height: 50%; }
+        top: 13px;
+        height: 26px; }
       nav.slider-nav div.main-nav > a.menu {
         left: 50%;
         margin-left: -24px;
@@ -1143,10 +1143,10 @@ nav.slider-nav {
           nav.slider-nav div.main-nav > a.menu {
             display: none; } }
         nav.slider-nav div.main-nav > a.menu img {
-          top: 17px;
-          left: 9px;
           height: auto;
-          width: 60%; }
+          left: 9px;
+          top: 17px;
+          width: 32px; }
       nav.slider-nav div.main-nav > a.prev {
         left: 0; }
         nav.slider-nav div.main-nav > a.prev img {
@@ -1183,8 +1183,8 @@ nav.slider-nav {
   .drawer.show {
     opacity: 1; }
   .drawer li {
-    width: -webkit-calc(100% / 7 );
-    width: calc(100% / 7 );
+    width: -webkit-calc(100% / 8 );
+    width: calc(100% / 8 );
     *zoom: 1;
     display: inline-block;
     float: left;
@@ -1210,7 +1210,7 @@ nav.slider-nav {
       font-family: "jubilat", Georgia, Cambria, "Times New Roman", Times, serif;
       font-weight: 200;
       height: 100%;
-      padding: 20px 30% 20px 20%;
+      padding: 20px 20% 20px 20%;
       text-decoration: none;
       -webkit-transition: all 0.15s ease-out 0s;
       -moz-transition: all 0.15s ease-out 0s;
