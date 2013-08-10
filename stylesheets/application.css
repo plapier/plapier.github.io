@@ -1210,7 +1210,7 @@ nav.slider-nav {
       font-family: "jubilat", Georgia, Cambria, "Times New Roman", Times, serif;
       font-weight: 200;
       height: 100%;
-      padding: 20px 20% 20px 20%;
+      padding: 20px 20% 20px 16%;
       text-decoration: none;
       -webkit-transition: all 0.15s ease-out 0s;
       -moz-transition: all 0.15s ease-out 0s;
@@ -1218,6 +1218,13 @@ nav.slider-nav {
       .drawer li a:hover {
         background: rgba(255, 255, 255, 0.025);
         color: #efefef; }
+      .drawer li a span {
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.4);
+        display: block;
+        font-weight: 400;
+        font-size: 0.6rem;
+        line-height: 1.4em; }
 
 nav.dots {
   left: 50%;

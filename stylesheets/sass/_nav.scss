@@ -124,17 +124,26 @@ nav.slider-nav {
 
     a {
       color: hsla(0, 0%, 100%, 0.7);
+      // @include ellipsis;
       display: block;
       font-family: $serif;
       font-weight: 200;
       height: 100%;
-      padding: 20px 20% 20px 20%;
+      padding: 20px 20% 20px 16%;
       text-decoration: none;
       @include transition;
 
       &:hover {
         background: $nav-bg-hover;
         color: #efefef;
+      }
+      span {
+        text-transform: uppercase;
+        color: hsla(0, 0%, 100%, 0.4);
+        display: block;
+        font-weight: 400;
+        font-size: 0.6rem;
+        line-height: 1.4em;
       }
     }
   }
