@@ -12,6 +12,7 @@ class ConstructSlider
     @setupKeybindings()
     @setupSwipeEvents()
     @watchViewportWidth()
+    @readHash()
 
   setInnerWidth: ->
     width = null
@@ -38,6 +39,7 @@ class ConstructSlider
       $next = $current.prev()
       width = (index - 1) * 90
       pxVal = (@viewportW * (index - 1)) * (90/100)
+    @changeHash($next)
 
     if $next.length
       $target = $current.find('.frame')
@@ -69,22 +71,25 @@ class ConstructSlider
 
     @drawer.find('a').on 'click', (event) =>
       dataId = $(event.target).attr('href')
-      dataId = dataId.replace("#", "")
-      $target = @inner.find("[data-id='#{dataId}']")
-      $targetIndex = $target.index()
+      @slideToTarget(dataId)
 
-      $current = @container.find('.active')
-      $currentIndex = $current.index()
-      diff = Math.abs($targetIndex - $currentIndex)
+  slideToTarget: (id) ->
+    id = id.replace("#", "")
+    $target = @inner.find("[data-id='#{id}']")
+    $targetIndex = $target.index()
+    $current = @container.find('.active')
+    $currentIndex = $current.index()
+    diff = Math.abs($targetIndex - $currentIndex)
 
-      if $targetIndex isnt $currentIndex
-        pxVal = Math.floor (@viewportW * $targetIndex) * (90/100)
-        $current.removeClass('active') ## THIS
-        $target.addClass('active')
-        @inner.addClass("transition-#{diff}").css('transform', "translateX(-#{pxVal}px)")
-        @changeDrawerActive()
-        @hideDrawer()
-        $current.scrollTop(0)
+    if $targetIndex isnt $currentIndex
+      pxVal = Math.floor (@viewportW * $targetIndex) * (90/100)
+      $current.removeClass('active') ## THIS
+      $target.addClass('active')
+      @inner.addClass("transition-#{diff}").css('transform', "translateX(-#{pxVal}px)")
+      @changeDrawerActive()
+      @hideDrawer()
+      $current.scrollTop(0)
+      @changeHash($target)
 
   ## For Multiples images in a single browser frame
   setupImagesNav: ->
@@ -179,5 +184,16 @@ class ConstructSlider
     pxVal    = Math.floor (@viewportW * index) * (90/100)
     @inner.css('transform', "translateX(-#{pxVal}px)")
 
+  readHash: ->
+    hash = window.location.hash
+    @slideToTarget(hash) unless hash.length is 0
+
+  changeHash: (target) ->
+    id = target.attr('data-id')
+    History.replaceState({state:1}, "#{id}", "##{id}")
+
 $ ->
   new ConstructSlider()
+
+
+

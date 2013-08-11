@@ -138,12 +138,13 @@ nav.slider-nav {
         color: #efefef;
       }
       span {
-        text-transform: uppercase;
         color: hsla(0, 0%, 100%, 0.4);
         display: block;
-        font-weight: 400;
         font-size: 0.6rem;
+        font-weight: 400;
         line-height: 1.4em;
+        pointer-events: none;
+        text-transform: uppercase;
       }
     }
   }

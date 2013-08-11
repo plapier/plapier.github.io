@@ -17,6 +17,7 @@
       this.setupKeybindings();
       this.setupSwipeEvents();
       this.watchViewportWidth();
+      this.readHash();
     }
 
     ConstructSlider.prototype.setInnerWidth = function() {
@@ -53,6 +54,7 @@
         width = (index - 1) * 90;
         pxVal = (this.viewportW * (index - 1)) * (90 / 100);
       }
+      this.changeHash($next);
       if ($next.length) {
         $target = $current.find('.frame');
         timeout = 0;
@@ -86,24 +88,30 @@
         return _this.toggleDrawer();
       });
       return this.drawer.find('a').on('click', function(event) {
-        var $current, $currentIndex, $target, $targetIndex, dataId, diff, pxVal;
+        var dataId;
         dataId = $(event.target).attr('href');
-        dataId = dataId.replace("#", "");
-        $target = _this.inner.find("[data-id='" + dataId + "']");
-        $targetIndex = $target.index();
-        $current = _this.container.find('.active');
-        $currentIndex = $current.index();
-        diff = Math.abs($targetIndex - $currentIndex);
-        if ($targetIndex !== $currentIndex) {
-          pxVal = Math.floor((_this.viewportW * $targetIndex) * (90 / 100));
-          $current.removeClass('active');
-          $target.addClass('active');
-          _this.inner.addClass("transition-" + diff).css('transform', "translateX(-" + pxVal + "px)");
-          _this.changeDrawerActive();
-          _this.hideDrawer();
-          return $current.scrollTop(0);
-        }
+        return _this.slideToTarget(dataId);
       });
+    };
+
+    ConstructSlider.prototype.slideToTarget = function(id) {
+      var $current, $currentIndex, $target, $targetIndex, diff, pxVal;
+      id = id.replace("#", "");
+      $target = this.inner.find("[data-id='" + id + "']");
+      $targetIndex = $target.index();
+      $current = this.container.find('.active');
+      $currentIndex = $current.index();
+      diff = Math.abs($targetIndex - $currentIndex);
+      if ($targetIndex !== $currentIndex) {
+        pxVal = Math.floor((this.viewportW * $targetIndex) * (90 / 100));
+        $current.removeClass('active');
+        $target.addClass('active');
+        this.inner.addClass("transition-" + diff).css('transform', "translateX(-" + pxVal + "px)");
+        this.changeDrawerActive();
+        this.hideDrawer();
+        $current.scrollTop(0);
+        return this.changeHash($target);
+      }
     };
 
     ConstructSlider.prototype.setupImagesNav = function() {
@@ -226,6 +234,22 @@
       index = this.inner.find('section').index($current);
       pxVal = Math.floor((this.viewportW * index) * (90 / 100));
       return this.inner.css('transform', "translateX(-" + pxVal + "px)");
+    };
+
+    ConstructSlider.prototype.readHash = function() {
+      var hash;
+      hash = window.location.hash;
+      if (hash.length !== 0) {
+        return this.slideToTarget(hash);
+      }
+    };
+
+    ConstructSlider.prototype.changeHash = function(target) {
+      var id;
+      id = target.attr('data-id');
+      return History.replaceState({
+        state: 1
+      }, "" + id, "#" + id);
     };
 
     return ConstructSlider;
