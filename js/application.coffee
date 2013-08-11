@@ -111,11 +111,9 @@ class ConstructSlider
     if val is "close"    or @container.hasClass('show-nav')
       @container.removeClass('show-nav').addClass('hide-nav')
       @drawer.removeClass('show').addClass('hide')
-      @nav.removeClass('show').addClass('hide')
     else if val = 'open' or @container.hasClass('show-nav')
       @container.removeClass('hide-nav').addClass('show-nav')
       @drawer.removeClass('hide').addClass('show')
-      @nav.removeClass('hide').addClass('show')
 
   hideDrawer: ->
     if @container.hasClass('show-nav')
