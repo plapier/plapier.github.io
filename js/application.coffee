@@ -208,5 +208,6 @@ class ConstructSlider
 $ ->
   new ConstructSlider()
 
-
-
+  ## Google Analytics Hash tracker
+  History.Adapter.bind window, "anchorchange", ->
+    _gaq.push ["_trackPageview", location.pathname + location.search + location.hash]

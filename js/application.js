@@ -270,7 +270,10 @@
   })();
 
   $(function() {
-    return new ConstructSlider();
+    new ConstructSlider();
+    return History.Adapter.bind(window, "anchorchange", function() {
+      return _gaq.push(["_trackPageview", location.pathname + location.search + location.hash]);
+    });
   });
 
 }).call(this);
