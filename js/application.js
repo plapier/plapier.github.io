@@ -36,7 +36,8 @@
         var id;
         id = $(event.target).attr('data-id');
         _this.slideNext(id);
-        return _this.hideDrawer();
+        _this.hideDrawer();
+        return _this.removeTransitionClass();
       });
     };
 
@@ -62,6 +63,7 @@
         $scrollPos = $current.scrollTop();
         if ($scrollPos > 100) {
           offset = $current.scrollTop();
+          console.log($target);
           $target.addClass('animate').css('transform', "translateY(" + offset + "px");
           $target.on("transitionend webkitTransitionEnd MSTransitionEnd", function() {
             return $(this).removeClass('animate');
@@ -150,9 +152,7 @@
       if (this.container.hasClass('show-nav')) {
         return this.inner.on("transitionend webkitTransitionEnd MSTransitionEnd", function() {
           _this.toggleDrawer("close");
-          return _this.inner.removeClass(function(index, css) {
-            return (css.match(/\btransition\S+/g) || []).join(" ");
-          });
+          return _this.removeTransitionClass();
         });
       }
     };
@@ -161,6 +161,12 @@
       var $target, selector;
       selector = this.container.find('.active').attr('class').split(' ')[0];
       return $target = this.drawer.find("a[href='#" + selector + "']").parent().addClass('active').siblings().removeClass('active');
+    };
+
+    ConstructSlider.prototype.removeTransitionClass = function() {
+      return this.inner.removeClass(function(index, css) {
+        return (css.match(/\btransition\S+/g) || []).join(" ");
+      });
     };
 
     ConstructSlider.prototype.setupSwipeEvents = function() {

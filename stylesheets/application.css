@@ -1225,6 +1225,7 @@ nav.slider-nav {
         font-weight: 400;
         line-height: 1.4em;
         pointer-events: none;
+        text-rendering: optimizeLegibility;
         text-transform: uppercase; }
 
 nav.dots {
@@ -1259,10 +1260,6 @@ nav.dots {
   margin: 10vh 5vw 5vh;
   position: relative;
   padding: 20px 0 0; }
-  .browser.animate {
-    -webkit-transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    -moz-transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
   .browser.multiple-images img {
     left: 0;
     opacity: 0;
@@ -1309,6 +1306,11 @@ nav.dots {
     display: block;
     border-radius: 4px;
     width: 99%; }
+
+.browser.animate, .ipad.animate {
+  -webkit-transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -moz-transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
 
 @media screen and (max-width: 480px) {
   .browser, .ipad {

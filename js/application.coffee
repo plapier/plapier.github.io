@@ -27,6 +27,7 @@ class ConstructSlider
       id = $(event.target).attr('data-id')
       @slideNext(id)
       @hideDrawer()
+      @removeTransitionClass()
 
   slideNext: (id) ->
     $current = @container.find('.active')
@@ -48,6 +49,7 @@ class ConstructSlider
       $scrollPos = $current.scrollTop()
       if $scrollPos > 100
         offset = $current.scrollTop()
+        console.log $target
         $target.addClass('animate').css('transform', "translateY(#{offset}px")
         $target.on "transitionend webkitTransitionEnd MSTransitionEnd", ->
           $(this).removeClass('animate')
@@ -96,7 +98,7 @@ class ConstructSlider
     @setBrowserHeight()
     @inner.find('nav.dots').on 'click', 'span', ->
       if !$(this).hasClass('current')
-        index = $(this).index()
+        index  = $(this).index()
         images = $(this).parent().siblings('img')
         $(this).addClass('current').siblings().removeClass('current')
         $(images[index]).addClass('current').siblings().removeClass('current')
@@ -119,12 +121,15 @@ class ConstructSlider
     if @container.hasClass('show-nav')
       @inner.on "transitionend webkitTransitionEnd MSTransitionEnd", =>
         @toggleDrawer("close")
-        @inner.removeClass (index, css) ->
-          (css.match(/\btransition\S+/g) or []).join " "
+        @removeTransitionClass()
 
   changeDrawerActive: ->
     selector = @container.find('.active').attr('class').split(' ')[0]
     $target  = @drawer.find("a[href='##{selector}']").parent().addClass('active').siblings().removeClass('active')
+
+  removeTransitionClass: ->
+    @inner.removeClass (index, css) ->
+      (css.match(/\btransition\S+/g) or []).join " "
 
   setupSwipeEvents: ->
     if $.isTouchCapable()

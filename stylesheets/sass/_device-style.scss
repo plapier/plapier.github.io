@@ -1,3 +1,4 @@
+
 .browser {
   $browser-top: 20px;
   border-radius: 4px;
@@ -7,10 +8,6 @@
   position: relative;
   padding: $browser-top 0 0;
 
-  // Faux-scroll effect
-  &.animate {
-    @include transition(all 0.4s $ease-out-quad);
-  }
 
   &.multiple-images {
     img {
@@ -42,7 +39,6 @@
 
 .ipad {
   background: #000;
-  // border-radius: 40px;
   border-radius: 3vw;
   display: block;
   margin: 10vh 5vw 5vh;
@@ -65,6 +61,12 @@
     display: block;
     border-radius: 4px;
     width: 99%;
+  }
+}
+
+.browser, .ipad {
+  &.animate {
+    @include transition(all 0.4s $ease-out-quad); // Faux-scroll effect
   }
 }
 
