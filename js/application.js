@@ -237,10 +237,16 @@
     };
 
     ConstructSlider.prototype.readHash = function() {
-      var hash;
+      var hash, hashes;
+      hashes = [];
       hash = window.location.hash;
-      if (hash.length !== 0) {
-        return this.slideToTarget(hash);
+      this.inner.find('section').each(function(index, el) {
+        return hashes.push("#" + (el.getAttribute('data-id')));
+      });
+      if (hashes.indexOf(hash) !== -1) {
+        if (hash.length !== 0) {
+          return this.slideToTarget(hash);
+        }
       }
     };
 

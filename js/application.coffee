@@ -185,8 +185,14 @@ class ConstructSlider
     @inner.css('transform', "translateX(-#{pxVal}px)")
 
   readHash: ->
+    hashes = []
     hash = window.location.hash
-    @slideToTarget(hash) unless hash.length is 0
+    @inner.find('section').each (index, el) ->
+      hashes.push("##{el.getAttribute('data-id')}")
+
+    # Only slide is hash is in the DOM
+    unless hashes.indexOf(hash) is -1
+      @slideToTarget(hash) unless hash.length is 0
 
   changeHash: (target) ->
     id = target.attr('data-id')
