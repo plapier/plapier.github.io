@@ -140,10 +140,12 @@
     ConstructSlider.prototype.toggleDrawer = function(val) {
       if (val === "close" || this.container.hasClass('show-nav')) {
         this.container.removeClass('show-nav').addClass('hide-nav');
-        return this.drawer.removeClass('show').addClass('hide');
+        this.drawer.removeClass('show').addClass('hide');
+        return this.nav.removeClass('show').addClass('hide');
       } else if (val = 'open' || this.container.hasClass('show-nav')) {
         this.container.removeClass('hide-nav').addClass('show-nav');
-        return this.drawer.removeClass('hide').addClass('show');
+        this.drawer.removeClass('hide').addClass('show');
+        return this.nav.removeClass('hide').addClass('show');
       }
     };
 
