@@ -7,6 +7,17 @@
   margin: 10vh 5vw 5vh;
   position: relative;
   padding: $browser-top 0 0;
+  // @include transition(all 1s $ease-out-expo); // Faux-scroll effect
+  // @include transition-property(transform);
+  // @include transition-duration(1s);
+  // @include transition-timing-function($ease-out-expo);
+  // @include transition-delay(0s);
+  // @include transform-origin(top);
+  // @include transform(scale(0.8) translateY(150px));
+
+  // &.zoom {
+    // @include transform(scale(1) translateY(0));
+  // }
 
 
   &.multiple-images {

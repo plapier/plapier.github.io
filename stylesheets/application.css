@@ -1110,6 +1110,28 @@ nav.slider-nav {
   right: 0; }
   nav.slider-nav.show {
     background: rgba(255, 255, 255, 0.025); }
+    nav.slider-nav.show span {
+      -webkit-transform: rotateY(180deg);
+      -moz-transform: rotateY(180deg);
+      -ms-transform: rotateY(180deg);
+      -o-transform: rotateY(180deg);
+      transform: rotateY(180deg); }
+  nav.slider-nav.show span, nav.slider-nav.hide span {
+    -webkit-transition: all 0.75s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    -moz-transition: all 0.75s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: all 0.75s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+    nav.slider-nav.show span:nth-child(1), nav.slider-nav.hide span:nth-child(1) {
+      -webkit-transition-delay: 0;
+      -moz-transition-delay: 0;
+      transition-delay: 0; }
+    nav.slider-nav.show span:nth-child(2), nav.slider-nav.hide span:nth-child(2) {
+      -webkit-transition-delay: 0.12s;
+      -moz-transition-delay: 0.12s;
+      transition-delay: 0.12s; }
+    nav.slider-nav.show span:nth-child(3), nav.slider-nav.hide span:nth-child(3) {
+      -webkit-transition-delay: 0.24s;
+      -moz-transition-delay: 0.24s;
+      transition-delay: 0.24s; }
   nav.slider-nav div.main-nav {
     height: 52px; }
     nav.slider-nav div.main-nav > a {
@@ -1136,17 +1158,22 @@ nav.slider-nav {
       nav.slider-nav div.main-nav > a.menu {
         left: 50%;
         margin-left: -24px;
-        opacity: 0.35; }
+        opacity: 0.35;
+        padding-top: 17px;
+        padding-left: 9px; }
         nav.slider-nav div.main-nav > a.menu:hover {
           opacity: 0.65; }
+        nav.slider-nav div.main-nav > a.menu span {
+          background: #fff;
+          border-radius: 1px;
+          display: inline-block;
+          float: left;
+          height: 3px;
+          margin-bottom: 4px;
+          width: 32px; }
         @media screen and (max-width: 480px) {
           nav.slider-nav div.main-nav > a.menu {
             display: none; } }
-        nav.slider-nav div.main-nav > a.menu img {
-          height: auto;
-          left: 9px;
-          top: 17px;
-          width: 32px; }
       nav.slider-nav div.main-nav > a.prev {
         left: 0; }
         nav.slider-nav div.main-nav > a.prev img {

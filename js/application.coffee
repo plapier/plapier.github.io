@@ -62,6 +62,7 @@ class ConstructSlider
         @changeDrawerActive()
         @inner.on "transitionend webkitTransitionEnd MSTransitionEnd", ->
           $target.css('transform', "translateX(0)")
+          # $target.addClass("zoom")
           $current.scrollTop(0)
       ), timeout
       @hideDrawer()
@@ -92,6 +93,7 @@ class ConstructSlider
       @hideDrawer()
       $current.scrollTop(0)
       @changeHash($target)
+      @removeTransitionClass()
 
   ## For Multiples images in a single browser frame
   setupImagesNav: ->

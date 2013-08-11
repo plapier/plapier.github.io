@@ -8,6 +8,24 @@ nav.slider-nav {
 
   &.show {
     background: $nav-bg-hover;
+
+    span {
+      @include transform(rotateY(180deg));
+    }
+  }
+
+  &.show, &.hide {
+    span {
+      @include transition(all 0.75s $ease-out-quad);
+
+      $delay: 0; $inc: 0.12s;
+      @for $i from 1 through 3 {
+        &:nth-child(#{$i}) {
+          @include transition-delay($delay);
+          $delay: $delay + $inc;
+        }
+      }
+    }
   }
 
   div.main-nav {
@@ -42,20 +60,25 @@ nav.slider-nav {
         left: 50%;
         margin-left: (-$nav-height / 2) + 2;
         opacity: $opacity - 0.1;
+        padding-top: 17px;
+        padding-left: 9px;
 
         &:hover {
           opacity: $opacity + 0.2;
         }
 
-        @include media($mobile) {
-          display: none;
+        span {
+          background: #fff;
+          border-radius: 1px;
+          display: inline-block;
+          float: left;
+          height: 3px;
+          margin-bottom: 4px;
+          width: 32px;
         }
 
-        img {
-          height: auto;
-          left: 9px;
-          top: 17px;
-          width: 32px;
+        @include media($mobile) {
+          display: none;
         }
       }
 

@@ -112,7 +112,8 @@
         this.changeDrawerActive();
         this.hideDrawer();
         $current.scrollTop(0);
-        return this.changeHash($target);
+        this.changeHash($target);
+        return this.removeTransitionClass();
       }
     };
 
