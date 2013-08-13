@@ -87,7 +87,8 @@
     ConstructSlider.prototype.setupDrawerNav = function() {
       var _this = this;
       this.nav.find('.menu').click(function() {
-        return _this.toggleDrawer();
+        _this.toggleDrawer();
+        return mixpanel.track("Menu Click");
       });
       return this.drawer.find('a').on('click', function(event) {
         var dataId;
@@ -203,14 +204,18 @@
         };
         switch (keyCode) {
           case arrow.left:
-            return _this.slideNext("prev");
+            _this.slideNext("prev");
+            break;
           case arrow.right:
-            return _this.slideNext("next");
+            _this.slideNext("next");
+            break;
           case arrow.down:
-            return _this.toggleDrawer();
+            _this.toggleDrawer();
+            break;
           case arrow.up:
-            return _this.toggleDrawer();
+            _this.toggleDrawer();
         }
+        return mixpanel.track("Key Press");
       });
     };
 

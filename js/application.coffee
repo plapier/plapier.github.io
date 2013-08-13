@@ -71,6 +71,7 @@ class ConstructSlider
   setupDrawerNav: ->
     @nav.find('.menu').click =>
       @toggleDrawer()
+      mixpanel.track("Menu Click")
 
     @drawer.find('a').on 'click', (event) =>
       dataId = $(event.target).attr('href')
@@ -165,6 +166,7 @@ class ConstructSlider
           @toggleDrawer()
         when arrow.up
           @toggleDrawer()
+        mixpanel.track("Key Press")
 
   ## Setup event listener on resize and set global variable
   watchViewportWidth: ->
