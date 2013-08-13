@@ -205,9 +205,9 @@ class ConstructSlider
     id = target.attr('data-id')
     History.replaceState({state:1}, "#{id}", "##{id}")
 
+    ## Report to Analytics
+    _gaq.push ["_trackPageview", location.pathname + location.search + location.hash]
+    mixpanel.track(id)
+
 $ ->
   new ConstructSlider()
-
-  ## Google Analytics Hash tracker
-  History.Adapter.bind window, "anchorchange", ->
-    _gaq.push ["_trackPageview", location.pathname + location.search + location.hash]

@@ -260,9 +260,11 @@
     ConstructSlider.prototype.changeHash = function(target) {
       var id;
       id = target.attr('data-id');
-      return History.replaceState({
+      History.replaceState({
         state: 1
       }, "" + id, "#" + id);
+      _gaq.push(["_trackPageview", location.pathname + location.search + location.hash]);
+      return mixpanel.track(id);
     };
 
     return ConstructSlider;
@@ -270,10 +272,7 @@
   })();
 
   $(function() {
-    new ConstructSlider();
-    return History.Adapter.bind(window, "anchorchange", function() {
-      return _gaq.push(["_trackPageview", location.pathname + location.search + location.hash]);
-    });
+    return new ConstructSlider();
   });
 
 }).call(this);
