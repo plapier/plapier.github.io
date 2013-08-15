@@ -265,9 +265,11 @@
     ConstructSlider.prototype.changeHash = function(target) {
       var id;
       id = target.attr('data-id');
-      History.replaceState({
-        state: 1
-      }, "" + id, "#" + id);
+      if (id) {
+        History.replaceState({
+          state: 1
+        }, "" + id, "#" + id);
+      }
       _gaq.push(["_trackPageview", location.pathname + location.search + location.hash]);
       return mixpanel.track(id);
     };

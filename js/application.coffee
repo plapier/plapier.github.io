@@ -166,7 +166,7 @@ class ConstructSlider
           @toggleDrawer()
         when arrow.up
           @toggleDrawer()
-        mixpanel.track("Key Press")
+      mixpanel.track("Key Press")
 
   ## Setup event listener on resize and set global variable
   watchViewportWidth: ->
@@ -200,12 +200,13 @@ class ConstructSlider
       hashes.push("##{el.getAttribute('data-id')}")
 
     # Only slide is hash is in the DOM
+    # console.log hash
     unless hashes.indexOf(hash) is -1
       @slideToTarget(hash) unless hash.length is 0
 
   changeHash: (target) ->
     id = target.attr('data-id')
-    History.replaceState({state:1}, "#{id}", "##{id}")
+    History.replaceState({state:1}, "#{id}", "##{id}") if id
 
     ## Report to Analytics
     _gaq.push ["_trackPageview", location.pathname + location.search + location.hash]
