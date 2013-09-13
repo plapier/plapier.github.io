@@ -13,6 +13,7 @@ class ConstructSlider
     @setupSwipeEvents()
     @watchViewportWidth()
     @readHash()
+    @setupSwipe()
 
   setInnerWidth: ->
     width = null
@@ -137,14 +138,48 @@ class ConstructSlider
       (css.match(/\btransition\S+/g) or []).join " "
 
   setupSwipeEvents: ->
-    if $.isTouchCapable()
-      @inner.on "swiperight", (e, touch) =>
-        @slideNext("prev")
-        e.preventDefault()
+    @inner.hammer(
+      drag_min_distance: 20
+      drag_lock_to_axis: true
+      drag_block_horizontal: true
+      drag_block_vertical: true
+    )
+      .on("touch drag", (ev) =>
+        event.preventDefault()
 
-      @inner.on "swipeleft", (e, touch) =>
-        @slideNext("next")
-        e.preventDefault()
+        $currentIndex = @container.find('.active').index()
+        pxVal         = Math.floor (@viewportW * $currentIndex) * (90/100)
+        distance      = Math.floor ev.gesture.distance
+        @inner.addClass('no-transition')
+
+        if ev.gesture.direction is "right"
+          distance = distance * -1
+
+        switch ev.gesture.direction
+          when "right", "left"
+            console.log "true"
+            console.log ev.gesture.direction
+            deltaDistance = pxVal + distance
+            @inner.css('transform', "translateX(-#{deltaDistance}px)")
+
+          when "up", "down"
+            console.log ('no')
+
+      ).on("dragend", (ev) =>
+        event.stopPropagation();
+
+        @inner.removeClass('no-transition').addClass('drag-transition')
+        ## remove drag-transiton after transition completes
+        setTimeout (=> @inner.removeClass 'drag-transition'), 600
+
+        switch ev.gesture.direction
+          when "right"
+            @slideNext("prev")
+          when "left"
+            @slideNext("next")
+      ).on('pinch', =>
+        event.preventDefault()
+      )
 
   setupKeybindings: ->
     $(window).focus ->
@@ -211,6 +246,8 @@ class ConstructSlider
     ## Report to Analytics
     _gaq.push ["_trackPageview", location.pathname + location.search + location.hash]
     mixpanel.track(id)
+
+  setupSwipe: ->
 
 $ ->
   new ConstructSlider()

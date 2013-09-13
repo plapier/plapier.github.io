@@ -18,6 +18,7 @@
       this.setupSwipeEvents();
       this.watchViewportWidth();
       this.readHash();
+      this.setupSwipe();
     }
 
     ConstructSlider.prototype.setInnerWidth = function() {
@@ -175,16 +176,47 @@
 
     ConstructSlider.prototype.setupSwipeEvents = function() {
       var _this = this;
-      if ($.isTouchCapable()) {
-        this.inner.on("swiperight", function(e, touch) {
-          _this.slideNext("prev");
-          return e.preventDefault();
-        });
-        return this.inner.on("swipeleft", function(e, touch) {
-          _this.slideNext("next");
-          return e.preventDefault();
-        });
-      }
+      return this.inner.hammer({
+        drag_min_distance: 20,
+        drag_lock_to_axis: true,
+        drag_block_horizontal: true,
+        drag_block_vertical: true
+      }).on("touch drag", function(ev) {
+        var $currentIndex, deltaDistance, distance, pxVal;
+        event.preventDefault();
+        $currentIndex = _this.container.find('.active').index();
+        pxVal = Math.floor((_this.viewportW * $currentIndex) * (90 / 100));
+        distance = Math.floor(ev.gesture.distance);
+        _this.inner.addClass('no-transition');
+        if (ev.gesture.direction === "right") {
+          distance = distance * -1;
+        }
+        switch (ev.gesture.direction) {
+          case "right":
+          case "left":
+            console.log("true");
+            console.log(ev.gesture.direction);
+            deltaDistance = pxVal + distance;
+            return _this.inner.css('transform', "translateX(-" + deltaDistance + "px)");
+          case "up":
+          case "down":
+            return console.log('no');
+        }
+      }).on("dragend", function(ev) {
+        event.stopPropagation();
+        _this.inner.removeClass('no-transition').addClass('drag-transition');
+        setTimeout((function() {
+          return _this.inner.removeClass('drag-transition');
+        }), 600);
+        switch (ev.gesture.direction) {
+          case "right":
+            return _this.slideNext("prev");
+          case "left":
+            return _this.slideNext("next");
+        }
+      }).on('pinch', function() {
+        return event.preventDefault();
+      });
     };
 
     ConstructSlider.prototype.setupKeybindings = function() {
@@ -273,6 +305,8 @@
       _gaq.push(["_trackPageview", location.pathname + location.search + location.hash]);
       return mixpanel.track(id);
     };
+
+    ConstructSlider.prototype.setupSwipe = function() {};
 
     return ConstructSlider;
 

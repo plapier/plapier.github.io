@@ -2,6 +2,7 @@
   @include backface-visibility(hidden);
   @include transform(translateZ(0));
 }
+
 body {
   background: $body-bg;
   overflow-y: hidden;
@@ -37,6 +38,11 @@ div.slider-container {
   @include transition(all 0.65s $ease-in-out-circ);
   width: 500vw;
 
+  cursor: hand;
+  cursor: -moz-grab;
+  cursor: -webkit-grab;
+  cursor: grab;
+
   @include media($ipad) {
     @include backface-visibility(hidden);
     @include transform(translateZ(0));
@@ -48,6 +54,14 @@ div.slider-container {
   @include media($iphone4) {
     @include backface-visibility(hidden);
     @include transform(translateZ(0));
+  }
+
+  &.no-transition {
+    @include transition(none);
+  }
+
+  &.drag-transition {
+    @include transition(all 0.3s ease-out);
   }
 }
 
@@ -118,6 +132,10 @@ section {
     line-height: 1.5em;
     margin-bottom: 1em;
     color: hsla(0, 0%, 100%, 0.7);
+  }
+
+  img {
+    pointer-events: none;
   }
 }
 
