@@ -177,7 +177,7 @@
     ConstructSlider.prototype.setupSwipeEvents = function() {
       var _this = this;
       return this.inner.hammer({
-        drag_min_distance: 20,
+        drag_min_distance: 50,
         drag_lock_to_axis: true,
         drag_block_horizontal: true,
         drag_block_vertical: true
@@ -194,13 +194,11 @@
         switch (ev.gesture.direction) {
           case "right":
           case "left":
-            console.log("true");
-            console.log(ev.gesture.direction);
             deltaDistance = pxVal + distance;
             return _this.inner.css('transform', "translateX(-" + deltaDistance + "px)");
           case "up":
           case "down":
-            return console.log('no');
+            return false;
         }
       }).on("dragend", function(ev) {
         event.stopPropagation();
@@ -242,8 +240,6 @@
             _this.slideNext("next");
             break;
           case arrow.down:
-            _this.toggleDrawer();
-            break;
           case arrow.up:
             _this.toggleDrawer();
         }

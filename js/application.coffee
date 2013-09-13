@@ -139,7 +139,7 @@ class ConstructSlider
 
   setupSwipeEvents: ->
     @inner.hammer(
-      drag_min_distance: 20
+      drag_min_distance: 50
       drag_lock_to_axis: true
       drag_block_horizontal: true
       drag_block_vertical: true
@@ -157,13 +157,10 @@ class ConstructSlider
 
         switch ev.gesture.direction
           when "right", "left"
-            console.log "true"
-            console.log ev.gesture.direction
             deltaDistance = pxVal + distance
             @inner.css('transform', "translateX(-#{deltaDistance}px)")
-
           when "up", "down"
-            console.log ('no')
+           return false
 
       ).on("dragend", (ev) =>
         event.stopPropagation();
@@ -197,9 +194,7 @@ class ConstructSlider
           @slideNext("prev")
         when arrow.right
           @slideNext("next")
-        when arrow.down
-          @toggleDrawer()
-        when arrow.up
+        when arrow.down, arrow.up
           @toggleDrawer()
       mixpanel.track("Key Press")
 
