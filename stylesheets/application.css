@@ -656,6 +656,13 @@ div#slider {
     -ms-transform: translateY(0px);
     -o-transform: translateY(0px);
     transform: translateY(0px); }
+  div#slider.zoom-out {
+    -webkit-transform: translateY(0px) scale(0.5);
+    -moz-transform: translateY(0px) scale(0.5);
+    -ms-transform: translateY(0px) scale(0.5);
+    -o-transform: translateY(0px) scale(0.5);
+    transform: translateY(0px) scale(0.5);
+    overflow: visible; }
 
 div.slider-container {
   *zoom: 1;
