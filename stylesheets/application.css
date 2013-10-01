@@ -627,7 +627,8 @@ div#slider, div.slider-container {
 
 body {
   background: #313841;
-  overflow-y: hidden; }
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch; }
   body, body * {
     -webkit-transform-style: preserve-3d;
     -moz-transform-style: preserve-3d;
