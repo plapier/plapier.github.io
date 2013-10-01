@@ -144,13 +144,16 @@ class ConstructSlider
       drag_block_horizontal: true
       drag_block_vertical: true
     )
-      .on("touch drag", (ev) =>
-        event.preventDefault()
+      .on("dragstart", (ev) =>
+        ev.preventDefault()
+        @inner.addClass('no-transition')
+
+      ).on("touch drag", (ev) =>
+        ev.preventDefault()
 
         $currentIndex = @container.find('.active').index()
         pxVal         = Math.floor (@viewportW * $currentIndex) * (90/100)
         distance      = Math.floor ev.gesture.distance
-        @inner.addClass('no-transition')
 
         if ev.gesture.direction is "right"
           distance = distance * -1
@@ -162,8 +165,8 @@ class ConstructSlider
           when "up", "down"
            return false
 
-      ).on("dragend", (ev) =>
-        event.stopPropagation();
+      ).on("release dragend", (ev) =>
+        ev.preventDefault()
 
         @inner.removeClass('no-transition').addClass('drag-transition')
         ## remove drag-transiton after transition completes
@@ -171,11 +174,13 @@ class ConstructSlider
 
         switch ev.gesture.direction
           when "right"
+            ev.gesture.stopDetect()
             @slideNext("prev")
           when "left"
+            ev.gesture.stopDetect()
             @slideNext("next")
       ).on('pinch', =>
-        event.preventDefault()
+        ev.preventDefault()
       )
 
   setupKeybindings: ->

@@ -181,13 +181,15 @@
         drag_lock_to_axis: true,
         drag_block_horizontal: true,
         drag_block_vertical: true
+      }).on("dragstart", function(ev) {
+        ev.preventDefault();
+        return _this.inner.addClass('no-transition');
       }).on("touch drag", function(ev) {
         var $currentIndex, deltaDistance, distance, pxVal;
-        event.preventDefault();
+        ev.preventDefault();
         $currentIndex = _this.container.find('.active').index();
         pxVal = Math.floor((_this.viewportW * $currentIndex) * (90 / 100));
         distance = Math.floor(ev.gesture.distance);
-        _this.inner.addClass('no-transition');
         if (ev.gesture.direction === "right") {
           distance = distance * -1;
         }
@@ -200,20 +202,22 @@
           case "down":
             return false;
         }
-      }).on("dragend", function(ev) {
-        event.stopPropagation();
+      }).on("release dragend", function(ev) {
+        ev.preventDefault();
         _this.inner.removeClass('no-transition').addClass('drag-transition');
         setTimeout((function() {
           return _this.inner.removeClass('drag-transition');
         }), 600);
         switch (ev.gesture.direction) {
           case "right":
+            ev.gesture.stopDetect();
             return _this.slideNext("prev");
           case "left":
+            ev.gesture.stopDetect();
             return _this.slideNext("next");
         }
       }).on('pinch', function() {
-        return event.preventDefault();
+        return ev.preventDefault();
       });
     };
 
