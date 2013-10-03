@@ -115,18 +115,18 @@ class ConstructSlider
   ## Show/Hide Drawer
   toggleDrawer: (val) ->
     if val is "close"    or @container.hasClass('show-nav')
-      @container.removeClass('show-nav').addClass('hide-nav')
+      @container.removeClass('show-nav').addClass('hide-nav').removeClass('zoom-out')
       @drawer.removeClass('show').addClass('hide')
       @nav.removeClass('show').addClass('hide')
     else if val = 'open' or @container.hasClass('show-nav')
-      @container.removeClass('hide-nav').addClass('show-nav')
+      @container.removeClass('hide-nav').addClass('show-nav').addClass('zoom-out')
       @drawer.removeClass('hide').addClass('show')
       @nav.removeClass('hide').addClass('show')
 
   hideDrawer: ->
     if @container.hasClass('show-nav')
       @inner.on "transitionend webkitTransitionEnd MSTransitionEnd", =>
-        @toggleDrawer("close")
+        # @toggleDrawer("close")
         @removeTransitionClass()
 
   changeDrawerActive: ->

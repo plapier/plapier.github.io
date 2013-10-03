@@ -110,7 +110,8 @@ nav.slider-nav {
   height: $drawer-height;
   margin: 0;
   padding: 0;
-  position: absolute;
+  // position: absolute;
+  position: fixed;
   top: $nav-height;
   @include transition;
   width: 100%;

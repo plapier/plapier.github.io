@@ -141,11 +141,11 @@
 
     ConstructSlider.prototype.toggleDrawer = function(val) {
       if (val === "close" || this.container.hasClass('show-nav')) {
-        this.container.removeClass('show-nav').addClass('hide-nav');
+        this.container.removeClass('show-nav').addClass('hide-nav').removeClass('zoom-out');
         this.drawer.removeClass('show').addClass('hide');
         return this.nav.removeClass('show').addClass('hide');
       } else if (val = 'open' || this.container.hasClass('show-nav')) {
-        this.container.removeClass('hide-nav').addClass('show-nav');
+        this.container.removeClass('hide-nav').addClass('show-nav').addClass('zoom-out');
         this.drawer.removeClass('hide').addClass('show');
         return this.nav.removeClass('hide').addClass('show');
       }
@@ -155,7 +155,6 @@
       var _this = this;
       if (this.container.hasClass('show-nav')) {
         return this.inner.on("transitionend webkitTransitionEnd MSTransitionEnd", function() {
-          _this.toggleDrawer("close");
           return _this.removeTransitionClass();
         });
       }
