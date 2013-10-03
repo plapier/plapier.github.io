@@ -88,8 +88,7 @@
     ConstructSlider.prototype.setupDrawerNav = function() {
       var _this = this;
       this.nav.find('.menu').click(function() {
-        _this.toggleDrawer();
-        return mixpanel.track("Menu Click");
+        return _this.toggleDrawer();
       });
       return this.drawer.find('a').on('click', function(event) {
         var dataId;
@@ -238,16 +237,13 @@
         };
         switch (keyCode) {
           case arrow.left:
-            _this.slideNext("prev");
-            break;
+            return _this.slideNext("prev");
           case arrow.right:
-            _this.slideNext("next");
-            break;
+            return _this.slideNext("next");
           case arrow.down:
           case arrow.up:
-            _this.toggleDrawer();
+            return _this.toggleDrawer();
         }
-        return mixpanel.track("Key Press");
       });
     };
 
@@ -298,12 +294,10 @@
       var id;
       id = target.attr('data-id');
       if (id) {
-        History.replaceState({
+        return History.replaceState({
           state: 1
         }, "" + id, "#" + id);
       }
-      _gaq.push(["_trackPageview", location.pathname + location.search + location.hash]);
-      return mixpanel.track(id);
     };
 
     ConstructSlider.prototype.setupSwipe = function() {};

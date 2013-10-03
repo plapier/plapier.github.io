@@ -72,7 +72,7 @@ class ConstructSlider
   setupDrawerNav: ->
     @nav.find('.menu').click =>
       @toggleDrawer()
-      mixpanel.track("Menu Click")
+      # mixpanel.track("Menu Click")
 
     @drawer.find('a').on 'click', (event) =>
       dataId = $(event.target).attr('href')
@@ -201,7 +201,7 @@ class ConstructSlider
           @slideNext("next")
         when arrow.down, arrow.up
           @toggleDrawer()
-      mixpanel.track("Key Press")
+      # mixpanel.track("Key Press")
 
   ## Setup event listener on resize and set global variable
   watchViewportWidth: ->
@@ -244,8 +244,8 @@ class ConstructSlider
     History.replaceState({state:1}, "#{id}", "##{id}") if id
 
     ## Report to Analytics
-    _gaq.push ["_trackPageview", location.pathname + location.search + location.hash]
-    mixpanel.track(id)
+    # _gaq.push ["_trackPageview", location.pathname + location.search + location.hash]
+    # mixpanel.track(id)
 
   setupSwipe: ->
 
