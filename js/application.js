@@ -184,7 +184,7 @@
       }).on("dragstart", function(ev) {
         ev.preventDefault();
         return _this.inner.addClass('no-transition');
-      }).on("touch drag", function(ev) {
+      }).on("drag", function(ev) {
         var $currentIndex, deltaDistance, distance, pxVal;
         ev.preventDefault();
         $currentIndex = _this.container.find('.active').index();
@@ -202,7 +202,7 @@
           case "down":
             return false;
         }
-      }).on("release dragend", function(ev) {
+      }).on("dragend", function(ev) {
         ev.preventDefault();
         _this.inner.removeClass('no-transition').addClass('drag-transition');
         setTimeout((function() {

@@ -143,12 +143,11 @@ class ConstructSlider
       drag_lock_to_axis: true
       drag_block_horizontal: true
       drag_block_vertical: true
-    )
-      .on("dragstart", (ev) =>
+      ).on("dragstart", (ev) =>
         ev.preventDefault()
         @inner.addClass('no-transition')
 
-      ).on("touch drag", (ev) =>
+      ).on("drag", (ev) =>
         ev.preventDefault()
 
         $currentIndex = @container.find('.active').index()
@@ -165,7 +164,7 @@ class ConstructSlider
           when "up", "down"
            return false
 
-      ).on("release dragend", (ev) =>
+      ).on("dragend", (ev) =>
         ev.preventDefault()
 
         @inner.removeClass('no-transition').addClass('drag-transition')
