@@ -13,7 +13,6 @@ class ConstructSlider
     @setupSwipeEvents()
     @watchViewportWidth()
     @readHash()
-    @setupSwipe()
 
   setInnerWidth: ->
     width = null
@@ -245,8 +244,6 @@ class ConstructSlider
     ## Report to Analytics
     _gaq.push ["_trackPageview", location.pathname + location.search + location.hash]
     mixpanel.track(id)
-
-  setupSwipe: ->
 
 $ ->
   new ConstructSlider()

@@ -18,7 +18,6 @@
       this.setupSwipeEvents();
       this.watchViewportWidth();
       this.readHash();
-      this.setupSwipe();
     }
 
     ConstructSlider.prototype.setInnerWidth = function() {
@@ -305,8 +304,6 @@
       _gaq.push(["_trackPageview", location.pathname + location.search + location.hash]);
       return mixpanel.track(id);
     };
-
-    ConstructSlider.prototype.setupSwipe = function() {};
 
     return ConstructSlider;
 
