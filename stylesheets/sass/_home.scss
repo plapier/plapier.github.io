@@ -155,7 +155,7 @@ section:last-child {
 
 $nums: 0;
 @for $i from 2 through 25 {
-  $nums: join($nums, $i);
+  $nums: join($nums, $i) !global;
 }
 
 @each $num in $nums {
