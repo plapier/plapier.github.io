@@ -1080,10 +1080,9 @@ section.about div.nav-info {
         top: 6px;
         height: 0;
         width: 0;
-        border-color: transparent;
-        border-style: solid;
-        border-width: 4px;
-        border-right-color: rgba(255, 255, 255, 0.3); }
+        border-top: 4px solid transparent;
+        border-bottom: 4px solid transparent;
+        border-right: 8px solid rgba(255, 255, 255, 0.3); }
       section.about div.nav-info .arrows span.arrow.right {
         -webkit-transform: scaleX(-1);
         -moz-transform: scaleX(-1);
