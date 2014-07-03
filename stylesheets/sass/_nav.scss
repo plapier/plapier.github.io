@@ -118,13 +118,12 @@ nav.slider-nav {
   &.hide {
     opacity: 0;
   }
-
   &.show {
     opacity: 1;
   }
 
   li {
-    @include calc(width, "100% / 7");
+    @include calc(width, "100% / 8");
     @include clearfix;
     display: inline-block;
     float: left;
