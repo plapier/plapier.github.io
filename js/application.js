@@ -6,8 +6,8 @@
     ConstructSlider.viewportW;
 
     function ConstructSlider() {
-      this.nav = $('nav.slider-nav');
-      this.drawer = $('.drawer');
+      this.nav = document.getElementsByClassName('slider-nav')[0];
+      this.drawer = document.getElementsByClassName('drawer')[0];
       this.container = document.getElementById('slider');
       this.inner = document.getElementById('inner');
       this.sections = this.inner.getElementsByTagName('section');
@@ -35,16 +35,7 @@
     ConstructSlider.prototype.setupArrows = function() {
       var arrows;
       arrows = this.inner.getElementsByClassName('nav-info')[0];
-      arrows.classList.add('slide-up');
-      return this.nav.on('click', '.arrow', (function(_this) {
-        return function(event) {
-          var id;
-          id = $(event.target).attr('data-id');
-          _this.slideNext(id);
-          _this.hideDrawer();
-          return _this.removeTransitionClass();
-        };
-      })(this));
+      return arrows.classList.add('slide-up');
     };
 
     ConstructSlider.prototype.slideNext = function(id) {
@@ -60,7 +51,7 @@
         width = (index - 1) * 90;
         pxVal = (this.viewportW * (index - 1)) * (90 / 100);
       }
-      this.changeHash($(next));
+      this.changeHash(next);
       if (!next) {
         return;
       }
@@ -95,16 +86,24 @@
     };
 
     ConstructSlider.prototype.setupDrawerNav = function() {
-      this.nav.find('.menu').click((function(_this) {
-        return function() {
-          _this.toggleDrawer();
-          return mixpanel.track("Menu Click");
+      $(this.nav).on('click', (function(_this) {
+        return function(event) {
+          var id;
+          if (event.target.classList.contains('arrow')) {
+            id = event.target.getAttribute('data-id');
+            _this.slideNext(id);
+            _this.hideDrawer();
+            return _this.removeTransitionClass();
+          } else if (event.target.classList.contains('menu')) {
+            _this.toggleDrawer();
+            return mixpanel.track("Menu Click");
+          }
         };
       })(this));
-      return this.drawer.find('a').on('click', (function(_this) {
+      return $(this.drawer).on('click', (function(_this) {
         return function(event) {
           var dataId;
-          dataId = $(event.target).attr('href');
+          dataId = event.target.getAttribute('href');
           return _this.slideToTarget(dataId);
         };
       })(this));
@@ -127,7 +126,7 @@
         this.changeDrawerActive();
         this.hideDrawer();
         $(current).scrollTop(0);
-        this.changeHash($(target));
+        this.changeHash(target);
         return this.removeTransitionClass();
       }
     };
@@ -152,17 +151,17 @@
       if (val === "close" || this.container.classList.contains('show-nav')) {
         this.container.classList.remove('show-nav');
         this.container.classList.add('hide-nav');
-        this.drawer[0].classList.remove('show');
-        this.drawer[0].classList.add('hide');
-        this.nav[0].classList.remove('show');
-        return this.nav[0].classList.add('hide');
+        this.drawer.classList.remove('show');
+        this.drawer.classList.add('hide');
+        this.nav.classList.remove('show');
+        return this.nav.classList.add('hide');
       } else if (val = 'open' || this.container.classList.contains('show-nav')) {
         this.container.classList.remove('hide-nav');
         this.container.classList.add('show-nav');
-        this.drawer[0].classList.remove('hide');
-        this.drawer[0].classList.add('show');
-        this.nav[0].classList.remove('hide');
-        return this.nav[0].classList.add('show');
+        this.drawer.classList.remove('hide');
+        this.drawer.classList.add('show');
+        this.nav.classList.remove('hide');
+        return this.nav.classList.add('show');
       }
     };
 
@@ -178,9 +177,10 @@
     };
 
     ConstructSlider.prototype.changeDrawerActive = function() {
-      var $target, selector;
+      var selector;
       selector = $(this.container).find('.active').attr('class').split(' ')[0];
-      return $target = this.drawer.find("a[href='#" + selector + "']").parent().addClass('active').siblings().removeClass('active');
+      this.drawer.getElementsByClassName('active')[0].classList.remove('active');
+      return this.drawer.querySelector("a[href='#" + selector + "']").parentElement.classList.add('active');
     };
 
     ConstructSlider.prototype.removeTransitionClass = function() {
@@ -323,7 +323,7 @@
 
     ConstructSlider.prototype.changeHash = function(target) {
       var id;
-      id = target.attr('data-id');
+      id = target.getAttribute('data-id');
       if (id) {
         History.replaceState({
           state: 1

@@ -1,8 +1,8 @@
 class ConstructSlider
   @viewportW
   constructor: () ->
-    @nav       = $('nav.slider-nav')
-    @drawer    = $('.drawer')
+    @nav       = document.getElementsByClassName('slider-nav')[0]
+    @drawer    = document.getElementsByClassName('drawer')[0]
     @container = document.getElementById('slider')
     @inner     = document.getElementById('inner')
     @sections  = @inner.getElementsByTagName('section')
@@ -25,11 +25,6 @@ class ConstructSlider
   setupArrows: ->
     arrows = @inner.getElementsByClassName('nav-info')[0]
     arrows.classList.add('slide-up')
-    @nav.on 'click', '.arrow', (event) =>
-      id = $(event.target).attr('data-id')
-      @slideNext(id)
-      @hideDrawer()
-      @removeTransitionClass()
 
   slideNext: (id) ->
     current = @container.getElementsByClassName('active')[0]
@@ -42,7 +37,7 @@ class ConstructSlider
       next = current.previousElementSibling
       width = (index - 1) * 90
       pxVal = (@viewportW * (index - 1)) * (90/100)
-    @changeHash($(next))
+    @changeHash(next)
 
     return if not next
 
@@ -73,12 +68,19 @@ class ConstructSlider
 
   ## Drawer Navigation
   setupDrawerNav: ->
-    @nav.find('.menu').click =>
-      @toggleDrawer()
-      mixpanel.track("Menu Click")
+    $(@nav).on 'click', (event) =>
+      if event.target.classList.contains('arrow')
+        id = event.target.getAttribute('data-id')
+        @slideNext(id)
+        @hideDrawer()
+        @removeTransitionClass()
 
-    @drawer.find('a').on 'click', (event) =>
-      dataId = $(event.target).attr('href')
+      else if event.target.classList.contains('menu')
+        @toggleDrawer()
+        mixpanel.track("Menu Click")
+
+    $(@drawer).on 'click', (event) =>
+      dataId = event.target.getAttribute('href')
       @slideToTarget(dataId)
 
   slideToTarget: (id) ->
@@ -98,7 +100,7 @@ class ConstructSlider
       @changeDrawerActive()
       @hideDrawer()
       $(current).scrollTop(0)
-      @changeHash($(target))
+      @changeHash(target)
       @removeTransitionClass()
 
   ## For Multiples images in a single browser frame
@@ -122,17 +124,17 @@ class ConstructSlider
     if val is "close" or @container.classList.contains('show-nav')
       @container.classList.remove('show-nav')
       @container.classList.add('hide-nav')
-      @drawer[0].classList.remove('show')
-      @drawer[0].classList.add('hide')
-      @nav[0].classList.remove('show')
-      @nav[0].classList.add('hide')
+      @drawer.classList.remove('show')
+      @drawer.classList.add('hide')
+      @nav.classList.remove('show')
+      @nav.classList.add('hide')
     else if val = 'open' or @container.classList.contains('show-nav')
       @container.classList.remove('hide-nav')
       @container.classList.add('show-nav')
-      @drawer[0].classList.remove('hide')
-      @drawer[0].classList.add('show')
-      @nav[0].classList.remove('hide')
-      @nav[0].classList.add('show')
+      @drawer.classList.remove('hide')
+      @drawer.classList.add('show')
+      @nav.classList.remove('hide')
+      @nav.classList.add('show')
 
   hideDrawer: ->
     if @container.classList.contains('show-nav')
@@ -142,7 +144,8 @@ class ConstructSlider
 
   changeDrawerActive: ->
     selector = $(@container).find('.active').attr('class').split(' ')[0]
-    $target  = @drawer.find("a[href='##{selector}']").parent().addClass('active').siblings().removeClass('active')
+    @drawer.getElementsByClassName('active')[0].classList.remove('active')
+    @drawer.querySelector("a[href='##{selector}']").parentElement.classList.add('active')
 
   removeTransitionClass: ->
     $(@inner).removeClass (index, css) ->
@@ -253,7 +256,7 @@ class ConstructSlider
       @slideToTarget(hash) unless hash.length is 0
 
   changeHash: (target) ->
-    id = target.attr('data-id')
+    id = target.getAttribute('data-id')
     History.replaceState({state:1}, "#{id}", "##{id}") if id
 
     ## Report to Analytics
