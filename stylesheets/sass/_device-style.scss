@@ -44,24 +44,13 @@
 }
 
 .ipad {
-  background: #000;
+  background: hsla(0, 0%, 100%, 0.15);
   border-radius: 3vw;
+  box-shadow: 0 0 0 1px hsla(0, 0%, 100%, 0.25);
   display: block;
   margin: 7vh 5vw 5vh;
   padding: 3vw 6vw;
   position: relative;
-
-  // inset Box-shadow hack for border-radius in vw
-  &:after {
-    border-radius: 3vw;
-    box-shadow: 2px -2px 0 #fff;
-    content: "";
-    height: 100%;
-    position: absolute;
-    right: 2px;
-    top: 2px;
-    width: 100%;
-  }
 
   img {
     display: block;

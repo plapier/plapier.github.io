@@ -6,6 +6,7 @@
     ConstructSlider.viewportW;
 
     function ConstructSlider() {
+      this.transition = "transitionend webkitTransitionEnd MSTransitionEnd";
       this.nav = document.getElementsByClassName('slider-nav')[0];
       this.drawer = document.getElementsByClassName('drawer')[0];
       this.container = document.getElementById('slider');
@@ -39,6 +40,7 @@
 
     ConstructSlider.prototype.slideNext = function(id) {
       var $scrollPos, current, index, next, offset, pxVal, speed, target, timeout, width;
+      next = void 0;
       current = this.container.getElementsByClassName('active')[0];
       index = $(this.sections).index(current);
       if (id === "next") {
@@ -51,7 +53,7 @@
         pxVal = (this.viewportW * (index - 1)) * (90 / 100);
       }
       this.changeHash(next);
-      if (!next) {
+      if (next == null) {
         return;
       }
       target = current.getElementsByClassName('frame')[0];
@@ -62,9 +64,9 @@
         offset = $(current).scrollTop();
         target.classList.add('animate');
         $(target).css('transform', "translateY(" + offset + "px");
-        $(target).on("transitionend webkitTransitionEnd MSTransitionEnd", function() {
+        $(target).on(this.transition, function() {
           target.classList.remove('animate');
-          return $(target).off();
+          return $(target).off(this.transition);
         });
         timeout = speed + 50;
       }
@@ -74,10 +76,10 @@
           current.classList.remove('active');
           next.classList.add('active');
           _this.changeDrawerActive();
-          return $(_this.inner).on("transitionend webkitTransitionEnd MSTransitionEnd", function() {
+          return $(_this.inner).on(_this.transition, function() {
             $(target).css('transform', "translateX(0)");
             $(current).scrollTop(0);
-            return $(_this.inner).off();
+            return $(_this.inner).off(_this.transition);
           });
         };
       })(this)), timeout);
@@ -150,14 +152,16 @@
     };
 
     ConstructSlider.prototype.hideDrawer = function() {
-      if (this.container.classList.contains('show-nav')) {
-        return $(this.inner).on("transitionend webkitTransitionEnd MSTransitionEnd", (function(_this) {
-          return function() {
-            _this.toggleDrawer("close");
-            return _this.removeTransitionClass();
-          };
-        })(this));
+      if (!this.container.classList.contains('show-nav')) {
+        return;
       }
+      return $(this.inner).on(this.transition, (function(_this) {
+        return function() {
+          _this.toggleDrawer("close");
+          _this.removeTransitionClass();
+          return $(_this.inner).off(_this.transition);
+        };
+      })(this));
     };
 
     ConstructSlider.prototype.changeDrawerActive = function() {
@@ -306,7 +310,7 @@
 
     ConstructSlider.prototype.changeHash = function(target) {
       var id;
-      id = target.getAttribute('data-id');
+      id = $(target).attr('data-id');
       if (id) {
         History.replaceState({
           state: 1

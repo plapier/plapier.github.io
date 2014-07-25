@@ -1,6 +1,7 @@
 class ConstructSlider
   @viewportW
   constructor: () ->
+    @transition = "transitionend webkitTransitionEnd MSTransitionEnd"
     @nav       = document.getElementsByClassName('slider-nav')[0]
     @drawer    = document.getElementsByClassName('drawer')[0]
     @container = document.getElementById('slider')
@@ -26,8 +27,10 @@ class ConstructSlider
     arrows.classList.add('slide-up')
 
   slideNext: (id) ->
+    next = undefined
     current = @container.getElementsByClassName('active')[0]
     index = $(@sections).index(current)
+
     if id is "next"
       next = current.nextElementSibling
       width = (index + 1) * 90
@@ -38,7 +41,7 @@ class ConstructSlider
       pxVal = (@viewportW * (index - 1)) * (90/100)
     @changeHash(next)
 
-    return if not next
+    return if !next?
 
     target = current.getElementsByClassName('frame')[0]
     timeout = 0
@@ -48,9 +51,9 @@ class ConstructSlider
       offset = $(current).scrollTop()
       target.classList.add('animate')
       $(target).css('transform', "translateY(#{offset}px")
-      $(target).on "transitionend webkitTransitionEnd MSTransitionEnd", ->
+      $(target).on @transition, ->
         target.classList.remove('animate')
-        $(target).off()
+        $(target).off(@transition)
       timeout = speed + 50
 
     window.setTimeout (=>
@@ -58,10 +61,10 @@ class ConstructSlider
       current.classList.remove('active')
       next.classList.add('active')
       @changeDrawerActive()
-      $(@inner).on "transitionend webkitTransitionEnd MSTransitionEnd", =>
+      $(@inner).on @transition, =>
         $(target).css('transform', "translateX(0)")
         $(current).scrollTop(0)
-        $(@inner).off()
+        $(@inner).off(@transition)
     ), timeout
     @hideDrawer()
 
@@ -121,10 +124,11 @@ class ConstructSlider
       @nav.classList.add('show')
 
   hideDrawer: ->
-    if @container.classList.contains('show-nav')
-      $(@inner).on "transitionend webkitTransitionEnd MSTransitionEnd", =>
-        @toggleDrawer("close")
-        @removeTransitionClass()
+    return if !@container.classList.contains('show-nav')
+    $(@inner).on @transition, =>
+      @toggleDrawer("close")
+      @removeTransitionClass()
+      $(@inner).off @transition
 
   changeDrawerActive: ->
     selector = $(@container).find('.active').attr('class').split(' ')[0]
@@ -147,7 +151,6 @@ class ConstructSlider
 
       ).on("drag", (ev) =>
         ev.preventDefault()
-
         $currentIndex = $(@container).find('.active').index()
         pxVal         = Math.floor (@viewportW * $currentIndex) * (90/100)
         distance      = Math.floor ev.gesture.distance
@@ -233,13 +236,12 @@ class ConstructSlider
     for section in @sections
       hashes.push("##{section.getAttribute('data-id')}")
 
-    # Only slide is hash is in the DOM
-    # console.log hash
+    # Only slide if hash is in the DOM
     unless hashes.indexOf(hash) is -1
       @slideToTarget(hash) unless hash.length is 0
 
   changeHash: (target) ->
-    id = target.getAttribute('data-id')
+    id = $(target).attr('data-id')
     History.replaceState({state:1}, "#{id}", "##{id}") if id
 
     ## Report to Analytics
