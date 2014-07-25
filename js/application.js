@@ -14,7 +14,6 @@
       this.setInnerWidth();
       this.setupArrows();
       this.setupDrawerNav();
-      this.setupImagesNav();
       this.setupKeybindings();
       this.setupSwipeEvents();
       this.watchViewportWidth();
@@ -113,38 +112,23 @@
       var $currentIndex, $targetIndex, current, diff, pxVal, target;
       id = id.replace("#", "");
       target = this.inner.querySelectorAll("[data-id='" + id + "']")[0];
+      current = this.container.getElementsByClassName('active')[0];
       $targetIndex = $(target).index();
-      current = this.container.getElementsByClassName('active');
       $currentIndex = $(current).index();
+      if ($targetIndex === $currentIndex) {
+        return;
+      }
       diff = Math.abs($targetIndex - $currentIndex);
-      if ($targetIndex !== $currentIndex) {
-        pxVal = Math.floor((this.viewportW * $targetIndex) * (90 / 100));
-        current[0].classList.remove('active');
-        target.classList.add('active');
-        this.inner.classList.add("transition-" + diff);
-        $(this.inner).css('transform', "translateX(-" + pxVal + "px)");
-        this.changeDrawerActive();
-        this.hideDrawer();
-        $(current).scrollTop(0);
-        this.changeHash(target);
-        return this.removeTransitionClass();
-      }
-    };
-
-    ConstructSlider.prototype.setupImagesNav = function() {
-      return this.setBrowserHeight();
-    };
-
-    ConstructSlider.prototype.setBrowserHeight = function() {
-      var image, imageHeight, images, _i, _len, _results;
-      images = this.inner.getElementsByClassName('multiple-images');
-      _results = [];
-      for (_i = 0, _len = images.length; _i < _len; _i++) {
-        image = images[_i];
-        imageHeight = image.getElementsByClassName('current')[0].offsetHeight;
-        _results.push(image.style.height = imageHeight);
-      }
-      return _results;
+      pxVal = Math.floor((this.viewportW * $targetIndex) * (90 / 100));
+      current.classList.remove('active');
+      target.classList.add('active');
+      this.inner.classList.add("transition-" + diff);
+      $(this.inner).css('transform', "translateX(-" + pxVal + "px)");
+      this.changeDrawerActive();
+      this.hideDrawer();
+      $(current).scrollTop(0);
+      this.changeHash(target);
+      return this.removeTransitionClass();
     };
 
     ConstructSlider.prototype.toggleDrawer = function(val) {
@@ -282,8 +266,7 @@
         return function() {
           _this.viewportW = _this.getViewportW();
           _this.setInnerWidth();
-          _this.recalculatePos();
-          return _this.setBrowserHeight();
+          return _this.recalculatePos();
         };
       })(this);
       return $(window).bind("resize", function() {

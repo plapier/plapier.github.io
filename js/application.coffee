@@ -9,7 +9,6 @@ class ConstructSlider
     @setInnerWidth()
     @setupArrows()
     @setupDrawerNav()
-    @setupImagesNav()
     @setupKeybindings()
     @setupSwipeEvents()
     @watchViewportWidth()
@@ -86,38 +85,23 @@ class ConstructSlider
   slideToTarget: (id) ->
     id = id.replace("#", "")
     target = @inner.querySelectorAll("[data-id='#{id}']")[0]
+    current = @container.getElementsByClassName('active')[0]
+
     $targetIndex = $(target).index()
-    current = @container.getElementsByClassName('active')
     $currentIndex = $(current).index()
+    return if $targetIndex is $currentIndex
+
     diff = Math.abs($targetIndex - $currentIndex)
-
-    if $targetIndex isnt $currentIndex
-      pxVal = Math.floor (@viewportW * $targetIndex) * (90/100)
-      current[0].classList.remove('active') ## THIS
-      target.classList.add('active')
-      @inner.classList.add("transition-#{diff}")
-      $(@inner).css('transform', "translateX(-#{pxVal}px)")
-      @changeDrawerActive()
-      @hideDrawer()
-      $(current).scrollTop(0)
-      @changeHash(target)
-      @removeTransitionClass()
-
-  ## For Multiples images in a single browser frame
-  setupImagesNav: ->
-    @setBrowserHeight()
-    # @inner.find('nav.dots').on 'click', 'span', ->
-      # if !$(this).hasClass('current')
-        # index  = $(this).index()
-        # images = $(this).parent().siblings('img')
-        # $(this).addClass('current').siblings().removeClass('current')
-        # $(images[index]).addClass('current').siblings().removeClass('current')
-
-  setBrowserHeight: ->
-    images = @inner.getElementsByClassName('multiple-images')
-    for image in images
-      imageHeight = image.getElementsByClassName('current')[0].offsetHeight
-      image.style.height = imageHeight
+    pxVal = Math.floor (@viewportW * $targetIndex) * (90/100)
+    current.classList.remove('active')
+    target.classList.add('active')
+    @inner.classList.add("transition-#{diff}")
+    $(@inner).css('transform', "translateX(-#{pxVal}px)")
+    @changeDrawerActive()
+    @hideDrawer()
+    $(current).scrollTop(0)
+    @changeHash(target)
+    @removeTransitionClass()
 
   ## Show/Hide Drawer
   toggleDrawer: (val) ->
@@ -227,7 +211,6 @@ class ConstructSlider
       @viewportW = @getViewportW()
       @setInnerWidth()
       @recalculatePos()
-      @setBrowserHeight()
 
     ## Resize after user stops resizing
     $(window).bind "resize", ->
