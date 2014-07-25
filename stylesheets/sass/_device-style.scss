@@ -4,6 +4,8 @@
   margin: 7vh 5vw 5vh;
   position: relative;
   padding: 0;
+  border-radius: 4px;
+  overflow: hidden;
   // @include transition(all 1s $ease-out-expo); // Faux-scroll effect
   // @include transition-property(transform);
   // @include transition-duration(1s);
@@ -37,7 +39,6 @@
   }
 
   img {
-    border-radius: 4px;
     display: block;
     width: 100%;
   }

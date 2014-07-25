@@ -7,9 +7,15 @@ $orange: #F89E6B;
 $yellow: #F4C042;
 $blue: #60A4EB;
 $blue-alt: #88B3E8;
+$blue-alt-2: lighten(#3884CC, 0%);
 
 .about {
   $c: $purple;
+  background: $c;
+  &:before, &:after { background: $c; }
+}
+.domflags {
+  $c: $blue-alt-2;
   background: $c;
   &:before, &:after { background: $c; }
 }
@@ -24,12 +30,12 @@ $blue-alt: #88B3E8;
   background: $c;
   &:before, &:after { background: $c; }
 }
-.groupize-wl {
+.white-label {
   $c: $blue;
   background: $c;
   &:before, &:after { background: $c; }
 }
-.groupize-prm {
+.prm {
   $c: $purple-alt;
   background: $c;
   &:before, &:after { background: $c; }

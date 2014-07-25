@@ -977,6 +977,11 @@ div#slider .transition-25 {
   .about:before, .about:after {
     background: #7f63b5; }
 
+.domflags {
+  background: #3884cc; }
+  .domflags:before, .domflags:after {
+    background: #3884cc; }
+
 .myfaves {
   background: #16a085; }
   .myfaves:before, .myfaves:after {
@@ -987,14 +992,14 @@ div#slider .transition-25 {
   .thoughtbot:before, .thoughtbot:after {
     background: #df6c63; }
 
-.groupize-wl {
+.white-label {
   background: #60a4eb; }
-  .groupize-wl:before, .groupize-wl:after {
+  .white-label:before, .white-label:after {
     background: #60a4eb; }
 
-.groupize-prm {
+.prm {
   background: #b080c1; }
-  .groupize-prm:before, .groupize-prm:after {
+  .prm:before, .prm:after {
     background: #b080c1; }
 
 .fdn {
@@ -1292,7 +1297,9 @@ nav.dots {
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.23);
   margin: 7vh 5vw 5vh;
   position: relative;
-  padding: 0; }
+  padding: 0;
+  border-radius: 4px;
+  overflow: hidden; }
   .browser.multiple-images img {
     left: 0;
     opacity: 0;
@@ -1312,7 +1319,6 @@ nav.dots {
       opacity: 1;
       z-index: 2; }
   .browser img {
-    border-radius: 4px;
     display: block;
     width: 100%; }
 
