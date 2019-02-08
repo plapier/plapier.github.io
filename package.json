@@ -1,0 +1,30 @@
+{
+  "name": "plapier.github.io",
+  "version": "1.0.0",
+  "description": "Run Jekyll jekyll serve -w",
+  "main": "index.js",
+  "dependencies": {
+    "grunt": "^1.0.3"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-contrib-coffee": "^2.0.0",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-jekyll": "^0.4.6"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/plapier/plapier.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/plapier/plapier.github.io/issues"
+  },
+  "homepage": "https://github.com/plapier/plapier.github.io#readme"
+}
