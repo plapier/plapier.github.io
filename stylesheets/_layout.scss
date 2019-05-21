@@ -1,0 +1,64 @@
+body, html {
+  background-color: var(--bg-primary);
+  margin: 0;
+  overflow-x: hidden;
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: var(--text-body-medium);
+  @include font-smoothing;
+}
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.layout-wrapper {
+  max-width: 1136px + (40*2);
+  margin: 0 auto;
+  padding: 80px 40px;
+}
+.inner-wrapper {
+  padding: 0 48px;
+}
+.chivo {
+  font-family: $chivo;
+}
+.poppins {
+  font-family: $poppins;
+}
+
+.header-main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  h1 {
+    font-weight: normal;
+    font-size: var(--text-body-large);
+    max-width: 590px;
+
+    b {
+      font-weight: 600;
+    }
+  }
+  nav {
+    a {
+      color: var(--text-primary);
+    }
+
+    .active {
+      border-bottom: 2px solid $action-color;
+      padding-bottom: 4px;
+    }
+  }
+  ul {
+    display: flex;
+    flex-direction: row;
+
+    li {
+      margin-left: 50px;
+    }
+  }
+}

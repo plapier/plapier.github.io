@@ -5,60 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>Philip LaPier — Product Designer in San Francisco</title>
     <meta name="description" content="Philip LaPier is a Product Designer in San Francisco, CA.">
-    <meta name="keywords" content="phil lapier, philip lapier, web design, web development, product design, interface design, ruby, rails, boston, bourbon, sass, scss, san francisco, dropbox" >
+    <meta name="keywords" content="phil lapier, philip lapier, web design, web development, product design, interface design, bourbon, sass, scss, san francisco, dropbox" >
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="stylesheet" href="stylesheets/application.css">
-    <script type="text/javascript" src="//use.typekit.net/yae4abi.js"></script>
-    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+    <link href="https://fonts.googleapis.com/css?family=Chivo:400,700|Poppins:400,600,700&display=swap" rel="stylesheet">
   </head>
 
   <body>
-    <nav class="slider-nav">
-      <div class="main-nav">
-        <a href="#" onclick="return false;" data-id="prev" class="prev arrow">
-          <img src="images/arrow.svg" alt="Previous">
-        </a>
-        <a href="#" onclick="return false;" class="menu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </a>
-        <a href="#" onclick="return false;" data-id="next" class="next arrow">
-          <img src="images/arrow.svg" alt="Next">
-        </a>
-      </div>
-    </nav>
-    <ol class="drawer hide">
-      <li class="active">
-        <a href="#about">About Me</a>
-      </li>
-      <li>
-        <a href="#domflags">DomFlags <span>Web / 2014</span></a>
-      </li>
-      <li>
-        <a href="#myfaves">myfaves.fm <span>Web / 2013</span></a>
-      </li>
-      <li>
-        <a href="#thoughtbot">thoughtbot <span>Web / 2013</span></a>
-      </li>
-      <li>
-        <a href="#white-label">White-label<span>Web / 2013</span></a>
-      </li>
-      <li>
-        <a href="#prm">PRM<span>Web / 2013</span></a>
-      </li>
-      <li>
-        <a href="#fdn">Financial DN<span>Web / 2012</span></a>
-      </li>
-      <li>
-        <a href="#vpp">Velocity<span>iPad / 2012</span></a>
-      </li>
-      <li>
-        <a href="#iora">Iora Health<span>iPad / 2011</span></a>
-      </li>
-    </ol>
-
-    {{ content }}
+    <div class="layout-wrapper">
+      <header class="header-main inner-wrapper">
+        <h1 class="chivo"><b>Philip LaPier</b> is a product designer based in San Francisco</h1>
+        <nav>
+          <ul>
+            <li><a href="/" class="active">Work</a></li>
+            <li><a href="/about" class="">About</a></li>
+          </ul>
+        </nav>
+      </header>
+      {{ content }}
+    </div>
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/history.js/1.8/native.history.min.js"></script>
