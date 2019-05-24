@@ -54,8 +54,7 @@ a {
   &:active,
   &:focus,
   &:hover {
-    color: shade(#f2f2f2, 25%);
-
+    color: $action-color;
   }
 }
 
