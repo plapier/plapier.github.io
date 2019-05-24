@@ -11,20 +11,20 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-headline);
-  font-size: var(--text-header-medium);
+  font-family: $heading-font-family;
+  font-size: $text-header-medium;
   line-height: $heading-line-height;
   margin: 0 0 $small-spacing;
   text-rendering: optimizeLegibility;
 }
 
 h1 {
-  font-size: var(--text-header-large);
+  font-size: $text-header-large;
   font-weight: 600;
 }
 
 h2 {
-  font-size: var(--text-header-medium);
+  font-size: $text-header-medium;
   font-weight: 600;
 
   b {
@@ -46,14 +46,16 @@ p {
 }
 
 a {
-  color: $action-color;
+  color: $text-primary;
+  font-weight: bold;
   text-decoration: none;
   transition: color $base-duration $base-timing;
 
   &:active,
   &:focus,
   &:hover {
-    color: shade($action-color, 25%);
+    color: shade(#f2f2f2, 25%);
+
   }
 }
 

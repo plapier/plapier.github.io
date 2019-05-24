@@ -1,10 +1,10 @@
 body, html {
-  background-color: var(--bg-primary);
+  background-color: $bg-primary;
   margin: 0;
   overflow-x: hidden;
-  color: var(--text-primary);
-  font-family: var(--font-body);
-  font-size: var(--text-body-medium);
+  color: $text-primary;
+  font-family: $base-font-family;
+  font-size: $text-body-medium;
   @include font-smoothing;
 }
 html {
@@ -36,16 +36,19 @@ html {
 
   h1 {
     font-weight: normal;
-    font-size: var(--text-body-large);
+    font-size: $text-body-large;
     max-width: 590px;
 
     b {
       font-weight: 600;
     }
   }
+
   nav {
     a {
-      color: var(--text-primary);
+      font-weight: normal;
+      color: $text-primary;
+      font-size: 24px;
     }
 
     .active {
@@ -56,6 +59,7 @@ html {
   ul {
     display: flex;
     flex-direction: row;
+    margin-top: 7px;
 
     li {
       margin-left: 50px;
