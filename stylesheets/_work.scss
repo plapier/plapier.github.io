@@ -35,6 +35,10 @@
   justify-content: flex-end;
   flex-direction: column;
 
+  @include phone {
+    max-height: 72vw;
+  }
+
   img {
     max-width: 100%;
     margin: 0 auto;
@@ -52,9 +56,10 @@
 .recents {
   .hero-image {
     background-image: url('../images/recents/hero.jpeg');
-    background-size: 100%;
+    // background-size: 100%;
     background-repeat: no-repeat;
     background-position: 50% 40%;
+    background-size: cover;
   }
 }
 
