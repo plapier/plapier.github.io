@@ -4,8 +4,12 @@ body, html {
   overflow-x: hidden;
   color: $text-primary;
   font-family: $base-font-family;
-  font-size: $text-body-medium;
+  font-size: $base-font-size;
   @include font-smoothing;
+
+  @include phone {
+    font-size: $base-font-size-mobile;
+  }
 }
 html {
   box-sizing: border-box;
@@ -18,9 +22,23 @@ html {
   max-width: 1136px + (40*2);
   margin: 0 auto;
   padding: 80px 40px;
+
+  @include tablet {
+    padding: 40px 20px;
+  }
+  @include phone {
+    padding: 40px 20px;
+  }
 }
 .inner-wrapper {
   padding: 0 48px;
+
+  @include tablet {
+    padding: 0 24px;
+  }
+  @include phone {
+    padding: 0 12px;
+  }
 }
 .chivo {
   font-family: $chivo;
@@ -33,6 +51,10 @@ html {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+
+  @include phone {
+    flex-direction: column;
+  }
 
   h1 {
     font-weight: normal;
@@ -48,7 +70,7 @@ html {
     a {
       font-weight: normal;
       color: $text-primary;
-      font-size: 24px;
+      font-size: $text-body-medium;
     }
 
     .active {
@@ -63,6 +85,11 @@ html {
 
     li {
       margin-left: 50px;
+
+      @include phone {
+        margin-left: 0;
+        margin-right: 50px;
+      }
     }
   }
 }

@@ -4,12 +4,50 @@
   section {
     display: flex;
     flex-direction: row;
+    align-content: stretch;
+
+
+    @include phone {
+      flex-direction: column;
+    }
   }
 
-  img {
-    width: 356px;
-    height: 474px;
+  .profile-photo {
+    background-image: url('/images/profile-photo.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    $width: 356px;
+    $height: 474px;
+    // @include size($width, $height);
+    min-width: $width;
+    // height: $height;
     margin-right: 90px;
+
+    @include tablet {
+      background-size: cover;
+      background-position: center;
+      // @include size($width/1.25, $height/1.25);
+      // @include size(100%);
+      margin-right: 45px;
+    }
+    @include phone {
+      min-width: auto;
+      width: 100%;
+      height: 250px;
+      margin: 0;
+      background-size: cover;
+    }
+  }
+  img {
+    $width: 356px;
+    $height: 474px;
+    @include size($width, $height);
+    margin-right: 90px;
+
+    @include tablet {
+      @include size($width/1.25, $height/1.25);
+      margin-right: 45px;
+    }
   }
   .content-inner {
     padding-top: 15px;

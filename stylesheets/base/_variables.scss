@@ -5,19 +5,20 @@ $poppins: 'Poppins', sans-serif;
 $bg-primary: #252525;
 $text-primary: #F2F2F2;
 
-$text-header-large: 36px;
-$text-header-medium: 28px;
+$text-header-large: 1.63rem; //36
+$text-header-medium: 1.27rem; //28
 
-$text-body-large: 32px;
-$text-body-medium: 22px; //base
-$text-body-small: 18px;
+$text-body-large: 1.45rem; //32
+$text-body-medium: 1rem; //base 22
+$text-body-small: 0.82rem; // 18
 
 
 $base-font-family:  $chivo;
 $heading-font-family: $poppins;
 
 // Font Sizes
-$base-font-size: 1em;
+$base-font-size: 22px;
+$base-font-size-mobile: 18px;
 
 // Line height
 $base-line-height: 1.5;
