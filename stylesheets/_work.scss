@@ -1,6 +1,11 @@
 .project {
   margin-top: 80px;
   margin-bottom: 130px;
+
+  @include phone {
+    margin-bottom: 100px;
+  }
+
   a {
     color: $text-primary;
   }
@@ -10,6 +15,10 @@
     display: flex;
     flex-direction: column-reverse;
     position: relative;
+
+    @include phone {
+      margin-bottom: 25px;
+    }
 
     h1 {
       font-weight: 600;
