@@ -1,17 +1,25 @@
-// %animation-app-slide-up {
-//   @include animation(app-slide-up 0.55s $ease-out-quad);
-//   @include animation-delay(0.25s);
-//   @include transform(translate(0, 30px));
-//   @include animation-fill-mode(both);
-//   opacity: 0;
-// }
-// @include keyframes(app-slide-up) {
-//   0% {
-//     @include transform(translate(0, 30px));
-//     opacity: 0;
-//   }
-//   100% {
-//     @include transform(translate(0, 0));
-//     opacity: 1;
-//   }
-// }
+    // %animation-app-slide-up {
+    //   animation: hue 10s infinite linear;
+    //   animation-delay: 0.5s;
+    // }
+
+    // @keyframes hue {
+    //   from {
+    //     -webkit-filter: hue-rotate(0deg);
+    //   }
+    //   to {
+    //     -webkit-filter: hue-rotate(-360deg);
+    //   }
+    // }
+
+    @keyframes hue {
+      0% {
+        background-position: 0 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0 50%;
+      }
+    }

@@ -1,6 +1,17 @@
 .about {
   margin-top: 80px;
 
+  // a:hover {
+  //   // background: linear-gradient(92deg, #f35626, #feab3a);
+  //   background: linear-gradient(-60deg, #FC575E, #F7B42C, #F2C94C);
+  //   background-size: 300%;
+  //   -webkit-background-clip: text;
+  //   -webkit-text-fill-color: transparent;
+  //   animation: hue 2s infinite ease-in-out;
+  //   // animation-delay: 0.5s;
+  //   color: #fff;
+  // }
+
   section {
     display: flex;
     flex-direction: row;
@@ -36,6 +47,7 @@
       height: 250px;
       margin: 0;
       background-size: cover;
+      margin-bottom: 24px;
     }
   }
   img {
