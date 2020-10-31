@@ -55,15 +55,6 @@ html {
   @include phone {
     flex-direction: column;
   }
-  // .sf {
-  //   // background: linear-gradient(92deg, #f35626, #feab3a);
-  //   background: linear-gradient(-60deg, #FC575E, #F7B42C, #F53844);
-  //   background-size: 200%;
-  //   // -webkit-background-clip: text;
-  //   // -webkit-text-fill-color: transparent;
-  //   animation: hue 20s infinite ease-in-out;
-  //   // animation-delay: 0.5s;
-  // }
 
   h1 {
     font-weight: normal;
@@ -80,6 +71,20 @@ html {
       font-weight: normal;
       color: $text-primary;
       font-size: $text-body-medium;
+      padding: 0 2px 6px;
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        height: 2.5px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba($action-color, 0.0);
+        border-radius: 4px;
+        transition: 0.3s ease-out all;
+      }
 
       @include phone {
         font-size: $text-body-large;
@@ -87,8 +92,9 @@ html {
     }
 
     .active {
-      border-bottom: 2px solid $action-color;
-      padding-bottom: 4px;
+      &::after {
+        background-color: rgba($action-color, 1.0);
+      }
     }
   }
   ul {
@@ -97,7 +103,7 @@ html {
     margin-top: 7px;
 
     li {
-      margin-left: 50px;
+      margin-left: 40px;
 
       @include phone {
         margin-left: 0;

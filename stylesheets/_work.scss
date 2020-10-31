@@ -1,5 +1,5 @@
 .project {
-  margin-top: 80px;
+  margin-top: $nav-content-gap;
   margin-bottom: 130px;
 
   @include phone {
@@ -59,6 +59,7 @@
 
 .gmail {
   .hero-image {
+    background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(#efbb1c,1) 0.3%, rgba(#F2C94C,1) 90.5% );
     img {
 
     }
@@ -76,7 +77,8 @@
 
 .chooser-saver {
   .hero-image {
-    background: #A2D39B;
+    background-image: linear-gradient( 109.6deg,  rgba(#005744,1) 11.2%, rgba(#007158,1) 91.1% );
+    background-color: #005744;
     justify-content: start;
 
     img {
@@ -85,7 +87,8 @@
 }
 .facebook {
   .hero-image {
-    background: #1777F0;
+    background: linear-gradient(90deg, #4481EB 0%, #04BEFE 100%);
+    background-color: #4481EB;
     justify-content: center;
 
     img {
