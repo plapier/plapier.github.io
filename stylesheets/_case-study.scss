@@ -49,4 +49,20 @@
     margin-bottom: 0.5em;
   }
 
+  img {
+    max-width: 100%;
+    margin: 0 auto;
+    height: auto;
+  }
+
+  .content-group {
+    margin: 100px 0;
+  }
+
+  .twoUp {
+    padding: $figure-padding 0;
+    height: auto;
+    flex-direction: row;
+    align-items: start;
+  }
 }

@@ -35,9 +35,9 @@
   }
 }
 
-.hero-image {
+.hero-image, .content-image {
   max-width: 1136px;
-  background: #F2C94C;
+  background: $dark-gray;
   height: 560px;
   border-radius: 6px;
   overflow: hidden;
@@ -57,11 +57,27 @@
   }
 }
 
+.green {
+  background-image: linear-gradient( 109.6deg,  rgba(#005744,1) 11.2%, rgba(#007158,1) 91.1% );
+  background-color: #005744;
+}
+.purple {
+  background-image: linear-gradient( 109.6deg,  rgba(#4D12D5,1) 11.2%, rgba(#672EED,1) 91.1% );
+  background-color: #4D12D5;
+}
+
 .gmail {
   .hero-image {
-    background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(#efbb1c,1) 0.3%, rgba(#F2C94C,1) 90.5% );
     img {
+    }
+  }
 
+  .content-image {
+    height: auto;
+    margin-bottom: 40px;
+
+    &.map-a, &.map-b {
+      padding: $figure-padding 0;
     }
   }
 }
@@ -77,8 +93,6 @@
 
 .chooser-saver {
   .hero-image {
-    background-image: linear-gradient( 109.6deg,  rgba(#005744,1) 11.2%, rgba(#007158,1) 91.1% );
-    background-color: #005744;
     justify-content: start;
 
     img {
