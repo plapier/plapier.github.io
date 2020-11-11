@@ -56,13 +56,47 @@
   }
 
   .content-group {
-    margin: 100px 0;
+    margin: 120px 0;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 
-  .twoUp {
+  .diptych {
     padding: $figure-padding 0;
     height: auto;
     flex-direction: row;
     align-items: start;
+    justify-content: space-evenly;
+
+    @include tablet {
+      flex-direction: column-reverse;
+      align-items: center;
+    }
+
+    @include phone {
+      flex-direction: column-reverse;
+      align-items: center;
+    }
+
+    img {
+      margin: 0;
+    }
   }
+}
+
+video {
+  border-radius: 6px;
+  width: 100%;
+  max-width: 100%;
+}
+figcaption {
+  opacity: 0.6;
+  font-size: $text-body-small;
+  text-align: center;
+  margin-top: 15px;
+}
+.outlook .content-image {
+  padding: ($figure-padding + 20) $figure-padding;
 }

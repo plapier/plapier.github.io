@@ -10,14 +10,20 @@
     color: $text-primary;
   }
 
-  .project-header {
-    margin-bottom: 40px;
+  .project-header.inner-wrapper {
+    margin-bottom: 0;
     display: flex;
     flex-direction: column-reverse;
     position: relative;
 
     @include phone {
       margin-bottom: 25px;
+    }
+    & + .inner-wrapper {
+      margin-top: 20px;
+    }
+    & + figure {
+      margin-top: 40px;
     }
 
     h1 {
@@ -35,25 +41,30 @@
   }
 }
 
-.hero-image, .content-image {
-  max-width: 1136px;
-  background: $dark-gray;
-  height: 560px;
+.flex {
   border-radius: 6px;
   overflow: hidden;
-  background-repeat: no-repeat;
+  width: 100%;
   display: flex;
   justify-content: flex-end;
   flex-direction: column;
+  // background-color: $dark-gray;
+  background-repeat: no-repeat;
+}
 
-  @include phone {
-    max-height: 72vw;
-  }
+.hero-image, .content-image {
+  max-width: 1136px;
+  height: 560px;
 
   img {
     max-width: 100%;
     margin: 0 auto;
     height: auto;
+  }
+}
+.hero-image {
+  @include phone {
+    max-height: 72vw;
   }
 }
 
@@ -65,26 +76,28 @@
   background-image: linear-gradient( 109.6deg,  rgba(#4D12D5,1) 11.2%, rgba(#672EED,1) 91.1% );
   background-color: #4D12D5;
 }
+.blue {
+  background: linear-gradient(90deg, #4481EB 0%, #04BEFE 100%);
+  background-color: #4481EB;
+}
 
-.gmail {
-  .hero-image {
-    img {
-    }
+.content-image {
+  height: auto;
+  margin-bottom: $figure-padding;
+
+  &.pad-tb {
+    padding-top: $figure-padding;
+    padding-bottom: $figure-padding;
   }
-
-  .content-image {
-    height: auto;
-    margin-bottom: 40px;
-
-    &.map-a, &.map-b {
-      padding: $figure-padding 0;
-    }
+  &.pad-lr {
+    padding-left: $figure-padding;
+    padding-right: $figure-padding;
   }
 }
+
 .recents {
   .hero-image {
     background-image: url('../images/recents/hero.jpeg');
-    // background-size: 100%;
     background-repeat: no-repeat;
     background-position: 50% 40%;
     background-size: cover;
@@ -94,18 +107,10 @@
 .chooser-saver {
   .hero-image {
     justify-content: start;
-
-    img {
-    }
   }
 }
 .facebook {
   .hero-image {
-    background: linear-gradient(90deg, #4481EB 0%, #04BEFE 100%);
-    background-color: #4481EB;
     justify-content: center;
-
-    img {
-    }
   }
 }
