@@ -25,6 +25,7 @@ h1 {
 
 h2 {
   font-size: $text-header-medium;
+  // font-size: $base-font-size;
   font-weight: 600;
 
   b {
@@ -33,6 +34,8 @@ h2 {
 }
 
 h3 {
+  font-size: $base-font-size;
+  font-weight: 600;
 }
 
 h4 {

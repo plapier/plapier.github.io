@@ -1,6 +1,6 @@
 // $phone-width: ;
 $tablet-width: 768px;
-$desktop-width: 1024px;
+$desktop-width: 1112px;
 
 @mixin phone {
   @media (max-width: #{$tablet-width - 1}) {
