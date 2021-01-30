@@ -112,6 +112,7 @@ figcaption {
   font-size: $text-body-small;
   text-align: center;
   margin-top: 15px;
+  display: none;
 }
 .outlook .content-image {
   padding: ($figure-padding + 20) $figure-padding;
