@@ -72,9 +72,26 @@
   background-image: linear-gradient(75deg, rgba(#005744,1) 11.2%, rgba(#007158,1) 91.1%);
   background-color: #005744;
 }
+.greenRich {
+  background: linear-gradient(75deg, #003C32 0%, #005C4E 100%);
+  background-color: #003C32;
+}
 .purple {
-  background-image: linear-gradient(75deg, rgba(#4D12D5,1) 11.2%, rgba(#672EED,1) 91.1%);
-  background-color: #4D12D5;
+  // background: var(--Purple-Gradient, linear-gradient(75deg, #4D12D5 0%, #672EED 100%));
+  background: linear-gradient(75deg, #3C2D89 0%, #5D39BE 100%);
+  background-color: #3C2D89;
+}
+.purple-dark {
+  background: var(--Dark-Purple, linear-gradient(75deg, #251867 0%, #3C2D89 100%));
+  background-color: #251867;
+}
+.purpleRich {
+  background: linear-gradient(75deg, #37075E 0%, #54118A 100%);
+  background-color: #37075E;
+}
+.purpleRichAlt {
+  background: linear-gradient(285deg, #37075E 0%, #54118A 100%);
+  background-color: #37075E;
 }
 .blue {
   background: linear-gradient(75deg, #0066DD 0%, #168EFF 100%);
@@ -87,6 +104,14 @@
 .maroon {
   background: linear-gradient(75deg, #5A132C 0%, #6F1736 100%);
   background-color: #5A132C;
+}
+.pinkish {
+  background: linear-gradient(75deg, #57002A 0%, #77004E 100%);
+  background-color: #57002A;
+}
+.orange {
+  background: linear-gradient(75deg, #743F01 0%, #8D5500 100%);
+  background-color: #743F01;
 }
 .yellow {
   background: linear-gradient(75deg, #EFBB1C 0%, #F2C94C 100%), #F2C94C;
@@ -113,9 +138,9 @@
 
 .recents {
   .hero-image {
-    padding-top: 45px;
-    padding-left: 40px;
-    padding-right: 40px;
+    // padding-top: 45px;
+    // padding-left: 40px;
+    // padding-right: 40px;
     justify-content: flex-start;
 
     @include phone {
@@ -126,7 +151,21 @@
 .center {
   text-align: center;
 }
-
+.pilot-home {
+  .hero-image {
+    justify-content: start;
+  }
+}
+.pilot-insights {
+  .hero-image {
+    justify-content: center;
+  }
+}
+.pilot-tasks {
+  .hero-image {
+    justify-content: end;
+  }
+}
 .chooser-saver {
   .hero-image {
     justify-content: start;
