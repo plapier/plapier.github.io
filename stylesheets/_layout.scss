@@ -73,6 +73,7 @@ html {
       font-size: $text-body-medium;
       padding: 0 2px 6px;
       position: relative;
+      border-bottom: none;
 
       &::after {
         content: "";

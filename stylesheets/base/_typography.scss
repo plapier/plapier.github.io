@@ -50,14 +50,16 @@ p {
 
 a {
   color: $text-primary;
-  font-weight: bold;
+  // font-weight: bold;
   text-decoration: none;
-  transition: color $base-duration $base-timing;
+  transition: all $base-duration $base-timing;
+  border-bottom: 1.5px solid rgba(#fff, 0.15);
 
   &:active,
   &:focus,
   &:hover {
-    color: $action-color;
+    // color: $action-color;
+    border-color: $action-color;
   }
 }
 
