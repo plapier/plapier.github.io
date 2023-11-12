@@ -129,22 +129,28 @@
   &.pad-tb {
     padding-top: $figure-padding;
     padding-bottom: $figure-padding;
+    @include phone {
+      padding-top: calc($figure-padding/2);
+      padding-bottom: calc($figure-padding/2);
+    }
   }
   &.pad-lr {
     padding-left: $figure-padding;
     padding-right: $figure-padding;
+    @include phone {
+      padding-left: calc($figure-padding/2);
+      padding-right: calc($figure-padding/2);
+    }
   }
 }
 
 .recents {
   .hero-image {
-    // padding-top: 45px;
-    // padding-left: 40px;
-    // padding-right: 40px;
     justify-content: flex-start;
+    height: min-content;
 
     @include phone {
-      padding-top: 35px;
+      padding-top: 0;
     }
   }
 }
@@ -153,17 +159,22 @@
 }
 .pilot-home {
   .hero-image {
-    justify-content: start;
-  }
-}
-.pilot-insights {
-  .hero-image {
-    justify-content: center;
+    justify-content: end;
+
+    @include phone {
+      height: min-content;
+    }
   }
 }
 .pilot-tasks {
   .hero-image {
     justify-content: end;
+    height: min-content;
+  }
+}
+.pilot-insights {
+  .hero-image {
+    justify-content: center;
   }
 }
 .chooser-saver {
