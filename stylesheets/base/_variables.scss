@@ -1,27 +1,28 @@
 // Typography
 $chivo: 'Chivo', sans-serif;
+$karla: 'Karla', sans-serif;
 $poppins: 'Poppins', sans-serif;
 
 // $bg-primary: #252525; // more grey
 $bg-primary: #1D1D21; // more blue
 $text-primary: #F2F2F2;
 
-$text-header-large: 1.63rem; //36
-$text-header-medium: 1.2rem; //26
+$text-header-large: 1.56rem; //36
+$text-header-medium: 1.14rem; //26
 
 $text-body-large: 1.45rem; //32
 $text-body-medium: 1rem; //base 22
-$text-body-small: 0.82rem; // 18
+$text-body-small: 0.78rem; // 18
 
-$base-font-family:  $chivo;
+$base-font-family:  $karla;
 $heading-font-family: $poppins;
 
 // Font Sizes
-$base-font-size: 22px;
+$base-font-size: 23px;
 $base-font-size-mobile: 18px;
 
 // Line height
-$base-line-height: 1.5;
+$base-line-height: 1.46;
 $heading-line-height: 1.4;
 
 // Other Sizes
